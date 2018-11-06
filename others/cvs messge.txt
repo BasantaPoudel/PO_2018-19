@@ -1,0 +1,7 @@
+CVS tells the user about the state of the update process by prefixing each file name (in the log of its actions) with a single character:
+U (new file coming from the repository),
+P (local file patched to reflect changes in the repository),
+R (local file scheduled for removal, but still exists in the corresponding repository revision),
+A (local file scheduled for addition, but not yet commited),
+C (a conflict was detected and marked: manual intervention is needed),
+? (unknown local file). Other messages may also be given (for instance, telling about the removal of local files).
