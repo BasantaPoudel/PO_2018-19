@@ -15,7 +15,7 @@ import sth.SchoolManager;
 public class DoOpen extends Command<SchoolManager> {
 
   //FIXME add input fields if needed
-  
+
   /**
    * @param receiver
    */
@@ -27,13 +27,13 @@ public class DoOpen extends Command<SchoolManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    try {
-      //FIXME implement command
-    } catch (FileNotFoundException fnfe) {
-      _display.popup(Message.fileNotFound());
-    } catch (ClassNotFoundException | IOException e) {
-      e.printStackTrace();
-    }
+    // try {
+    //   //FIXME implement command
+    // } catch (FileNotFoundException fnfe) {
+    //   _display.popup(Message.fileNotFound());
+    // } catch (ClassNotFoundException | IOException e) {
+    //   e.printStackTrace();
+    // }
   }
 
 }

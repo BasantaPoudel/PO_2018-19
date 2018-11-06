@@ -1,7 +1,15 @@
 package sth;
 
-//FIXME import other classes if needed
+//FIXME [FIXING-BEGIN] import other classes if needed
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.Serializable;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
 
+//[FIXING-END]
 import sth.exceptions.BadEntryException;
 import sth.exceptions.InvalidCourseSelectionException;
 import sth.exceptions.NoSuchPersonIdException;
@@ -17,16 +25,32 @@ public class School implements Serializable {
   //FIXME define object fields (attributes and, possibly, associations)
 
   //FIXME implement constructors if needed
-  
+
   /**
    * @param filename
    * @throws BadEntryException
    * @throws IOException
    */
   void importFile(String filename) throws IOException, BadEntryException {
-    //FIXME implement text file reader
+    //FIXME [FIXING-BEGIN] implement text file reader
+   try {
+     BufferedReader in = new BufferedReader(new FileReader(filename));
+     String s,sin, s2 = new String();
+     while((s = in.readLine()) != null) s2 += s + "\n";
+     in.close();
+
+     PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
+
+     int lineCount = 1;
+     while((sin = in.readLine()) != null ) out.printf("%3d: %s\n", lineCount++, sin);
+     out.close();
+
+   }
+   catch(IOException e) { System.err.println("Erro Ler o Ficheiro"); }
+   //catch(BadEntryException e) { System.err.println("Erro Ler o Ficheiro"); }
+   //[FIXING-END]
   }
-  
+
   //FIXME implement other methods
 
 }

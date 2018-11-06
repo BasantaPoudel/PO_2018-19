@@ -1,4 +1,5 @@
 package sth;
+import java.io.IOException;
 
 import sth.exceptions.BadEntryException;
 import sth.exceptions.ImportFileException;
@@ -14,7 +15,8 @@ public class SchoolManager {
   //FIXME add object attributes if needed
 
   //FIXME implement constructors if needed
-  
+  private School _school;
+
   /**
    * @param datafile
    * @throws ImportFileException
@@ -41,6 +43,7 @@ public class SchoolManager {
    */
   public boolean hasAdministrative() {
     //FIXME implement predicate
+    return true;
   }
 
   /**
@@ -48,6 +51,7 @@ public class SchoolManager {
    */
   public boolean hasProfessor() {
     //FIXME implement predicate
+    return true;
   }
 
   /**
@@ -55,6 +59,7 @@ public class SchoolManager {
    */
   public boolean hasStudent() {
     //FIXME implement predicate
+    return true;
   }
 
   /**
@@ -62,8 +67,9 @@ public class SchoolManager {
    */
   public boolean hasRepresentative() {
     //FIXME implement predicate
+    return true;
   }
 
   //FIXME implement other methods (in general, one for each command in sth-app)
-  
+
 }
