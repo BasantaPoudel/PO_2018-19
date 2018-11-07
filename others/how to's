@@ -1,0 +1,17 @@
+Como se compila o banco:
+
+Como se executa o banco:
+no app:
+
+export CLASSPATH=../po-ubank-core/po-ubank-core.jar:../po-ubank-app/po-ubank-app.jar:../po-uuilib/po-uuilib.jar
+java bank.app.App BPO
+
+Como se compila o projecto:
+
+Como se executa o projecto:
+dentro do app
+
+export CLASSPATH=/usr/share/java/po-uuilib.jar:../sth-core/sth-core.jar:./sth-app.jar  
+java -Dimport=test.import -Din=test.in -Dout=test.outhyp sth.app.App  
+
+java -cp /usr/share/java/po-uuilib.jar:../sth-core/sth-core.jar:./sth-app.jar sth.app.App
