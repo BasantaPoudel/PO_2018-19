@@ -15,7 +15,7 @@ public class SchoolManager {
   //FIXME add object attributes if needed
 
   //FIXME implement constructors if needed
-  private School _school;
+  private School _school = new School();
 
   /**
    * @param datafile

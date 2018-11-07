@@ -34,17 +34,13 @@ public class School implements Serializable {
   void importFile(String filename) throws IOException, BadEntryException {
     //FIXME [FIXING-BEGIN] implement text file reader
    try {
+     String s = new String();
      BufferedReader in = new BufferedReader(new FileReader(filename));
-     String s,sin, s2 = new String();
-     while((s = in.readLine()) != null) s2 += s + "\n";
-     in.close();
-
-     PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
-
+     PrintWriter   out = new PrintWriter(new BufferedWriter(new FileWriter("Escritor1.out")));
      int lineCount = 1;
-     while((sin = in.readLine()) != null ) out.printf("%3d: %s\n", lineCount++, sin);
+     while((s = in.readLine()) != null ) out.printf("%3d: %s\n", lineCount++, s);
      out.close();
-
+     in.close();
    }
    catch(IOException e) { System.err.println("Erro Ler o Ficheiro"); }
    //catch(BadEntryException e) { System.err.println("Erro Ler o Ficheiro"); }
