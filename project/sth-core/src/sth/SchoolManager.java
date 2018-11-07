@@ -15,7 +15,7 @@ public class SchoolManager {
   //FIXME add object attributes if needed
 
   //FIXME implement constructors if needed
-  private School _school = new School();
+	private School _school = new School();
 
   /**
    * @param datafile
@@ -23,12 +23,14 @@ public class SchoolManager {
    * @throws InvalidCourseSelectionException
    */
   public void importFile(String datafile) throws ImportFileException {
-    try {
-      _school.importFile(datafile);
-    } catch (IOException | BadEntryException e) {
-      throw new ImportFileException(e);
-    }
+  	try {
+  		_school.importFile(datafile);
+  	} catch (IOException | BadEntryException e) {
+  		throw new ImportFileException(e);
+  	}
   }
+
+
 
   /**
    * @param id
@@ -43,7 +45,7 @@ public class SchoolManager {
    */
   public boolean hasAdministrative() {
     //FIXME implement predicate
-    return true;
+  	return true;
   }
 
   /**
@@ -51,7 +53,7 @@ public class SchoolManager {
    */
   public boolean hasProfessor() {
     //FIXME implement predicate
-    return true;
+  	return true;
   }
 
   /**
@@ -59,7 +61,7 @@ public class SchoolManager {
    */
   public boolean hasStudent() {
     //FIXME implement predicate
-    return true;
+  	return true;
   }
 
   /**
@@ -67,9 +69,16 @@ public class SchoolManager {
    */
   public boolean hasRepresentative() {
     //FIXME implement predicate
-    return true;
+  	return true;
   }
 
   //FIXME implement other methods (in general, one for each command in sth-app)
+
+
+
+
+
+
+
 
 }
