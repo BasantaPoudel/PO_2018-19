@@ -38,8 +38,14 @@ public class School implements Serializable {
      BufferedReader in = new BufferedReader(new FileReader(filename));
      PrintWriter   out = new PrintWriter(new BufferedWriter(new FileWriter("Escritor1.out")));
      int lineCount = 1;
-     while((s = in.readLine()) != null ) out.printf("%3d: %s\n", lineCount++, s);
-     out.close();
+     while((s = in.readLine()) != null ){
+                     String[] fields = s.split("\\|");
+                   for (String i:fields){
+                     System.out.println(i);
+                   }
+          out.printf("%3d: %s\n", lineCount++, s);
+          }
+          out.close();
      in.close();
    }
    catch(IOException e) { System.err.println("Erro Ler o Ficheiro"); }
