@@ -54,97 +54,97 @@ public class School implements Serializable {
   }
 
   //FIXME  implement other methods
-  // FIXING
+//   // FIXING
 
-//auxiliary methods for the creation of the several elements of the school
+// //auxiliary methods for the creation of the several elements of the school
 
-  /**
-   * @param id
-   * @param phoneNumber
-   * @param name
-   * @throws CantAddStudentException
-   */
-  public void addStudent(int id,int phoneNumber,String name) throws CantAddStudentException {
-    //NEWFIXME implement method
-   // FIXING-BEGIN
+//   /**
+//    * @param id
+//    * @param phoneNumber
+//    * @param name
+//    * @throws CantAddStudentException
+//    */
+//   public void addStudent(int id,int phoneNumber,String name) throws CantAddStudentException {
+//     //NEWFIXME implement method
+//    // FIXING-BEGIN
 
-   // >100000
-  	id_size=(int)(Math.log10(id)+1);
-  	// conditions
-  	if (id>100000 && size<=6){
-  		students.add(new Student(id,phoneNumber,name));
-  	}
-  	else {
-  		throw CantAddStudentException;
-  	}
+//    // >100000
+//   	id_size=(int)(Math.log10(id)+1);
+//   	// conditions
+//   	if (id>100000 && size<=6){
+//   		students.add(new Student(id,phoneNumber,name));
+//   	}
+//   	else {
+//   		throw CantAddStudentException;
+//   	}
 
-  }
+//   }
 
-    /**
-   * @param id
-   * @param phoneNumber
-   * @param name
-   * @throws CantAddTeacherException
-   */
-  public void addTeacher(int id,int phoneNumber,String name) throws CantAddTeacherException {
-    //NEWFIXME implement method
-   // FIXING-BEGIN
+//     /**
+//    * @param id
+//    * @param phoneNumber
+//    * @param name
+//    * @throws CantAddTeacherException
+//    */
+//   public void addTeacher(int id,int phoneNumber,String name) throws CantAddTeacherException {
+//     //NEWFIXME implement method
+//    // FIXING-BEGIN
 
-   // >100000
-  	id_size=(int)(Math.log10(id)+1);
-  	// conditions
-  	if (id>100000 && size<=6){
-  		teachers.add(new Teacher(id,phoneNumber,name));
-  	}
-  	else {
-  		throw CantAddTeacherException;
-  	}
+//    // >100000
+//   	id_size=(int)(Math.log10(id)+1);
+//   	// conditions
+//   	if (id>100000 && size<=6){
+//   		teachers.add(new Teacher(id,phoneNumber,name));
+//   	}
+//   	else {
+//   		throw CantAddTeacherException;
+//   	}
 
-  }
+//   }
 
-    /**
-   * @param id
-   * @param phoneNumber
-   * @param name
-   * @throws CantAddStaffException
-   */
-  public void addStaff(int id,int phoneNumber,String name) throws CantAddStaffException {
-    //NEWFIXME implement method
-   // FIXING-BEGIN
+//     /**
+//    * @param id
+//    * @param phoneNumber
+//    * @param name
+//    * @throws CantAddStaffException
+//    */
+//   public void addStaff(int id,int phoneNumber,String name) throws CantAddStaffException {
+//     //NEWFIXME implement method
+//    // FIXING-BEGIN
 
-   // >100000
-  	id_size=(int)(Math.log10(id)+1);
-  	// conditions
-  	if (id>100000 && size<=6){
-  		staffs.add(new Staff(id,phoneNumber,name));
-  	}
-  	else {
-  		throw CantAddStaffException;
-  	}
+//    // >100000
+//   	id_size=(int)(Math.log10(id)+1);
+//   	// conditions
+//   	if (id>100000 && size<=6){
+//   		staffs.add(new Staff(id,phoneNumber,name));
+//   	}
+//   	else {
+//   		throw CantAddStaffException;
+//   	}
 
-  }
+//   }
 
-      /**
-   * @param id
-   * @param phoneNumber
-   * @param name
-   * @throws CantAddRepresentativeException
-   */
-  public void addRepresentative(int id,int phoneNumber,String name) throws CantAddRepresentativeException {
-    //NEWFIXME implement method
-   // FIXING-BEGIN
+//       /**
+//    * @param id
+//    * @param phoneNumber
+//    * @param name
+//    * @throws CantAddRepresentativeException
+//    */
+//   public void addRepresentative(int id,int phoneNumber,String name) throws CantAddRepresentativeException {
+//     //NEWFIXME implement method
+//    // FIXING-BEGIN
 
-   // >100000
-  	id_size=(int)(Math.log10(id)+1);
-  	// conditions
-  	if (id>100000 && size<=6){
-  		Representatives.add(new Representative(id,phoneNumber,name));
-  	}
-  	else {
-  		throw CantAddRepresentativeException;
-  	}
+//    // >100000
+//   	id_size=(int)(Math.log10(id)+1);
+//   	// conditions
+//   	if (id>100000 && size<=6){
+//   		Representatives.add(new Representative(id,phoneNumber,name));
+//   	}
+//   	else {
+//   		throw CantAddRepresentativeException;
+//   	}
 
-  }
+//   }
 
 
 
