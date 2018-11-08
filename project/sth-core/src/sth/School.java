@@ -53,6 +53,53 @@ public class School implements Serializable {
    //[FIXING-END]
   }
 
+
+// ____________________________________________________________________________________________________
+// simple factory to populate the school system with people
+
+	// void registerFromFields(String[] fields) throws UnknownDataException{
+ //                // Regular expression pattern to match an person.
+	// 	Pattern patPerson = Pattern.compile("^(FUNCIONÁRIO|DELEGADO|ALUNO|DOCENTE)");
+ //                // Regular expression pattern to match a message.
+	// 	Pattern patMessage = Pattern.compile("^(MESSAGE)");
+ //                // Regular expression pattern to match a publication.
+	// 	Pattern parPublication = Pattern.compile("^(IMAGE|NOTE|URI)");
+ //                // Regular expression pattern to match a publication.
+	// 	Pattern parConnection = Pattern.compile("^(CONNECTION)");
+
+	// 	if (patPerson.matcher(fields[0]).matches()) {
+	// 		registerPerson(fields);
+	// 	} else if (patMessage.matcher(fields[0]).matches()) {
+	// 		registerMessage(fields);
+	// 	} else if (parPublication.matcher(fields[0]).matches()) {
+	// 		registerPublication(fields);
+	// 	} else if (parConnection.matcher(fields[0]).matches()) {
+	// 		registerConnection(fields);
+	// 	} else {
+	// 		throw new UnknownDataException(fields[0]);
+	// 	}
+	// }
+
+
+	// void registerPerson(String... fields) throws ClientExistsException, UnknownDataException {
+ //                int id = (fields[1] != null) ? Integer.parseInt(fields[1]) : getUUID();
+ //                if (fields[0].equals("PERSON")) {
+ //                        Person person = new Person(id, fields[2], fields[3], fields[4]);
+ //                        .addPerson(id, person);
+ //                        setLastUUID(id);
+ //                        changed();
+ //                } else if (fields[0].equals("ORGANIZATION")) {
+ //                        Organization organization = new Organization(id, fields[2], fields[3], fields[4]);
+ //                        addPerson(id, organization);
+ //                        setLastUUID(id);
+ //                        changed();
+ //                } else {
+ //                        throw new UnknownDataException(fields[0]);
+ //                }
+ //        }
+
+
+
   //FIXME  implement other methods
 //   // FIXING
 
