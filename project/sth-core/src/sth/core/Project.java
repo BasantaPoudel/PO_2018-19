@@ -10,5 +10,32 @@ public class Project{
 		_content=content;
 
 	}
+	/*===========================================
+	=            getters and setters            =
+	===========================================*/
+	public String getName(){
+		return _name;
+	}
+	public void setName(String name){
+		_name=name;
+	}
+	public String getDescription(){
+		return _description;
+	}
+	public void setDescription(String description){
+		_description=description;
+	}
+	public boolean getClosed(){
+		return _closed;
+	}
+	public void setClosed(boolean closed){
+		_closed=closed;
+	}
+	public String getContent(){
+		return _content;
+	}
+	public void setContent(String content){
+		_content=content;
+	}
 
 }
