@@ -14,10 +14,10 @@ import sth.exceptions.BadEntryException;
 import sth.exceptions.InvalidCourseSelectionException;
 import sth.exceptions.NoSuchPersonIdException;
 
-// /**
-//  * School implementation.
-//  */
-// public class School implements Serializable {
+/**
+ * School implementation.
+ */
+public class School implements Serializable {
 
 //   /** Serial number for serialization. */
 //   private static final long serialVersionUID = 201810051538L;
