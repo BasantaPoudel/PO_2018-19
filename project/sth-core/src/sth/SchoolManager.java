@@ -23,11 +23,11 @@ public class SchoolManager {
    * @throws InvalidCourseSelectionException
    */
   public void importFile(String datafile) throws ImportFileException {
-  	// try {
-  	// 	_school.importFile(datafile);
-  	// } catch (IOException | BadEntryException e) {
-  	// 	throw new ImportFileException(e);
-  	// }
+  	try {
+  		_school.importFile(datafile);
+  	} catch (IOException | BadEntryException e) {
+  		throw new ImportFileException(e);
+  	}
   }
 
 
