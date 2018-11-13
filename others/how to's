@@ -12,6 +12,6 @@ Como se executa o projecto:
 dentro do app
 
 export CLASSPATH=/usr/share/java/po-uuilib.jar:../sth-core/sth-core.jar:./sth-app.jar  
-java -Dimport=test.import -Din=test.in -Dout=test.outhyp sth.app.App  
+java sth.app.App  
 
-java -cp /usr/share/java/po-uuilib.jar:../sth-core/sth-core.jar:./sth-app.jar sth.app.App
+java -cp classpath=/usr/share/java/po-uuilib.jar:sth-core/sth-core.jar:sth-app/sth-app.jar sth.app.App
