@@ -44,8 +44,7 @@ Note-se que os comandos DoLogin, DoOpenPersonnelMenu, DoOpenRepresentativeMenu, 
 A funcionalidade a implementar em sth-core tem de ser suficiente para suportar os comandos indicados acima. <br>
 Critérios de avaliação (não automática) <br>
 
-Serão aplicados os seguintes critérios na avaliação da entrega intermédia do projecto. <br>
-
+<h2>Serão aplicados os seguintes critérios na avaliação da entrega intermédia do projecto. <br></h2>
 Factores aditivos positivos: <br>
 
 0.30 - Atributos não públicos <br>
