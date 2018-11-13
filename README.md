@@ -1,4 +1,4 @@
-<h2>no folder</h2>
+<h2>no 'project'</h2>
 
 ```shell
 export CLASSPATH=/usr/share/java/po-uuilib.jar:./sth-core/sth-core.jar:./sth-app/sth-app.jar
@@ -13,6 +13,8 @@ ou
  https://web.tecnico.ulisboa.pt/~david.matos/w/pt/index.php/Programa%C3%A7%C3%A3o_com_Objectos
  
  https://web.tecnico.ulisboa.pt/~david.matos/w/pt/index.php/Programa%C3%A7%C3%A3o_com_Objectos/Projecto_de_Programa%C3%A7%C3%A3o_com_Objectos
+ 
+ https://web.tecnico.ulisboa.pt/~david.matos/w/pt/index.php/Programa%C3%A7%C3%A3o_com_Objectos/Projecto_de_Programa%C3%A7%C3%A3o_com_Objectos/Enunciado_do_Projecto_de_2018-2019
 
  https://web.tecnico.ulisboa.pt/~david.matos/w/pt/index.php/Programa%C3%A7%C3%A3o_com_Objectos/Projecto_de_Programa%C3%A7%C3%A3o_com_Objectos/Avalia%C3%A7%C3%A3o_do_Projecto_%28%C3%89poca_Normal%29
 
@@ -44,8 +46,7 @@ Note-se que os comandos DoLogin, DoOpenPersonnelMenu, DoOpenRepresentativeMenu, 
 A funcionalidade a implementar em sth-core tem de ser suficiente para suportar os comandos indicados acima. <br>
 Critérios de avaliação (não automática) <br>
 
-Serão aplicados os seguintes critérios na avaliação da entrega intermédia do projecto. <br>
-
+<h2>Serão aplicados os seguintes critérios na avaliação da entrega intermédia do projecto. <br></h2>
 Factores aditivos positivos: <br>
 
 0.30 - Atributos não públicos <br>
