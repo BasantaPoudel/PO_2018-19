@@ -11,7 +11,13 @@ Como se compila o projecto:
 Como se executa o projecto:
 dentro do app
 
-export CLASSPATH=/usr/share/java/po-uuilib.jar:../sth-core/sth-core.jar:./sth-app.jar  
-java sth.app.App  
+export CLASSPATH=/usr/share/java/po-uuilib.jar:../sth-core/sth-core.jar:./sth-app.jar
+java sth.app.App
 
 java -cp classpath=/usr/share/java/po-uuilib.jar:sth-core/sth-core.jar:sth-app/sth-app.jar sth.app.App
+
+Correr o programa com testes do input:
+java -Dimport=test.import -Din=test.in -Dout=test.outhyp sth.app.App
+
+Ver diferenças dos outputs:
+diff -b test.out test.outhyp
