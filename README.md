@@ -1,4 +1,4 @@
-<h2>no folder</h2>
+<h2>no project</h2>
 
 ```python
 export CLASSPATH=/usr/share/java/po-uuilib.jar:./sth-core/sth-core.jar:./sth-app/sth-app.jar
