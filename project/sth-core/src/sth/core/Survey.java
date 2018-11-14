@@ -1,3 +1,4 @@
+package sth.core;
 public class Survey{
 	private double _hoursSpent;
 	private String  _freeComments;
@@ -10,7 +11,7 @@ public class Survey{
 	public Survey(double hoursSpent ,String freeComments){
 		_hoursSpent=hoursSpent;
 		_freeComments=freeComments;
- 
+
 	}
 
 	/*============================================

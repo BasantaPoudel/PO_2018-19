@@ -9,10 +9,22 @@ import java.io.BufferedWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
 
-//[FIXING-END]
-import sth.exceptions.BadEntryException;
-import sth.exceptions.InvalidCourseSelectionException;
-import sth.exceptions.NoSuchPersonIdException;
+import java.util.regex.Pattern;
+import java.util.TreeMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.Iterator;
+
+import sth.exceptions.*;
+
+import sth.core.Student;
+import sth.core.Professor;
+import sth.core.Discipline;
+import sth.core.Person;
+import sth.core.Project;
+import sth.core.Staff;
+import sth.core.Student;
+import sth.core.Survey;
 
 /**
  * School implementation.
@@ -22,7 +34,12 @@ public class School implements Serializable {
   /** Serial number for serialization. */
   private static final long serialVersionUID = 201810051538L;
 
-  //FIXME define object fields (attributes and, possibly, associations)
+  //FIXME [FIXING-BEGIN] define object fields (attributes and, possibly, associations)
+  private TreeMap<Integer, Student> _students = new TreeMap<Integer, Student>();
+  private TreeMap<Integer, Student> _representatives = new TreeMap<Integer, Student>();
+  private TreeMap<Integer, Professor> _professors = new TreeMap<Integer, Professor>();
+  private TreeMap<Integer, Staff> _staffs = new TreeMap<Integer, Staff>();
+  //[FIXING-END]
 
   //FIXME implement constructors if needed
 
@@ -31,29 +48,223 @@ public class School implements Serializable {
    * @throws BadEntryException
    * @throws IOException
    */
-  void importFile(String filename) throws IOException, BadEntryException {
-    //FIXME [FIXING-BEGIN] implement text file reader
-   try {
-     String s = new String();
-     BufferedReader in = new BufferedReader(new FileReader(filename));
-     PrintWriter   out = new PrintWriter(new BufferedWriter(new FileWriter("Escritor1.out")));
-     int lineCount = 1;
-     while((s = in.readLine()) != null ){
-                     String[] fields = s.split("\\|");
-                   // for (String i:fields){
-                   //   System.out.println(i);
-                   // }
-          out.printf("%3d: %s\n", lineCount++, s);
-          }
-          out.close();
-     in.close();
+   /*========================================
+   =            main functions
+   =========================================*/
+
+   void importFile(String filename) throws IOException, BadEntryException {
+
+     BufferedReader reader = new BufferedReader(new FileReader(filename));
+     String line;
+
+     while ((line = reader.readLine()) != null) {
+       //
+       String[] fields = line.split("\\|");
+       try {
+         registerFromFields(fields);
+         //
+         while(isNextLineHashtag(reader)){
+           line = reader.readLine();
+           //[FIXME] System.out.println(line);
+         }
+
+       } catch (UnknownDataException e) {
+         System.err.printf("WARNING: unknown data");
+         e.printStackTrace();
+       }  catch (ClientExistsException e) {
+         e.printStackTrace();
+       } catch (InvalidIdentifierException e) {
+         e.printStackTrace();
+       }
+     }
+     reader.close();
    }
-   catch(IOException e) { System.err.println("Erro Ler o Ficheiro"); }
-   //catch(BadEntryException e) { System.err.println("Erro Ler o Ficheiro"); }
-   //[FIXING-END]
-  }
 
 
+   // ====================================================================================
+
+   /**
+   *
+   *
+   * @param
+   * @return true if next line begins with hashtag
+   */
+   boolean isNextLineHashtag(BufferedReader reader) throws UnknownDataException,
+   ClientExistsException, InvalidIdentifierException, IOException{
+     String line;
+     String[] fields;
+     Pattern pattHashtag = Pattern.compile("^(#)");
+
+     reader.mark(4096); //mark line because we just want to see and not move to next line
+
+     line = reader.readLine(); //read (and move to) next line
+     if (line != null ){
+       fields = line.split("\\ "); //split by spaces (has only one)
+       if( pattHashtag.matcher(fields[0]).matches()){
+         reader.reset(); //checking was already done
+         return true;
+       }
+     }
+     reader.reset(); //checking was already done
+     return false;
+
+   }
+   // ====================================================================================
+
+
+   void registerFromFields(String[] fields) throws UnknownDataException,
+   ClientExistsException,
+   InvalidIdentifierException {
+
+     Pattern pattStudent = Pattern.compile("^(ALUNO)");
+     Pattern pattRepresentive  = Pattern.compile("^(DELEGADO)");
+     Pattern pattProfessor = Pattern.compile("^(DOCENTE)");
+     Pattern pattStaff = Pattern.compile("^(FUNCIONÁRIO)");
+
+
+     if (pattStudent.matcher(fields[0]).matches()) {
+
+       registerStudent(fields);
+     }
+     else if (pattRepresentive .matcher(fields[0]).matches()) {
+       registerRepresentive(fields);
+     }
+     else if (pattProfessor.matcher(fields[0]).matches()) {
+       registerProfessor(fields);
+     }
+     else if (pattStaff.matcher(fields[0]).matches()) {
+       registerStaff(fields);
+     }
+     else {
+       throw new UnknownDataException(fields[0]);
+     }
+   }
+
+
+
+
+
+   // ====================================================================================
+   /*========================================
+   =            register functions
+   =========================================*/
+
+   /**
+   * Registers using fields from already parsed line
+   *
+   * @param    fields
+   */
+   void registerStudent(String[] fields) throws  UnknownDataException {
+
+     int id = Integer.parseInt(fields[1]);
+     int phoneNumber = Integer.parseInt(fields[2]);
+     String name = fields[3];
+
+     if (fields[0].equals("ALUNO")) {
+       //...|id|tel|name
+       Student s= new Student(name,phoneNumber,id);
+       addStudent(id, s);
+     }
+   }
+
+   void registerRepresentive(String[] fields) throws  UnknownDataException {
+     int id = Integer.parseInt(fields[1]);
+     int phoneNumber = Integer.parseInt(fields[2]);
+     String name = fields[3];
+
+     if (fields[0].equals("DELEGADO")) {
+       //...|id|tel|name
+       Student repr= new Student(name,phoneNumber,id);
+       addRepresentive(id, repr);
+     }
+   }
+
+   void registerProfessor(String[] fields) throws  UnknownDataException {
+     int id = Integer.parseInt(fields[1]);
+     int phoneNumber = Integer.parseInt(fields[2]);
+     String name = fields[3];
+
+     if (fields[0].equals("DOCENTE")) {
+       //...|id|tel|name
+       Professor t= new Professor(name,phoneNumber,id);
+       addProfessor(id, t);
+     }
+   }
+
+   void registerStaff(String[] fields) throws  UnknownDataException {
+
+     int id = Integer.parseInt(fields[1]);
+     int phoneNumber = Integer.parseInt(fields[2]);
+     String name = fields[3];
+
+     if (fields[0].equals("FUNCIONÁRIO")) {
+       //...|id|tel|name
+       Staff s= new Staff(name,phoneNumber,id);
+       addStaff(id, s);
+     }
+   }
+
+
+   /*========================================
+   =            add functions
+   =========================================*/
+
+
+   /**
+   * Adds student to proper array
+   *
+   * @param    id
+   * @param  student
+   */
+   public void addStudent(int id, Student student){
+     _students.put(id,student);
+   }
+   public void addRepresentive (int id, Student student ){
+     _representatives.put(id,student);
+   }
+   public void addProfessor(int id, Professor professor){
+     _professors.put(id,professor);
+   }
+
+   public void addStaff(int id, Staff staff){
+     _staffs.put(id,staff);
+   }
+
+
+   /*==========================
+   =            test          =
+   ===========================*/
+   // wash hands
+
+   public void printStudent(){
+     System.out.println("_students");
+     _students.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+     System.out.println("_representatives");
+     _representatives.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+     System.out.println("_professors");
+     _professors.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+     System.out.println("_staffs");
+     _staffs.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+   }
+
+   public boolean hasStudent(int id){
+     	return _students.containsKey(id);
+     }
+
+       public boolean hasProfessor(int id){
+     	return _professors.containsKey(id);
+     }
+
+       public boolean hasStaff(int id){
+     	return _staffs.containsKey(id);
+     }
+
+   public boolean hasRepresentative(int id){
+     	return _representatives.containsKey(id);
+   }
+   public boolean hasStaffs(int id){
+     	return _staffs.containsKey(id);
+   }
 // ____________________________________________________________________________________________________
 // simple factory to populate the school system with people
 
@@ -131,9 +342,9 @@ public class School implements Serializable {
 //    * @param id
 //    * @param phoneNumber
 //    * @param name
-//    * @throws CantAddTeacherException
+//    * @throws CantAddProfessorException
 //    */
-//   public void addTeacher(int id,int phoneNumber,String name) throws CantAddTeacherException {
+//   public void addProfessor(int id,int phoneNumber,String name) throws CantAddProfessorException {
 //     //NEWFIXME implement method
 //    // FIXING-BEGIN
 
@@ -141,10 +352,10 @@ public class School implements Serializable {
 //   	id_size=(int)(Math.log10(id)+1);
 //   	// conditions
 //   	if (id>100000 && size<=6){
-//   		teachers.add(new Teacher(id,phoneNumber,name));
+//   		professors.add(new Professor(id,phoneNumber,name));
 //   	}
 //   	else {
-//   		throw CantAddTeacherException;
+//   		throw CantAddProfessorException;
 //   	}
 
 //   }

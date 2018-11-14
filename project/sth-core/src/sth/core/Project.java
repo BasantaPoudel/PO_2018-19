@@ -1,3 +1,4 @@
+package sth.core;
 public class Project{
 	private String _name;
 	private String _description;

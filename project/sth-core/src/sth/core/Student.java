@@ -1,3 +1,4 @@
+package sth.core;
 public class Student extends Person{
 
 	private boolean _isRep=false;
@@ -12,7 +13,7 @@ public class Student extends Person{
 		super(_name,_phoneNumber,_id);
 		_isRep=isRep;
 	}
-	
+
 	/*============================================
 	=            getters and setters             =
 	============================================*/
@@ -50,50 +51,50 @@ public class Student extends Person{
 		// if _isRep{
 
 		// }
-		// else 
+		// else
 		// 	throw new unauthorizedOperationException();
-		
+
 	}
 	public void finalizeSurvey(Survey s){
 		// if _isRep{
 
 		// }
-		// else 
+		// else
 		// 	throw new unauthorizedOperationException();
-		
+
 	}
 	public void closeSurvey(Survey s){
 		// if _isRep{
 
 		// }
-		// else 
+		// else
 		// 	throw new unauthorizedOperationException();
-		
+
 	}
 	public void openSurvey(Survey s){
 		// if _isRep{
 
 		// }
-		// else 
+		// else
 		// 	throw new unauthorizedOperationException();
-		
+
 	}
 	public void  cancelSurvey(Survey s){
 		// if _isRep{
 
 		// }
-		// else 
+		// else
 		// 	throw new unauthorizedOperationException();
-		
+
 	}
 	public void  createSurvey(Survey s){
 		// if _isRep{
 
 		// }
-		// else 
+		// else
 		// 	throw new unauthorizedOperationException();
-		
+
 	}
-	
-	
+
+
 }

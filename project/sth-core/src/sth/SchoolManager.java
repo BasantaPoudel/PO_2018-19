@@ -16,6 +16,7 @@ public class SchoolManager {
 
   //FIXME implement constructors if needed
 	private School _school = new School();
+	private int _testid;
 
   /**
    * @param datafile
@@ -25,6 +26,8 @@ public class SchoolManager {
   public void importFile(String datafile) throws ImportFileException {
   	try {
   		_school.importFile(datafile);
+			// _school.printStudent();   //[Debug]
+
   	} catch (IOException | BadEntryException e) {
   		throw new ImportFileException(e);
   	}
@@ -37,48 +40,44 @@ public class SchoolManager {
    * @throws NoSuchPersonIdException
    */
   public void login(int id) throws NoSuchPersonIdException {
-    //FIXME implement method
+    //FIXME [FIXING-BEGIN] implement method
+		_testid = id;
+		if (  !(_school.hasStudent(id)||_school.hasProfessor(id)||_school.hasRepresentative(id) || _school.hasStaff(id))	)
+			throw new NoSuchPersonIdException(id);
+   // System.out.println(_testid); [Debug]
+		//FIXME [FIXING-END] implement method
   }
 
   /**
    * @return true when the currently logged in person is an administrative
    */
-  public boolean hasAdministrative() {
-    //FIXME implement predicate
-  	return true;
-  }
+	 public boolean hasAdministrative() {
 
-  /**
-   * @return true when the currently logged in person is a professor
-   */
-  public boolean hasProfessor() {
-    //FIXME implement predicate
-  	return true;
-  }
+   	// System.out.println(_school.hasAdministrative(10001));
+   	return false;
+   }
 
-  /**
-   * @return true when the currently logged in person is a student
-   */
-  public boolean hasStudent() {
-    //FIXME implement predicate
-  	return true;
-  }
+   /**
+    * @return true when the currently logged in person is a professor
+    */
+   public boolean hasProfessor() {
+		 return _school.hasProfessor(_testid);
+   }
 
-  /**
-   * @return true when the currently logged in person is a representative
-   */
-  public boolean hasRepresentative() {
-    //FIXME implement predicate
-  	return true;
-  }
+   /**
+    * @return true when the currently logged in person is a student
+    */
+   public boolean hasStudent() {
+		 return _school.hasStudent(_testid) ||  _school.hasRepresentative(_testid);
+   }
+
+   /**
+    * @return true when the currently logged in person is a representative
+    */
+   public boolean hasRepresentative() {
+		 return _school.hasRepresentative(_testid);
+   }
 
   //FIXME implement other methods (in general, one for each command in sth-app)
-
-
-
-
-
-
-
 
 }

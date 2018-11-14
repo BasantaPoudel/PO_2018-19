@@ -31,3 +31,8 @@
 
 * A-09-01 - Ver alunos de disciplina não existente e existente mas não leccionada
 * A-09-03 - Ver alunos de disciplina com um aluno
+
+
+Como Correr:
+java -Dimport=../../Tests/auto-tests/A-01-01-M-ok.import sth.app.App
+java -Dimport=../../Tests/auto-tests/A-01-02-M-ok.import sth.app.App
