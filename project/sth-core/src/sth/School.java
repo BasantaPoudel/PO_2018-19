@@ -376,10 +376,31 @@ public Collection<Person> getPersons() {
      // _professors.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
 
      for (Map.Entry<Integer, Professor> entry : _professors.entrySet()) {
-       Person value = entry.getValue();
+       Professor value = entry.getValue();
        String _sname =value.getName();
        if(_sname.contains(name)){
-         _allstudent += value.getId() + "|"+value.getPhoneNumber()+ "|"+value.getName();
+         _allstudent += value.show();
+       }
+     }
+     // for (Map.Entry<Integer, Student> entry : _students.entrySet()) {
+     //   Student value = entry.getValue();
+     //   String _sname =value.getName();
+     //   if(_sname.contains(name)){
+     //     _allstudent += value.show();
+     //   }
+     // }
+     // for (Map.Entry<Integer, Student> entry : _representatives.entrySet()) {
+     //   Student value = entry.getValue();
+     //   String _sname =value.getName();
+     //   if(_sname.contains(name)){
+     //     _allstudent += value.show();
+     //   }
+     // }
+     for (Map.Entry<Integer, Staff> entry : _staffs.entrySet()) {
+       Staff value = entry.getValue();
+       String _sname =value.getName();
+       if(_sname.contains(name)){
+         _allstudent += value.show();
        }
      }
      return _allstudent;
