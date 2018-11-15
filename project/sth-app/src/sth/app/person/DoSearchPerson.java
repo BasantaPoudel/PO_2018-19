@@ -36,8 +36,9 @@ public class DoSearchPerson extends Command<SchoolManager> {
     //   // _display.popup(_receiver.showPerson()); //[Debug]
     _form.parse();
     try {
-      // _display.display(_receiver.searchPerson(_name.value()));
-      _receiver.searchPerson(_name.value());
+      _display.add(_receiver.searchPerson(_name.value()));
+      _display.display();
+      // _receiver.searchPerson(_name.value());
       // System.out.println(_receiver.searchPerson(_name.value()));
 
     } catch (UnknownAgentException e) {

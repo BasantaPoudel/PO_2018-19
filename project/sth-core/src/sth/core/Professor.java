@@ -56,17 +56,17 @@ public class Professor extends Person{
 	public String show(){
 
 		return "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
-		
+
 	}
 
 	public String showWithDisciplines(){
 
 		String res = "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
 		for (Discipline discipline : _disciplines) {
-			res=res+discipline.getCourse().getName()+" - "+discipline.getName();
+			res=res+"\n*" + discipline.getCourse().getName()+" - "+discipline.getName();
 		}
 		return res;
-		
+
 	}
 
 

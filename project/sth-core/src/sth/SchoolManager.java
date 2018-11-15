@@ -94,8 +94,8 @@ public class SchoolManager {
 
 
 
-  public void searchPerson(String name) throws UnknownAgentException{
-    _school.searchPerson(name);
+  public String searchPerson(String name) throws UnknownAgentException{
+    return _school.searchPerson(name);
   }
 
   // public String showAllPersons() throws UnknownAgentException{

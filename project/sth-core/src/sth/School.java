@@ -140,7 +140,7 @@ public class School implements Serializable {
 
      line = reader.readLine(); //read (and move to) next line
      if (line != null ){
-       fields = line.split("\\ "); //split by spaces 
+       fields = line.split("\\ "); //split by spaces
        if( pattHashtag.matcher(fields[0]).matches()){
          reader.reset(); //checking was already done
          return true;
@@ -178,7 +178,7 @@ public class School implements Serializable {
    				fields = line.split("\\#");
 
        		//gets last 2 fields for discipline
-   				fields=fields[1].split("\\|"); 
+   				fields=fields[1].split("\\|");
    			//makes the necessary objects for adding the discipline to student
    				Course c = new Course(fields[0]);
    				Discipline d = new Discipline(c,fields[1]);
@@ -212,7 +212,7 @@ public class School implements Serializable {
    			fields = line.split("\\#");
 
        		//gets last 2 fields for discipline
-   			fields=fields[1].split("\\|"); 
+   			fields=fields[1].split("\\|");
    			//makes the necessary objects for adding the discipline to representive
    			Course c = new Course(fields[0]);
    			Discipline d = new Discipline(c,fields[1]);
@@ -246,7 +246,7 @@ public class School implements Serializable {
    			fields = line.split("\\#");
 
        		//gets last 2 fields for discipline
-   			fields=fields[1].split("\\|"); 
+   			fields=fields[1].split("\\|");
    			//makes the necessary objects for adding the discipline to professor
    			Course c = new Course(fields[0]);
    			Discipline d = new Discipline(c,fields[1]);
@@ -282,7 +282,7 @@ public class School implements Serializable {
    			fields = line.split("\\#");
 
    			//gets last 2 fields for discipline
-   			fields=fields[1].split("\\|"); 
+   			fields=fields[1].split("\\|");
    			//makes the necessary objects for adding the discipline to staff
    			Course c = new Course(fields[0]);
    			Discipline d = new Discipline(c,fields[1]);
@@ -382,7 +382,6 @@ public Collection<Person> getPersons() {
          _allstudent += value.getId() + "|"+value.getPhoneNumber()+ "|"+value.getName();
        }
      }
-     System.out.println(_allstudent);
      return _allstudent;
    }
 
