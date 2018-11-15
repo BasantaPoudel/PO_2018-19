@@ -382,20 +382,20 @@ public Collection<Person> getPersons() {
          _allstudent += value.show();
        }
      }
-     // for (Map.Entry<Integer, Student> entry : _students.entrySet()) {
-     //   Student value = entry.getValue();
-     //   String _sname =value.getName();
-     //   if(_sname.contains(name)){
-     //     _allstudent += value.show();
-     //   }
-     // }
-     // for (Map.Entry<Integer, Student> entry : _representatives.entrySet()) {
-     //   Student value = entry.getValue();
-     //   String _sname =value.getName();
-     //   if(_sname.contains(name)){
-     //     _allstudent += value.show();
-     //   }
-     // }
+     for (Map.Entry<Integer, Student> entry : _students.entrySet()) {
+       Student value = entry.getValue();
+       String _sname =value.getName();
+       if(_sname.contains(name)){
+         _allstudent += value.show(false);
+       }
+     }
+     for (Map.Entry<Integer, Student> entry : _representatives.entrySet()) {
+       Student value = entry.getValue();
+       String _sname =value.getName();
+       if(_sname.contains(name)){
+         _allstudent += value.show(true);
+       }
+     }
      for (Map.Entry<Integer, Staff> entry : _staffs.entrySet()) {
        Staff value = entry.getValue();
        String _sname =value.getName();

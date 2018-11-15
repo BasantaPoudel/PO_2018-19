@@ -97,9 +97,9 @@ public class Student extends Person{
  */
 	public String show(boolean isRepresentative){
 		if (isRepresentative)
-			return "ALUNO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
-		else 
 			return "DELEGADO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
+		else 
+			return "ALUNO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
 	}
 
 	
