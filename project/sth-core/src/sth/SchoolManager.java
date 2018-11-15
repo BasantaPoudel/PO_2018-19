@@ -112,4 +112,20 @@ public class SchoolManager {
   // }
 
 
+	// __________________________________________________________________________
+	    // try {
+	    //   ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("school.dat")));
+	    //   oos.writeObject(_school);
+	    //   oos.close();
+	    // }
+	    // catch (IOException e) { e.printStackTrace(); }
+	    // // __________________________________________________________________________
+	    // try {
+	    //   ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream("school.dat")));
+	    //   School _school = (School)ois.readObject();
+	    //   ois.close();
+	    // }
+	    // catch (IOException            e) { e.printStackTrace(); }
+	    // catch (ClassNotFoundException e) { e.printStackTrace(); }
+	    // // __________________________________________________________________________
 }
