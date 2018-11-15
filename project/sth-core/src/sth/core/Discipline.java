@@ -3,9 +3,9 @@ public class Discipline{
 	private String _name;
 	private Course _course;
 
-	public Discipline(String name,Course course){
-		_name=name;
+	public Discipline(Course course,String name){
 		_course=course;
+		_name=name;
 	
 	}
 	/*===========================================

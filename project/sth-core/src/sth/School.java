@@ -1,30 +1,10 @@
 package sth;
 
 //FIXME [FIXING-BEGIN] import other classes if needed
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.Serializable;
-import java.io.FileWriter;
-import java.io.BufferedWriter;
-import java.io.PrintWriter;
-import java.io.IOException;
-
-import java.util.regex.Pattern;
-import java.util.TreeMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.Iterator;
-
+import java.io.BufferedReader; import java.io.FileReader; import java.io.Serializable; import java.io.FileWriter; import java.io.BufferedWriter; import java.io.PrintWriter; import java.io.IOException;
+import java.util.regex.Pattern; import java.util.TreeMap;import java.util.Map;import java.util.Set;import java.util.Iterator;
 import sth.exceptions.*;
-
-import sth.core.Student;
-import sth.core.Professor;
-import sth.core.Discipline;
-import sth.core.Person;
-import sth.core.Project;
-import sth.core.Staff;
-import sth.core.Student;
-import sth.core.Survey;
+import sth.core.Student; import sth.core.Professor; import sth.core.Discipline; import sth.core.Person; import sth.core.Project; import sth.core.Staff; import sth.core.Student; import sth.core.Survey; import sth.core.Course;
 
 /**
  * School implementation.
@@ -108,8 +88,10 @@ public class School implements Serializable {
        fields = line.split("\\ "); //split by spaces 
        if( pattHashtag.matcher(fields[0]).matches()){
        	fields = line.split("\\#");
-       	fields=fields[1].split("\\|");
-       	// Discipline d = new Discipline(fields[0],fields[1]);
+
+       	fields=fields[1].split("\\|"); //analyse last 2 fields for discipline
+       	Course c = new Course(fields[0]);
+       	Discipline d = new Discipline(c,fields[1]);
             // _professors.put(id,professor);
 
          reader.reset(); //checking was already done
