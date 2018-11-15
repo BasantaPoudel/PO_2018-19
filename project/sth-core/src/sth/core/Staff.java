@@ -22,5 +22,10 @@ public class Staff extends Person{
 	// _______________________________________________________________________
 
 
+	public String show(){
+		return "FUNCIONÁRIO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
+	}
+
+
 
 }

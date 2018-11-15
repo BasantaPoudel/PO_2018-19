@@ -37,6 +37,5 @@ public class Person{
 	}
 	/*=====  End of getters and setters  ======*/
 
-
-
+	
 }
