@@ -88,6 +88,13 @@ public class Student extends Person{
 		// else
 		// 	throw new unauthorizedOperationException();
 	}
+
+	/**
+ * Show info about this student 
+ *
+ * @param   isRepresentative	Whether student is representative or not (School class is reponsible for knowing)
+ * @return  //FIX
+ */
 	public String show(boolean isRepresentative){
 		if (isRepresentative)
 			return "ALUNO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();

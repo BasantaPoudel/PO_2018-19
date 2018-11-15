@@ -5,7 +5,12 @@ import sth.exceptions.BadEntryException;
 import sth.exceptions.ImportFileException;
 import sth.exceptions.NoSuchPersonIdException;
 
-//FIXME import other classes if needed
+//FIXME [FIXING-BEGIN] import other classes if needed
+import java.util.Collection;
+import java.util.Collections;
+import sth.exceptions.UnknownAgentException;
+
+//FIXME [FIXING-END] import other classes if needed
 
 /**
  * The façade class.
@@ -78,6 +83,24 @@ public class SchoolManager {
 		 return _school.hasRepresentative(_testid);
    }
 
-  //FIXME implement other methods (in general, one for each command in sth-app)
+//FIXME [FIXING-BEGIN] implement other methods (in general, one for each command in sth-app)
+  // public String getPersons() {
+  //     return _school.getPersons();
+  // }
+
+  // public Collection<Student> getStudentsCollection() {
+  //    return Collections.unmodifiableCollection(_students.values());
+  // }
+
+
+
+  public void searchPerson(String name) throws UnknownAgentException{
+    _school.searchPerson(name);
+  }
+
+  // public String showAllPersons() throws UnknownAgentException{
+  //  return _school.showAllPersons();
+  // }
+
 
 }

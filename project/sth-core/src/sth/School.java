@@ -1,11 +1,36 @@
 package sth;
 
 //FIXME [FIXING-BEGIN] import other classes if needed
-import java.io.BufferedReader; import java.io.FileReader; import java.io.Serializable; import java.io.FileWriter; import java.io.BufferedWriter; import java.io.PrintWriter; import java.io.IOException;
-import java.util.regex.Pattern; import java.util.TreeMap;import java.util.Map;import java.util.Set;import java.util.Iterator;
-import sth.exceptions.*;
-import sth.core.Student; import sth.core.Professor; import sth.core.Discipline; import sth.core.Person; import sth.core.Project; import sth.core.Staff; import sth.core.Student; import sth.core.Survey; import sth.core.Course;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.Serializable;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
 
+import java.util.regex.Pattern;
+import java.util.TreeMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.Iterator;
+import java.util.Collection;
+import java.util.Collections;
+
+
+import sth.exceptions.*;
+
+import sth.core.Student;
+import sth.core.Professor;
+import sth.core.Discipline;
+import sth.core.Person;
+import sth.core.Project;
+import sth.core.Staff;
+import sth.core.Student;
+import sth.core.Survey;
+import sth.core.Course;
+
+//FIXME [FIXING-END] import other classes if needed
 /**
  * School implementation.
  */
@@ -337,4 +362,30 @@ public class School implements Serializable {
    public boolean hasStaffs(int id){
    	return _staffs.containsKey(id);
    }
+
+public Collection<Person> getPersons() {
+       return Collections.unmodifiableCollection(_students.values());
+   }
+
+   public String searchPerson(String name) throws UnknownAgentException{
+     String _allstudent = "";
+     // for (Student s : getPassengers()) {
+     //  _allstudent += s.toString() + "\n";
+     // }
+
+     // _professors.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+
+     for (Map.Entry<Integer, Professor> entry : _professors.entrySet()) {
+       Person value = entry.getValue();
+       String _sname =value.getName();
+       if(_sname.contains(name)){
+         _allstudent += value.getId() + "|"+value.getPhoneNumber()+ "|"+value.getName();
+       }
+     }
+     System.out.println(_allstudent);
+     return _allstudent;
+   }
+
+
+
 }
