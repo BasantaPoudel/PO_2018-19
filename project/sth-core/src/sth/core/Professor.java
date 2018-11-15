@@ -15,7 +15,7 @@ public class Professor extends Person{
 		return _disciplines;
 	}
 
-	public void putDiscipline(Discipline d){
+	public void addDiscipline(Discipline d){
 		_disciplines.add(d);
 
 
