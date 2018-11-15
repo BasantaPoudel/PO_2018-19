@@ -96,10 +96,17 @@ public class Student extends Person{
  * @return  //FIX
  */
 	public String show(boolean isRepresentative){
+		String res;
 		if (isRepresentative)
-			return "DELEGADO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
+			res= "DELEGADO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
 		else 
-			return "ALUNO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
+			res= "ALUNO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
+	
+		for (Discipline discipline : _disciplines) {
+			res=res+"\n*" + discipline.getCourse().getName()+" - "+discipline.getName();
+		}
+		return res;
+
 	}
 
 	
