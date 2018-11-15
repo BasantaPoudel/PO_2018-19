@@ -1,4 +1,6 @@
 package sth.core;
+import java.util.*;
+
 public class Student extends Person{
 
 	private boolean _isRep=false;
@@ -7,8 +9,9 @@ public class Student extends Person{
 	public Student(String _name,int _phoneNumber,int _id){
 		super(_name,_phoneNumber,_id);
 	}
+	private List<Discipline> _disciplines = new ArrayList<Discipline>();
 
-    	// To specify if hes a representative
+	    	// To specify if hes a representative
 	public Student(String _name,int _phoneNumber,int _id,boolean isRep){
 		super(_name,_phoneNumber,_id);
 		_isRep=isRep;
@@ -17,6 +20,19 @@ public class Student extends Person{
 	/*============================================
 	=            getters and setters             =
 	============================================*/
+	
+	// _______________________________________________________________________
+	public void addDiscipline(Discipline d){
+		_disciplines.add(d);
+	}
+	public List<Discipline> getDisciplines(){
+		return _disciplines;
+	}
+
+	public void setDisciplines(List<Discipline> disciplines){
+		_disciplines=disciplines;
+	}
+	// _______________________________________________________________________
 
 	public boolean getIsRep(){
 		return _isRep;
@@ -31,70 +47,46 @@ public class Student extends Person{
 		_numOfEnrolledDisciplines=numOfEnrolledDisciplines;
 	}
 
+	/*====================END========================*/
 
 
-	// /*============================================
 	public void deliverProject(Project p){
-
 	}
-
-	public void switchRepresentativeStatus(){
-		if (_isRep=false){
-			_isRep=true;
-		}
-		else
-			_isRep=false;
-	}
-
-
 	public void fillSurvey(Survey s){
 		// if _isRep{
-
 		// }
 		// else
 		// 	throw new unauthorizedOperationException();
-
 	}
 	public void finalizeSurvey(Survey s){
 		// if _isRep{
-
 		// }
 		// else
 		// 	throw new unauthorizedOperationException();
-
 	}
 	public void closeSurvey(Survey s){
 		// if _isRep{
-
 		// }
 		// else
 		// 	throw new unauthorizedOperationException();
-
 	}
 	public void openSurvey(Survey s){
 		// if _isRep{
-
 		// }
 		// else
 		// 	throw new unauthorizedOperationException();
-
 	}
 	public void  cancelSurvey(Survey s){
 		// if _isRep{
-
 		// }
 		// else
 		// 	throw new unauthorizedOperationException();
-
 	}
 	public void  createSurvey(Survey s){
 		// if _isRep{
-
 		// }
 		// else
 		// 	throw new unauthorizedOperationException();
-
 	}
-
 
 }

@@ -14,6 +14,8 @@ public class School implements Serializable {
 	/** Serial number for serialization. */
 	private static final long serialVersionUID = 201810051538L;
 
+	private int _auxId;
+
   //FIXME [FIXING-BEGIN] define object fields (attributes and, possibly, associations)
 	private TreeMap<Integer, Student> _students = new TreeMap<Integer, Student>();
 	private TreeMap<Integer, Student> _representatives = new TreeMap<Integer, Student>();
@@ -46,13 +48,8 @@ public class School implements Serializable {
        //
    		String[] fields = line.split("\\|");
    		try {
-   			registerFromFields(fields);
+   			registerFromFields(fields,reader);
 
-                  // int id = Integer.parseInt(fields[1]); //incase we need 
-   			while(isNextLineHashtag(reader)){
-   				// line = reader.readLine();
-           //[FIXME] System.out.println(line);
-   			}
 
    		} catch (UnknownDataException e) {
    			System.err.printf("WARNING: unknown data");
@@ -65,6 +62,39 @@ public class School implements Serializable {
    	}
    	reader.close();
    }
+
+
+ // ====================================================================================
+
+
+   void registerFromFields(String[] fields,BufferedReader reader) throws UnknownDataException,
+   ClientExistsException,
+   InvalidIdentifierException {
+
+   	Pattern pattStudent = Pattern.compile("^(ALUNO)");
+   	Pattern pattRepresentive  = Pattern.compile("^(DELEGADO)");
+   	Pattern pattProfessor = Pattern.compile("^(DOCENTE)");
+   	Pattern pattStaff = Pattern.compile("^(FUNCIONÁRIO)");
+
+
+   	if (pattStudent.matcher(fields[0]).matches()) {
+   		registerStudent(fields,reader);
+   	}
+   	else if (pattRepresentive .matcher(fields[0]).matches()) {
+   		registerRepresentive(fields,reader);
+   	}
+   	else if (pattProfessor.matcher(fields[0]).matches()) {
+   		registerProfessor(fields,reader);
+   	}
+   	else if (pattStaff.matcher(fields[0]).matches()) {
+   		registerStaff(fields,reader);
+   	}
+   	else {
+   		throw new UnknownDataException(fields[0]);
+   	}
+   }
+
+
 
 
    // ====================================================================================
@@ -87,53 +117,14 @@ public class School implements Serializable {
      if (line != null ){
        fields = line.split("\\ "); //split by spaces 
        if( pattHashtag.matcher(fields[0]).matches()){
-       	fields = line.split("\\#");
-
-       	fields=fields[1].split("\\|"); //analyse last 2 fields for discipline
-       	Course c = new Course(fields[0]);
-       	Discipline d = new Discipline(c,fields[1]);
-            // _professors.put(id,professor);
-
          reader.reset(); //checking was already done
          return true;
-     }
- }
+   }
+}
      reader.reset(); //checking was already done
      return false;
 
- }
-   // ====================================================================================
-
-
- void registerFromFields(String[] fields) throws UnknownDataException,
- ClientExistsException,
- InvalidIdentifierException {
-
- 	Pattern pattStudent = Pattern.compile("^(ALUNO)");
- 	Pattern pattRepresentive  = Pattern.compile("^(DELEGADO)");
- 	Pattern pattProfessor = Pattern.compile("^(DOCENTE)");
- 	Pattern pattStaff = Pattern.compile("^(FUNCIONÁRIO)");
-
-
- 	if (pattStudent.matcher(fields[0]).matches()) {
- 		registerStudent(fields);
- 	}
- 	else if (pattRepresentive .matcher(fields[0]).matches()) {
- 		registerRepresentive(fields);
- 	}
- 	else if (pattProfessor.matcher(fields[0]).matches()) {
- 		registerProfessor(fields);
- 	}
- 	else if (pattStaff.matcher(fields[0]).matches()) {
- 		registerStaff(fields);
- 	}
- 	else {
- 		throw new UnknownDataException(fields[0]);
- 	}
- }
-
-
-
+}
 
 
    // ====================================================================================
@@ -146,53 +137,142 @@ public class School implements Serializable {
    *
    * @param    fields
    */
-   void registerStudent(String[] fields) throws  UnknownDataException {
+   void registerStudent(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
-   	int id = Integer.parseInt(fields[1]);
+
+   	int id = Integer.parseInt(fields[1]);	_auxId=id;
    	int phoneNumber = Integer.parseInt(fields[2]);
    	String name = fields[3];
 
    	if (fields[0].equals("ALUNO")) {
-       //...|id|tel|name
-   		Student s= new Student(name,phoneNumber,id);
-   		addStudent(id, s);
+   		Student student= new Student(name,phoneNumber,id);
+   		try{
+   			while(isNextLineHashtag(reader)){
+   				String line=reader.readLine();
+   			// cuts out the # part
+   				fields = line.split("\\#");
+
+       		//gets last 2 fields for discipline
+   				fields=fields[1].split("\\|"); 
+   			//makes the necessary objects for adding the discipline to student
+   				Course c = new Course(fields[0]);
+   				Discipline d = new Discipline(c,fields[1]);
+   				student.addDiscipline(d);
+   			}
+   		}catch(UnknownDataException e){
+   			// FIX
+   		}   		catch(IOException e){
+   			// FIX
+   		}  		catch(ClientExistsException e){
+   			// FIX
+   		}		catch(InvalidIdentifierException e){
+   			// FIX
+   		}
+   		addStudent(id, student);
    	}
    }
 
-   void registerRepresentive(String[] fields) throws  UnknownDataException {
-   	int id = Integer.parseInt(fields[1]);
+   void registerRepresentive(String[] fields, BufferedReader reader) throws  UnknownDataException {
+
+   	int id = Integer.parseInt(fields[1]);	_auxId=id;
    	int phoneNumber = Integer.parseInt(fields[2]);
    	String name = fields[3];
 
    	if (fields[0].equals("DELEGADO")) {
-       //...|id|tel|name
-   		Student repr= new Student(name,phoneNumber,id);
-   		addRepresentive(id, repr);
+   		Student representive= new Student(name,phoneNumber,id);
+   		try{
+   			while(isNextLineHashtag(reader)){
+   			String line=reader.readLine();
+   			// cuts out the # part
+   			fields = line.split("\\#");
+
+       		//gets last 2 fields for discipline
+   			fields=fields[1].split("\\|"); 
+   			//makes the necessary objects for adding the discipline to representive
+   			Course c = new Course(fields[0]);
+   			Discipline d = new Discipline(c,fields[1]);
+   			representive.addDiscipline(d);
+   		}
+   		}catch(UnknownDataException e){
+   			// FIX
+   		}   		catch(IOException e){
+   			// FIX
+   		}  		catch(ClientExistsException e){
+   			// FIX
+   		}		catch(InvalidIdentifierException e){
+   			// FIX
+   		}
+   		addRepresentive(id, representive);
    	}
    }
 
-   void registerProfessor(String[] fields) throws  UnknownDataException {
-   	int id = Integer.parseInt(fields[1]);
+   void registerProfessor(String[] fields, BufferedReader reader) throws  UnknownDataException {
+
+   	int id = Integer.parseInt(fields[1]);	_auxId=id;
    	int phoneNumber = Integer.parseInt(fields[2]);
    	String name = fields[3];
 
    	if (fields[0].equals("DOCENTE")) {
-       //...|id|tel|name
-   		Professor t= new Professor(name,phoneNumber,id);
-   		addProfessor(id, t);
+   		Professor professor= new Professor(name,phoneNumber,id);
+   		try{
+   			while(isNextLineHashtag(reader)){
+   			String line=reader.readLine();
+   			// cuts out the # part
+   			fields = line.split("\\#");
+
+       		//gets last 2 fields for discipline
+   			fields=fields[1].split("\\|"); 
+   			//makes the necessary objects for adding the discipline to professor
+   			Course c = new Course(fields[0]);
+   			Discipline d = new Discipline(c,fields[1]);
+   			professor.addDiscipline(d);
+   		}
+   		}catch(UnknownDataException e){
+   			// FIX
+   		}   		catch(IOException e){
+   			// FIX
+   		}  		catch(ClientExistsException e){
+   			// FIX
+   		}		catch(InvalidIdentifierException e){
+   			// FIX
+   		}
+   		addProfessor(id, professor);
    	}
    }
 
-   void registerStaff(String[] fields) throws  UnknownDataException {
 
-   	int id = Integer.parseInt(fields[1]);
+   void registerStaff(String[] fields, BufferedReader reader) throws  UnknownDataException {
+
+
+   	int id = Integer.parseInt(fields[1]);	_auxId=id;
    	int phoneNumber = Integer.parseInt(fields[2]);
    	String name = fields[3];
 
    	if (fields[0].equals("FUNCIONÁRIO")) {
-       //...|id|tel|name
-   		Staff s= new Staff(name,phoneNumber,id);
-   		addStaff(id, s);
+   		Staff staff= new Staff(name,phoneNumber,id);
+   		try{
+   			while(isNextLineHashtag(reader)){
+   			String line=reader.readLine();
+   			// cuts out the # part
+   			fields = line.split("\\#");
+
+   			//gets last 2 fields for discipline
+   			fields=fields[1].split("\\|"); 
+   			//makes the necessary objects for adding the discipline to staff
+   			Course c = new Course(fields[0]);
+   			Discipline d = new Discipline(c,fields[1]);
+   			staff.addDiscipline(d);
+   		}
+   		}catch(UnknownDataException e){
+   			// FIX
+   		}   		catch(IOException e){
+   			// FIX
+   		}  		catch(ClientExistsException e){
+   			// FIX
+   		}		catch(InvalidIdentifierException e){
+   			// FIX
+   		}
+   		addStaff(id, staff);
    	}
    }
 
