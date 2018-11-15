@@ -1,8 +1,12 @@
 package sth.core;
 public class Discipline{
 	private String _name;
-	public Discipline(String name){
+	private Course _course;
+
+	public Discipline(String name,Course course){
 		_name=name;
+		_course=course;
+	
 	}
 	/*===========================================
 	=            getters and setters            =
@@ -12,6 +16,11 @@ public class Discipline{
  	}
  	public void setName(String name){
  		_name=name;
+ 	}
+
+ 	private String show(){
+ 		return "* " + _name +" - " + _course;
+
  	}
 
 }
