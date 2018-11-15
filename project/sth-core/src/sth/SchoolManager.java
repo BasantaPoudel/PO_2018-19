@@ -88,15 +88,24 @@ public class SchoolManager {
   //     return _school.getPersons();
   // }
 
-  // public Collection<Student> getStudentsCollection() {
-  //    return Collections.unmodifiableCollection(_students.values());
-  // }
 
 
+	public void setNewPhoneNum(int newTelPhone){
+		_school.setNewPhoneNum(_testid,newTelPhone);
+	}
 
   public String searchPerson(String name) throws UnknownAgentException{
     return _school.searchPerson(name);
   }
+
+  public String showPerson(){
+    return _school.showPerson(_testid);
+  }
+	//
+  // public String showPersons() throws UnknownAgentException{
+  //   return _school.showPersons();
+  // }
+
 
   // public String showAllPersons() throws UnknownAgentException{
   //  return _school.showAllPersons();

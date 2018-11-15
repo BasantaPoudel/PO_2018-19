@@ -5,7 +5,6 @@ import sth.SchoolManager;
 
 //FIXME [FIXING-BEGIN] import other classes if needed
 import pt.tecnico.po.ui.Input;
-import sth.exceptions.UnknownAgentException;
 //FIXME [FIXING-END] import other classes if needed
 
 /**
@@ -30,6 +29,7 @@ public class DoShowPerson extends Command<SchoolManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-
+    _display.add(_receiver.showPerson());
+    _display.display();
   }
 }
