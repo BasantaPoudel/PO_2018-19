@@ -6,11 +6,35 @@ public class Professor extends Person{
 
 	private List<Discipline> _disciplines = new ArrayList<Discipline>();
 
-	public Professor(String _name,int _phoneNumber,int _id){
-		super(_name,_phoneNumber,_id);
+	public Professor(String name,int phoneNumber,int id){
+		super(name,phoneNumber,id);
 	}
 
- 
+	/*===========================================
+	=            getters and setters            =
+	===========================================*/
+	public String getName(){
+		return super.getName();
+	}
+	public void setName(String name){
+		super.setName(name);
+	}
+
+	public int getPhoneNumber(){
+		return super.getPhoneNumber();
+	}
+	public void setPhoneNumber(int phoneNumber){
+		super.setPhoneNumber(phoneNumber);
+	}
+
+	public int getId(){
+		return super.getId();
+	}
+	public void setId(int id){
+		super.setId(id);
+	}
+	/*=====  End of getters and setters  ======*/
+
 	// _______________________________________________________________________
 	public void addDiscipline(Discipline d){
 		_disciplines.add(d);
@@ -28,6 +52,17 @@ public class Professor extends Person{
 	}
 	public void closeProject(String proj,String disc){
 	}
+
+	public String show(){
+
+		String res = "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
+		for (Discipline discipline : _disciplines) {
+			res=res+discipline.getCourse().getName()+" - "+discipline.getName();
+		}
+		return res;
+		
+	}
+
 
 
 }

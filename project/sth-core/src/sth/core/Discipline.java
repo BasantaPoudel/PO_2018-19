@@ -23,4 +23,11 @@ public class Discipline{
 
  	}
 
+ 	public Course getCourse(){
+ 		return _course;
+ 	}
+ 	public void setCourse(Course course){
+ 		_course=course;
+ 	}
+
 }
