@@ -387,22 +387,22 @@ public class School implements Serializable {
 	//
 	// }
 	public String showPerson(int id){
-		Student _p1 = _students.get(id);
-		Professor _p2 = _professors.get(id);
-		Student _p3 = _representatives.get(id);
-		Staff _p4 = _staffs.get(id);
-		// if((_p1!=null) || (_p2!=null) || (_p3!=null) || (_p4!=null)){
-		if(_p1!=null){
-			return _p1.show(false);
+		Student _pStudent = _students.get(id);
+		Professor _pProf = _professors.get(id);
+		Student _pRepr = _representatives.get(id);
+		Staff _pStaff = _staffs.get(id);
+		// if((_pStudent!=null) || (_pProf!=null) || (_pRepr!=null) || (_pStaff!=null)){
+		if(_pStudent!=null){
+			return _pStudent.show(false);
 		}
-		else if(_p2!=null){
-			return _p2.show();
+		else if(_pProf!=null){
+			return _pProf.showWithDisciplines();
 		}
-		else if(_p3!=null){
-			return _p3.show(true);
+		else if(_pRepr!=null){
+			return _pRepr.show(true);
 		}
-		else if(_p4!=null){
-			return _p4.show();
+		else if(_pStaff!=null){
+			return _pStaff.show();
 		}
 		return "";
 		// return false;
