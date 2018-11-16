@@ -93,19 +93,6 @@ public class School implements Serializable {
 		reader.close();
 	}
 
-
-	/**
-   * Constructor.
-   *
-   * @param ui
-   *          interaction for the menu.
-   * @param title
-   *          menu title.
-   * @param commands
-   *          list of commands managed by the menu.
-   */
-
-
 		/**
 		* Does the Pattern Matching with the fields parsed and calls the corresponding method to register each Object.
 		*
@@ -190,6 +177,7 @@ public class School implements Serializable {
 	*
 	* @param    fields
 	* @param    reader
+	* @throws  UnknownDataException
 	*/
 	void registerStudent(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
@@ -228,10 +216,13 @@ public class School implements Serializable {
 	}
 
 	/**
+	*Registers Representatives from fields from already parsed line
 	*
+	* @param fields
 	*
-	* @param
-	* @return
+	* @param reader BufferedReader
+	* @throws UnknownDataException
+	*
 	*/
 	void registerRepresentive(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
@@ -270,10 +261,11 @@ public class School implements Serializable {
 
 
 	/**
+	*Registers Professors from fields from already parsed line
 	*
-	*
-	* @param
-	* @return
+	* @param fields
+	* @param reader BufferedReader
+	* @throws UnknownDataException
 	*/
 	void registerProfessor(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
@@ -312,11 +304,11 @@ public class School implements Serializable {
 
 
 	/**
-	*
+	*Registers Staffs from fields from already parsed line
 	*
 	* @param   fields
-	* @param   reader
-	* @return
+	* @param   reader BufferedReader
+	* @throws  UnknownDataException
 	*/
 	void registerStaff(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
@@ -373,34 +365,41 @@ public class School implements Serializable {
 	/**
 	* Adds representive to proper array
 	*
-	* @param
-	* @return
+	* @param id int
+	* @param student Student
 	*/
 	public void addRepresentive (int id, Student student ){
 		_representatives.put(id,student);
+	}
+
 		/**
 		* Adds professor to proper array
 		*
-		* @param
-		* @return
-	*/}
+		* @param id int
+		* @param professor Professor
+		*/
+
 	public void addProfessor(int id, Professor professor){
 		_professors.put(id,professor);
 	}
+
 	/**
 	* Adds staff to proper array
 	*
-	* @param
-	* @return
+	* @param id int
+	* @param staff Staff
 	*/
+
 	public void addStaff(int id, Staff staff){
 		_staffs.put(id,staff);
+	}
+
 		/**
 		* Adds person to proper array
 		*
-		* @param
-		* @return
-	*/}
+		* @param id int
+		* @param person Person
+		*/
 	public void addPerson(int id, Person person){
 		_persons.put(id,person);
 	}
@@ -431,8 +430,8 @@ public class School implements Serializable {
 	/**
 	*
 	*
-	* @param
-	* @return
+	* @param id int
+	* @return true if the Map storing students finds a student with the given id in the Map.
 	*/
 
 	public boolean hasStudent(int id){
@@ -442,8 +441,8 @@ public class School implements Serializable {
 	/**
 	*
 	*
-	* @param
-	* @return
+	* @param id int
+	* @return true if the Map storing Professors finds a professor with the given id in the Map.
 	*/
 
 	public boolean hasProfessor(int id){
@@ -453,8 +452,8 @@ public class School implements Serializable {
 	/**
 	*
 	*
-	* @param
-	* @return
+	* @param id int
+	* @return true if the Map storing Staffs finds a staff with the given id in the Map.
 	*/
 
 	public boolean hasStaff(int id){
@@ -464,8 +463,8 @@ public class School implements Serializable {
 	/**
 	*
 	*
-	* @param
-	* @return
+	* @param id int
+	* @return true if the Map storing Representatives finds a representative with the given id in the Map.
 	*/
 
 	public boolean hasRepresentative(int id){
@@ -474,8 +473,8 @@ public class School implements Serializable {
 	/**
 	*
 	*
-	* @param
-	* @return
+	* @param id int
+	* @return true if the Map storing Staffs finds a staff with the given id in the Map.
 	*/
 
 	public boolean hasStaffs(int id){
@@ -483,10 +482,9 @@ public class School implements Serializable {
 	}
 
 	/**
+	*Performs the Command DoShowAllPersons
 	*
-	*
-	* @param   id
-	* @return
+	* @return String
 	*/
 
 	public String showAllPersons(){
@@ -531,10 +529,10 @@ public class School implements Serializable {
 
 
 	/**
+	*Performs the Command DoShowPerson
 	*
-	*
-	* @param   id
-	* @return
+	* @param   id int
+	* @return String
 	*/
 
 	public String showPerson(int id){
@@ -558,10 +556,10 @@ public class School implements Serializable {
 	}
 
 	/**
-	* //FIX description of what it does
+	* Perform the Command DoSearchPerson
 	*
-	* @param   name //FIX description
-	* @return //FIX description of returned
+	* @param   name The String input by user to search
+	* @return String
 	*/
 	public String searchPerson(String name) throws UnknownAgentException{
 		String _allstudent = "";
@@ -598,13 +596,13 @@ public class School implements Serializable {
 	}
 
 	/**
+	*Perform the Command DoChangePhoneNumber
 	*
-	*
-	* @param   id
-	* @param   newTelPhone
-	*/
+	* @param   id id iof the person to change the number
+	* @param   newTelPhone new telephone number to set in the Map.
+	* @return String
+ 	*/
 	public String setNewPhoneNum(int id,int newTelPhone){
-
 		if (_students.get(id)!=null){
 			Student student = _students.get(id);
 			Person globalStudent = _persons.get(id);

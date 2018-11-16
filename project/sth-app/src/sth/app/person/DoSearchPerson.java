@@ -16,7 +16,6 @@ public class DoSearchPerson extends Command<SchoolManager> {
 
   //FIXME[FIXING-BEGIN] add input fields if needed
   Input<String> _name;
-
   //FIXME[FIXING-END] add input fields if needed
 
   /**
@@ -32,20 +31,16 @@ public class DoSearchPerson extends Command<SchoolManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    //   //FIXME [FIXING-BEGIN] implement command
-    //   // _display.popup(_receiver.showPerson()); //[Debug]
+      //FIXME [FIXING-BEGIN] implement command
     _form.parse();
     try {
       _display.add(_receiver.searchPerson(_name.value()));
       _display.display();
-      // _receiver.searchPerson(_name.value());
-      // System.out.println(_receiver.searchPerson(_name.value()));
 
     } catch (UnknownAgentException e) {
       System.err.printf("WARNING: unknown agent");
-      // 	throw new UnknownAgentException();
     }
-    //   //FIXME [FIXING-END] implement command
+      //FIXME [FIXING-END] implement command
   }
 
 
