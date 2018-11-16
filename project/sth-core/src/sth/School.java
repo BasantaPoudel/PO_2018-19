@@ -386,16 +386,19 @@ public class School implements Serializable {
 
 // for tests
 
-	// public void printStudent(){
-	// 	System.out.println("_students");
-	// 	_students.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
-	// 	System.out.println("_representatives");
-	// 	_representatives.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
-	// 	System.out.println("_professors");
-	// 	_professors.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
-	// 	System.out.println("_staffs");
-	// 	_staffs.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
-	// }
+	public void printStudent(){
+		System.out.println("_students");
+		_students.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+		System.out.println("_representatives");
+		_representatives.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+		System.out.println("_professors");
+		_professors.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+		System.out.println("_staffs");
+		_staffs.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+
+		System.out.println("_persons");
+		_persons.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+	}
 
 /*=====================================
 =            has functions            =
@@ -553,22 +556,30 @@ public class School implements Serializable {
 
 	   	if (_students.get(id)!=null){
 	   		       Student student = _students.get(id);
+	   		       Person globalStudent = _persons.get(id);
 	   		       student.setPhoneNumber(newTelPhone);
+	   		       globalStudent.setPhoneNumber(newTelPhone);
 	   	}
 
 	   	else if (_representatives.get(id)!=null) {
 	   		         Student representative = _representatives.get(id);
+	   		         Person globalRepresentative = _persons.get(id);
 	   		         representative.setPhoneNumber(newTelPhone);
+	   		         globalRepresentative.setPhoneNumber(newTelPhone);
 	   	}
 
 	   	else if (_professors.get(id)!=null) {
 	   		         Professor professor = _professors.get(id);
+	   		         Person globalProfessor = _persons.get(id);
 	   		         professor.setPhoneNumber(newTelPhone);
+	   		         globalProfessor.setPhoneNumber(newTelPhone);
 	   	}
 
 	   	else if (_staffs.get(id)!=null) {
 	   		         Staff staff = _staffs.get(id);
+	   		         Person globalStaff = _persons.get(id);
 	   		         staff.setPhoneNumber(newTelPhone);
+	   		         globalStaff.setPhoneNumber(newTelPhone);
 	   	}
 
 	   }
