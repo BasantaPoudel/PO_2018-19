@@ -23,13 +23,8 @@ public class DoShowAllPersons extends Command<SchoolManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-
-    // _display.display(_receiver.showPersons());
-    //FIXME[FIXING-BEGIN] implement command
-    // for (Student s : _receiver.getPersons())
-      // _display.popup(_receiver.showAllPersons());
-    // _display.display();
-    //FIXME[FIXING-END] implement command
+    _display.add(_receiver.showAllPersons());
+    _display.display();
   }
 
 }

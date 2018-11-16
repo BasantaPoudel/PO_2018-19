@@ -32,7 +32,8 @@ public class DoChangePhoneNumber extends Command<SchoolManager> {
   public final void execute() {
        //   //FIXME [FIXING-BEGIN] implement command
        _form.parse();
-         _receiver.setNewPhoneNum(_newNumber.value());
+       _display.add(_receiver.setNewPhoneNum(_newNumber.value()));
+       _display.display();
   }
 
 }

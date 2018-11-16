@@ -50,7 +50,7 @@ public class SchoolManager {
 		if (  !(_school.hasStudent(id)||_school.hasProfessor(id)||_school.hasRepresentative(id) || _school.hasStaff(id))	)
 			throw new NoSuchPersonIdException(id);
    // System.out.println(_testid); [Debug]
-	 _school.printStudent();
+	 // _school.printStudent();
 		//FIXME [FIXING-END] implement method
   }
 
@@ -91,8 +91,8 @@ public class SchoolManager {
 
 
 
-	public void setNewPhoneNum(int newTelPhone){
-		_school.setNewPhoneNum(_testid,newTelPhone);
+	public String setNewPhoneNum(int newTelPhone){
+		return _school.setNewPhoneNum(_testid,newTelPhone);
 	}
 
   public String searchPerson(String name) throws UnknownAgentException{
@@ -102,15 +102,10 @@ public class SchoolManager {
   public String showPerson(){
     return _school.showPerson(_testid);
   }
-	//
-  // public String showPersons() throws UnknownAgentException{
-  //   return _school.showPersons();
-  // }
 
-
-  // public String showAllPersons() throws UnknownAgentException{
-  //  return _school.showAllPersons();
-  // }
+  public String showAllPersons(){
+   return _school.showAllPersons();
+  }
 
 
 	// __________________________________________________________________________
