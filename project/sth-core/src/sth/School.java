@@ -335,22 +335,26 @@ public class School implements Serializable {
    }
 
 
+// for tests
 
-	/*==========================
-	=            test          =
-	===========================*/
-	// wash hands
+	// public void printStudent(){
+	// 	System.out.println("_students");
+	// 	_students.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+	// 	System.out.println("_representatives");
+	// 	_representatives.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+	// 	System.out.println("_professors");
+	// 	_professors.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+	// 	System.out.println("_staffs");
+	// 	_staffs.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+	// }
 
-	public void printStudent(){
-		System.out.println("_students");
-		_students.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
-		System.out.println("_representatives");
-		_representatives.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
-		System.out.println("_professors");
-		_professors.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
-		System.out.println("_staffs");
-		_staffs.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
-	}
+/*=====================================
+=            has functions            =
+=====================================*/
+
+
+
+
 
 	public boolean hasStudent(int id){
 		return _students.containsKey(id);
