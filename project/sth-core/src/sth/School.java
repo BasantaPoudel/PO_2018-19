@@ -93,10 +93,10 @@ public class School implements Serializable {
 	// ====================================================================================
 
 /**
- * 
  *
- * @param   
- * @return 
+ *
+ * @param
+ * @return
  */
 	void registerFromFields(String[] fields,BufferedReader reader) throws UnknownDataException,
 	ClientExistsException,
@@ -206,10 +206,10 @@ public class School implements Serializable {
    }
 
 /**
- * 
  *
- * @param   
- * @return 
+ *
+ * @param
+ * @return
  */
    void registerRepresentive(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
@@ -248,10 +248,10 @@ public class School implements Serializable {
 
 
 /**
- * 
  *
- * @param   
- * @return 
+ *
+ * @param
+ * @return
  */
    void registerProfessor(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
@@ -290,11 +290,11 @@ public class School implements Serializable {
 
 
 /**
- * 
+ *
  *
  * @param   fields
  * @param   reader
- * @return 
+ * @return
  */
    void registerStaff(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
@@ -351,16 +351,16 @@ public class School implements Serializable {
    /**
     * Adds representive to proper array
     *
-    * @param   
-    * @return 
+    * @param
+    * @return
     */
    public void addRepresentive (int id, Student student ){
    	_representatives.put(id,student);
    /**
     * Adds professor to proper array
     *
-    * @param   
-    * @return 
+    * @param
+    * @return
     */}
    public void addProfessor(int id, Professor professor){
    	_professors.put(id,professor);
@@ -368,16 +368,16 @@ public class School implements Serializable {
 /**
  * Adds staff to proper array
  *
- * @param   
- * @return 
+ * @param
+ * @return
  */
    public void addStaff(int id, Staff staff){
    	_staffs.put(id,staff);
    /**
     * Adds person to proper array
     *
-    * @param   
-    * @return 
+    * @param
+    * @return
     */}
    public void addPerson(int id, Person person){
    	_persons.put(id,person);
@@ -388,16 +388,16 @@ public class School implements Serializable {
 
 	public void printStudent(){
 		System.out.println("_students");
-		_students.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+		_students.forEach((k,v)->System.out.println(v.getId()+"|"+v.getPhoneNumber()+"|"+v.getName()));
 		System.out.println("_representatives");
-		_representatives.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+		_representatives.forEach((k,v)->System.out.println(v.getId()+"|"+v.getPhoneNumber()+"|"+v.getName()));
 		System.out.println("_professors");
-		_professors.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+		_professors.forEach((k,v)->System.out.println(v.getId()+"|"+v.getPhoneNumber()+"|"+v.getName()));
 		System.out.println("_staffs");
-		_staffs.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+		_staffs.forEach((k,v)->System.out.println(v.getId()+"|"+v.getPhoneNumber()+"|"+v.getName()));
 
 		System.out.println("_persons");
-		_persons.forEach((k,v)->System.out.println("name " + v.getName() + ". id " + k));
+		_persons.forEach((k,v)->System.out.println(v.getId()+"|"+v.getPhoneNumber()+"|"+v.getName()));
 	}
 
 /*=====================================
@@ -407,10 +407,10 @@ public class School implements Serializable {
 
 
 	/**
-	 * 
 	 *
-	 * @param   
-	 * @return 
+	 *
+	 * @param
+	 * @return
 	 */
 
 	public boolean hasStudent(int id){
@@ -418,10 +418,10 @@ public class School implements Serializable {
 	}
 
 	/**
-	 * 
 	 *
-	 * @param   
-	 * @return 
+	 *
+	 * @param
+	 * @return
 	 */
 
 	public boolean hasProfessor(int id){
@@ -429,10 +429,10 @@ public class School implements Serializable {
 	}
 
 	/**
-	 * 
 	 *
-	 * @param   
-	 * @return 
+	 *
+	 * @param
+	 * @return
 	 */
 
 	public boolean hasStaff(int id){
@@ -440,20 +440,20 @@ public class School implements Serializable {
 	}
 
 	/**
-	 * 
 	 *
-	 * @param   
-	 * @return 
+	 *
+	 * @param
+	 * @return
 	 */
 
 	public boolean hasRepresentative(int id){
 		return _representatives.containsKey(id);
 	}
 	/**
-	 * 
 	 *
-	 * @param   
-	 * @return 
+	 *
+	 * @param
+	 * @return
 	 */
 
 	public boolean hasStaffs(int id){
@@ -474,10 +474,10 @@ public class School implements Serializable {
 
 
 /**
- * 
+ *
  *
  * @param   id
- * @return 
+ * @return
  */
 
 	public String showPerson(int id){
@@ -546,7 +546,7 @@ public class School implements Serializable {
 	}
 
 /**
- * 
+ *
  *
  * @param   id
  * @param   newTelPhone
@@ -582,6 +582,7 @@ public class School implements Serializable {
 	   		         globalStaff.setPhoneNumber(newTelPhone);
 	   	}
 
+			printStudent();
 	   }
 
 

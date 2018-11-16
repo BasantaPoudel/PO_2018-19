@@ -50,6 +50,7 @@ public class SchoolManager {
 		if (  !(_school.hasStudent(id)||_school.hasProfessor(id)||_school.hasRepresentative(id) || _school.hasStaff(id))	)
 			throw new NoSuchPersonIdException(id);
    // System.out.println(_testid); [Debug]
+	 _school.printStudent();
 		//FIXME [FIXING-END] implement method
   }
 
