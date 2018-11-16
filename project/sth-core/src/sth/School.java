@@ -55,15 +55,16 @@ public class School implements Serializable {
 
 	//FIXME implement constructors if needed
 
+	/*========================================
+	=            main functions
+	=========================================*/
+
+
 	/**
 	* @param filename
 	* @throws BadEntryException
 	* @throws IOException
 	*/
-	/*========================================
-	=            main functions
-	=========================================*/
-
 	void importFile(String filename) throws IOException, BadEntryException {
 
 		BufferedReader reader = new BufferedReader(new FileReader(filename));
@@ -91,7 +92,12 @@ public class School implements Serializable {
 
 	// ====================================================================================
 
-
+/**
+ * 
+ *
+ * @param   
+ * @return 
+ */
 	void registerFromFields(String[] fields,BufferedReader reader) throws UnknownDataException,
 	ClientExistsException,
 	InvalidIdentifierException {
@@ -127,7 +133,7 @@ public class School implements Serializable {
 	/**
 	*
 	*
-	* @param
+	* @param reader
 	* @return true if next line begins with hashtag
 	*/
 	boolean isNextLineHashtag(BufferedReader reader) throws UnknownDataException,
@@ -161,6 +167,7 @@ public class School implements Serializable {
    * Registers using fields from already parsed line
    *
    * @param    fields
+   * @param    reader
    */
    void registerStudent(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
@@ -198,6 +205,12 @@ public class School implements Serializable {
    	}
    }
 
+/**
+ * 
+ *
+ * @param   
+ * @return 
+ */
    void registerRepresentive(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
    	int id = Integer.parseInt(fields[1]);	_auxId=id;
@@ -233,6 +246,13 @@ public class School implements Serializable {
    	}
    }
 
+
+/**
+ * 
+ *
+ * @param   
+ * @return 
+ */
    void registerProfessor(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
    	int id = Integer.parseInt(fields[1]);	_auxId=id;
@@ -269,6 +289,13 @@ public class School implements Serializable {
    }
 
 
+/**
+ * 
+ *
+ * @param   fields
+ * @param   reader
+ * @return 
+ */
    void registerStaff(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
 
@@ -320,16 +347,38 @@ public class School implements Serializable {
    public void addStudent(int id, Student student){
    	_students.put(id,student);
    }
+
+   /**
+    * Adds representive to proper array
+    *
+    * @param   
+    * @return 
+    */
    public void addRepresentive (int id, Student student ){
    	_representatives.put(id,student);
-   }
+   /**
+    * Adds professor to proper array
+    *
+    * @param   
+    * @return 
+    */}
    public void addProfessor(int id, Professor professor){
    	_professors.put(id,professor);
    }
-
+/**
+ * Adds staff to proper array
+ *
+ * @param   
+ * @return 
+ */
    public void addStaff(int id, Staff staff){
    	_staffs.put(id,staff);
-   }
+   /**
+    * Adds person to proper array
+    *
+    * @param   
+    * @return 
+    */}
    public void addPerson(int id, Person person){
    	_persons.put(id,person);
    }
@@ -354,23 +403,56 @@ public class School implements Serializable {
 
 
 
-
+	/**
+	 * 
+	 *
+	 * @param   
+	 * @return 
+	 */
 
 	public boolean hasStudent(int id){
 		return _students.containsKey(id);
 	}
 
+	/**
+	 * 
+	 *
+	 * @param   
+	 * @return 
+	 */
+
 	public boolean hasProfessor(int id){
 		return _professors.containsKey(id);
 	}
+
+	/**
+	 * 
+	 *
+	 * @param   
+	 * @return 
+	 */
 
 	public boolean hasStaff(int id){
 		return _staffs.containsKey(id);
 	}
 
+	/**
+	 * 
+	 *
+	 * @param   
+	 * @return 
+	 */
+
 	public boolean hasRepresentative(int id){
 		return _representatives.containsKey(id);
 	}
+	/**
+	 * 
+	 *
+	 * @param   
+	 * @return 
+	 */
+
 	public boolean hasStaffs(int id){
 		return _staffs.containsKey(id);
 	}
@@ -386,6 +468,15 @@ public class School implements Serializable {
 	// 	}
 	//
 	// }
+
+
+/**
+ * 
+ *
+ * @param   id
+ * @return 
+ */
+
 	public String showPerson(int id){
 		Student _pStudent = _students.get(id);
 		Professor _pProf = _professors.get(id);
@@ -410,6 +501,13 @@ public class School implements Serializable {
 	//
 	// }
 
+
+/**
+ * //FIX description of what it does
+ *
+ * @param   name //FIX description
+ * @return //FIX description of returned
+ */
 	public String searchPerson(String name) throws UnknownAgentException{
 		String _allstudent = "";
 
@@ -444,7 +542,12 @@ public class School implements Serializable {
 		return _allstudent;
 	}
 
-
+/**
+ * 
+ *
+ * @param   id
+ * @param   newTelPhone
+ */
 	public void setNewPhoneNum(int id,int newTelPhone){
 
 
