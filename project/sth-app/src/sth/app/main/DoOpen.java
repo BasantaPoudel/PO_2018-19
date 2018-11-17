@@ -15,6 +15,7 @@ import sth.SchoolManager;
 public class DoOpen extends Command<SchoolManager> {
 
   //FIXME add input fields if needed
+  Input<String> _openFileName;
 
   /**
    * @param receiver
@@ -22,18 +23,23 @@ public class DoOpen extends Command<SchoolManager> {
   public DoOpen(SchoolManager receiver) {
     super(Label.OPEN, receiver);
     //FIXME initialize input fields if needed
+    _openFileName = _form.addStringInput(Message.openFile());
+
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    // try {
-    //   //FIXME implement command
-    // } catch (FileNotFoundException fnfe) {
-    //   _display.popup(Message.fileNotFound());
-    // } catch (ClassNotFoundException | IOException e) {
-    //   e.printStackTrace();
-    // }
+    _form.parse();
+
+    try {
+      //FIXME implement command
+      _receiver.doOpen(_openFileName.value());
+    } catch (FileNotFoundException fnfe) {
+      _display.popup(Message.fileNotFound());
+    } catch (ClassNotFoundException | IOException e) {
+      e.printStackTrace();
+    }
   }
 
 }

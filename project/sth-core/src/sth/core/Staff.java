@@ -25,7 +25,7 @@ public class Staff extends Person implements Serializable{
 
 
 	public String show(){
-		return "FUNCIONÁRIO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
+		return "FUNCIONÁRIO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName()+"\n";
 	}
 
 
