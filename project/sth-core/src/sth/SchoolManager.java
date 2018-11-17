@@ -10,6 +10,15 @@ import java.util.Collection;
 import java.util.Collections;
 import sth.exceptions.UnknownAgentException;
 
+
+import java.io.ObjectOutputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+
+import java.io.ObjectInputStream;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+
 //FIXME [FIXING-END] import other classes if needed
 
 /**
@@ -108,14 +117,19 @@ public class SchoolManager {
   }
 
 
-	// __________________________________________________________________________
-	    // try {
-	    //   ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("school.dat")));
-	    //   oos.writeObject(_school);
-	    //   oos.close();
-	    // }
-	    // catch (IOException e) { e.printStackTrace(); }
-	    // // __________________________________________________________________________
+
+	public void doSave(String fileName){
+		try {
+			ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(fileName)));
+			oos.writeObject(_school);
+			oos.close();
+		}
+		catch (IOException e) { e.printStackTrace(); }
+	}
+
+	
+
+	    // __________________________________________________________________________
 	    // try {
 	    //   ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream("school.dat")));
 	    //   School _school = (School)ois.readObject();
@@ -124,4 +138,6 @@ public class SchoolManager {
 	    // catch (IOException            e) { e.printStackTrace(); }
 	    // catch (ClassNotFoundException e) { e.printStackTrace(); }
 	    // // __________________________________________________________________________
+
+
 }

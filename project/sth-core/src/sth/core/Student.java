@@ -1,7 +1,10 @@
 package sth.core;
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Student extends Person{
+
+public class Student extends Person implements Serializable{
 
 	private boolean _isRep=false;
 	private int _numOfEnrolledDisciplines=0;
@@ -20,7 +23,7 @@ public class Student extends Person{
 	/*============================================
 	=            getters and setters             =
 	============================================*/
-	
+
 	// _______________________________________________________________________
 	public void addDiscipline(Discipline d){
 		_disciplines.add(d);
@@ -90,7 +93,7 @@ public class Student extends Person{
 	}
 
 	/**
- * Show info about this student 
+ * Show info about this student
  *
  * @param   isRepresentative	Whether student is representative or not (School class is reponsible for knowing)
  * @return  //FIX
@@ -99,9 +102,9 @@ public class Student extends Person{
 		String res;
 		if (isRepresentative)
 			res= "DELEGADO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
-		else 
+		else
 			res= "ALUNO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
-	
+
 		for (Discipline discipline : _disciplines) {
 			res=res+"\n*" + discipline.getCourse().getName()+" - "+discipline.getName();
 		}
@@ -109,6 +112,6 @@ public class Student extends Person{
 
 	}
 
-	
+
 
 }

@@ -1,5 +1,7 @@
 package sth.core;
-public class Course{
+import java.io.Serializable;
+
+public class Course implements Serializable{
 	private String _name;
 	private int _numOfRepresentatives=0;
 

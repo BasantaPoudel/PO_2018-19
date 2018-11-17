@@ -1,5 +1,7 @@
 package sth.core;
-public class Survey{
+import java.io.Serializable;
+
+public class Survey implements Serializable{
 	private double _hoursSpent;
 	private String  _freeComments;
 	private boolean _closed=false;

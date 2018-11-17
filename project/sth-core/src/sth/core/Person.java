@@ -1,5 +1,7 @@
 package sth.core;
-public class Person{
+import java.io.Serializable;
+
+public class Person implements Serializable{
 
 	private String _name;
 	private int _phoneNumber;
@@ -37,5 +39,5 @@ public class Person{
 	}
 	/*=====  End of getters and setters  ======*/
 
-	
+
 }

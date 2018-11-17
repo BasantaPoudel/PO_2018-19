@@ -12,20 +12,27 @@ import sth.SchoolManager;
  * 4.1.1. Save to file under current name (if unnamed, query for name).
  */
 public class DoSave extends Command<SchoolManager> {
-  //FIXME add input fields if needed
+
+
+
+    Input<String> _fileName;
+
+
 
   /**
    * @param receiver
    */
   public DoSave(SchoolManager receiver) {
     super(Label.SAVE, receiver);
-    //FIXME initialize input fields if needed
-  }
+    _fileName = _form.addStringInput(Message.newSaveAs());
+   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() {
-    //FIXME implement command
+       _form.parse();
+       _receiver.doSave(_fileName.value());
+
   }
 
 }

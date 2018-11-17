@@ -1,5 +1,7 @@
 package sth.core;
-public class Project{
+import java.io.Serializable;
+
+public class Project implements Serializable{
 	private String _name;
 	private String _description;
 	private boolean _closed=false;

@@ -1,7 +1,9 @@
 package sth.core;
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Professor extends Person{
+public class Professor extends Person implements Serializable{
 
 
 	private List<Discipline> _disciplines = new ArrayList<Discipline>();

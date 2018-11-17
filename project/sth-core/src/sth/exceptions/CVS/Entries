@@ -1,4 +1,10 @@
 /BadEntryException.java/1.1/Sun Oct  7 10:12:12 2018//
+/ClientExistsException.java/1.1/Wed Nov 14 19:46:19 2018//
 /ImportFileException.java/1.1/Sun Oct  7 10:12:12 2018//
+/InvalidCourseSelectionException.java/1.1/Tue Nov  6 23:49:45 2018//
+/InvalidIdentifierException.java/1.1/Wed Nov 14 19:46:19 2018//
 /NoSuchPersonIdException.java/1.1/Sun Oct  7 10:12:12 2018//
+/PublicationExistsException.java/1.1/Wed Nov 14 19:46:19 2018//
+/UnknownAgentException.java/1.1/Wed Nov 14 19:46:19 2018//
+/UnknownDataException.java/1.1/Wed Nov 14 19:46:19 2018//
 D

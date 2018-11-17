@@ -20,7 +20,6 @@ public class App {
     SchoolManager school = new SchoolManager();
 
     String datafile = System.getProperty("import"); //$NON-NLS-1$
-    // System.out.println(datafile); //[debug]
     if (datafile != null) {
       try {
         school.importFile(datafile);
@@ -41,5 +40,7 @@ public class App {
     } finally {
       IO.close();
     }
+
   }
+
 }

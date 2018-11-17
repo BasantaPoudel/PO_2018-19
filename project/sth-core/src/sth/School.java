@@ -33,6 +33,8 @@ import sth.core.Student;
 import sth.core.Survey;
 import sth.core.Course;
 
+
+
 //FIXME [FIXING-END] import other classes if needed
 
 /**
@@ -106,32 +108,32 @@ public class School implements Serializable {
 		*
 		*/
 
-	void registerFromFields(String[] fields,BufferedReader reader) throws UnknownDataException,
-	ClientExistsException,
-	InvalidIdentifierException {
+		void registerFromFields(String[] fields,BufferedReader reader) throws UnknownDataException,
+		ClientExistsException,
+		InvalidIdentifierException {
 
-		Pattern pattStudent = Pattern.compile("^(ALUNO)");
-		Pattern pattRepresentive  = Pattern.compile("^(DELEGADO)");
-		Pattern pattProfessor = Pattern.compile("^(DOCENTE)");
-		Pattern pattStaff = Pattern.compile("^(FUNCIONÁRIO)");
+			Pattern pattStudent = Pattern.compile("^(ALUNO)");
+			Pattern pattRepresentive  = Pattern.compile("^(DELEGADO)");
+			Pattern pattProfessor = Pattern.compile("^(DOCENTE)");
+			Pattern pattStaff = Pattern.compile("^(FUNCIONÁRIO)");
 
 
-		if (pattStudent.matcher(fields[0]).matches()) {
-			registerStudent(fields,reader);
+			if (pattStudent.matcher(fields[0]).matches()) {
+				registerStudent(fields,reader);
+			}
+			else if (pattRepresentive .matcher(fields[0]).matches()) {
+				registerRepresentive(fields,reader);
+			}
+			else if (pattProfessor.matcher(fields[0]).matches()) {
+				registerProfessor(fields,reader);
+			}
+			else if (pattStaff.matcher(fields[0]).matches()) {
+				registerStaff(fields,reader);
+			}
+			else {
+				throw new UnknownDataException(fields[0]);
+			}
 		}
-		else if (pattRepresentive .matcher(fields[0]).matches()) {
-			registerRepresentive(fields,reader);
-		}
-		else if (pattProfessor.matcher(fields[0]).matches()) {
-			registerProfessor(fields,reader);
-		}
-		else if (pattStaff.matcher(fields[0]).matches()) {
-			registerStaff(fields,reader);
-		}
-		else {
-			throw new UnknownDataException(fields[0]);
-		}
-	}
 
 
 
@@ -379,9 +381,9 @@ public class School implements Serializable {
 		* @param professor Professor
 		*/
 
-	public void addProfessor(int id, Professor professor){
-		_professors.put(id,professor);
-	}
+		public void addProfessor(int id, Professor professor){
+			_professors.put(id,professor);
+		}
 
 	/**
 	* Adds staff to proper array
@@ -400,9 +402,9 @@ public class School implements Serializable {
 		* @param id int
 		* @param person Person
 		*/
-	public void addPerson(int id, Person person){
-		_persons.put(id,person);
-	}
+		public void addPerson(int id, Person person){
+			_persons.put(id,person);
+		}
 
 
 	// for tests
@@ -487,44 +489,59 @@ public class School implements Serializable {
 	* @return String
 	*/
 
-	public String showAllPersons(){
-		String _allpersons = "";
-		for (Map.Entry<Integer, Professor> entry : _professors.entrySet()) {
-			Professor value = entry.getValue();
-			String _sname =value.getName();
-				_allpersons += value.show();
-		}
-		for (Map.Entry<Integer, Student> entry : _students.entrySet()) {
-			Student value = entry.getValue();
-			String _sname =value.getName();
-				_allpersons += value.show(false);
-		}
-		for (Map.Entry<Integer, Student> entry : _representatives.entrySet()) {
-			Student value = entry.getValue();
-			String _sname =value.getName();
-				_allpersons += value.show(true);
-		}
-		for (Map.Entry<Integer, Staff> entry : _staffs.entrySet()) {
-			Staff value = entry.getValue();
-			String _sname =value.getName();
-				_allpersons += value.show();
-		}
-		// for (Map.Entry<Integer, Person> entry : _persons.entrySet()) {
-		// 	Person value = entry.getValue();
-		// 	if(value instanceof Student){
-		// 		Student s = (Student) value;
-		// 	_allpersons += s.show();
-		// 	}
-		// 	if(value instanceof Professor){
-		// 		Professor p = (Professor) value;
-		// 	_allpersons += p.show();
-		// 	}
-		// 	if(value instanceof Staff){
-		// 		Staff s = (Staff) value;
-		// 	_allpersons += s.show();
-		// 	}
+	// public String showAllPersons(){
+		// String _allpersons = "";
+		// for (Map.Entry<Integer, Professor> entry : _professors.entrySet()) {
+		// 	Professor value = entry.getValue();
+		// 	String _sname =value.getName();
+		// 	_allpersons += value.show();
 		// }
-		return _allpersons;
+		// for (Map.Entry<Integer, Student> entry : _students.entrySet()) {
+		// 	Student value = entry.getValue();
+		// 	String _sname =value.getName();
+		// 	_allpersons += value.show(false);
+		// }
+		// for (Map.Entry<Integer, Student> entry : _representatives.entrySet()) {
+		// 	Student value = entry.getValue();
+		// 	String _sname =value.getName();
+		// 	_allpersons += value.show(true);
+		// }
+		// for (Map.Entry<Integer, Staff> entry : _staffs.entrySet()) {
+		// 	Staff value = entry.getValue();
+		// 	String _sname =value.getName();
+		// 	_allpersons += value.show();
+		// }
+//}
+		public String showAllPersons(){
+			String _allpersons = "";
+
+
+			for (Map.Entry<Integer, Person> entry : _persons.entrySet()) {
+				Person value = entry.getValue();
+
+				if(value instanceof Student){
+					Student student = (Student) value;
+					if (hasRepresentative(student.getId()))
+						_allpersons += student.show(true);
+					else if (hasStudent(student.getId()))
+						_allpersons += student.show(false);
+
+				}
+
+
+				if(value instanceof Professor){
+					Professor professor = (Professor) value;
+					_allpersons += professor.show();
+				}
+
+				if(value instanceof Staff){
+					Staff staff = (Staff) value;
+					_allpersons += staff.show();
+				}
+
+
+			}
+			return _allpersons;
 	}
 
 
@@ -635,6 +652,5 @@ public class School implements Serializable {
 		return showPerson(id);
 		// printStudent();
 	}
-
 
 }
