@@ -1,7 +1,7 @@
-PROJECTDIR=../project
+PROJECTDIR=../../project
 
 echo "Compiling..."
-cd $PROJECTDIR && make &> /dev/null && cd ../tests_50
+cd $PROJECTDIR && make &> /dev/null && cd ../tests/tests_50
 echo "Done compiling!"
 
 if [ ! -d results/ ]; then
@@ -17,7 +17,7 @@ do
 	diff -b auto-tests/expected/$FILE.out results/$FILE.outhyp
 done
 
-cd $PROJECTDIR && make clean &> /dev/null && cd ../Tests
+cd $PROJECTDIR && make clean &> /dev/null && cd ../tests/tests_50
 
 
 echo "Done!"
