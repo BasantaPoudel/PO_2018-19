@@ -514,11 +514,8 @@ public class School implements Serializable {
 //}
 		public String showAllPersons(){
 			String _allpersons = "";
-
-
 			for (Map.Entry<Integer, Person> entry : _persons.entrySet()) {
 				Person value = entry.getValue();
-
 				if(value instanceof Student){
 					Student student = (Student) value;
 					if (hasRepresentative(student.getId()))
@@ -527,8 +524,6 @@ public class School implements Serializable {
 						_allpersons += student.show(false);
 
 				}
-
-
 				if(value instanceof Professor){
 					Professor professor = (Professor) value;
 					_allpersons += professor.show();

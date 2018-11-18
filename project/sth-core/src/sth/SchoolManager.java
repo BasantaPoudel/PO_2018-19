@@ -132,7 +132,7 @@ public class SchoolManager {
 	public void doOpen(String fileName) throws FileNotFoundException,ClassNotFoundException,IOException{
 		try {
 			ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(fileName)));
-			School _school = (School)ois.readObject();
+			_school = (School)ois.readObject();
 			ois.close();
 		}
 		catch (IOException            e) { e.printStackTrace(); }
