@@ -101,12 +101,12 @@ public class Student extends Person implements Serializable{
 	public String show(boolean isRepresentative){
 		String res;
 		if (isRepresentative)
-			res= "DELEGADO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName()+"\n";
+			res= "DELEGADO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
 		else
-			res= "ALUNO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName()+"\n";
+			res= "ALUNO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
 
 		for (Discipline discipline : _disciplines) {
-			res=res+"*" + discipline.getCourse().getName()+" - "+discipline.getName()+"\n";
+			res=res+"\n*" + discipline.getCourse().getName()+" - "+discipline.getName();
 		}
 		return res;
 

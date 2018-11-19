@@ -57,15 +57,15 @@ public class Professor extends Person implements Serializable{
 
 	public String show(){
 
-		return "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName()+"\n";
+		return "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
 
 	}
 
 	public String showWithDisciplines(){
 
-		String res = "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName()+"\n";
+		String res = "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName();
 		for (Discipline discipline : _disciplines) {
-			res=res+"*" + discipline.getCourse().getName()+" - "+discipline.getName()+"\n";
+			res=res+"\n*" + discipline.getCourse().getName()+" - "+discipline.getName();
 		}
 		return res;
 

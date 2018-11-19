@@ -11,6 +11,8 @@ import sth.exceptions.NoSuchPersonIdException;
 import java.util.Collection;
 import java.util.Collections;
 import sth.exceptions.UnknownAgentException;
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
 
 
 import java.io.ObjectOutputStream;
@@ -33,12 +35,15 @@ public class SchoolManager {
 	//FIXME implement constructors if needed
 	private School _school = new School();
 	private int _testid;
+  private boolean _ischanged = false;
+	private boolean _initial = true;
 
 	/**
 	* @param datafile
 	* @throws ImportFileException
 	* @throws InvalidCourseSelectionException
 	*/
+
 	public void importFile(String datafile) throws ImportFileException {
 		try {
 			_school.importFile(datafile);
@@ -103,6 +108,8 @@ public class SchoolManager {
 
 
 	public String setNewPhoneNum(int newTelPhone){
+		_ischanged=true;
+		_initial=true;
 		return _school.setNewPhoneNum(_testid,newTelPhone);
 	}
 
@@ -121,12 +128,42 @@ public class SchoolManager {
 
 
 	public void doSave(String fileName){
+		if ((_initial==true) || (_ischanged==true)){
+			// System.out.println(_initial);
 		try {
 			ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(fileName)));
 			oos.writeObject(_school);
 			oos.close();
+			_initial=false;
+			_ischanged=false;
+			System.out.println("OBJECT SERIALIZED");
 		}
 		catch (IOException e) { e.printStackTrace(); }
+		}
+		// if (_ischanged=false){
+		// XMLEncoder encoder=null;
+		// try{
+		// encoder=new XMLEncoder(new BufferedOutputStream(new FileOutputStream(fileName)));
+		// }catch(FileNotFoundException fileNotFound){
+		// 	System.out.println("ERROR: While Creating or Opening the File dvd.xml");
+		// }
+		// encoder.writeObject(_school);
+		// encoder.close();
+		// // }
+		// _ischanged=true;
+	}
+
+	public boolean getChanged(){
+		return _ischanged;
+	}
+	public void setChanged(){
+		_ischanged=true;
+	}
+	public boolean getInitial(){
+		return _initial;
+	}
+	public void setInitial(){
+		_initial=false;
 	}
 
 	public void doOpen(String fileName) throws FileNotFoundException,ClassNotFoundException,IOException{
@@ -137,6 +174,16 @@ public class SchoolManager {
 		}
 		catch (IOException            e) { e.printStackTrace(); }
 		catch (ClassNotFoundException e) { e.printStackTrace(); }
+
+		// XMLDecoder decoder=null;
+		// try {
+		// 	decoder=new XMLDecoder(new BufferedInputStream(new FileInputStream(fileName)));
+		// } catch (FileNotFoundException e) {
+		// 	System.out.println("ERROR: File not found");
+		// }
+		// School _school=(School)decoder.readObject();
+		// System.out.println(_school);
+
 	}
 	// __________________________________________________________________________
 	// try {

@@ -9,30 +9,42 @@ import sth.SchoolManager;
 //FIXME import other classes if needed
 
 /**
- * 4.1.1. Save to file under current name (if unnamed, query for name).
- */
+* 4.1.1. Save to file under current name (if unnamed, query for name).
+*/
 public class DoSave extends Command<SchoolManager> {
 
 
 
-    Input<String> _fileName;
-
+  Input<String> _fileName;
 
 
   /**
-   * @param receiver
-   */
+  * @param receiver
+  */
   public DoSave(SchoolManager receiver) {
     super(Label.SAVE, receiver);
-    _fileName = _form.addStringInput(Message.newSaveAs());
-   }
-
-  /** @see pt.tecnico.po.ui.Command#execute() */
-  @Override
-  public final void execute() {
-       _form.parse();
-       _receiver.doSave(_fileName.value());
-
   }
-
-}
+    /** @see pt.tecnico.po.ui.Command#execute() */
+    @Override
+    public final void execute() {
+      System.out.println("EXECUTING DOSAVE !!!!!!!!!!!!");
+      if(_receiver.getInitial()==true){
+        System.out.println("getInitial true !!!!!!!!!!!!");
+        if(_receiver.getChanged()==false){
+          System.out.println("getChanged false !!!!!!!!!!!!");
+          // System.out.println(_receiver.getChanged());
+          // System.out.println(_receiver.getInitial());
+          // _receiver.setInitial();
+          _fileName = _form.addStringInput(Message.newSaveAs());
+          _form.parse();
+          _receiver.doSave(_fileName.value());
+        }
+        else{
+          System.out.println("getChanged true !!!!!!!!!!!!");
+          // _fileName = _form.addStringInput(Message.saveAs());
+          // _form.parse();
+          _receiver.doSave(_fileName.value());
+        }
+      }
+    }
+  }
