@@ -136,7 +136,6 @@ public class SchoolManager {
 			oos.close();
 			_initial=false;
 			_ischanged=false;
-			System.out.println("OBJECT SERIALIZED");
 		}
 		catch (IOException e) { e.printStackTrace(); }
 		}
