@@ -49,12 +49,12 @@ public class School implements Serializable {
 	//FIXME [FIXING-BEGIN] define object fields (attributes and, possibly, associations)
 	private int _auxId;
 
+	// maps for people and theirs ids
 	private TreeMap<Integer, Student> _students = new TreeMap<Integer, Student>();
 	private TreeMap<Integer, Student> _representatives = new TreeMap<Integer, Student>();
 	private TreeMap<Integer, Professor> _professors = new TreeMap<Integer, Professor>();
 	private TreeMap<Integer, Staff> _staffs = new TreeMap<Integer, Staff>();
-
-	//New TreeMap consisting all Tree Maps
+	//all people
 	private TreeMap<Integer, Person> _persons= new TreeMap<Integer, Person>();
 
 
