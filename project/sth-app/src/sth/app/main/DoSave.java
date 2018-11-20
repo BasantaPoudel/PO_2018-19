@@ -27,11 +27,8 @@ public class DoSave extends Command<SchoolManager> {
     /** @see pt.tecnico.po.ui.Command#execute() */
     @Override
     public final void execute() {
-      System.out.println("EXECUTING DOSAVE !!!!!!!!!!!!");
       if(_receiver.getInitial()==true){
-        System.out.println("getInitial true !!!!!!!!!!!!");
         if(_receiver.getChanged()==false){
-          System.out.println("getChanged false !!!!!!!!!!!!");
           // System.out.println(_receiver.getChanged());
           // System.out.println(_receiver.getInitial());
           // _receiver.setInitial();
@@ -40,7 +37,6 @@ public class DoSave extends Command<SchoolManager> {
           _receiver.doSave(_fileName.value());
         }
         else{
-          System.out.println("getChanged true !!!!!!!!!!!!");
           // _fileName = _form.addStringInput(Message.saveAs());
           // _form.parse();
           _receiver.doSave(_fileName.value());
