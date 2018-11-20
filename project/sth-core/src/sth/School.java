@@ -46,16 +46,17 @@ public class School implements Serializable {
 	private static final long serialVersionUID = 201810051538L;
 
 
-	//FIXME [FIXING-BEGIN] define object fields (attributes and, possibly, associations)
+	//auxiliary variables
 	private int _auxId;
 
 	// maps for people and theirs ids
-	private TreeMap<Integer, Student> _students = new TreeMap<Integer, Student>();
-	private TreeMap<Integer, Student> _representatives = new TreeMap<Integer, Student>();
-	private TreeMap<Integer, Professor> _professors = new TreeMap<Integer, Professor>();
-	private TreeMap<Integer, Staff> _staffs = new TreeMap<Integer, Staff>();
+	private Map<Integer, Student> _students = new TreeMap<Integer, Student>();
+	private Map<Integer, Student> _representatives = new TreeMap<Integer, Student>();
+	private Map<Integer, Professor> _professors = new TreeMap<Integer, Professor>();
+	private Map<Integer, Staff> _staffs = new TreeMap<Integer, Staff>();
 	//all people
-	private TreeMap<Integer, Person> _persons= new TreeMap<Integer, Person>();
+	private Map<Integer, Person> _persons= new TreeMap<Integer, Person>();
+
 
 
 	//[FIXING-END]
