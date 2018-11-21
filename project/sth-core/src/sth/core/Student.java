@@ -8,11 +8,11 @@ public class Student extends Person implements Serializable{
 
 	private boolean _isRep=false;
 	private int _numOfEnrolledDisciplines=0;
+	private List<Discipline> _disciplines = new ArrayList<Discipline>();
 
 	public Student(String _name,int _phoneNumber,int _id){
 		super(_name,_phoneNumber,_id);
 	}
-	private List<Discipline> _disciplines = new ArrayList<Discipline>();
 
 	    	// To specify if hes a representative
 	public Student(String _name,int _phoneNumber,int _id,boolean isRep){
@@ -24,19 +24,8 @@ public class Student extends Person implements Serializable{
 	=            getters and setters             =
 	============================================*/
 
-	// _______________________________________________________________________
-	public void addDiscipline(Discipline d){
-		_disciplines.add(d);
-	}
-	public List<Discipline> getDisciplines(){
-		return _disciplines;
-	}
 
-	public void setDisciplines(List<Discipline> disciplines){
-		_disciplines=disciplines;
-	}
-	// _______________________________________________________________________
-
+ 
 	public boolean getIsRep(){
 		return _isRep;
 	}
@@ -50,47 +39,50 @@ public class Student extends Person implements Serializable{
 		_numOfEnrolledDisciplines=numOfEnrolledDisciplines;
 	}
 
-	/*====================END========================*/
+	/*=============================================
+	=            map operations
+	=============================================*/
+	public void addDiscipline(Discipline d){
+		_disciplines.add(d);
+	}
+	public List<Discipline> getDisciplines(){
+		return _disciplines;
+	}
+
+	public void setDisciplines(List<Discipline> disciplines){
+		_disciplines=disciplines;
+	}
+
+
+
+	/*=============================================
+		
+	=============================================*/
+
 
 
 	public void deliverProject(Project p){
 	}
 	public void fillSurvey(Survey s){
-		// if _isRep{
-		// }
-		// else
-		// 	throw new unauthorizedOperationException();
+		//FIX1
 	}
 	public void finalizeSurvey(Survey s){
-		// if _isRep{
-		// }
-		// else
-		// 	throw new unauthorizedOperationException();
+		//FIX1
 	}
 	public void closeSurvey(Survey s){
-		// if _isRep{
-		// }
-		// else
-		// 	throw new unauthorizedOperationException();
+		//FIX1
 	}
 	public void openSurvey(Survey s){
-		// if _isRep{
-		// }
-		// else
-		// 	throw new unauthorizedOperationException();
+		//FIX1
 	}
 	public void  cancelSurvey(Survey s){
-		// if _isRep{
-		// }
-		// else
-		// 	throw new unauthorizedOperationException();
+		//FIX1
 	}
 	public void  createSurvey(Survey s){
-		// if _isRep{
-		// }
-		// else
-		// 	throw new unauthorizedOperationException();
+		//FIX1
 	}
+
+
 
 	/**
  * Show info about this student

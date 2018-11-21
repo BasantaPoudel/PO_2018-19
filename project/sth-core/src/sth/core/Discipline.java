@@ -4,6 +4,10 @@ import java.io.Serializable;
 public class Discipline implements Serializable{
 	private String _name;
 	private Course _course;
+	// private Map<int> = new TreeMap<int> _StudentIDs;
+
+
+
 
 	public Discipline(Course course,String name){
 		_course=course;
@@ -13,23 +17,32 @@ public class Discipline implements Serializable{
 	/*===========================================
 	=            getters and setters            =
 	===========================================*/
- 	public String getName(){
- 		return _name;
- 	}
- 	public void setName(String name){
- 		_name=name;
- 	}
+	public String getName(){
+		return _name;
+	}
+	public void setName(String name){
+		_name=name;
+	}
 
- 	private String show(){
- 		return "* " + _name +" - " + _course;
+	private String show(){
+		return "* " + _name +" - " + _course;
 
- 	}
+	}
 
- 	public Course getCourse(){
- 		return _course;
- 	}
- 	public void setCourse(Course course){
- 		_course=course;
- 	}
+	public Course getCourse(){
+		return _course;
+	}
+	public void setCourse(Course course){
+		_course=course;
+	}
+ 
+
+
+	/*=============================================
+	=            map operations
+	=============================================*/
+	
+	
+	
 
 }

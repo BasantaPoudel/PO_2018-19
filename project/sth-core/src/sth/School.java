@@ -184,8 +184,9 @@ public class School implements Serializable {
 	*/
 	void registerStudent(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
-
-		int id = Integer.parseInt(fields[1]);	_auxId=id;
+		// vars
+		int id = Integer.parseInt(fields[1]);
+		_auxId=id;
 		int phoneNumber = Integer.parseInt(fields[2]);
 		String name = fields[3];
 
@@ -208,6 +209,7 @@ public class School implements Serializable {
 
 				
 					Discipline d = new Discipline(c,fields[1]);
+					// d.addStudentID()
 					student.addDiscipline(d);
 
 					// add id of student to discipline for when a menu asks for it
