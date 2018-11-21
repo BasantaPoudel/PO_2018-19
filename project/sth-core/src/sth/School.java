@@ -194,13 +194,20 @@ public class School implements Serializable {
 			try{
 				while(isNextLineHashtag(reader)){
 					String line=reader.readLine();
-					// cuts out the # part
+					// for each # line we will:
+
+					// cut out the # part
 					fields = line.split("\\#");
 
 					//gets last 2 fields for discipline
 					fields=fields[1].split("\\|");
-					//makes the necessary objects for adding the discipline to student
+					
+					//make the necessary objects for adding the discipline to student
 					Course c = new Course(fields[0]);
+					
+					// add id of student to discipline for when a menu asks for it
+					
+					
 					Discipline d = new Discipline(c,fields[1]);
 					student.addDiscipline(d);
 				}
