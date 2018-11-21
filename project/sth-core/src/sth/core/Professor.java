@@ -1,12 +1,12 @@
 package sth.core;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 import java.io.Serializable;
 
 public class Professor extends Person implements Serializable{
 
 
-	private List<Discipline> _disciplines = new ArrayList<Discipline>();
+	private Map<String,Discipline> _disciplines = new TreeMap<String, Discipline>();
 
 	public Professor(String name,int phoneNumber,int id){
 		super(name,phoneNumber,id);
@@ -39,15 +39,9 @@ public class Professor extends Person implements Serializable{
 
 	// _______________________________________________________________________
 	public void addDiscipline(Discipline d){
-		_disciplines.add(d);
-	}
-	public List<Discipline> getDisciplines(){
-		return _disciplines;
+		_disciplines.put(d.getName(), d);
 	}
 
-	public void setDisciplines(List<Discipline> disciplines){
-		_disciplines=disciplines;
-	}
 	// _______________________________________________________________________
 
 	public void createProject(String proj,String disc){
@@ -64,11 +58,11 @@ public class Professor extends Person implements Serializable{
 	public String showWithDisciplines(){
 
 		String res = "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName()+"\n";
-		for (Discipline discipline : _disciplines) {
-			res=res+"*" + discipline.getCourse().getName()+" - "+discipline.getName()+"\n";
+		for(Map.Entry<String,Discipline> entr : _disciplines.entrySet()) {
+			Discipline discipline = entr.getValue();
+  			res=res+"*" + discipline.getCourse().getName()+" - "+discipline.getName()+"\n";
 		}
 		return res;
-
 	}
 
 
