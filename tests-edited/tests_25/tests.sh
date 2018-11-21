@@ -1,7 +1,7 @@
 PROJECTDIR=../../project
 
 echo -e "Compiling..."
-cd $PROJECTDIR && make &> /dev/null && cd ../edited-tests/tests_25
+cd $PROJECTDIR && make &> /dev/null && cd ../tests-edited/tests_25
 echo -e "Done compiling!"
 
 if [ ! -d results/ ]; then
@@ -39,7 +39,7 @@ do
 	fi
 
 done	
-cd $PROJECTDIR && make clean &> /dev/null && cd ../edited-tests/tests_25
+cd $PROJECTDIR && make clean &> /dev/null && cd ../tests-edited/tests_25
 
 notify-send "done"
 echo -e "Done!"
