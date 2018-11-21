@@ -205,11 +205,14 @@ public class School implements Serializable {
 					//make the necessary objects for adding the discipline to student
 					Course c = new Course(fields[0]);
 					
-					// add id of student to discipline for when a menu asks for it
-					
-					
+
+				
 					Discipline d = new Discipline(c,fields[1]);
 					student.addDiscipline(d);
+
+					// add id of student to discipline for when a menu asks for it
+					//FIX_1
+					
 				}
 			}catch(UnknownDataException e){
 				// FIX
