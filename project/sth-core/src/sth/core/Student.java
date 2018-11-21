@@ -1,6 +1,6 @@
 package sth.core;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 import java.io.Serializable;
 
 
@@ -8,7 +8,7 @@ public class Student extends Person implements Serializable{
 
 	private boolean _isRep=false;
 	private int _numOfEnrolledDisciplines=0;
-	private List<Discipline> _disciplines = new ArrayList<Discipline>();
+	private Map<String,Discipline> _disciplines = new TreeMap<String, Discipline>();
 
 	public Student(String _name,int _phoneNumber,int _id){
 		super(_name,_phoneNumber,_id);
@@ -25,7 +25,7 @@ public class Student extends Person implements Serializable{
 	============================================*/
 
 
- 
+
 	public boolean getIsRep(){
 		return _isRep;
 	}
@@ -43,16 +43,9 @@ public class Student extends Person implements Serializable{
 	=            map operations
 	=============================================*/
 	public void addDiscipline(Discipline d){
-		_disciplines.add(d);
+		_disciplines.put(d.getName(), d);
 	}
-	public List<Discipline> getDisciplines(){
-		return _disciplines;
-	}
-
-	public void setDisciplines(List<Discipline> disciplines){
-		_disciplines=disciplines;
-	}
-
+	
 
 
 	/*=============================================
@@ -97,9 +90,12 @@ public class Student extends Person implements Serializable{
 		else
 			res= "ALUNO"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName()+"\n";
 
-		for (Discipline discipline : _disciplines) {
-			res=res+"*" + discipline.getCourse().getName()+" - "+discipline.getName()+"\n";
+
+		for(Map.Entry<String,Discipline> entr : _disciplines.entrySet()) {
+			Discipline discipline = entr.getValue();
+  			res=res+"*" + discipline.getCourse().getName()+" - "+discipline.getName()+"\n";
 		}
+		
 		return res;
 
 	}
