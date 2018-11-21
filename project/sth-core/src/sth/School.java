@@ -208,12 +208,11 @@ public class School implements Serializable {
 					
 
 				
-					Discipline d = new Discipline(c,fields[1]);
-					// d.addStudentID()
-					student.addDiscipline(d);
-
-					// add id of student to discipline for when a menu asks for it
-					//FIX_1
+					Discipline disc = new Discipline(c,fields[1]);
+					// disc.addStudentID()
+					disc.addStudentID(id);
+					student.addDiscipline(disc);
+ 
 					
 				}
 			}catch(UnknownDataException e){
@@ -257,8 +256,8 @@ public class School implements Serializable {
 					fields=fields[1].split("\\|");
 					//makes the necessary objects for adding the discipline to representive
 					Course c = new Course(fields[0]);
-					Discipline d = new Discipline(c,fields[1]);
-					representive.addDiscipline(d);
+					Discipline disc = new Discipline(c,fields[1]);
+					representive.addDiscipline(disc);
 				}
 			}catch(UnknownDataException e){
 				// FIX
@@ -300,8 +299,8 @@ public class School implements Serializable {
 					fields=fields[1].split("\\|");
 					//makes the necessary objects for adding the discipline to professor
 					Course c = new Course(fields[0]);
-					Discipline d = new Discipline(c,fields[1]);
-					professor.addDiscipline(d);
+					Discipline disc = new Discipline(c,fields[1]);
+					professor.addDiscipline(disc);
 				}
 			}catch(UnknownDataException e){
 				// FIX
@@ -344,8 +343,8 @@ public class School implements Serializable {
 					fields=fields[1].split("\\|");
 					//makes the necessary objects for adding the discipline to staff
 					Course c = new Course(fields[0]);
-					Discipline d = new Discipline(c,fields[1]);
-					staff.addDiscipline(d);
+					Discipline disc = new Discipline(c,fields[1]);
+					staff.addDiscipline(disc);
 				}
 			}catch(UnknownDataException e){
 				// FIX

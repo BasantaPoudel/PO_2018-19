@@ -46,7 +46,7 @@ public class Discipline implements Serializable{
 	/*=============================================
 	=            map operations
 	=============================================*/
-	public void addID(int id){
+	public void addStudentID(int id){
 		_studentIDs.add(id);
 	}
 	public List<Integer> getIDs(){
