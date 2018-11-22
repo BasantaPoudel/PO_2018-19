@@ -1,8 +1,10 @@
-FOLDER=tests_25
-
 PROJECTDIR=../../project
+PROJECTDIR=../../project
+fold=tests_25
+
+
 echo -e "Compiling..."
-cd $PROJECTDIR && make &> /dev/null && cd ../tests-edited/$FOLDER
+cd $PROJECTDIR && make &> /dev/null && cd ../tests-e/$fold
 echo -e "Done compiling!"
 
 if [ ! -d results/ ]; then
@@ -23,6 +25,7 @@ do
 	else
 		echo -e $"______________________________________________________________________________________________________________"
 		echo -e $FILE FAILED
+		cat desc/$FILE.desc
 		echo -e please schedule a fix
 		echo -e $FILE 
 		echo -e $"______________________________________________________________________________________________________________"
@@ -40,7 +43,7 @@ do
 	fi
 
 done	
-cd $PROJECTDIR && make clean &> /dev/null && cd ../tests-edited/$FOLDER
+cd $PROJECTDIR && make clean &> /dev/null && cd ../tests-e/$fold
 
 notify-send "done"
 echo -e "Done!"
