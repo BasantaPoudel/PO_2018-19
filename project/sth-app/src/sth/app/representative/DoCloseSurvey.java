@@ -12,7 +12,10 @@ import sth.SchoolManager;
  */
 public class DoCloseSurvey extends Command<SchoolManager> {
 
-  //FIXME add input fields if needed
+  //FIXME[FIXING-BEGIN] add input fields if needed
+  Input<String> _projectname;
+  Input<String> _disciplinename;
+  //FIXME[FIXING-END] add input fields if needed
 
   /**
    * @param receiver
@@ -20,12 +23,33 @@ public class DoCloseSurvey extends Command<SchoolManager> {
   public DoCloseSurvey(SchoolManager receiver) {
     super(Label.CLOSE_SURVEY, receiver);
     //FIXME initialize input fields if needed
+    _disciplinename = _form.addStringInput(Message.requestDisciplineName());
+    _projectname = _form.addStringInput(Message.requestProjectName());
+
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() throws DialogException {
     //FIXME implement command
+    _form.parse();
+    // try{
+    // // _display.add(_receiver.closeSurvey()));
+    // // _display.display();
+    // }
+    // catch(NoSurveyException e){
+    //   throw new NoSurveyException(_disciplinename,_projectname);
+    // }
+    // catch(ClosingSurveyException e){
+    //   throw new ClosingSurveyException(_disciplinename,_projectname);
+    // }
+    // catch(NoSuchProjectException e){
+    //   throw new NoSuchProjectException(_disciplinename,_projectname);
+    // }
+    // catch(NoSuchDisciplineException e){
+    //   throw new NoSuchDisciplineException(_disciplinename);
+    //}
+
   }
 
 }

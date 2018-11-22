@@ -12,7 +12,9 @@ import sth.SchoolManager;
  */
 public class DoShowDisciplineStudents extends Command<SchoolManager> {
 
-  //FIXME add input fields if needed
+  //FIXME[FIXING-BEGIN] add input fields if needed
+  Input<String> _disciplinename;
+  //FIXME[FIXING-END] add input fields if needed
 
   /**
    * @param receiver
@@ -20,12 +22,32 @@ public class DoShowDisciplineStudents extends Command<SchoolManager> {
   public DoShowDisciplineStudents(SchoolManager receiver) {
     super(Label.SHOW_COURSE_STUDENTS, receiver);
     //FIXME initialize input fields if needed
+    _disciplinename = _form.addStringInput(Message.requestDisciplineName());
+
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() throws DialogException {
     //FIXME implement command
+    _form.parse();
+    // if(_receiver.existsDiscipline==true){
+    // _display.add(_receiver.showDisciplineStudents()));
+    // _display.display();
+    // }
+
+    // try{
+    // _display.add(_receiver.showDisciplineStudents()));
+    // _display.display();
+    // }
+    // catch(NoSuchProjectException e){
+    //   throw new NoSuchProjectException(_projectname);
+    // }
+    // }
+    // catch(NoSuchDisciplineException e){
+    //   throw new NoSuchDisciplineException(_disciplinename);
+    // }
+
   }
 
 }
