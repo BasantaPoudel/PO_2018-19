@@ -1,0 +1,224 @@
+Compiling...
+Done compiling!
+executing A-01-01-M-ok
+_______________________________________________________________________
+A-01-01-M-ok PASSED
+Login com funcionário
+executing A-01-02-M-ok
+_______________________________________________________________________
+A-01-02-M-ok PASSED
+Login com professor
+executing A-01-03-M-ok
+_______________________________________________________________________
+A-01-03-M-ok PASSED
+Login com aluno
+executing A-01-04-M-ok
+_______________________________________________________________________
+A-01-04-M-ok PASSED
+Login com delegado
+executing A-02-01-M-ok
+_______________________________________________________________________
+A-02-01-M-ok PASSED
+Login funcionário e vê funcionário
+executing A-02-02-M-ok
+_______________________________________________________________________
+A-02-02-M-ok PASSED
+Login professor sem disciplinas e vê professor
+executing A-02-03-M-ok
+_______________________________________________________________________
+A-02-03-M-ok PASSED
+Login professor só com uma disciplina e vê professor
+executing A-02-04-M-ok
+_______________________________________________________________________
+A-02-04-M-ok PASSED
+Login professor com várias disciplina e vê professor disciplinas inseridas ordenadamente com mesmo curso
+executing A-02-05-M-ok
+_______________________________________________________________________
+A-02-05-M-ok PASSED
+Login professor com várias disciplina (e há várias disciplinas com o mesmo nome) e vê professor
+executing A-02-06-M-ok
+_______________________________________________________________________
+A-02-06-M-ok PASSED
+Login aluno com uma disciplina e vê aluno
+executing A-02-07-M-ok
+_______________________________________________________________________
+A-02-07-M-ok PASSED
+Login aluno com várias disciplinas ordenadas e vê aluno
+executing A-02-08-M-ok
+_______________________________________________________________________
+A-02-08-M-ok FAILED
+Login aluno com várias disciplinas desordenadas e vê aluno
+executing A-02-09-M-ok
+_______________________________________________________________________
+A-02-09-M-ok PASSED
+Login delegado com uma disciplina e vê delegado
+executing A-02-10-M-ok
+_______________________________________________________________________
+A-02-10-M-ok PASSED
+Login delegado com várias disciplinas e vê delegado
+executing A-02-11-M-ok
+_______________________________________________________________________
+A-02-11-M-ok PASSED
+Login de pessoa que não existe
+executing A-02-12-M-ok
+_______________________________________________________________________
+A-02-12-M-ok FAILED
+Login professor com várias disciplina e vê professor disciplinas inseridas desordenadamente com mesmo curso
+executing A-02-13-M-ok
+_______________________________________________________________________
+A-02-13-M-ok FAILED
+Login professor com várias disciplina e vê professor disciplinas inseridas desordenadamente com curso  diferente
+executing A-03-01-M-ok
+_______________________________________________________________________
+A-03-01-M-ok PASSED
+Procura pessoa com string que não existe
+executing A-03-02-M-ok
+_______________________________________________________________________
+A-03-02-M-ok PASSED
+Procura pessoa com string que faz match com uma pessoa existente
+executing A-03-03-M-ok
+_______________________________________________________________________
+A-03-03-M-ok FAILED
+Procura pessoa com string que faz match com várias pessoas (e lista de pessoas por id tb ordenada por nome)
+executing A-03-04-M-ok
+_______________________________________________________________________
+A-03-04-M-ok FAILED
+Procura pessoa com string que faz match com várias pessoas (e lista de pessoas por id não ordenada por nome)
+executing A-04-01-M-ok
+_______________________________________________________________________
+A-04-01-M-ok PASSED
+Altera o número de telefone de um funcionário
+executing A-04-02-M-ok
+_______________________________________________________________________
+A-04-02-M-ok PASSED
+Altera o número de telefone de um professor
+executing A-05-01-M-ok
+_______________________________________________________________________
+A-05-01-M-ok PASSED
+Mostra apenas uma pessoa
+executing A-05-02-M-ok
+_______________________________________________________________________
+A-05-02-M-ok PASSED
+Mostar vários funcionários inseridos pela ordem do id
+executing A-05-03-M-ok
+_______________________________________________________________________
+A-05-03-M-ok PASSED
+Mostar vários funcionários inseridos com uma ordem diferente do id
+executing A-05-04-M-ok
+_______________________________________________________________________
+A-05-04-M-ok FAILED
+Mostra vários tipos de utilizadores
+executing A-06-01-M-ok
+EXECUTING DOSAVE !!!!!!!!!!!!
+getInitial true !!!!!!!!!!!!
+getChanged false !!!!!!!!!!!!
+OBJECT SERIALIZED
+_______________________________________________________________________
+A-06-01-M-ok PASSED
+Persistência de Pessoas - guardar
+executing A-06-02-M-ok
+_______________________________________________________________________
+A-06-02-M-ok PASSED
+Persistência de Pessoas - abrir
+executing A-06-03-M-ok
+EXECUTING DOSAVE !!!!!!!!!!!!
+getInitial true !!!!!!!!!!!!
+getChanged false !!!!!!!!!!!!
+OBJECT SERIALIZED
+EXECUTING DOSAVE !!!!!!!!!!!!
+_______________________________________________________________________
+A-06-03-M-ok PASSED
+Persistência de Pessoas - guardar 2x
+executing A-06-04-M-ok
+_______________________________________________________________________
+A-06-04-M-ok FAILED
+Persistência - abrir com uma pessoa que não existe no estado persistente
+executing A-06-05-M-ok
+EXECUTING DOSAVE !!!!!!!!!!!!
+getInitial true !!!!!!!!!!!!
+getChanged false !!!!!!!!!!!!
+OBJECT SERIALIZED
+_______________________________________________________________________
+A-06-05-M-ok PASSED
+Persistência de Pessoas, cursos e disciplinas - guardar
+executing A-06-06-M-ok
+EXECUTING DOSAVE !!!!!!!!!!!!
+getInitial true !!!!!!!!!!!!
+getChanged false !!!!!!!!!!!!
+OBJECT SERIALIZED
+_______________________________________________________________________
+A-06-06-M-ok FAILED
+Persistência de Pessoas, cursos e disciplinas - abrir e criar projecto e guardar
+executing A-07-01-M-ok
+_______________________________________________________________________
+A-07-01-M-ok FAILED
+Criar projecto de disciplina não leccionada mas existente
+executing A-07-02-M-ok
+_______________________________________________________________________
+A-07-02-M-ok FAILED
+Criar projecto de disciplina não leccionada e não existente
+executing A-07-03-M-ok
+EXECUTING DOSAVE !!!!!!!!!!!!
+getInitial true !!!!!!!!!!!!
+getChanged false !!!!!!!!!!!!
+OBJECT SERIALIZED
+_______________________________________________________________________
+A-07-03-M-ok PASSED
+Criar projecto de disciplina lecionada e guardar (proj3)
+executing A-07-04-M-ok
+_______________________________________________________________________
+A-07-04-M-ok FAILED
+Criar projecto com mesmo nome de disciplina lecionada
+executing A-07-05-M-ok
+_______________________________________________________________________
+A-07-05-M-ok PASSED
+Criar projecto com mesmo nome em diferentes disciplinas lecionada
+executing A-07-06-M-ok
+_______________________________________________________________________
+A-07-06-M-ok PASSED
+Criar projecto 2 projectos em duas disciplinas distintas com o mesmo nome
+executing A-07-07-M-ok
+_______________________________________________________________________
+A-07-07-M-ok FAILED
+Abrir proj3 e Criar o mesmo projecto na disciplina mas por um docente diferente
+executing A-07-08-M-ok
+_______________________________________________________________________
+A-07-08-M-ok FAILED
+?
+executing A-08-01-M-ok
+_______________________________________________________________________
+A-08-01-M-ok PASSED
+Fechar projecto existente e aberto
+executing A-08-02-M-ok
+_______________________________________________________________________
+A-08-02-M-ok FAILED
+Fechar projecto não existente
+executing A-08-03-M-ok
+_______________________________________________________________________
+A-08-03-M-ok PASSED
+Fechar projecto existente e já fechado
+executing A-09-01-M-ok
+_______________________________________________________________________
+A-09-01-M-ok FAILED
+Ver alunos de disciplina não existente e existente mas não leccionada
+executing A-09-02-M-ok
+_______________________________________________________________________
+A-09-02-M-ok PASSED
+Ver alunos de disciplina sem alunos
+executing A-09-03-M-ok
+_______________________________________________________________________
+A-09-03-M-ok FAILED
+Ver alunos de disciplina com um aluno
+executing A-09-04-M-ok
+_______________________________________________________________________
+A-09-04-M-ok FAILED
+Ver alunos de disciplina com vários alunos e inseridos por ordem
+executing A-09-05-M-ok
+_______________________________________________________________________
+A-09-05-M-ok FAILED
+Ver alunos de disciplina com vários alunos e inseridos fora de ordem
+executing A-09-06-M-ok
+_______________________________________________________________________
+A-09-06-M-ok FAILED
+?
+Done!
