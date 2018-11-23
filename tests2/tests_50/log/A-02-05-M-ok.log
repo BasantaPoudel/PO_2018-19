@@ -1,0 +1,106 @@
+______________________________________________________________________________________________________________
+A-02-05-M-ok FAILED
+Login professor com várias disciplina (e há várias disciplinas com o mesmo nome) e vê professor
+please schedule a fix
+A-02-05-M-ok
+______________________________________________________________________________________________________________
+FUNCIONÁRIO|100001|123789456|Maria José
+DELEGADO|100010|123456789|João Maria
+# Informática|Fundamentos da Programação
+# Informática|Algoritmos e Estruturas de Dados
+# Informática|Programação com Objectos
+# Informática|Análise e Síntese de Algoritmos
+DELEGADO|100011|123456789|João Manuel
+# Informática|Fundamentos da Programação
+# Informática|Algoritmos e Estruturas de Dados
+# Informática|Programação com Objectos
+# Informática|Análise e Síntese de Algoritmos
+DELEGADO|100012|123456789|João Miguel
+# Matemática|Álgebra Linear
+# Matemática|Probabilidades e Estatística
+# Matemática|Cálculo I
+# Matemática|Métodos Numéricos
+ALUNO|100013|123456789|José Manuel
+# Matemática|Álgebra Linear
+# Matemática|Probabilidades e Estatística
+# Matemática|Cálculo I
+# Matemática|Métodos Numéricos
+DOCENTE|100100|987654321|Ana Maria
+# Electrónica|Sistemas Operativos
+# Informática|Análise e Síntese de Algoritmos
+# Informática|Compiladores
+# Informática|Engenharia de Software
+# Informática|Sistemas Operativos
+# Matemática|Compiladores
+FUNCIONÁRIO|101010|789456123|José Carlos
+______________________________________________________________________________________________________________
+100100
+3
+1
+0
+0
+______________________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: DOCENTE|100100|987654321|Ana Maria
+* Electrónica - Sistemas Operativos
+* Informática - Análise e Síntese de Algoritmos
+* Informática - Compiladores
+* Informática - Engenharia de Software
+* Informática - Sistemas Operativos
+* Matemática - Compiladores
+Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: ______________________________________________________________________________________________________________
+Identificador: Menu principal					Identificador: Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+4 - Portal do Docente						4 - Portal do Docente
+0 - Sair							0 - Sair
+Escolha uma opção: Portal Pessoal				Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa						1 - Mostrar pessoa
+2 - Alterar número de telefone					2 - Alterar número de telefone
+3 - Mostrar pessoas						3 - Mostrar pessoas
+4 - Procurar pessoa						4 - Procurar pessoa
+0 - Sair							0 - Sair
+Escolha uma opção: DOCENTE|100100|987654321|Ana Maria		Escolha uma opção: DOCENTE|100100|987654321|Ana Maria
+							      >	* Electrónica - Sistemas Operativos
+* Informática - Análise e Síntese de Algoritmos			* Informática - Análise e Síntese de Algoritmos
+* Matemática - Compiladores				      |	* Informática - Compiladores
+* Informática - Engenharia de Software				* Informática - Engenharia de Software
+* Informática - Sistemas Operativos				* Informática - Sistemas Operativos
+							      >	* Matemática - Compiladores
+Portal Pessoal							Portal Pessoal
+1 - Mostrar pessoa						1 - Mostrar pessoa
+2 - Alterar número de telefone					2 - Alterar número de telefone
+3 - Mostrar pessoas						3 - Mostrar pessoas
+4 - Procurar pessoa						4 - Procurar pessoa
+0 - Sair							0 - Sair
+Escolha uma opção: Menu principal				Escolha uma opção: Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+4 - Portal do Docente						4 - Portal do Docente
+0 - Sair							0 - Sair
+Escolha uma opção: 						Escolha uma opção: 
