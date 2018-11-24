@@ -14,7 +14,6 @@ import sth.exceptions.UnknownAgentException;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 
-
 import java.io.ObjectOutputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
@@ -22,6 +21,16 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
+
+import sth.exceptions.newexceptions.NoSurveyexcepcao;
+import sth.exceptions.newexceptions.ClosingSurveyexcepcao;
+import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+import sth.exceptions.newexceptions.FinishingSurveyexcepcao;
+import sth.exceptions.newexceptions.OpeningSurveyexcepcao;
+import sth.exceptions.newexceptions.DuplicateSurveyexcepcao;
+import sth.exceptions.newexceptions.NonEmptySurveyexcepcao;
+import sth.exceptions.newexceptions.SurveyFinishedexcepcao;
 
 //FIXME [FIXING-END] import other classes if needed
 
@@ -35,7 +44,7 @@ public class SchoolManager {
 	//FIXME implement constructors if needed
 	private School _school = new School();
 	private int _testid;
-  private boolean _ischanged = false;
+	private boolean _ischanged = false;
 	private boolean _initial = true;
 
 	/**
@@ -130,14 +139,14 @@ public class SchoolManager {
 	public void doSave(String fileName){
 		if ((_initial==true) || (_ischanged==true)){
 			// System.out.println(_initial);
-		try {
-			ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(fileName)));
-			oos.writeObject(_school);
-			oos.close();
-			_initial=false;
-			_ischanged=false;
-		}
-		catch (IOException e) { e.printStackTrace(); }
+			try {
+				ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(fileName)));
+				oos.writeObject(_school);
+				oos.close();
+				_initial=false;
+				_ischanged=false;
+			}
+			catch (IOException e) { e.printStackTrace(); }
 		}
 		// if (_ischanged=false){
 		// XMLEncoder encoder=null;
@@ -165,6 +174,9 @@ public class SchoolManager {
 		_initial=false;
 	}
 
+public String doOpennnn(String str){
+	return str;
+}
 	public void doOpen(String fileName) throws FileNotFoundException,ClassNotFoundException,IOException{
 		try {
 			ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(fileName)));
@@ -193,6 +205,154 @@ public class SchoolManager {
 	// catch (IOException            e) { e.printStackTrace(); }
 	// catch (ClassNotFoundException e) { e.printStackTrace(); }
 	// // __________________________________________________________________________
+
+	// __________________________________________________________________________//
+	// __________________________________________________________________________//
+
+	/*=====================================
+	=   Funções de Portal DOCENTE         =
+	=====================================*/
+	//4.1
+	public String createProject(){
+		return _school.createProject();
+	}
+	//4.2
+	public String closeProject(){
+		return _school.closeProject();
+	}
+	//4.3
+	public String showDisciplineStudent(){
+		return _school.showDisciplineStudent();
+	}
+	//4.4
+	public String showProjectSubmissions(){
+		return _school.showProjectSubmissions();
+	}
+	//4.5
+	public String showSurveyResults(){
+		return _school.showSurveyResults();
+	}
+
+	/*=====================================
+	=   Funções de Portal ALUNO           =
+	=====================================*/
+	//5.1
+	public String deliverProject() {
+		return _school.deliverProject();
+	}
+	//5.2
+	public String answerSurvey(){
+		return _school.answerSurvey();
+	}
+	//5.3
+	public String showSurveyResult(){
+		return _school.showSurveyResult();
+	}
+	/*=====================================
+	=   Funções de Portal DELEGADO        =
+	=====================================*/
+	//6.1
+	public String createSurvey(String _disciplinename, String _projectname) throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, DuplicateSurveyexcepcao{
+		try{
+			return _school.createSurvey();
+    }
+    catch(DuplicateSurveyexcepcao e){
+      throw new DuplicateSurveyexcepcao(_disciplinename,_projectname);
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectexcepcao(_disciplinename,_projectname);
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineexcepcao(_disciplinename);
+    }
+	}
+	//6.2
+	public String cancelSurvey(String _disciplinename, String _projectname)throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao,SurveyFinishedexcepcao, NoSurveyexcepcao, NonEmptySurveyexcepcao{
+		try{
+			return _school.cancelSurvey();
+    }
+    catch(NoSurveyexcepcao e){
+      throw new NoSurveyexcepcao(_disciplinename,_projectname);
+    }
+    catch(NonEmptySurveyexcepcao e){
+      throw new NonEmptySurveyexcepcao(_disciplinename,_projectname);
+    }
+    catch(SurveyFinishedexcepcao e){
+      throw new SurveyFinishedexcepcao(_disciplinename,_projectname);
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectexcepcao(_disciplinename,_projectname);
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineexcepcao(_disciplinename);
+    }
+	}
+	//6.3
+	public String openSurvey(String _disciplinename, String _projectname) throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, OpeningSurveyexcepcao{
+		try{
+			return _school.openSurvey();
+    }
+     catch(NoSurveyexcepcao e){
+       throw new NoSurveyexcepcao(_disciplinename,_projectname);
+     }
+     catch(OpeningSurveyexcepcao e){
+       throw new OpeningSurveyexcepcao(_disciplinename,_projectname);
+     }
+     catch(NoSuchProjectexcepcao e){
+       throw new NoSuchProjectexcepcao(_disciplinename,_projectname);
+     }
+     catch(NoSuchDisciplineexcepcao e){
+       throw new NoSuchDisciplineexcepcao(_disciplinename);
+     }
+	}
+	//6.4
+	public String closeSurvey(String _disciplinename, String _projectname) throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, ClosingSurveyexcepcao{
+		try{
+			return _school.closeSurvey();
+    }
+    catch(NoSurveyexcepcao e){
+      throw new NoSurveyexcepcao(_disciplinename,_projectname);
+    }
+    catch(ClosingSurveyexcepcao e){
+      throw new ClosingSurveyexcepcao(_disciplinename,_projectname);
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectexcepcao(_disciplinename,_projectname);
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineexcepcao(_disciplinename);
+    }
+	}
+	//6.5
+	public String finishSurvey(String _disciplinename, String _projectname) throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, FinishingSurveyexcepcao{
+		 try{
+			return _school.finishSurvey();
+    }
+    catch(NoSurveyexcepcao e){
+      throw new NoSurveyexcepcao(_disciplinename,_projectname);
+    }
+    catch(FinishingSurveyexcepcao e){
+      throw new FinishingSurveyexcepcao(_disciplinename,_projectname);
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectexcepcao(_disciplinename,_projectname);
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineexcepcao(_disciplinename);
+    }
+	}
+	//6.6
+	public String showDisciplineSurvey(String _disciplinename,String _projectname)throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao{
+		try{
+			return _school.showDisciplineSurvey();
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectexcepcao(_disciplinename,_projectname);
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineexcepcao(_disciplinename);
+    }
+	}
 
 
 }

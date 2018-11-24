@@ -5,6 +5,14 @@ import pt.tecnico.po.ui.DialogException;
 import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
+import sth.app.exceptions.DuplicateSurveyException;
+import sth.app.exceptions.NoSuchProjectException;
+import sth.app.exceptions.NoSuchDisciplineException;
+
+import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+import sth.exceptions.newexceptions.DuplicateSurveyexcepcao;
+
 //FIXME import other classes if needed
 
 /**
@@ -32,19 +40,19 @@ public class DoCreateSurvey extends Command<SchoolManager> {
   public final void execute() throws DialogException {
     //FIXME implement command
     _form.parse();
-    // try{
-    // // _display.add(_receiver.createSurvey()));
-    // // _display.display();
-    // }
-    // catch(DuplicateSurveyException e){
-    //   throw new DuplicateSurveyException(_disciplinename,_projectname);
-    // }
-    // catch(NoSuchProjectException e){
-    //   throw new NoSuchProjectException(_disciplinename,_projectname);
-    // }
-    // catch(NoSuchDisciplineException e){
-    //   throw new NoSuchDisciplineException(_disciplinename);
-    //}
+    try{
+    _display.add(_receiver.createSurvey(_disciplinename.value(),_projectname.value()));
+    _display.display();
+    }
+    catch(DuplicateSurveyexcepcao e){
+      throw new DuplicateSurveyException(_disciplinename.value(),_projectname.value());
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineException(_disciplinename.value());
+    }
   }
 
 }

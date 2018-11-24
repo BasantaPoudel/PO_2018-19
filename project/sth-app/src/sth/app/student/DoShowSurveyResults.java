@@ -31,7 +31,7 @@ public class DoShowSurveyResults extends Command<SchoolManager> {
   public final void execute() throws DialogException {
     _form.parse();
     // try{
-    // // _display.add(_receiver.showSurveyResults()));
+    // // _display.add(_receiver.showSurveyResult()));
     // // _display.display();
     // }
     // catch ( NoSurveyException e) {

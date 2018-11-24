@@ -5,8 +5,13 @@ import pt.tecnico.po.ui.DialogException;
 import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
-//FIXME import other classes if needed
 
+//FIXME import other classes if needed
+import sth.app.exceptions.NoSuchProjectException;
+import sth.app.exceptions.NoSurveyException;
+import sth.app.exceptions.NoSuchDisciplineException;
+import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
 /**
  * 4.5.6. Show discipline surveys.
  */
@@ -24,7 +29,6 @@ public class DoShowDisciplineSurveys extends Command<SchoolManager> {
     //FIXME initialize input fields if needed
     _disciplinename = _form.addStringInput(Message.requestDisciplineName());
     _projectname = _form.addStringInput(Message.requestProjectName());
-
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
@@ -33,16 +37,16 @@ public class DoShowDisciplineSurveys extends Command<SchoolManager> {
     //FIXME implement command
     _form.parse();
 
-    // try{
-    // // _display.add(_receiver.showDisciplineSurveys()));
-    // // _display.display();
-    // }
-    // catch(NoSuchProjectException e){
-    //   throw new NoSuchProjectException(_disciplinename,_projectname);
-    // }
-    // catch(NoSuchDisciplineException e){
-    //   throw new NoSuchDisciplineException(_disciplinename);
-    //}
+    try{
+    _display.add(_receiver.showDisciplineSurvey(_disciplinename.value(),_projectname.value()));
+    _display.display();
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineException(_disciplinename.value());
+    }
   }
 
 }

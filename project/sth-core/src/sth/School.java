@@ -34,6 +34,18 @@ import sth.core.Survey;
 import sth.core.Course;
 
 
+import sth.exceptions.newexceptions.NonEmptySurveyexcepcao;
+import sth.exceptions.newexceptions.OpeningSurveyexcepcao;
+import sth.exceptions.newexceptions.ClosingSurveyexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+import sth.exceptions.newexceptions.NoSurveyexcepcao;
+import sth.exceptions.newexceptions.FinishingSurveyexcepcao;
+import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
+import sth.exceptions.newexceptions.DuplicateSurveyexcepcao;
+import sth.exceptions.newexceptions.SurveyFinishedexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+
+
 
 //FIXME [FIXING-END] import other classes if needed
 
@@ -96,45 +108,45 @@ public class School implements Serializable {
 		reader.close();
 	}
 
-		/**
-		* Does the Pattern Matching with the fields parsed and calls the corresponding method to register each Object.
-		*
-		* @param fields
-		*				 				Contains List of Strings splitted.
-		* @param reader
-		*								BufferedReader
-		* @throws UnknownDataException
-		* @throws ClientExistsException
-		* @throws InvalidIdentifierException
-		*
-		*/
+	/**
+	* Does the Pattern Matching with the fields parsed and calls the corresponding method to register each Object.
+	*
+	* @param fields
+	*				 				Contains List of Strings splitted.
+	* @param reader
+	*								BufferedReader
+	* @throws UnknownDataException
+	* @throws ClientExistsException
+	* @throws InvalidIdentifierException
+	*
+	*/
 
-		void registerFromFields(String[] fields,BufferedReader reader) throws UnknownDataException,
-		ClientExistsException,
-		InvalidIdentifierException {
+	void registerFromFields(String[] fields,BufferedReader reader) throws UnknownDataException,
+	ClientExistsException,
+	InvalidIdentifierException {
 
-			Pattern pattStudent = Pattern.compile("^(ALUNO)");
-			Pattern pattRepresentive  = Pattern.compile("^(DELEGADO)");
-			Pattern pattProfessor = Pattern.compile("^(DOCENTE)");
-			Pattern pattStaff = Pattern.compile("^(FUNCIONÁRIO)");
+		Pattern pattStudent = Pattern.compile("^(ALUNO)");
+		Pattern pattRepresentive  = Pattern.compile("^(DELEGADO)");
+		Pattern pattProfessor = Pattern.compile("^(DOCENTE)");
+		Pattern pattStaff = Pattern.compile("^(FUNCIONÁRIO)");
 
 
-			if (pattStudent.matcher(fields[0]).matches()) {
-				registerStudent(fields,reader);
-			}
-			else if (pattRepresentive .matcher(fields[0]).matches()) {
-				registerRepresentive(fields,reader);
-			}
-			else if (pattProfessor.matcher(fields[0]).matches()) {
-				registerProfessor(fields,reader);
-			}
-			else if (pattStaff.matcher(fields[0]).matches()) {
-				registerStaff(fields,reader);
-			}
-			else {
-				throw new UnknownDataException(fields[0]);
-			}
+		if (pattStudent.matcher(fields[0]).matches()) {
+			registerStudent(fields,reader);
 		}
+		else if (pattRepresentive .matcher(fields[0]).matches()) {
+			registerRepresentive(fields,reader);
+		}
+		else if (pattProfessor.matcher(fields[0]).matches()) {
+			registerProfessor(fields,reader);
+		}
+		else if (pattStaff.matcher(fields[0]).matches()) {
+			registerStaff(fields,reader);
+		}
+		else {
+			throw new UnknownDataException(fields[0]);
+		}
+	}
 
 
 
@@ -202,18 +214,18 @@ public class School implements Serializable {
 
 					//gets last 2 fields for discipline
 					fields=fields[1].split("\\|");
-					
+
 					//make the necessary objects for adding the discipline to student
 					Course c = new Course(fields[0]);
-					
 
-				
+
+
 					Discipline disc = new Discipline(c,fields[1]);
 					// disc.addStudentID()
 					disc.addStudentID(id);
 					student.addDiscipline(disc);
- 
-					
+
+
 				}
 			}catch(UnknownDataException e){
 				// FIX
@@ -386,16 +398,16 @@ public class School implements Serializable {
 		_representatives.put(id,student);
 	}
 
-		/**
-		* Adds professor to proper array
-		*
-		* @param id int
-		* @param professor Professor
-		*/
+	/**
+	* Adds professor to proper array
+	*
+	* @param id int
+	* @param professor Professor
+	*/
 
-		public void addProfessor(int id, Professor professor){
-			_professors.put(id,professor);
-		}
+	public void addProfessor(int id, Professor professor){
+		_professors.put(id,professor);
+	}
 
 	/**
 	* Adds staff to proper array
@@ -408,15 +420,15 @@ public class School implements Serializable {
 		_staffs.put(id,staff);
 	}
 
-		/**
-		* Adds person to proper array
-		*
-		* @param id int
-		* @param person Person
-		*/
-		public void addPerson(int id, Person person){
-			_persons.put(id,person);
-		}
+	/**
+	* Adds person to proper array
+	*
+	* @param id int
+	* @param person Person
+	*/
+	public void addPerson(int id, Person person){
+		_persons.put(id,person);
+	}
 
 
 	// for tests
@@ -502,60 +514,33 @@ public class School implements Serializable {
 	*/
 
 	// public String showAllPersons(){
-		// String _allpersons = "";
-		// for (Map.Entry<Integer, Professor> entry : _professors.entrySet()) {
-		// 	Professor value = entry.getValue();
-		// 	String _sname =value.getName();
-		// 	_allpersons += value.show();
-		// }
-		// for (Map.Entry<Integer, Student> entry : _students.entrySet()) {
-		// 	Student value = entry.getValue();
-		// 	String _sname =value.getName();
-		// 	_allpersons += value.show(false);
-		// }
-		// for (Map.Entry<Integer, Student> entry : _representatives.entrySet()) {
-		// 	Student value = entry.getValue();
-		// 	String _sname =value.getName();
-		// 	_allpersons += value.show(true);
-		// }
-		// for (Map.Entry<Integer, Staff> entry : _staffs.entrySet()) {
-		// 	Staff value = entry.getValue();
-		// 	String _sname =value.getName();
-		// 	_allpersons += value.show();
-		// }
-//}
-		public String showAllPersons(){
-			String _allpersons = "";
+	// String _allpersons = "";
+	// for (Map.Entry<Integer, Professor> entry : _professors.entrySet()) {
+	// 	Professor value = entry.getValue();
+	// 	String _sname =value.getName();
+	// 	_allpersons += value.show();
+	// }
+	// for (Map.Entry<Integer, Student> entry : _students.entrySet()) {
+	// 	Student value = entry.getValue();
+	// 	String _sname =value.getName();
+	// 	_allpersons += value.show(false);
+	// }
+	// for (Map.Entry<Integer, Student> entry : _representatives.entrySet()) {
+	// 	Student value = entry.getValue();
+	// 	String _sname =value.getName();
+	// 	_allpersons += value.show(true);
+	// }
+	// for (Map.Entry<Integer, Staff> entry : _staffs.entrySet()) {
+	// 	Staff value = entry.getValue();
+	// 	String _sname =value.getName();
+	// 	_allpersons += value.show();
+	// }
+	//}
 
 
-			for (Map.Entry<Integer, Person> entry : _persons.entrySet()) {
-				Person value = entry.getValue();
-
-				if(value instanceof Student){
-					Student student = (Student) value;
-					if (hasRepresentative(student.getId()))
-						_allpersons += student.show(true);
-					else if (hasStudent(student.getId()))
-						_allpersons += student.show(false);
-
-				}
-
-
-				if(value instanceof Professor){
-					Professor professor = (Professor) value;
-					_allpersons += professor.show();
-				}
-
-				if(value instanceof Staff){
-					Staff staff = (Staff) value;
-					_allpersons += staff.show();
-				}
-
-
-			}
-			return _allpersons;
-	}
-
+	/*=====================================
+	=   Metodos de Portal Pessoal         =
+	=====================================*/
 
 	/**
 	*Performs the Command DoShowPerson
@@ -564,6 +549,7 @@ public class School implements Serializable {
 	* @return String
 	*/
 
+	//3.1
 	public String showPerson(int id){
 		Student _pStudent = _students.get(id);
 		Professor _pProf = _professors.get(id);
@@ -585,11 +571,91 @@ public class School implements Serializable {
 	}
 
 	/**
+	*Perform the Command DoChangePhoneNumber
+	*
+	* @param   id id iof the person to change the number
+	* @param   newTelPhone new telephone number to set in the Map.
+	* @return String
+	*/
+
+	//3.2
+	public String setNewPhoneNum(int id,int newTelPhone){
+		if (_students.get(id)!=null){
+			Student student = _students.get(id);
+			Person globalStudent = _persons.get(id);
+			student.setPhoneNumber(newTelPhone);
+			globalStudent.setPhoneNumber(newTelPhone);
+		}
+
+		else if (_representatives.get(id)!=null) {
+			Student representative = _representatives.get(id);
+			Person globalRepresentative = _persons.get(id);
+			representative.setPhoneNumber(newTelPhone);
+			globalRepresentative.setPhoneNumber(newTelPhone);
+
+		}
+
+		else if (_professors.get(id)!=null) {
+			Professor professor = _professors.get(id);
+			Person globalProfessor = _persons.get(id);
+			professor.setPhoneNumber(newTelPhone);
+			globalProfessor.setPhoneNumber(newTelPhone);
+		}
+
+		else if (_staffs.get(id)!=null) {
+			Staff staff = _staffs.get(id);
+			Person globalStaff = _persons.get(id);
+			staff.setPhoneNumber(newTelPhone);
+			globalStaff.setPhoneNumber(newTelPhone);
+		}
+
+		return showPerson(id);
+		// printStudent();
+	}
+
+	//3.3
+	public String showAllPersons(){
+		String _allpersons = "";
+
+
+		for (Map.Entry<Integer, Person> entry : _persons.entrySet()) {
+			Person value = entry.getValue();
+
+			if(value instanceof Student){
+				Student student = (Student) value;
+				if (hasRepresentative(student.getId()))
+				_allpersons += student.show(true);
+				else if (hasStudent(student.getId()))
+				_allpersons += student.show(false);
+
+			}
+
+
+			if(value instanceof Professor){
+				Professor professor = (Professor) value;
+				_allpersons += professor.show();
+			}
+
+			if(value instanceof Staff){
+				Staff staff = (Staff) value;
+				_allpersons += staff.show();
+			}
+
+
+		}
+		return _allpersons;
+	}
+
+
+
+	/**
 	* Perform the Command DoSearchPerson
 	*
 	* @param   name The String input by user to search
 	* @return String
 	*/
+
+	//3.4
 	public String searchPerson(String name) throws UnknownAgentException{
 		String _allstudent = "";
 
@@ -624,45 +690,74 @@ public class School implements Serializable {
 		return _allstudent;
 	}
 
-	/**
-	*Perform the Command DoChangePhoneNumber
-	*
-	* @param   id id iof the person to change the number
-	* @param   newTelPhone new telephone number to set in the Map.
-	* @return String
- 	*/
-	public String setNewPhoneNum(int id,int newTelPhone){
-		if (_students.get(id)!=null){
-			Student student = _students.get(id);
-			Person globalStudent = _persons.get(id);
-			student.setPhoneNumber(newTelPhone);
-			globalStudent.setPhoneNumber(newTelPhone);
-		}
 
-		else if (_representatives.get(id)!=null) {
-			Student representative = _representatives.get(id);
-			Person globalRepresentative = _persons.get(id);
-			representative.setPhoneNumber(newTelPhone);
-			globalRepresentative.setPhoneNumber(newTelPhone);
 
-		}
+	/*=====================================
+	=   Metodos de Portal DOCENTE         =
+	=====================================*/
+	//4.1
+	public String createProject(){
+		return "_school.createProject()";
+	}
+	//4.2
+	public String closeProject(){
+		return "_school.closeProject()";
+	}
+	//4.3
+	public String showDisciplineStudent(){
+		return "_school.showDisciplineStudent()";
+	}
+	//4.4
+	public String showProjectSubmissions(){
+		return "_school.showProjectSubmissions()";
+	}
+	//4.5
+	public String showSurveyResults(){
+		return "_school.showSurveyResults()";
+	}
 
-		else if (_professors.get(id)!=null) {
-			Professor professor = _professors.get(id);
-			Person globalProfessor = _persons.get(id);
-			professor.setPhoneNumber(newTelPhone);
-			globalProfessor.setPhoneNumber(newTelPhone);
-		}
+	/*=====================================
+	=   Metodos de Portal ALUNO           =
+	=====================================*/
+	//5.1
+	public String deliverProject() {
+		return "_school.deliverProject()";
+	}
+	//5.2
+	public String answerSurvey(){
+		return "_school.answerSurvey()";
+	}
+	//5.3
+	public String showSurveyResult(){
+		return "_school.showSurveyResults()";
+	}
 
-		else if (_staffs.get(id)!=null) {
-			Staff staff = _staffs.get(id);
-			Person globalStaff = _persons.get(id);
-			staff.setPhoneNumber(newTelPhone);
-			globalStaff.setPhoneNumber(newTelPhone);
-		}
-
-		return showPerson(id);
-		// printStudent();
+	/*=====================================
+	=   Metodos de Portal DELEGADO        =
+	=====================================*/
+	//6.1
+	public String createSurvey() throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, DuplicateSurveyexcepcao{
+		return "_school.createSurvey()";
+	}
+	//6.2
+	public String cancelSurvey() throws NoSuchProjectexcepcao,SurveyFinishedexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, NonEmptySurveyexcepcao{
+		return "_school.cancelSurvey()";
+	}
+	//6.3
+	public String openSurvey() throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, OpeningSurveyexcepcao{
+		return "_school.openSurvey()";
+	}
+	//6.4
+	public String closeSurvey() throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, ClosingSurveyexcepcao{
+		return "_school.closeSurvey()";
+	}
+	//6.5
+	public String finishSurvey() throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, FinishingSurveyexcepcao{
+		return "_school.finishSurvey()";
+	}
+	//6.6
+	public String showDisciplineSurvey() throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao{
+		return "_school.showDisciplineSurvey()";
 	}
 
 }

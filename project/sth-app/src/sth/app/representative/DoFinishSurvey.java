@@ -5,6 +5,15 @@ import pt.tecnico.po.ui.DialogException;
 import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
+import sth.app.exceptions.NoSuchDisciplineException;
+import sth.app.exceptions.FinishingSurveyException;
+import sth.app.exceptions.NoSuchProjectException;
+import sth.app.exceptions.NoSurveyException;
+
+import sth.exceptions.newexceptions.NoSurveyexcepcao;
+import sth.exceptions.newexceptions.FinishingSurveyexcepcao;
+import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
 //FIXME import other classes if needed
 
 /**
@@ -32,22 +41,22 @@ public class DoFinishSurvey extends Command<SchoolManager> {
   public final void execute() throws DialogException {
     //FIXME implement command
     _form.parse();
-    // try{
-    // // _display.add(_receiver.cancelSurvey()));
-    // // _display.display();
-    // }
-    // catch(NoSurveyException e){
-    //   throw new NoSurveyException(_disciplinename,_projectname);
-    // }
-    // catch(FinishingSurveyException e){
-    //   throw new FinishingSurveyException(_disciplinename,_projectname);
-    // }
-    // catch(NoSuchProjectException e){
-    //   throw new NoSuchProjectException(_disciplinename,_projectname);
-    // }
-    // catch(NoSuchDisciplineException e){
-    //   throw new NoSuchDisciplineException(_disciplinename);
-    //}
+    try{
+    _display.add(_receiver.finishSurvey(_disciplinename.value(),_projectname.value()));
+    _display.display();
+    }
+    catch(NoSurveyexcepcao e){
+      throw new NoSurveyException(_disciplinename.value(),_projectname.value());
+    }
+    catch(FinishingSurveyexcepcao e){
+      throw new FinishingSurveyException(_disciplinename.value(),_projectname.value());
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineException(_disciplinename.value());
+    }
   }
 
 }

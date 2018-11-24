@@ -5,6 +5,16 @@ import pt.tecnico.po.ui.DialogException;
 import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
+import sth.app.exceptions.NoSuchDisciplineException;
+import sth.app.exceptions.OpeningSurveyException;
+import sth.app.exceptions.NoSuchProjectException;
+import sth.app.exceptions.NoSurveyException;
+
+import sth.exceptions.newexceptions.NoSurveyexcepcao;
+import sth.exceptions.newexceptions.OpeningSurveyexcepcao;
+import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+
 //FIXME import other classes if needed
 
 /**
@@ -30,22 +40,24 @@ public class DoOpenSurvey extends Command<SchoolManager> {
   @Override
   public final void execute() throws DialogException {
     _form.parse();
-    // try{
-    // // _display.add(_receiver.openSurvey()));
-    // // _display.display();
-    // }
-    // catch(NoSurveyException e){
-    //   throw new NoSurveyException(_disciplinename,_projectname);
-    // }
-    // catch(OpeningSurveyException e){
-    //   throw new OpeningSurveyException(_disciplinename,_projectname);
-    // }
-    // catch(NoSuchProjectException e){
-    //   throw new NoSuchProjectException(_disciplinename,_projectname);
-    // }
-    // catch(NoSuchDisciplineException e){
-    //   throw new NoSuchDisciplineException(_disciplinename);
-    //}
+    // _display.add(_receiver.doOpennnn(_projectname.value())));
+    // _display.display();
+    try{
+    _display.add(_receiver.openSurvey(_disciplinename.value(),_projectname.value()));
+    _display.display();
+    }
+    catch(NoSurveyexcepcao e){
+      throw new NoSurveyException(_disciplinename.value(),_projectname.value());
+    }
+     catch(OpeningSurveyexcepcao e){
+       throw new OpeningSurveyException(_disciplinename.value(),_projectname.value());
+     }
+     catch(NoSuchProjectexcepcao e){
+       throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+     }
+     catch(NoSuchDisciplineexcepcao e){
+       throw new NoSuchDisciplineException(_disciplinename.value());
+     }
   }
 
 }

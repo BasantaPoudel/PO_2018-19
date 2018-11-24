@@ -5,6 +5,19 @@ import pt.tecnico.po.ui.DialogException;
 import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
+
+import sth.exceptions.newexceptions.NoSurveyexcepcao;
+import sth.exceptions.newexceptions.NonEmptySurveyexcepcao;
+import sth.exceptions.newexceptions.SurveyFinishedexcepcao;
+import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+
+
+import sth.app.exceptions.NoSurveyException;
+import sth.app.exceptions.NonEmptySurveyException;
+import sth.app.exceptions.SurveyFinishedException;
+import sth.app.exceptions.NoSuchProjectException;
+import sth.app.exceptions.NoSuchDisciplineException;
 //FIXME import other classes if needed
 
 /**
@@ -32,25 +45,25 @@ public class DoCancelSurvey extends Command<SchoolManager> {
   public final void execute() throws DialogException {
     //FIXME implement command
     _form.parse();
-    // try{
-    // // _display.add(_receiver.cancelSurvey()));
-    // // _display.display();
-    // }
-    // catch(NoSurveyException e){
-    //   throw new NoSurveyException(_disciplinename,_projectname);
-    // }
-    // catch(NonEmptySurveyException e){
-    //   throw new NonEmptySurveyException(_disciplinename,_projectname);
-    // }
-    // catch(SurveyFinishedException e){
-    //   throw new SurveyFinishedException(_disciplinename,_projectname);
-    // }
-    // catch(NoSuchProjectException e){
-    //   throw new NoSuchProjectException(_disciplinename,_projectname);
-    // }
-    // catch(NoSuchDisciplineException e){
-    //   throw new NoSuchDisciplineException(_disciplinename);
-    //}
+    try{
+    _display.add(_receiver.cancelSurvey(_disciplinename.value(),_projectname.value()));
+    _display.display();
+    }
+    catch(NoSurveyexcepcao e){
+      throw new NoSurveyException(_disciplinename.value(),_projectname.value());
+    }
+    catch(NonEmptySurveyexcepcao e){
+      throw new NonEmptySurveyException(_disciplinename.value(),_projectname.value());
+    }
+    catch(SurveyFinishedexcepcao e){
+      throw new SurveyFinishedException(_disciplinename.value(),_projectname.value());
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineException(_disciplinename.value());
+    }
   }
 
 }

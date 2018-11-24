@@ -5,6 +5,17 @@ import pt.tecnico.po.ui.DialogException;
 import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
+import sth.exceptions.newexceptions.NoSurveyexcepcao;
+import sth.exceptions.newexceptions.ClosingSurveyexcepcao;
+import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+
+import sth.app.exceptions.NoSurveyException;
+import sth.app.exceptions.ClosingSurveyException;
+import sth.app.exceptions.NoSuchProjectException;
+import sth.app.exceptions.NoSuchDisciplineException;
+
+
 //FIXME import other classes if needed
 
 /**
@@ -33,22 +44,22 @@ public class DoCloseSurvey extends Command<SchoolManager> {
   public final void execute() throws DialogException {
     //FIXME implement command
     _form.parse();
-    // try{
-    // // _display.add(_receiver.closeSurvey()));
-    // // _display.display();
-    // }
-    // catch(NoSurveyException e){
-    //   throw new NoSurveyException(_disciplinename,_projectname);
-    // }
-    // catch(ClosingSurveyException e){
-    //   throw new ClosingSurveyException(_disciplinename,_projectname);
-    // }
-    // catch(NoSuchProjectException e){
-    //   throw new NoSuchProjectException(_disciplinename,_projectname);
-    // }
-    // catch(NoSuchDisciplineException e){
-    //   throw new NoSuchDisciplineException(_disciplinename);
-    //}
+    try{
+    _display.add(_receiver.closeSurvey(_disciplinename.value(),_projectname.value()));
+    _display.display();
+    }
+    catch(NoSurveyexcepcao e){
+      throw new NoSurveyException(_disciplinename.value(),_projectname.value());
+    }
+    catch(ClosingSurveyexcepcao e){
+      throw new ClosingSurveyException(_disciplinename.value(),_projectname.value());
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineException(_disciplinename.value());
+    }
 
   }
 
