@@ -1,9 +1,9 @@
-______________________________________________________________________________________________________________
-A-03-04-M-ok FAILED
+-e $______________________________________________________________________________________________________________
+-e A-03-04-M-ok FAILED
 Procura pessoa com string que faz match com várias pessoas (e lista de pessoas por id não ordenada por nome)
-please schedule a fix
-A-03-04-M-ok
-______________________________________________________________________________________________________________
+-e please schedule a fix
+-e A-03-04-M-ok
+-e $______________________________________________________________________________________________________________
 FUNCIONÁRIO|100001|123789456|Maria José
 DELEGADO|100010|123456789|João Maria
 # Informática|Algoritmos e Estruturas de Dados
@@ -28,49 +28,14 @@ DOCENTE|100100|987654321|Anabela Maria
 # Informática|Engenharia de Software
 # Informática|Sistemas Operativos
 FUNCIONÁRIO|101010|789456123|José Carlos
-______________________________________________________________________________________________________________
+-e $______________________________________________________________________________________________________________
 100100
 3
 4
 Maria
 0
 0
-________us______________________________________________________________________________________________________
-Identificador: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: Portal Pessoal
-1 - Mostrar pessoa
-2 - Alterar número de telefone
-3 - Mostrar pessoas
-4 - Procurar pessoa
-0 - Sair
-Escolha uma opção: Nome a procurar: DOCENTE|100100|987654321|Anabela Maria
-DELEGADO|100010|123456789|João Maria
-* Informática - Algoritmos e Estruturas de Dados
-* Informática - Fundamentos da Programação
-* Informática - Programação com Objectos
-DELEGADO|100011|123456789|Ana Maria
-* Informática - Algoritmos e Estruturas de Dados
-* Informática - Fundamentos da Programação
-* Informática - Programação com Objectos
-FUNCIONÁRIO|100001|123789456|Maria José
-Portal Pessoal
-1 - Mostrar pessoa
-2 - Alterar número de telefone
-3 - Mostrar pessoas
-4 - Procurar pessoa
-0 - Sair
-Escolha uma opção: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: ________exp______________________________________________________________________________________________________
+-e $______________________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -109,7 +74,81 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: _________diff_____________________________________________________________________________________________________
+Escolha uma opção: -e $________1______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Nome a procurar: DOCENTE|100100|987654321|Anabela Maria
+DELEGADO|100010|123456789|João Maria
+* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação
+* Informática - Programação com Objectos
+DELEGADO|100011|123456789|Ana Maria
+* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação
+* Informática - Programação com Objectos
+FUNCIONÁRIO|100001|123789456|Maria José
+Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: -e $________2______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Nome a procurar: DELEGADO|100011|123456789|Ana Maria
+* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação
+* Informática - Programação com Objectos
+DOCENTE|100100|987654321|Anabela Maria
+* Informática - Análise e Síntese de Algoritmos
+* Informática - Compiladores
+* Informática - Engenharia de Software
+* Informática - Sistemas Operativos
+DELEGADO|100010|123456789|João Maria
+* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação
+* Informática - Programação com Objectos
+FUNCIONÁRIO|100001|123789456|Maria José
+Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: -e $_________diff_____________________________________________________________________________________________________
 13,14c13
 < Escolha uma opção: Nome a procurar: DOCENTE|100100|987654321|Anabela Maria
 < DELEGADO|100010|123456789|João Maria

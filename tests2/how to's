@@ -1,9 +1,6 @@
-/project$ a="A-09-01-M-ok"; cat ../tests-e/tests_25-e/auto-tests/$a.import;       export CLASSPATH=/usr/share/java/po-uuilib.jar:sth-core/sth-core.jar:sth-app/sth-app.jar;       java -Dimport=../tests/tests_25/auto-tests/$a.import sth.app.App
-
-
 po:
 cd tests2/tests_50;sh todo.sh;cd -
 
 manual
 proj:
-a="A-09-01-M-ok"; cat ../tests-e/tests_25-e/auto-tests/$a.import;       export CLASSPATH=/usr/share/java/po-uuilib.jar:sth-core/sth-core.jar:sth-app/sth-app.jar;       java -Dimport=../tests/tests_25/auto-tests/$a.import sth.app.App
+echo; a="A-09-02-M-ok";   cat ../tests2/tests_50/desc/$a.desc; echo;       cat ../tests2/tests_50/auto-tests/$a.import;   cat ../tests2/tests_50/auto-tests/$a.in;       export CLASSPATH=/usr/share/java/po-uuilib.jar:sth-core/sth-core.jar:sth-app/sth-app.jar;       java -Dimport=../tests/tests_50/auto-tests/$a.import sth.app.App

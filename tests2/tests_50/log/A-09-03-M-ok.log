@@ -1,9 +1,9 @@
-______________________________________________________________________________________________________________
-A-09-03-M-ok FAILED
+-e $______________________________________________________________________________________________________________
+-e A-09-03-M-ok FAILED
 Ver alunos de disciplina com um aluno
-please schedule a fix
-A-09-03-M-ok
-______________________________________________________________________________________________________________
+-e please schedule a fix
+-e A-09-03-M-ok
+-e $______________________________________________________________________________________________________________
 FUNCIONÁRIO|100001|123789456|Maria José
 DELEGADO|100010|123456789|João Maria
 # Informática|Fundamentos da Programação
@@ -31,41 +31,14 @@ DOCENTE|100100|987654321|Ana Maria
 # Informática|The dark Side
 # Informática|Compiladores
 FUNCIONÁRIO|101010|789456123|José Carlos
-______________________________________________________________________________________________________________
+-e $______________________________________________________________________________________________________________
 100100
 4
 4
 Compiladores
 0
 0
-________us______________________________________________________________________________________________________
-Identificador: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: Portal do Docente
-1 - Criar projecto
-2 - Fechar projecto
-3 - Ver submissões de um projecto
-4 - Ver alunos de disciplina leccionada
-5 - Ver resultados de um inquérito
-0 - Sair
-Escolha uma opção: Nome da disciplina: Portal do Docente
-1 - Criar projecto
-2 - Fechar projecto
-3 - Ver submissões de um projecto
-4 - Ver alunos de disciplina leccionada
-5 - Ver resultados de um inquérito
-0 - Sair
-Escolha uma opção: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: ________exp______________________________________________________________________________________________________
+-e $______________________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -97,7 +70,66 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: _________diff_____________________________________________________________________________________________________
+Escolha uma opção: -e $________1______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal do Docente
+1 - Criar projecto
+2 - Fechar projecto
+3 - Ver submissões de um projecto
+4 - Ver alunos de disciplina leccionada
+5 - Ver resultados de um inquérito
+0 - Sair
+Escolha uma opção: Nome da disciplina: Portal do Docente
+1 - Criar projecto
+2 - Fechar projecto
+3 - Ver submissões de um projecto
+4 - Ver alunos de disciplina leccionada
+5 - Ver resultados de um inquérito
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: -e $________2______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal do Docente
+1 - Criar projecto
+2 - Fechar projecto
+3 - Ver submissões de um projecto
+4 - Ver alunos de disciplina leccionada
+5 - Ver resultados de um inquérito
+0 - Sair
+Escolha uma opção: Nome da disciplina: DELEGADO|100011|123456789|João Manuel
+* Informática - Algoritmos e Estruturas de Dados
+* Informática - Compiladores
+* Informática - Fundamentos da Programação
+* Informática - Programação com Objectos
+Portal do Docente
+1 - Criar projecto
+2 - Fechar projecto
+3 - Ver submissões de um projecto
+4 - Ver alunos de disciplina leccionada
+5 - Ver resultados de um inquérito
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: -e $_________diff_____________________________________________________________________________________________________
 14c14,19
 < Escolha uma opção: Nome da disciplina: Portal do Docente
 ---
