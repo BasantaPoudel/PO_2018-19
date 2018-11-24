@@ -3,10 +3,17 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.io.Serializable;
 
+import java.text.Collator;
+import java.util.Locale;
+
 public class Professor extends Person implements Serializable{
 
 
-  private TreeMap<String,	TreeMap<String,	Discipline>> _disciplines = new TreeMap<String,	TreeMap<String,	Discipline>>();
+     Locale locale = new Locale("pt", "PT");
+Collator collator = Collator.getInstance(locale);
+
+
+  private TreeMap<String,	TreeMap<String,	Discipline>> _disciplines = new TreeMap<String,	TreeMap<String,	Discipline>>(collator);
 
   public Professor(String _name,int _phoneNumber,int _id){
     super(_name,_phoneNumber,_id);
@@ -39,7 +46,8 @@ public class Professor extends Person implements Serializable{
 
     if (_disciplines.get(courseName) == null){
 
-      TreeMap<String,Discipline> disciplinesMap = new TreeMap<String,Discipline>();  // new Map
+
+      TreeMap<String,Discipline> disciplinesMap = new TreeMap<String,Discipline>(collator);  // new Map
 
       disciplinesMap.put(disciplineName,discipline);
       _disciplines.put(courseName,disciplinesMap);
