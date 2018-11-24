@@ -58,7 +58,7 @@ public class School implements Serializable {
 	private static final long serialVersionUID = 201810051538L;
 
 
- 
+
 
 	// maps for people and theirs ids
 	private Map<Integer, Student> _students = new TreeMap<Integer, Student>();
@@ -458,7 +458,7 @@ public class School implements Serializable {
 	* @return true if the Map storing students finds a student with the given id in the Map.
 	*/
 
-	public boolean hasStudent(int id){
+	public boolean hasStudent(int loginID){
 		return _students.containsKey(id);
 	}
 
@@ -469,7 +469,7 @@ public class School implements Serializable {
 	* @return true if the Map storing Professors finds a professor with the given id in the Map.
 	*/
 
-	public boolean hasProfessor(int id){
+	public boolean hasProfessor(int loginID){
 		return _professors.containsKey(id);
 	}
 
@@ -480,7 +480,7 @@ public class School implements Serializable {
 	* @return true if the Map storing Staffs finds a staff with the given id in the Map.
 	*/
 
-	public boolean hasStaff(int id){
+	public boolean hasStaff(int loginID){
 		return _staffs.containsKey(id);
 	}
 
@@ -491,7 +491,7 @@ public class School implements Serializable {
 	* @return true if the Map storing Representatives finds a representative with the given id in the Map.
 	*/
 
-	public boolean hasRepresentative(int id){
+	public boolean hasRepresentative(int loginID){
 		return _representatives.containsKey(id);
 	}
 	/**
@@ -501,7 +501,7 @@ public class School implements Serializable {
 	* @return true if the Map storing Staffs finds a staff with the given id in the Map.
 	*/
 
-	public boolean hasStaffs(int id){
+	public boolean hasStaffs(int loginID){
 		return _staffs.containsKey(id);
 	}
 
@@ -548,7 +548,7 @@ public class School implements Serializable {
 	*/
 
 	//3.1
-	public String showPerson(int id){
+	public String showPerson(int loginID){
 		Student _pStudent = _students.get(id);
 		Professor _pProf = _professors.get(id);
 		Student _pRepr = _representatives.get(id);
@@ -577,7 +577,7 @@ public class School implements Serializable {
 	*/
 
 	//3.2
-	public String setNewPhoneNum(int id,int newTelPhone){
+	public String setNewPhoneNum(int loginID,int newTelPhone){
 		if (_students.get(id)!=null){
 			Student student = _students.get(id);
 			Person globalStudent = _persons.get(id);
