@@ -14,42 +14,7 @@ func2
 3
 0
 0
--e $______________________________________________________________________________________________________________
-Identificador: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: Ficheiro a abrir: Abrir: Operação inválida: A pessoa com identificador 101011 não existe.
-Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: Portal Pessoal
-1 - Mostrar pessoa
-2 - Alterar número de telefone
-3 - Mostrar pessoas
-4 - Procurar pessoa
-0 - Sair
-Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José
-DOCENTE|101011|789456123|José Carlos
-Portal Pessoal
-1 - Mostrar pessoa
-2 - Alterar número de telefone
-3 - Mostrar pessoas
-4 - Procurar pessoa
-0 - Sair
-Escolha uma opção: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: 
--e $________1______________________________________________________________________________________________________
+-e $________us______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -82,7 +47,7 @@ Escolha uma opção: Menu principal
 2 - Guardar
 3 - Portal Pessoal
 0 - Sair
-Escolha uma opção: -e $________2______________________________________________________________________________________________________
+Escolha uma opção: -e $________exp______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
