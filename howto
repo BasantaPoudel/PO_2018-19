@@ -1,5 +1,5 @@
 po:
-cd tests2/tests_50;sh todoS.sh;cd -
+cd tests2/tests_50;./todoS.sh;cd -
 
 manual
 in  /PO/project
