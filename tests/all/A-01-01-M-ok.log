@@ -1,0 +1,30 @@
+______________________________________________________________________________________________________________
+Login com funcionário
+please schedule a fix
+A-01-01-M-ok
+______________________________________________________________________________________________________________
+FUNCIONÁRIO|100001|123789456|Maria José
+FUNCIONÁRIO|101010|789456123|José Carlos
+______________________________________________________________________________________________________________
+100001
+3
+0
+0
+________exp______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+0 - Sair
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+0 - Sair
+Escolha uma opção: 
