@@ -58,8 +58,7 @@ public class School implements Serializable {
 	private static final long serialVersionUID = 201810051538L;
 
 
-	//auxiliary variables
-	private int _auxId;
+ 
 
 	// maps for people and theirs ids
 	private Map<Integer, Student> _students = new TreeMap<Integer, Student>();
@@ -198,7 +197,6 @@ public class School implements Serializable {
 
 		// vars
 		int id = Integer.parseInt(fields[1]);
-		_auxId=id;
 		int phoneNumber = Integer.parseInt(fields[2]);
 		String name = fields[3];
 
@@ -252,7 +250,7 @@ public class School implements Serializable {
 	*/
 	void registerRepresentive(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
-		int id = Integer.parseInt(fields[1]);	_auxId=id;
+		int id = Integer.parseInt(fields[1]);
 		int phoneNumber = Integer.parseInt(fields[2]);
 		String name = fields[3];
 
@@ -295,7 +293,7 @@ public class School implements Serializable {
 	*/
 	void registerProfessor(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
-		int id = Integer.parseInt(fields[1]);	_auxId=id;
+		int id = Integer.parseInt(fields[1]);
 		int phoneNumber = Integer.parseInt(fields[2]);
 		String name = fields[3];
 
@@ -339,7 +337,7 @@ public class School implements Serializable {
 	void registerStaff(String[] fields, BufferedReader reader) throws  UnknownDataException {
 
 
-		int id = Integer.parseInt(fields[1]);	_auxId=id;
+		int id = Integer.parseInt(fields[1]);
 		int phoneNumber = Integer.parseInt(fields[2]);
 		String name = fields[3];
 
