@@ -37,35 +37,7 @@ Compiladores
 Proj 1
 0
 0
-______________________________________________________________________________________________________________
-Identificador: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: Portal do Docente
-1 - Criar projecto
-2 - Fechar projecto
-3 - Ver submissões de um projecto
-4 - Ver alunos de disciplina leccionada
-5 - Ver resultados de um inquérito
-0 - Sair
-Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: A disciplina 'Compiladores' não existe ou não é válida para o utilizador em causa.
-Portal do Docente
-1 - Criar projecto
-2 - Fechar projecto
-3 - Ver submissões de um projecto
-4 - Ver alunos de disciplina leccionada
-5 - Ver resultados de um inquérito
-0 - Sair
-Escolha uma opção: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: ________1______________________________________________________________________________________________________
+________us______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -92,7 +64,7 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: ________2______________________________________________________________________________________________________
+Escolha uma opção: ________exp______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar

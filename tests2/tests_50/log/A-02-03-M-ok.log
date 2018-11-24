@@ -1,8 +1,8 @@
 ______________________________________________________________________________________________________________
-A-02-13-M-ok FAILED
-Login professor com várias disciplina e vê professor disciplinas inseridas desordenadamente com curso  diferente
+A-02-03-M-ok FAILED
+Login professor só com uma disciplina e vê professor
 please schedule a fix
-A-02-13-M-ok
+A-02-03-M-ok
 ______________________________________________________________________________________________________________
 FUNCIONÁRIO|100001|123789456|Maria José
 DELEGADO|100010|123456789|João Maria
@@ -25,9 +25,9 @@ ALUNO|100013|123456789|José Manuel
 # Matemática|Probabilidades e Estatística
 # Matemática|Cálculo I
 # Matemática|Métodos Numéricos
-DOCENTE|100100|987654321|Ana Maria
-# Informática|Engenharia de Software
-# Matemática|Compiladores
+DOCENTE|100100|987654321|Anabela Dias Maria
+# Informática|Análise e Síntese de Algoritmos
+DOCENTE|100104|987654321|Ana Maria
 # Informática|Análise e Síntese de Algoritmos
 # Matemática|Álgebra Linear
 FUNCIONÁRIO|101010|789456123|José Carlos
@@ -37,7 +37,7 @@ ________________________________________________________________________________
 1
 0
 0
-________us______________________________________________________________________________________________________
+______________________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -50,11 +50,8 @@ Escolha uma opção: Portal Pessoal
 3 - Mostrar pessoas
 4 - Procurar pessoa
 0 - Sair
-Escolha uma opção: DOCENTE|100100|987654321|Ana Maria
+Escolha uma opção: DOCENTE|100100|987654321|Anabela Dias Maria
 * Informática - Análise e Síntese de Algoritmos
-* Informática - Engenharia de Software
-* Matemática - Compiladores
-* Matemática - Álgebra Linear
 Portal Pessoal
 1 - Mostrar pessoa
 2 - Alterar número de telefone
@@ -67,7 +64,7 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: ________exp______________________________________________________________________________________________________
+Escolha uma opção: ________1______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -80,11 +77,8 @@ Escolha uma opção: Portal Pessoal
 3 - Mostrar pessoas
 4 - Procurar pessoa
 0 - Sair
-Escolha uma opção: DOCENTE|100100|987654321|Ana Maria
-* Informática - Análise e Síntese de Algoritmos
-* Informática - Engenharia de Software
-* Matemática - Álgebra Linear
-* Matemática - Compiladores
+Escolha uma opção: DOCENTE|100100|987654321|Anabela Dias Maria
+* Informática -  Informática
 Portal Pessoal
 1 - Mostrar pessoa
 2 - Alterar número de telefone
@@ -97,9 +91,35 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: 
-_________diff_____________________________________________________________________________________________________
-16d15
-< * Matemática - Compiladores
-17a17
-> * Matemática - Compiladores
+Escolha uma opção: ________2______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: DOCENTE|100100|987654321|Anabela Dias Maria
+* Informática - Análise e Síntese de Algoritmos
+Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: _________diff_____________________________________________________________________________________________________
+14c14
+< * Informática -  Informática
+---
+> * Informática - Análise e Síntese de Algoritmos

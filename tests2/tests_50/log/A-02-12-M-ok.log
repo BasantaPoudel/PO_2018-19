@@ -1,8 +1,8 @@
 ______________________________________________________________________________________________________________
-A-09-03-M-ok FAILED
-Ver alunos de disciplina com um aluno
+A-02-12-M-ok FAILED
+Login professor com várias disciplina e vê professor disciplinas inseridas desordenadamente com mesmo curso
 please schedule a fix
-A-09-03-M-ok
+A-02-12-M-ok
 ______________________________________________________________________________________________________________
 FUNCIONÁRIO|100001|123789456|Maria José
 DELEGADO|100010|123456789|João Maria
@@ -14,28 +14,27 @@ DELEGADO|100011|123456789|João Manuel
 # Informática|Fundamentos da Programação
 # Informática|Algoritmos e Estruturas de Dados
 # Informática|Programação com Objectos
-# Informática|Compiladores
+# Informática|Análise e Síntese de Algoritmos
 DELEGADO|100012|123456789|João Miguel
 # Matemática|Álgebra Linear
 # Matemática|Probabilidades e Estatística
 # Matemática|Cálculo I
 # Matemática|Métodos Numéricos
-DELEGADO|100013|123456789|José Manuel
-# Matemática|Análise Numérica
+ALUNO|100013|123456789|José Manuel
+# Matemática|Álgebra Linear
+# Matemática|Probabilidades e Estatística
 # Matemática|Cálculo I
 # Matemática|Métodos Numéricos
-# Matemática|Probabilidades e Estatística
 DOCENTE|100100|987654321|Ana Maria
 # Informática|Engenharia de Software
+# Informática|Análise e Síntese de Algoritmos
 # Informática|Sistemas Operativos
-# Informática|The dark Side
 # Informática|Compiladores
 FUNCIONÁRIO|101010|789456123|José Carlos
 ______________________________________________________________________________________________________________
 100100
-4
-4
-Compiladores
+3
+1
 0
 0
 ________us______________________________________________________________________________________________________
@@ -45,19 +44,19 @@ Identificador: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: Portal do Docente
-1 - Criar projecto
-2 - Fechar projecto
-3 - Ver submissões de um projecto
-4 - Ver alunos de disciplina leccionada
-5 - Ver resultados de um inquérito
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
 0 - Sair
-Escolha uma opção: Nome da disciplina: Portal do Docente
-1 - Criar projecto
-2 - Fechar projecto
-3 - Ver submissões de um projecto
-4 - Ver alunos de disciplina leccionada
-5 - Ver resultados de um inquérito
+Escolha uma opção: DOCENTE|100100|987654321|Ana Maria
+* Informática - Compiladores
+Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
 0 - Sair
 Escolha uma opção: Menu principal
 1 - Abrir
@@ -72,24 +71,22 @@ Identificador: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: Portal do Docente
-1 - Criar projecto
-2 - Fechar projecto
-3 - Ver submissões de um projecto
-4 - Ver alunos de disciplina leccionada
-5 - Ver resultados de um inquérito
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
 0 - Sair
-Escolha uma opção: Nome da disciplina: DELEGADO|100011|123456789|João Manuel
-* Informática - Algoritmos e Estruturas de Dados
+Escolha uma opção: DOCENTE|100100|987654321|Ana Maria
+* Informática - Análise e Síntese de Algoritmos
 * Informática - Compiladores
-* Informática - Fundamentos da Programação
-* Informática - Programação com Objectos
-Portal do Docente
-1 - Criar projecto
-2 - Fechar projecto
-3 - Ver submissões de um projecto
-4 - Ver alunos de disciplina leccionada
-5 - Ver resultados de um inquérito
+* Informática - Engenharia de Software
+* Informática - Sistemas Operativos
+Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
 0 - Sair
 Escolha uma opção: Menu principal
 1 - Abrir
@@ -98,12 +95,8 @@ Escolha uma opção: Menu principal
 4 - Portal do Docente
 0 - Sair
 Escolha uma opção: _________diff_____________________________________________________________________________________________________
-14c14,19
-< Escolha uma opção: Nome da disciplina: Portal do Docente
----
-> Escolha uma opção: Nome da disciplina: DELEGADO|100011|123456789|João Manuel
-> * Informática - Algoritmos e Estruturas de Dados
-> * Informática - Compiladores
-> * Informática - Fundamentos da Programação
-> * Informática - Programação com Objectos
-> Portal do Docente
+13a14
+> * Informática - Análise e Síntese de Algoritmos
+14a16,17
+> * Informática - Engenharia de Software
+> * Informática - Sistemas Operativos
