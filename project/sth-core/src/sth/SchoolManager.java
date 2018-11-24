@@ -43,7 +43,7 @@ public class SchoolManager {
 
 	//FIXME implement constructors if needed
 	private School _school = new School();
-	private int _testid;
+	private int _loginID;
 	private boolean _ischanged = false;
 	private boolean _initial = true;
 
@@ -71,10 +71,10 @@ public class SchoolManager {
 	*/
 	public void login(int id) throws NoSuchPersonIdException {
 		//FIXME [FIXING-BEGIN] implement method
-		_testid = id;
+		_loginID = id;
 		if (  !(_school.hasStudent(id)||_school.hasProfessor(id)||_school.hasRepresentative(id) || _school.hasStaff(id))	)
 		throw new NoSuchPersonIdException(id);
-		// System.out.println(_testid); [Debug]
+		// System.out.println(_loginID); [Debug]
 		// _school.printStudent();
 		//FIXME [FIXING-END] implement method
 	}
@@ -92,21 +92,21 @@ public class SchoolManager {
 	* @return true when the currently logged in person is a professor
 	*/
 	public boolean hasProfessor() {
-		return _school.hasProfessor(_testid);
+		return _school.hasProfessor(_loginID);
 	}
 
 	/**
 	* @return true when the currently logged in person is a student
 	*/
 	public boolean hasStudent() {
-		return _school.hasStudent(_testid) ||  _school.hasRepresentative(_testid);
+		return _school.hasStudent(_loginID) ||  _school.hasRepresentative(_loginID);
 	}
 
 	/**
 	* @return true when the currently logged in person is a representative
 	*/
 	public boolean hasRepresentative() {
-		return _school.hasRepresentative(_testid);
+		return _school.hasRepresentative(_loginID);
 	}
 
 	//FIXME [FIXING-BEGIN] implement other methods (in general, one for each command in sth-app)
@@ -119,7 +119,7 @@ public class SchoolManager {
 	public String setNewPhoneNum(int newTelPhone){
 		_ischanged=true;
 		_initial=true;
-		return _school.setNewPhoneNum(_testid,newTelPhone);
+		return _school.setNewPhoneNum(_loginID,newTelPhone);
 	}
 
 	public String searchPerson(String name) throws UnknownAgentException{
@@ -127,7 +127,7 @@ public class SchoolManager {
 	}
 
 	public String showPerson(){
-		return _school.showPerson(_testid);
+		return _school.showPerson(_loginID);
 	}
 
 	public String showAllPersons(){
