@@ -34,13 +34,13 @@ public class Discipline implements Serializable{
 
 	}
 
-	public Course getCourse(){
-		return _course;
+	public String getCourseName(){
+		return _course.getName();
 	}
 	public void setCourse(Course course){
 		_course=course;
 	}
- 
+
 
 
 	/*=============================================
@@ -58,6 +58,6 @@ public class Discipline implements Serializable{
 	}
 
 
-	
+
 
 }

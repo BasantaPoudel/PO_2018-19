@@ -6,22 +6,15 @@ import java.io.Serializable;
 public class Professor extends Person implements Serializable{
 
 
-	private Map<String,Discipline> _disciplines = new TreeMap<String, Discipline>();
+  private TreeMap<String,	TreeMap<String,	Discipline>> _disciplines = new TreeMap<String,	TreeMap<String,	Discipline>>();
 
-	public Professor(String name,int phoneNumber,int id){
-		super(name,phoneNumber,id);
-	}
+  public Professor(String _name,int _phoneNumber,int _id){
+    super(_name,_phoneNumber,_id);
+  }
 
-	/*===========================================
-	=            getters and setters            =
-	===========================================*/
-	public String getName(){
-		return super.getName();
-	}
 	public void setName(String name){
 		super.setName(name);
 	}
-
 	public int getPhoneNumber(){
 		return super.getPhoneNumber();
 	}
@@ -38,10 +31,27 @@ public class Professor extends Person implements Serializable{
 	/*=====  End of getters and setters  ======*/
 
 	// _______________________________________________________________________
-	public void addDiscipline(Discipline d){
-		_disciplines.put(d.getName(), d);
-	}
+	public void addDiscipline(Discipline discipline){
 
+    // names
+		String courseName=discipline.getCourseName();
+    String disciplineName=discipline.getName();
+
+    if (_disciplines.get(courseName) == null){
+
+      TreeMap<String,Discipline> disciplinesMap = new TreeMap<String,Discipline>();  // new Map
+
+      disciplinesMap.put(disciplineName,discipline);
+      _disciplines.put(courseName,disciplinesMap);
+
+    }
+    else if (_disciplines.get(courseName) != null){
+
+      _disciplines.get(courseName).put(disciplineName,discipline); // existing Map
+
+    }
+}
+//
 	// _______________________________________________________________________
 
 	public void createProject(String proj,String disc){
@@ -58,12 +68,14 @@ public class Professor extends Person implements Serializable{
 	public String showWithDisciplines(){
 
 		String res = "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName()+"\n";
-		for(Map.Entry<String,Discipline> entr : _disciplines.entrySet()) {
-			Discipline discipline = entr.getValue();
-  			res=res+"*" + discipline.getCourse().getName()+" - "+discipline.getName()+"\n";
-		}
-		return res;
-	}
+    for (String courseName : _disciplines.keySet() ) {
+      for (String disciplineName : _disciplines.get(courseName).keySet() ){
+      	res=res+"*" + courseName +" - "+disciplineName+"\n";
+      }
+    }
+    return res;
+  }
+
 
 
 

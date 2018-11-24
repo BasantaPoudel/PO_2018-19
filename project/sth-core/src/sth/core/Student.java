@@ -45,11 +45,11 @@ public class Student extends Person implements Serializable{
 	public void addDiscipline(Discipline d){
 		_disciplines.put(d.getName(), d);
 	}
-	
+
 
 
 	/*=============================================
-		
+
 	=============================================*/
 
 
@@ -93,9 +93,9 @@ public class Student extends Person implements Serializable{
 
 		for(Map.Entry<String,Discipline> entr : _disciplines.entrySet()) {
 			Discipline discipline = entr.getValue();
-  			res=res+"*" + discipline.getCourse().getName()+" - "+discipline.getName()+"\n";
+  			res=res+"*" + discipline.getCourseName()+" - "+discipline.getName()+"\n";
 		}
-		
+
 		return res;
 
 	}
