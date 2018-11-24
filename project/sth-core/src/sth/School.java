@@ -454,55 +454,55 @@ public class School implements Serializable {
 	/**
 	*
 	*
-	* @param id int
+	* @param loginID int
 	* @return true if the Map storing students finds a student with the given id in the Map.
 	*/
 
 	public boolean hasStudent(int loginID){
-		return _students.containsKey(id);
+		return _students.containsKey(loginID);
 	}
 
 	/**
 	*
 	*
-	* @param id int
-	* @return true if the Map storing Professors finds a professor with the given id in the Map.
+	* @param loginID int
+	* @return true if the Map storing Professors finds a professor with the given loginID in the Map.
 	*/
 
 	public boolean hasProfessor(int loginID){
-		return _professors.containsKey(id);
+		return _professors.containsKey(loginID);
 	}
 
 	/**
 	*
 	*
-	* @param id int
-	* @return true if the Map storing Staffs finds a staff with the given id in the Map.
+	* @param loginID int
+	* @return true if the Map storing Staffs finds a staff with the given loginID in the Map.
 	*/
 
 	public boolean hasStaff(int loginID){
-		return _staffs.containsKey(id);
+		return _staffs.containsKey(loginID);
 	}
 
 	/**
 	*
 	*
-	* @param id int
-	* @return true if the Map storing Representatives finds a representative with the given id in the Map.
+	* @param loginID int
+	* @return true if the Map storing Representatives finds a representative with the given loginID in the Map.
 	*/
 
 	public boolean hasRepresentative(int loginID){
-		return _representatives.containsKey(id);
+		return _representatives.containsKey(loginID);
 	}
 	/**
 	*
 	*
-	* @param id int
-	* @return true if the Map storing Staffs finds a staff with the given id in the Map.
+	* @param loginID int
+	* @return true if the Map storing Staffs finds a staff with the given loginID in the Map.
 	*/
 
 	public boolean hasStaffs(int loginID){
-		return _staffs.containsKey(id);
+		return _staffs.containsKey(loginID);
 	}
 
 	/**
@@ -543,16 +543,16 @@ public class School implements Serializable {
 	/**
 	*Performs the Command DoShowPerson
 	*
-	* @param   id int
+	* @param   loginID int
 	* @return String
 	*/
 
 	//3.1
 	public String showPerson(int loginID){
-		Student _pStudent = _students.get(id);
-		Professor _pProf = _professors.get(id);
-		Student _pRepr = _representatives.get(id);
-		Staff _pStaff = _staffs.get(id);
+		Student _pStudent = _students.get(loginID);
+		Professor _pProf = _professors.get(loginID);
+		Student _pRepr = _representatives.get(loginID);
+		Staff _pStaff = _staffs.get(loginID);
 		if(_pStudent!=null){
 			return _pStudent.show(false);
 		}
@@ -571,43 +571,43 @@ public class School implements Serializable {
 	/**
 	*Perform the Command DoChangePhoneNumber
 	*
-	* @param   id id iof the person to change the number
+	* @param   loginID loginID iof the person to change the number
 	* @param   newTelPhone new telephone number to set in the Map.
 	* @return String
 	*/
 
 	//3.2
 	public String setNewPhoneNum(int loginID,int newTelPhone){
-		if (_students.get(id)!=null){
-			Student student = _students.get(id);
-			Person globalStudent = _persons.get(id);
+		if (_students.get(loginID)!=null){
+			Student student = _students.get(loginID);
+			Person globalStudent = _persons.get(loginID);
 			student.setPhoneNumber(newTelPhone);
 			globalStudent.setPhoneNumber(newTelPhone);
 		}
 
-		else if (_representatives.get(id)!=null) {
-			Student representative = _representatives.get(id);
-			Person globalRepresentative = _persons.get(id);
+		else if (_representatives.get(loginID)!=null) {
+			Student representative = _representatives.get(loginID);
+			Person globalRepresentative = _persons.get(loginID);
 			representative.setPhoneNumber(newTelPhone);
 			globalRepresentative.setPhoneNumber(newTelPhone);
 
 		}
 
-		else if (_professors.get(id)!=null) {
-			Professor professor = _professors.get(id);
-			Person globalProfessor = _persons.get(id);
+		else if (_professors.get(loginID)!=null) {
+			Professor professor = _professors.get(loginID);
+			Person globalProfessor = _persons.get(loginID);
 			professor.setPhoneNumber(newTelPhone);
 			globalProfessor.setPhoneNumber(newTelPhone);
 		}
 
-		else if (_staffs.get(id)!=null) {
-			Staff staff = _staffs.get(id);
-			Person globalStaff = _persons.get(id);
+		else if (_staffs.get(loginID)!=null) {
+			Staff staff = _staffs.get(loginID);
+			Person globalStaff = _persons.get(loginID);
 			staff.setPhoneNumber(newTelPhone);
 			globalStaff.setPhoneNumber(newTelPhone);
 		}
 
-		return showPerson(id);
+		return showPerson(loginID);
 		// printStudent();
 	}
 
