@@ -174,9 +174,7 @@ public class SchoolManager {
 		_initial=false;
 	}
 
-public String doOpennnn(String str){
-	return str;
-}
+
 	public void doOpen(String fileName) throws FileNotFoundException,ClassNotFoundException,IOException{
 		try {
 			ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(fileName)));
