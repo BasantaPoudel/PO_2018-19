@@ -312,7 +312,9 @@ public class School implements Serializable {
 					Discipline disc = new Discipline(c,fields[1]);
 					professor.addDiscipline(disc);
 				}
-			}catch(UnknownDataException e){
+				professor.TreeToHashMap(); //now we have a non transient map in professor
+			}
+			catch(UnknownDataException e){
 				// FIX
 			}   		catch(IOException e){
 				// FIX
