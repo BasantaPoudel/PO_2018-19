@@ -20,7 +20,9 @@ do
 
 	echo -e $FILE
 	if diff auto-tests/expected/$FILE.out results/$FILE.outhyp >/dev/null ; then
-
+			 if [ -f log/$FILE.log ];then
+				 rm log/$FILE.log
+			 fi
 				echo yes;
 	else
 		echo no;
@@ -46,7 +48,7 @@ do
 
 
 	fi
-echo -e $"______________________________________________________________________________________________________________"
+echo -e $"______________________________________________"
 
 done
 cd $PROJECTDIR && make clean &> /dev/null && cd ../$v2/$v
