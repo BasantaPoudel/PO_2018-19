@@ -38,8 +38,9 @@ public class DoShowDisciplineSurveys extends Command<SchoolManager> {
     _form.parse();
 
     try{
-    _display.add(_receiver.showDisciplineSurvey(_disciplinename.value(),_projectname.value()));
-    _display.display();
+    // _display.add(_receiver.showDisciplineSurvey(_disciplinename.value(),_projectname.value()));
+    // _display.display();
+    System.out.println(_receiver.showDisciplineSurvey(_disciplinename.value(),_projectname.value()));
     }
     catch(NoSuchProjectexcepcao e){
       throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());

@@ -43,8 +43,9 @@ public class DoOpenSurvey extends Command<SchoolManager> {
     // _display.add(_receiver.doOpennnn(_projectname.value())));
     // _display.display();
     try{
-    _display.add(_receiver.openSurvey(_disciplinename.value(),_projectname.value()));
-    _display.display();
+    // _display.add(_receiver.openSurvey(_disciplinename.value(),_projectname.value()));
+    // _display.display();
+    System.out.println(_receiver.openSurvey(_disciplinename.value(),_projectname.value()));
     }
     catch(NoSurveyexcepcao e){
       throw new NoSurveyException(_disciplinename.value(),_projectname.value());

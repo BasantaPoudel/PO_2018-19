@@ -6,6 +6,14 @@ import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
 //FIXME import other classes if needed
+import sth.app.exceptions.NoSuchProjectException;
+import sth.app.exceptions.DuplicateProjectException;
+import sth.app.exceptions.NoSuchDisciplineException;
+
+import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+import sth.exceptions.newexceptions.DuplicateProjectexcepcao;
+
 
 /**
  * 4.3.1. Create project.
@@ -33,17 +41,18 @@ public class DoCreateProject extends Command<SchoolManager> {
   public final void execute() throws DialogException {
     //FIXME implement command
     _form.parse();
-    // try{
-    // _display.add(_receiver.createProject()));
+    try{
+    // _display.add(_receiver.createProject(_disciplinename.value(),_projectname.value()));
     // _display.display();
-    // }
-    // catch(NoSuchDisciplineException e){
-    //   throw new NoSuchProjectException(_disciplinename);
-    // }
-    // }
-    // catch(DuplicateProjectException e){
-    //   throw new DuplicateProjectException(_projectname);
-    // }
+    System.out.println(_receiver.createProject(_disciplinename.value(),_projectname.value()));
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+    }
+
+    catch(DuplicateProjectexcepcao e){
+      throw new DuplicateProjectException(_disciplinename.value(),_projectname.value());
+    }
   }
 
 }

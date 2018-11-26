@@ -6,6 +6,13 @@ import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
 //FIXME import other classes if needed
+import sth.app.exceptions.NoSuchProjectException;
+import sth.app.exceptions.NoSurveyException;
+import sth.app.exceptions.NoSuchDisciplineException;
+
+import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+import sth.exceptions.newexceptions.DuplicateSurveyexcepcao;
 
 /**
  * 4.3.2. Close project.
@@ -33,18 +40,17 @@ public class DoCloseProject extends Command<SchoolManager> {
   public final void execute() throws DialogException {
     //FIXME implement command
     _form.parse();
-
-    // try{
-    // _display.add(_receiver.closeProject()));
+    try{
+    // _display.add(_receiver.closeProject(_disciplinename.value(),_projectname.value()));
     // _display.display();
-    // }
-    // catch(NoSuchProjectException e){
-    //   throw new NoSuchProjectException(_projectname);
-    // }
-    // }
-    // catch(NoSuchDisciplineException e){
-    //   throw new NoSuchDisciplineException(_disciplinename);
-    // }
+    System.out.println(_receiver.closeProject(_disciplinename.value(),_projectname.value()));
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineException(_disciplinename.value());
+    }
 
   }
 

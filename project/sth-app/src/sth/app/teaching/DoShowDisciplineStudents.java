@@ -6,6 +6,14 @@ import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
 //FIXME import other classes if needed
+import sth.app.exceptions.NoSuchProjectException;
+import sth.app.exceptions.NoSurveyException;
+import sth.app.exceptions.NoSuchDisciplineException;
+
+
+import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+
 
 /**
  * 4.3.4. Show course students.
@@ -14,6 +22,7 @@ public class DoShowDisciplineStudents extends Command<SchoolManager> {
 
   //FIXME[FIXING-BEGIN] add input fields if needed
   Input<String> _disciplinename;
+  Input<String> _projectname;
   //FIXME[FIXING-END] add input fields if needed
 
   /**
@@ -23,6 +32,7 @@ public class DoShowDisciplineStudents extends Command<SchoolManager> {
     super(Label.SHOW_COURSE_STUDENTS, receiver);
     //FIXME initialize input fields if needed
     _disciplinename = _form.addStringInput(Message.requestDisciplineName());
+    _projectname = _form.addStringInput(Message.requestDisciplineName());
 
   }
 
@@ -31,22 +41,23 @@ public class DoShowDisciplineStudents extends Command<SchoolManager> {
   public final void execute() throws DialogException {
     //FIXME implement command
     _form.parse();
-    // if(_receiver.existsDiscipline==true){
-    // _display.add(_receiver.showDisciplineStudents()));
+    // if(_receiver.existsDiscipline(_disciplinename.value())==true){
+    // _display.add(_receiver.showDisciplineStudents(_disciplinename.value()));
     // _display.display();
     // }
 
-    // try{
-    // _display.add(_receiver.showDisciplineStudents()));
+    try{
+    // _display.add(_receiver.showDisciplineStudent(_disciplinename.value(),_projectname.value()));
     // _display.display();
-    // }
-    // catch(NoSuchProjectException e){
-    //   throw new NoSuchProjectException(_projectname);
-    // }
-    // }
-    // catch(NoSuchDisciplineException e){
-    //   throw new NoSuchDisciplineException(_disciplinename);
-    // }
+    System.out.println(_receiver.showDisciplineStudent(_disciplinename.value(),_projectname.value()));
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+    }
+
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineException(_disciplinename.value());
+    }
 
   }
 

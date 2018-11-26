@@ -696,19 +696,19 @@ public class School implements Serializable {
 	=   Metodos de Portal DOCENTE         =
 	=====================================*/
 	//4.1
-	public String createProject(){
+	public String createProject() throws NoSuchProjectexcepcao,NoSuchDisciplineexcepcao{
 		return "_school.createProject()";
 	}
 	//4.2
-	public String closeProject(){
+	public String closeProject() throws NoSuchProjectexcepcao,NoSuchDisciplineexcepcao{
 		return "_school.closeProject()";
 	}
 	//4.3
-	public String showDisciplineStudent(){
+	public String showDisciplineStudent() throws NoSuchProjectexcepcao,NoSuchDisciplineexcepcao{
 		return "_school.showDisciplineStudent()";
 	}
 	//4.4
-	public String showProjectSubmissions(){
+	public String showProjectSubmissions() {
 		return "_school.showProjectSubmissions()";
 	}
 	//4.5
@@ -720,15 +720,15 @@ public class School implements Serializable {
 	=   Metodos de Portal ALUNO           =
 	=====================================*/
 	//5.1
-	public String deliverProject() {
+	public String deliverProject() throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao{
 		return "_school.deliverProject()";
 	}
 	//5.2
-	public String answerSurvey(){
+	public String answerSurvey() throws NoSuchProjectexcepcao,NoSurveyexcepcao,NoSuchDisciplineexcepcao{
 		return "_school.answerSurvey()";
 	}
 	//5.3
-	public String showSurveyResult(){
+	public String showSurveyResult() throws NoSuchProjectexcepcao,NoSurveyexcepcao,NoSuchDisciplineexcepcao{
 		return "_school.showSurveyResults()";
 	}
 

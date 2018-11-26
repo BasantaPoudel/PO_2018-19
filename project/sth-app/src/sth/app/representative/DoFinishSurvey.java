@@ -42,8 +42,9 @@ public class DoFinishSurvey extends Command<SchoolManager> {
     //FIXME implement command
     _form.parse();
     try{
-    _display.add(_receiver.finishSurvey(_disciplinename.value(),_projectname.value()));
-    _display.display();
+    // _display.add(_receiver.finishSurvey(_disciplinename.value(),_projectname.value()));
+    // _display.display();
+    System.out.println(_receiver.finishSurvey(_disciplinename.value(),_projectname.value()));
     }
     catch(NoSurveyexcepcao e){
       throw new NoSurveyException(_disciplinename.value(),_projectname.value());

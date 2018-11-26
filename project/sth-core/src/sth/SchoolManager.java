@@ -31,6 +31,7 @@ import sth.exceptions.newexceptions.OpeningSurveyexcepcao;
 import sth.exceptions.newexceptions.DuplicateSurveyexcepcao;
 import sth.exceptions.newexceptions.NonEmptySurveyexcepcao;
 import sth.exceptions.newexceptions.SurveyFinishedexcepcao;
+import sth.exceptions.newexceptions.DuplicateProjectexcepcao;
 
 //FIXME [FIXING-END] import other classes if needed
 
@@ -211,39 +212,39 @@ public class SchoolManager {
 	=   Funções de Portal DOCENTE         =
 	=====================================*/
 	//4.1
-	public String createProject(){
-		return _school.createProject();
+	public String createProject(String _disciplinename,String _projectname) throws DuplicateProjectexcepcao,NoSuchDisciplineexcepcao{
+		return "_school.createProject()";
 	}
 	//4.2
-	public String closeProject(){
-		return _school.closeProject();
+	public String closeProject(String _disciplinename,String _projectname) throws NoSuchProjectexcepcao,NoSuchDisciplineexcepcao{
+		return "_school.closeProject()";
 	}
 	//4.3
-	public String showDisciplineStudent(){
-		return _school.showDisciplineStudent();
+	public String showDisciplineStudent(String _disciplinename,String _projectname) throws NoSuchProjectexcepcao,NoSuchDisciplineexcepcao{
+		return "_school.showDisciplineStudent()";
 	}
 	//4.4
-	public String showProjectSubmissions(){
-		return _school.showProjectSubmissions();
+	public String showProjectSubmissions(String _disciplinename,String _projectname) throws NoSuchProjectexcepcao,NoSuchDisciplineexcepcao{
+		return "_school.showProjectSubmissions()";
 	}
 	//4.5
-	public String showSurveyResults(){
-		return _school.showSurveyResults();
+	public String showSurveyResults(String _disciplinename,String _projectname) throws NoSuchProjectexcepcao, NoSurveyexcepcao, NoSuchDisciplineexcepcao{
+		return "_school.showSurveyResults()";
 	}
 
 	/*=====================================
 	=   Funções de Portal ALUNO           =
 	=====================================*/
 	//5.1
-	public String deliverProject() {
+	public String deliverProject(String _disciplinename, String _projectname,String _description)throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao {
 		return _school.deliverProject();
 	}
 	//5.2
-	public String answerSurvey(){
+	public String answerSurvey(String _disciplinename,String _projectname) throws NoSuchProjectexcepcao,NoSurveyexcepcao,NoSuchDisciplineexcepcao{
 		return _school.answerSurvey();
 	}
 	//5.3
-	public String showSurveyResult(){
+	public String showSurveyResult(String _disciplinename,String _projectname) throws NoSuchProjectexcepcao,NoSurveyexcepcao,NoSuchDisciplineexcepcao{
 		return _school.showSurveyResult();
 	}
 	/*=====================================

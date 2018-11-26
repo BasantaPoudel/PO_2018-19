@@ -6,7 +6,10 @@ import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
 //FIXME import other classes if needed
-
+import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
+import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+import sth.app.exceptions.NoSuchProjectException;
+import sth.app.exceptions.NoSuchDisciplineException;
 /**
  * 4.4.1. Deliver project.
  */
@@ -34,17 +37,16 @@ public class DoDeliverProject extends Command<SchoolManager> {
   public final void execute() throws DialogException {
     //FIXME implement command
     _form.parse();
-    // try{
-    // // _display.add(_receiver.deliverProject()));
-    // // _display.display();
-    // }
-    // catch(NoSuchProjectException e){
-    //   throw new NoSuchProjectException(_disciplinename,_projectname);
-    // }
-    // catch(NoSuchDisciplineException e){
-    //   throw new NoSuchDisciplineException(_disciplinename);
-    // }
-    // }
+    try{
+    // _display.add(_receiver.deliverProject(_disciplinename.value(),_projectname.value(),_description.value()));
+    // _display.display();
+    System.out.println(_receiver.deliverProject(_disciplinename.value(),_projectname.value(),_description.value()));
+    }
+    catch(NoSuchProjectexcepcao e){
+      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+    }
+    catch(NoSuchDisciplineexcepcao e){
+      throw new NoSuchDisciplineException(_disciplinename.value());
+    }
+    }
   }
-
-}
