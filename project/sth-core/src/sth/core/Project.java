@@ -1,5 +1,7 @@
 package sth.core;
 import java.io.Serializable;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class Project implements Serializable{
 	private String _name;
@@ -7,38 +9,22 @@ public class Project implements Serializable{
 	private boolean _closed=false;
 	private String _content;
 
+	private TreeMap<String,Survey> _surveys = new TreeMap<String,Survey>();
+
+
 	public Project(String name,String description,String content){
 		_name=name;
 		_description=description;
 		_content=content;
 
 	}
-	/*===========================================
-	=            getters and setters            =
-	===========================================*/
-	public String getName(){
-		return _name;
+
+	void close(){
+		_closed=false;
 	}
-	public void setName(String name){
-		_name=name;
+	void open(){
+
 	}
-	public String getDescription(){
-		return _description;
-	}
-	public void setDescription(String description){
-		_description=description;
-	}
-	public boolean getClosed(){
-		return _closed;
-	}
-	public void setClosed(boolean closed){
-		_closed=closed;
-	}
-	public String getContent(){
-		return _content;
-	}
-	public void setContent(String content){
-		_content=content;
-	}
+
 
 }
