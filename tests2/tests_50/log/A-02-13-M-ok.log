@@ -1,4 +1,3 @@
-______________________________________________________________________________________________________________
 A-02-13-M-ok FAILED
 Login professor com várias disciplina e vê professor disciplinas inseridas desordenadamente com curso  diferente
 please schedule a fix
@@ -37,37 +36,7 @@ ________________________________________________________________________________
 1
 0
 0
-________us______________________________________________________________________________________________________
-Identificador: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: Portal Pessoal
-1 - Mostrar pessoa
-2 - Alterar número de telefone
-3 - Mostrar pessoas
-4 - Procurar pessoa
-0 - Sair
-Escolha uma opção: DOCENTE|100100|987654321|Ana Maria
-* Informática - Análise e Síntese de Algoritmos
-* Informática - Engenharia de Software
-* Matemática - Álgebra Linear
-* Matemática - Compiladores
-Portal Pessoal
-1 - Mostrar pessoa
-2 - Alterar número de telefone
-3 - Mostrar pessoas
-4 - Procurar pessoa
-0 - Sair
-Escolha uma opção: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: ________exp______________________________________________________________________________________________________
+________expected______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -98,4 +67,34 @@ Escolha uma opção: Menu principal
 4 - Portal do Docente
 0 - Sair
 Escolha uma opção: 
-_________diff_____________________________________________________________________________________________________
+________us______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: DOCENTE|100100|987654321|Ana Maria
+* Informática - Análise e Síntese de Algoritmos
+* Informática - Engenharia de Software
+* Matemática - Álgebra Linear
+* Matemática - Compiladores
+Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: _________diff_____________________________________________________________________________________________________

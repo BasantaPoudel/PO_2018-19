@@ -27,8 +27,7 @@ do
 	else
 		echo no;
 
-
-		echo -e $FILE FAILED >> log/$FILE.log
+		echo -e $FILE FAILED > log/$FILE.log
 		cat desc/$FILE.desc >> log/$FILE.log
 		echo -e please schedule a fix >> log/$FILE.log
 		echo -e $FILE  >> log/$FILE.log
@@ -37,7 +36,7 @@ do
 		echo -e $"______________________________________________________________________________________________________________" >> log/$FILE.log
 		cat auto-tests/$FILE.in >> log/$FILE.log
 
-		echo -e $"________exp______________________________________________________________________________________________________" >> log/$FILE.log
+		echo -e $"________expected______________________________________________________________________________________________________" >> log/$FILE.log
 		cat auto-tests/expected/$FILE.out  >> log/$FILE.log
 		echo -e $"________us______________________________________________________________________________________________________" >> log/$FILE.log
 		cat results/$FILE.outhyp >> log/$FILE.log

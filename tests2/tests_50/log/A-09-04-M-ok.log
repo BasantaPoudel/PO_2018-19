@@ -1,4 +1,3 @@
-______________________________________________________________________________________________________________
 A-09-04-M-ok FAILED
 Ver alunos de disciplina com vários alunos e inseridos por ordem
 please schedule a fix
@@ -47,35 +46,7 @@ ________________________________________________________________________________
 Algoritmos e Estruturas de Dados
 0
 0
-________us______________________________________________________________________________________________________
-Identificador: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: Portal do Docente
-1 - Criar projecto
-2 - Fechar projecto
-3 - Ver submissões de um projecto
-4 - Ver alunos de disciplina leccionada
-5 - Ver resultados de um inquérito
-0 - Sair
-Escolha uma opção: Nome da disciplina: Nome da disciplina: Portal do Docente
-1 - Criar projecto
-2 - Fechar projecto
-3 - Ver submissões de um projecto
-4 - Ver alunos de disciplina leccionada
-5 - Ver resultados de um inquérito
-0 - Sair
-Escolha uma opção: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
-________exp______________________________________________________________________________________________________
+________expected______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -122,7 +93,35 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: _________diff_____________________________________________________________________________________________________
+Escolha uma opção: ________us______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal do Docente
+1 - Criar projecto
+2 - Fechar projecto
+3 - Ver submissões de um projecto
+4 - Ver alunos de disciplina leccionada
+5 - Ver resultados de um inquérito
+0 - Sair
+Escolha uma opção: Nome da disciplina: Nome da disciplina: Portal do Docente
+1 - Criar projecto
+2 - Fechar projecto
+3 - Ver submissões de um projecto
+4 - Ver alunos de disciplina leccionada
+5 - Ver resultados de um inquérito
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
+_________diff_____________________________________________________________________________________________________
 14c14,34
 < Escolha uma opção: Nome da disciplina: Nome da disciplina: Portal do Docente
 ---

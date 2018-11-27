@@ -1,4 +1,3 @@
-______________________________________________________________________________________________________________
 A-03-03-M-ok FAILED
 Procura pessoa com string que faz match com várias pessoas (e lista de pessoas por id tb ordenada por nome)
 please schedule a fix
@@ -35,45 +34,7 @@ ________________________________________________________________________________
 Manuel
 0
 0
-________us______________________________________________________________________________________________________
-Identificador: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: Portal Pessoal
-1 - Mostrar pessoa
-2 - Alterar número de telefone
-3 - Mostrar pessoas
-4 - Procurar pessoa
-0 - Sair
-Escolha uma opção: Nome a procurar: ALUNO|100013|123456789|José Manuel
-* Matemática - Análise Numérica
-* Matemática - Cálculo I
-* Matemática - Métodos Numéricos
-* Matemática - Probabilidades e Estatística
-DELEGADO|100010|123456789|Carlos Manuel Maria
-* Informática - Algoritmos e Estruturas de Dados
-* Informática - Fundamentos da Programação
-* Informática - Programação com Objectos
-DELEGADO|100011|123456789|Jorge Manuel
-* Informática - Algoritmos e Estruturas de Dados
-* Informática - Fundamentos da Programação
-* Informática - Programação com Objectos
-Portal Pessoal
-1 - Mostrar pessoa
-2 - Alterar número de telefone
-3 - Mostrar pessoas
-4 - Procurar pessoa
-0 - Sair
-Escolha uma opção: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-4 - Portal do Docente
-0 - Sair
-Escolha uma opção: ________exp______________________________________________________________________________________________________
+________expected______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -99,6 +60,44 @@ ALUNO|100013|123456789|José Manuel
 * Matemática - Cálculo I
 * Matemática - Métodos Numéricos
 * Matemática - Probabilidades e Estatística
+Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: ________us______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Nome a procurar: ALUNO|100013|123456789|José Manuel
+* Matemática - Análise Numérica
+* Matemática - Cálculo I
+* Matemática - Métodos Numéricos
+* Matemática - Probabilidades e Estatística
+DELEGADO|100010|123456789|Carlos Manuel Maria
+* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação
+* Informática - Programação com Objectos
+DELEGADO|100011|123456789|Jorge Manuel
+* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação
+* Informática - Programação com Objectos
 Portal Pessoal
 1 - Mostrar pessoa
 2 - Alterar número de telefone

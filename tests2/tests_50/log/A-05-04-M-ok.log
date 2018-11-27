@@ -1,4 +1,3 @@
-______________________________________________________________________________________________________________
 A-05-04-M-ok FAILED
 Mostra vários tipos de utilizadores
 please schedule a fix
@@ -37,57 +36,7 @@ ________________________________________________________________________________
 3
 0
 0
-________us______________________________________________________________________________________________________
-Identificador: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-5 - Portal do Estudante
-6 - Portal do Delegado
-0 - Sair
-Escolha uma opção: Portal Pessoal
-1 - Mostrar pessoa
-2 - Alterar número de telefone
-3 - Mostrar pessoas
-4 - Procurar pessoa
-0 - Sair
-Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José
-DELEGADO|100010|123456789|João Maria
-* Informática - Algoritmos e Estruturas de Dados
-* Informática - Análise e Síntese de Algoritmos
-* Informática - Fundamentos da Programação
-* Informática - Programação com Objectos
-DELEGADO|100011|123456789|João Manuel
-* Informática - Algoritmos e Estruturas de Dados
-* Informática - Análise e Síntese de Algoritmos
-* Informática - Fundamentos da Programação
-* Informática - Programação com Objectos
-DELEGADO|100012|123456789|João Miguel
-* Matemática - Cálculo I
-* Matemática - Métodos Numéricos
-* Matemática - Probabilidades e Estatística
-* Matemática - Álgebra Linear
-DELEGADO|100013|123456789|José Manuel
-* Matemática - Análise Numérica
-* Matemática - Cálculo I
-* Matemática - Métodos Numéricos
-* Matemática - Probabilidades e Estatística
-DOCENTE|100100|987654321|Ana Maria
-FUNCIONÁRIO|101010|789456123|José Carlos
-Portal Pessoal
-1 - Mostrar pessoa
-2 - Alterar número de telefone
-3 - Mostrar pessoas
-4 - Procurar pessoa
-0 - Sair
-Escolha uma opção: Menu principal
-1 - Abrir
-2 - Guardar
-3 - Portal Pessoal
-5 - Portal do Estudante
-6 - Portal do Delegado
-0 - Sair
-Escolha uma opção: ________exp______________________________________________________________________________________________________
+________expected______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -142,7 +91,57 @@ Escolha uma opção: Menu principal
 6 - Portal do Delegado
 0 - Sair
 Escolha uma opção: 
-_________diff_____________________________________________________________________________________________________
+________us______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+6 - Portal do Delegado
+0 - Sair
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José
+DELEGADO|100010|123456789|João Maria
+* Informática - Algoritmos e Estruturas de Dados
+* Informática - Análise e Síntese de Algoritmos
+* Informática - Fundamentos da Programação
+* Informática - Programação com Objectos
+DELEGADO|100011|123456789|João Manuel
+* Informática - Algoritmos e Estruturas de Dados
+* Informática - Análise e Síntese de Algoritmos
+* Informática - Fundamentos da Programação
+* Informática - Programação com Objectos
+DELEGADO|100012|123456789|João Miguel
+* Matemática - Cálculo I
+* Matemática - Métodos Numéricos
+* Matemática - Probabilidades e Estatística
+* Matemática - Álgebra Linear
+DELEGADO|100013|123456789|José Manuel
+* Matemática - Análise Numérica
+* Matemática - Cálculo I
+* Matemática - Métodos Numéricos
+* Matemática - Probabilidades e Estatística
+DOCENTE|100100|987654321|Ana Maria
+FUNCIONÁRIO|101010|789456123|José Carlos
+Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+6 - Portal do Delegado
+0 - Sair
+Escolha uma opção: _________diff_____________________________________________________________________________________________________
 25a26
 > * Matemática - Álgebra Linear
 29d29
