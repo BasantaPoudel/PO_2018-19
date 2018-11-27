@@ -312,9 +312,7 @@ public class School implements Serializable {
 					Discipline disc = new Discipline(c,fields[1]);
 					professor.addDiscipline(disc);
 				}
-				professor.TreeToHashMap(); //now we have a non transient map in professor
-			}
-			catch(UnknownDataException e){
+			}catch(UnknownDataException e){
 				// FIX
 			}   		catch(IOException e){
 				// FIX
@@ -696,19 +694,19 @@ public class School implements Serializable {
 	=   Metodos de Portal DOCENTE         =
 	=====================================*/
 	//4.1
-	public String createProject() throws NoSuchProjectexcepcao,NoSuchDisciplineexcepcao{
+	public String createProject(){
 		return "_school.createProject()";
 	}
 	//4.2
-	public String closeProject() throws NoSuchProjectexcepcao,NoSuchDisciplineexcepcao{
+	public String closeProject(){
 		return "_school.closeProject()";
 	}
 	//4.3
-	public String showDisciplineStudent() throws NoSuchProjectexcepcao,NoSuchDisciplineexcepcao{
+	public String showDisciplineStudent(){
 		return "_school.showDisciplineStudent()";
 	}
 	//4.4
-	public String showProjectSubmissions() {
+	public String showProjectSubmissions(){
 		return "_school.showProjectSubmissions()";
 	}
 	//4.5
@@ -720,15 +718,15 @@ public class School implements Serializable {
 	=   Metodos de Portal ALUNO           =
 	=====================================*/
 	//5.1
-	public String deliverProject() throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao{
+	public String deliverProject() {
 		return "_school.deliverProject()";
 	}
 	//5.2
-	public String answerSurvey() throws NoSuchProjectexcepcao,NoSurveyexcepcao,NoSuchDisciplineexcepcao{
+	public String answerSurvey(){
 		return "_school.answerSurvey()";
 	}
 	//5.3
-	public String showSurveyResult() throws NoSuchProjectexcepcao,NoSurveyexcepcao,NoSuchDisciplineexcepcao{
+	public String showSurveyResult(){
 		return "_school.showSurveyResults()";
 	}
 

@@ -16,14 +16,14 @@ public class Project implements Serializable{
 		_name=name;
 		_description=description;
 		_content=content;
-
 	}
-
+    
+	
 	void close(){
-		_closed=false;
+		_closed=true;
 	}
 	void open(){
-
+        _closed=false;
 	}
 
 
