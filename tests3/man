@@ -1,3 +1,0 @@
-FILE=A-02-13-M-ok; if diff -b auto-tests/expected/$FILE.out results/$FILE.outhyp >/dev/null ; then	echo yes ;else	echo no ; fi;
-
-FILE=A-02-13-M-ok;if diff -b  results/$FILE.outhyp auto-tests/expected/$FILE.out >/dev/null ;then echo yes;else echo no;fi
