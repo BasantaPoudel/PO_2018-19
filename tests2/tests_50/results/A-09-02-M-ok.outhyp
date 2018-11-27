@@ -11,7 +11,7 @@ Escolha uma opção: Portal do Docente
 4 - Ver alunos de disciplina leccionada
 5 - Ver resultados de um inquérito
 0 - Sair
-Escolha uma opção: Nome da disciplina: Portal do Docente
+Escolha uma opção: Nome da disciplina: Nome da disciplina: Portal do Docente
 1 - Criar projecto
 2 - Fechar projecto
 3 - Ver submissões de um projecto
@@ -24,4 +24,4 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: 
+Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada

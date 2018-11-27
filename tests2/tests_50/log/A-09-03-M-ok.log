@@ -52,7 +52,7 @@ Escolha uma opção: Portal do Docente
 4 - Ver alunos de disciplina leccionada
 5 - Ver resultados de um inquérito
 0 - Sair
-Escolha uma opção: Nome da disciplina: Portal do Docente
+Escolha uma opção: Nome da disciplina: Nome da disciplina: Portal do Docente
 1 - Criar projecto
 2 - Fechar projecto
 3 - Ver submissões de um projecto
@@ -65,7 +65,8 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: ________exp______________________________________________________________________________________________________
+Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
+________exp______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -99,7 +100,7 @@ Escolha uma opção: Menu principal
 0 - Sair
 Escolha uma opção: _________diff_____________________________________________________________________________________________________
 14c14,19
-< Escolha uma opção: Nome da disciplina: Portal do Docente
+< Escolha uma opção: Nome da disciplina: Nome da disciplina: Portal do Docente
 ---
 > Escolha uma opção: Nome da disciplina: DELEGADO|100011|123456789|João Manuel
 > * Informática - Algoritmos e Estruturas de Dados
@@ -107,3 +108,8 @@ Escolha uma opção: _________diff______________________________________________
 > * Informática - Fundamentos da Programação
 > * Informática - Programação com Objectos
 > Portal do Docente
+27c32
+< Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
+---
+> Escolha uma opção: 
+\ No newline at end of file

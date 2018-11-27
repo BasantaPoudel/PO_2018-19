@@ -57,16 +57,7 @@ Escolha uma opção: Portal Pessoal
 3 - Mostrar pessoas
 4 - Procurar pessoa
 0 - Sair
-Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José
-DELEGADO|100010|123456789|João Maria
-* Informática - Algoritmos e Estruturas de Dados
-DELEGADO|100011|123456789|João Manuel
-* Informática - Algoritmos e Estruturas de Dados
-DELEGADO|100012|123456789|João Miguel
-* Matemática - Cálculo I
-ALUNO|100013|123456789|José Manuel
-* Matemática - Cálculo I
-DOCENTE|100100|987654321|Ana Maria
+Escolha uma opção: DOCENTE|100100|987654321|Ana Maria Vieira
 FUNCIONÁRIO|101010|789456123|José Carlos
 Portal Pessoal
 1 - Mostrar pessoa
@@ -214,13 +205,25 @@ Escolha uma opção: Menu principal
 4 - Portal do Docente
 0 - Sair
 Escolha uma opção: _________diff_____________________________________________________________________________________________________
-41a42
+32c32,42
+< Escolha uma opção: DOCENTE|100100|987654321|Ana Maria Vieira
+---
+> Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José
+> DELEGADO|100010|123456789|João Maria
 > * Informática - Algoritmos e Estruturas de Dados
-87c88
+> DELEGADO|100011|123456789|João Manuel
+> * Informática - Algoritmos e Estruturas de Dados
+> DELEGADO|100012|123456789|João Miguel
+> * Matemática - Cálculo I
+> ALUNO|100013|123456789|José Manuel
+> * Matemática - Cálculo I
+> DOCENTE|100100|987654321|Ana Maria
+> * Informática - Algoritmos e Estruturas de Dados
+78c88
 < Escolha uma opção: Ficheiro sem nome. Guardar ficheiro como: Menu principal
 ---
 > Escolha uma opção: Menu principal
-93c94
+84c94
 < Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
 ---
 > Escolha uma opção: 

@@ -52,20 +52,14 @@ Escolha uma opção: Portal do Docente
 4 - Ver alunos de disciplina leccionada
 5 - Ver resultados de um inquérito
 0 - Sair
-Escolha uma opção: Nome da disciplina: Portal do Docente
+Escolha uma opção: Nome da disciplina: Nome da disciplina: Portal do Docente
 1 - Criar projecto
 2 - Fechar projecto
 3 - Ver submissões de um projecto
 4 - Ver alunos de disciplina leccionada
 5 - Ver resultados de um inquérito
 0 - Sair
-Escolha uma opção: Nome da disciplina: Portal do Docente
-1 - Criar projecto
-2 - Fechar projecto
-3 - Ver submissões de um projecto
-4 - Ver alunos de disciplina leccionada
-5 - Ver resultados de um inquérito
-0 - Sair
+Escolha uma opção: Número inválido!
 Escolha uma opção: Menu principal
 1 - Abrir
 2 - Guardar
@@ -109,13 +103,18 @@ Escolha uma opção: Menu principal
 4 - Portal do Docente
 0 - Sair
 Escolha uma opção: _________diff_____________________________________________________________________________________________________
-14c14,15
-< Escolha uma opção: Nome da disciplina: Portal do Docente
+14c14,23
+< Escolha uma opção: Nome da disciplina: Nome da disciplina: Portal do Docente
 ---
 > Escolha uma opção: Nome da disciplina: Ver alunos de disciplina leccionada: Operação inválida: A disciplina 'Compiladores' não existe ou não é válida para o utilizador em causa.
 > Portal do Docente
-21c22,23
-< Escolha uma opção: Nome da disciplina: Portal do Docente
----
+> 1 - Criar projecto
+> 2 - Fechar projecto
+> 3 - Ver submissões de um projecto
+> 4 - Ver alunos de disciplina leccionada
+> 5 - Ver resultados de um inquérito
+> 0 - Sair
 > Escolha uma opção: Nome da disciplina: Ver alunos de disciplina leccionada: Operação inválida: A disciplina 'Mais uma' não existe ou não é válida para o utilizador em causa.
 > Portal do Docente
+21d29
+< Escolha uma opção: Número inválido!
