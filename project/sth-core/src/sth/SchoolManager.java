@@ -149,17 +149,7 @@ public class SchoolManager {
 			}
 			catch (IOException e) { e.printStackTrace(); }
 		}
-		// if (_ischanged=false){
-		// XMLEncoder encoder=null;
-		// try{
-		// encoder=new XMLEncoder(new BufferedOutputStream(new FileOutputStream(fileName)));
-		// }catch(FileNotFoundException fileNotFound){
-		// 	System.out.println("ERROR: While Creating or Opening the File dvd.xml");
-		// }
-		// encoder.writeObject(_school);
-		// encoder.close();
-		// // }
-		// _ischanged=true;
+
 	}
 
 	public boolean getChanged(){
@@ -185,28 +175,9 @@ public class SchoolManager {
 		catch (IOException            e) { e.printStackTrace(); }
 		catch (ClassNotFoundException e) { e.printStackTrace(); }
 
-		// XMLDecoder decoder=null;
-		// try {
-		// 	decoder=new XMLDecoder(new BufferedInputStream(new FileInputStream(fileName)));
-		// } catch (FileNotFoundException e) {
-		// 	System.out.println("ERROR: File not found");
-		// }
-		// School _school=(School)decoder.readObject();
-		// System.out.println(_school);
+
 
 	}
-	// __________________________________________________________________________
-	// try {
-	//   ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream("school.dat")));
-	//   School _school = (School)ois.readObject();
-	//   ois.close();
-	// }
-	// catch (IOException            e) { e.printStackTrace(); }
-	// catch (ClassNotFoundException e) { e.printStackTrace(); }
-	// // __________________________________________________________________________
-
-	// __________________________________________________________________________//
-	// __________________________________________________________________________//
 
 	/*=====================================
 	=   Funções de Portal DOCENTE         =
