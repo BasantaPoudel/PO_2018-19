@@ -1,19 +1,19 @@
-A-06-03-M-ok FAILED
+-e A-06-03-M-ok FAILED
 Persistência de Pessoas - guardar 2x
-please schedule a fix
-A-06-03-M-ok
-______________________________________________________________________________________________________________
+-e please schedule a fix
+-e A-06-03-M-ok
+-e $______________________________________________________________________________________________________________
 FUNCIONÁRIO|100001|123789456|Maria José
 ALUNO|100048|123456789|Joaquim Maria
 # Informática|Programação com Objectos
 DOCENTE|101010|789456123|José Carlos
-______________________________________________________________________________________________________________
+-e $______________________________________________________________________________________________________________
 100048
 2
 func2
 2
 0
-________expected______________________________________________________________________________________________________
+-e $________expected______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -32,7 +32,7 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 5 - Portal do Estudante
 0 - Sair
-Escolha uma opção: ________us______________________________________________________________________________________________________
+Escolha uma opção: -e $________us______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -46,7 +46,7 @@ Escolha uma opção: Ficheiro sem nome. Guardar ficheiro como: Menu principal
 5 - Portal do Estudante
 0 - Sair
 Escolha uma opção: Ficheiro sem nome. Guardar ficheiro como: Ficheiro sem nome. Guardar ficheiro como: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
-_________diff_____________________________________________________________________________________________________
+-e $_________diff_____________________________________________________________________________________________________
 13c13,19
 < Escolha uma opção: Ficheiro sem nome. Guardar ficheiro como: Ficheiro sem nome. Guardar ficheiro como: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
 ---

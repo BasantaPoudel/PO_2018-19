@@ -1,12 +1,12 @@
-A-06-06-M-ok FAILED
+-e A-06-06-M-ok FAILED
 Persistência de Pessoas, cursos e disciplinas - abrir e criar projecto e guardar
-please schedule a fix
-A-06-06-M-ok
-______________________________________________________________________________________________________________
+-e please schedule a fix
+-e A-06-06-M-ok
+-e $______________________________________________________________________________________________________________
 DOCENTE|100100|987654321|Ana Maria Vieira
 # Informática|Algoritmos e Estruturas de Dados
 FUNCIONÁRIO|101010|789456123|José Carlos
-______________________________________________________________________________________________________________
+-e $______________________________________________________________________________________________________________
 100100
 1
 func2
@@ -24,7 +24,7 @@ proj1
 0
 2
 0
-________expected______________________________________________________________________________________________________
+-e $________expected______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -118,7 +118,7 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: ________us______________________________________________________________________________________________________
+Escolha uma opção: -e $________us______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -203,7 +203,7 @@ Escolha uma opção: Ficheiro sem nome. Guardar ficheiro como: Menu principal
 4 - Portal do Docente
 0 - Sair
 Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
-_________diff_____________________________________________________________________________________________________
+-e $_________diff_____________________________________________________________________________________________________
 32c32,42
 < Escolha uma opção: DOCENTE|100100|987654321|Ana Maria Vieira
 ---

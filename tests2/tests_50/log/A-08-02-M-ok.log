@@ -1,8 +1,8 @@
-A-08-02-M-ok FAILED
+-e A-08-02-M-ok FAILED
 Fechar projecto não existente
-please schedule a fix
-A-08-02-M-ok
-______________________________________________________________________________________________________________
+-e please schedule a fix
+-e A-08-02-M-ok
+-e $______________________________________________________________________________________________________________
 FUNCIONÁRIO|100001|123789456|Maria José
 DELEGADO|100010|123456789|João Maria
 # Informática|Fundamentos da Programação
@@ -28,7 +28,7 @@ DOCENTE|100100|987654321|Ana Maria
 # Informática|Engenharia de Software
 # Informática|Sistemas Operativos
 FUNCIONÁRIO|101010|789456123|José Carlos
-______________________________________________________________________________________________________________
+-e $______________________________________________________________________________________________________________
 100100
 4
 1
@@ -48,7 +48,7 @@ Sistemas Operativos
 Proj
 0
 0
-________expected______________________________________________________________________________________________________
+-e $________expected______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -106,7 +106,7 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: ________us______________________________________________________________________________________________________
+Escolha uma opção: -e $________us______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -161,7 +161,7 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: _________diff_____________________________________________________________________________________________________
+Escolha uma opção: -e $_________diff_____________________________________________________________________________________________________
 21c21,22
 < Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
 ---

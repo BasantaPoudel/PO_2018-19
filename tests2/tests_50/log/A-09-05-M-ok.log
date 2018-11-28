@@ -1,8 +1,8 @@
-A-09-05-M-ok FAILED
+-e A-09-05-M-ok FAILED
 Ver alunos de disciplina com vários alunos e inseridos fora de ordem
-please schedule a fix
-A-09-05-M-ok
-______________________________________________________________________________________________________________
+-e please schedule a fix
+-e A-09-05-M-ok
+-e $______________________________________________________________________________________________________________
 FUNCIONÁRIO|100001|123789456|Maria José
 DELEGADO|100010|123456789|António Marques
 # Informática|Algoritmos e Estruturas de Dados
@@ -38,7 +38,7 @@ DOCENTE|100100|987654321|Ana Maria
 # Informática|Sistemas Operativos
 # Informática|Fundamentos
 FUNCIONÁRIO|101010|789456123|José Carlos
-______________________________________________________________________________________________________________
+-e $______________________________________________________________________________________________________________
 100100
 4
 4
@@ -47,7 +47,7 @@ Algoritmos e Estruturas de Dados
 Fundamentos
 0
 0
-________expected______________________________________________________________________________________________________
+-e $________expected______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -115,7 +115,7 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: ________us______________________________________________________________________________________________________
+Escolha uma opção: -e $________us______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -143,7 +143,7 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: _________diff_____________________________________________________________________________________________________
+Escolha uma opção: -e $_________diff_____________________________________________________________________________________________________
 14c14,55
 < Escolha uma opção: Nome da disciplina: Nome da disciplina: Portal do Docente
 ---

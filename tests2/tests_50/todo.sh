@@ -2,10 +2,6 @@ PROJECTDIR=../../project
 v2=tests2
 v=tests_50
 
-echo -e "Compiling..."
-cd $PROJECTDIR && make &> /dev/null && cd ../$v2/$v
-echo -e "Done compiling!"
-
 if [ ! -d results/ ]; then
 	mkdir results
 fi
