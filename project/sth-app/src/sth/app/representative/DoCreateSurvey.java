@@ -9,9 +9,9 @@ import sth.app.exceptions.DuplicateSurveyException;
 import sth.app.exceptions.NoSuchProjectException;
 import sth.app.exceptions.NoSuchDisciplineException;
 
-import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
-import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
-import sth.exceptions.newexceptions.DuplicateSurveyexcepcao;
+import sth.exceptions.newexceptions.NoSuchProjectCoreException;
+import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
+import sth.exceptions.newexceptions.DuplicateSurveyCoreException;
 
 //FIXME import other classes if needed
 
@@ -45,13 +45,13 @@ public class DoCreateSurvey extends Command<SchoolManager> {
     // _display.display();
     System.out.println(_receiver.createSurvey(_disciplinename.value(),_projectname.value()));
     }
-    catch(DuplicateSurveyexcepcao e){
+    catch(DuplicateSurveyCoreException e){
       throw new DuplicateSurveyException(_disciplinename.value(),_projectname.value());
     }
-    catch(NoSuchProjectexcepcao e){
+    catch(NoSuchProjectCoreException e){
       throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
     }
-    catch(NoSuchDisciplineexcepcao e){
+    catch(NoSuchDisciplineCoreException e){
       throw new NoSuchDisciplineException(_disciplinename.value());
     }
   }

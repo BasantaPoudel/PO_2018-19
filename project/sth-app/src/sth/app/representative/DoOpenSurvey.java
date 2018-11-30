@@ -10,10 +10,10 @@ import sth.app.exceptions.OpeningSurveyException;
 import sth.app.exceptions.NoSuchProjectException;
 import sth.app.exceptions.NoSurveyException;
 
-import sth.exceptions.newexceptions.NoSurveyexcepcao;
-import sth.exceptions.newexceptions.OpeningSurveyexcepcao;
-import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
-import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+import sth.exceptions.newexceptions.NoSurveyCoreException;
+import sth.exceptions.newexceptions.OpeningSurveyCoreException;
+import sth.exceptions.newexceptions.NoSuchProjectCoreException;
+import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
 
 //FIXME import other classes if needed
 
@@ -47,16 +47,16 @@ public class DoOpenSurvey extends Command<SchoolManager> {
     // _display.display();
     System.out.println(_receiver.openSurvey(_disciplinename.value(),_projectname.value()));
     }
-    catch(NoSurveyexcepcao e){
+    catch(NoSurveyCoreException e){
       throw new NoSurveyException(_disciplinename.value(),_projectname.value());
     }
-     catch(OpeningSurveyexcepcao e){
+     catch(OpeningSurveyCoreException e){
        throw new OpeningSurveyException(_disciplinename.value(),_projectname.value());
      }
-     catch(NoSuchProjectexcepcao e){
+     catch(NoSuchProjectCoreException e){
        throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
      }
-     catch(NoSuchDisciplineexcepcao e){
+     catch(NoSuchDisciplineCoreException e){
        throw new NoSuchDisciplineException(_disciplinename.value());
      }
   }

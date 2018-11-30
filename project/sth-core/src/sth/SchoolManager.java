@@ -22,16 +22,16 @@ import java.io.ObjectInputStream;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 
-import sth.exceptions.newexceptions.NoSurveyexcepcao;
-import sth.exceptions.newexceptions.ClosingSurveyexcepcao;
-import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
-import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
-import sth.exceptions.newexceptions.FinishingSurveyexcepcao;
-import sth.exceptions.newexceptions.OpeningSurveyexcepcao;
-import sth.exceptions.newexceptions.DuplicateSurveyexcepcao;
-import sth.exceptions.newexceptions.NonEmptySurveyexcepcao;
-import sth.exceptions.newexceptions.SurveyFinishedexcepcao;
-import sth.exceptions.newexceptions.DuplicateProjectexcepcao;
+import sth.exceptions.newexceptions.NoSurveyCoreException;
+import sth.exceptions.newexceptions.ClosingSurveyCoreException;
+import sth.exceptions.newexceptions.NoSuchProjectCoreException;
+import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
+import sth.exceptions.newexceptions.FinishingSurveyCoreException;
+import sth.exceptions.newexceptions.OpeningSurveyCoreException;
+import sth.exceptions.newexceptions.DuplicateSurveyCoreException;
+import sth.exceptions.newexceptions.NonEmptySurveyCoreException;
+import sth.exceptions.newexceptions.SurveyFinishedCoreException;
+import sth.exceptions.newexceptions.DuplicateProjectCoreException;
 
 //FIXME [FIXING-END] import other classes if needed
 
@@ -183,23 +183,23 @@ public class SchoolManager {
 	=   Funções de Portal DOCENTE         =
 	=====================================*/
 	//4.1
-	public String createProject(String _disciplinename,String _projectname) throws DuplicateProjectexcepcao,NoSuchDisciplineexcepcao{
+	public String createProject(String _disciplinename,String _projectname) throws DuplicateProjectCoreException,NoSuchDisciplineCoreException{
 		return "_school.createProject()";
 	}
 	//4.2
-	public String closeProject(String _disciplinename,String _projectname) throws NoSuchProjectexcepcao,NoSuchDisciplineexcepcao{
+	public String closeProject(String _disciplinename,String _projectname) throws NoSuchProjectCoreException,NoSuchDisciplineCoreException{
 		return "_school.closeProject()";
 	}
 	//4.3
-	public String showDisciplineStudent(String _disciplinename,String _projectname) throws NoSuchProjectexcepcao,NoSuchDisciplineexcepcao{
+	public String showDisciplineStudent(String _disciplinename,String _projectname) throws NoSuchProjectCoreException,NoSuchDisciplineCoreException{
 		return "_school.showDisciplineStudent()";
 	}
 	//4.4
-	public String showProjectSubmissions(String _disciplinename,String _projectname) throws NoSuchProjectexcepcao,NoSuchDisciplineexcepcao{
+	public String showProjectSubmissions(String _disciplinename,String _projectname) throws NoSuchProjectCoreException,NoSuchDisciplineCoreException{
 		return "_school.showProjectSubmissions()";
 	}
 	//4.5
-	public String showSurveyResults(String _disciplinename,String _projectname) throws NoSuchProjectexcepcao, NoSurveyexcepcao, NoSuchDisciplineexcepcao{
+	public String showSurveyResults(String _disciplinename,String _projectname) throws NoSuchProjectCoreException, NoSurveyCoreException, NoSuchDisciplineCoreException{
 		return "_school.showSurveyResults()";
 	}
 
@@ -207,120 +207,120 @@ public class SchoolManager {
 	=   Funções de Portal ALUNO           =
 	=====================================*/
 	//5.1
-	public String deliverProject(String _disciplinename, String _projectname,String _description)throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao {
+	public String deliverProject(String _disciplinename, String _projectname,String _description)throws NoSuchProjectCoreException, NoSuchDisciplineCoreException {
 		return _school.deliverProject();
 	}
 	//5.2
-	public String answerSurvey(String _disciplinename,String _projectname) throws NoSuchProjectexcepcao,NoSurveyexcepcao,NoSuchDisciplineexcepcao{
+	public String answerSurvey(String _disciplinename,String _projectname) throws NoSuchProjectCoreException,NoSurveyCoreException,NoSuchDisciplineCoreException{
 		return _school.answerSurvey();
 	}
 	//5.3
-	public String showSurveyResult(String _disciplinename,String _projectname) throws NoSuchProjectexcepcao,NoSurveyexcepcao,NoSuchDisciplineexcepcao{
+	public String showSurveyResult(String _disciplinename,String _projectname) throws NoSuchProjectCoreException,NoSurveyCoreException,NoSuchDisciplineCoreException{
 		return _school.showSurveyResult();
 	}
 	/*=====================================
 	=   Funções de Portal DELEGADO        =
 	=====================================*/
 	//6.1
-	public String createSurvey(String _disciplinename, String _projectname) throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, DuplicateSurveyexcepcao{
+	public String createSurvey(String _disciplinename, String _projectname) throws NoSuchProjectCoreException, NoSuchDisciplineCoreException, DuplicateSurveyCoreException{
 		try{
 			return _school.createSurvey();
     }
-    catch(DuplicateSurveyexcepcao e){
-      throw new DuplicateSurveyexcepcao(_disciplinename,_projectname);
+    catch(DuplicateSurveyCoreException e){
+      throw new DuplicateSurveyCoreException(_disciplinename,_projectname);
     }
-    catch(NoSuchProjectexcepcao e){
-      throw new NoSuchProjectexcepcao(_disciplinename,_projectname);
+    catch(NoSuchProjectCoreException e){
+      throw new NoSuchProjectCoreException(_disciplinename,_projectname);
     }
-    catch(NoSuchDisciplineexcepcao e){
-      throw new NoSuchDisciplineexcepcao(_disciplinename);
+    catch(NoSuchDisciplineCoreException e){
+      throw new NoSuchDisciplineCoreException(_disciplinename);
     }
 	}
 	//6.2
-	public String cancelSurvey(String _disciplinename, String _projectname)throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao,SurveyFinishedexcepcao, NoSurveyexcepcao, NonEmptySurveyexcepcao{
+	public String cancelSurvey(String _disciplinename, String _projectname)throws NoSuchProjectCoreException, NoSuchDisciplineCoreException,SurveyFinishedCoreException, NoSurveyCoreException, NonEmptySurveyCoreException{
 		try{
 			return _school.cancelSurvey();
     }
-    catch(NoSurveyexcepcao e){
-      throw new NoSurveyexcepcao(_disciplinename,_projectname);
+    catch(NoSurveyCoreException e){
+      throw new NoSurveyCoreException(_disciplinename,_projectname);
     }
-    catch(NonEmptySurveyexcepcao e){
-      throw new NonEmptySurveyexcepcao(_disciplinename,_projectname);
+    catch(NonEmptySurveyCoreException e){
+      throw new NonEmptySurveyCoreException(_disciplinename,_projectname);
     }
-    catch(SurveyFinishedexcepcao e){
-      throw new SurveyFinishedexcepcao(_disciplinename,_projectname);
+    catch(SurveyFinishedCoreException e){
+      throw new SurveyFinishedCoreException(_disciplinename,_projectname);
     }
-    catch(NoSuchProjectexcepcao e){
-      throw new NoSuchProjectexcepcao(_disciplinename,_projectname);
+    catch(NoSuchProjectCoreException e){
+      throw new NoSuchProjectCoreException(_disciplinename,_projectname);
     }
-    catch(NoSuchDisciplineexcepcao e){
-      throw new NoSuchDisciplineexcepcao(_disciplinename);
+    catch(NoSuchDisciplineCoreException e){
+      throw new NoSuchDisciplineCoreException(_disciplinename);
     }
 	}
 	//6.3
-	public String openSurvey(String _disciplinename, String _projectname) throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, OpeningSurveyexcepcao{
+	public String openSurvey(String _disciplinename, String _projectname) throws NoSuchProjectCoreException, NoSuchDisciplineCoreException, NoSurveyCoreException, OpeningSurveyCoreException{
 		try{
 			return _school.openSurvey();
     }
-     catch(NoSurveyexcepcao e){
-       throw new NoSurveyexcepcao(_disciplinename,_projectname);
+     catch(NoSurveyCoreException e){
+       throw new NoSurveyCoreException(_disciplinename,_projectname);
      }
-     catch(OpeningSurveyexcepcao e){
-       throw new OpeningSurveyexcepcao(_disciplinename,_projectname);
+     catch(OpeningSurveyCoreException e){
+       throw new OpeningSurveyCoreException(_disciplinename,_projectname);
      }
-     catch(NoSuchProjectexcepcao e){
-       throw new NoSuchProjectexcepcao(_disciplinename,_projectname);
+     catch(NoSuchProjectCoreException e){
+       throw new NoSuchProjectCoreException(_disciplinename,_projectname);
      }
-     catch(NoSuchDisciplineexcepcao e){
-       throw new NoSuchDisciplineexcepcao(_disciplinename);
+     catch(NoSuchDisciplineCoreException e){
+       throw new NoSuchDisciplineCoreException(_disciplinename);
      }
 	}
 	//6.4
-	public String closeSurvey(String _disciplinename, String _projectname) throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, ClosingSurveyexcepcao{
+	public String closeSurvey(String _disciplinename, String _projectname) throws NoSuchProjectCoreException, NoSuchDisciplineCoreException, NoSurveyCoreException, ClosingSurveyCoreException{
 		try{
 			return _school.closeSurvey();
     }
-    catch(NoSurveyexcepcao e){
-      throw new NoSurveyexcepcao(_disciplinename,_projectname);
+    catch(NoSurveyCoreException e){
+      throw new NoSurveyCoreException(_disciplinename,_projectname);
     }
-    catch(ClosingSurveyexcepcao e){
-      throw new ClosingSurveyexcepcao(_disciplinename,_projectname);
+    catch(ClosingSurveyCoreException e){
+      throw new ClosingSurveyCoreException(_disciplinename,_projectname);
     }
-    catch(NoSuchProjectexcepcao e){
-      throw new NoSuchProjectexcepcao(_disciplinename,_projectname);
+    catch(NoSuchProjectCoreException e){
+      throw new NoSuchProjectCoreException(_disciplinename,_projectname);
     }
-    catch(NoSuchDisciplineexcepcao e){
-      throw new NoSuchDisciplineexcepcao(_disciplinename);
+    catch(NoSuchDisciplineCoreException e){
+      throw new NoSuchDisciplineCoreException(_disciplinename);
     }
 	}
 	//6.5
-	public String finishSurvey(String _disciplinename, String _projectname) throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, FinishingSurveyexcepcao{
+	public String finishSurvey(String _disciplinename, String _projectname) throws NoSuchProjectCoreException, NoSuchDisciplineCoreException, NoSurveyCoreException, FinishingSurveyCoreException{
 		 try{
 			return _school.finishSurvey();
     }
-    catch(NoSurveyexcepcao e){
-      throw new NoSurveyexcepcao(_disciplinename,_projectname);
+    catch(NoSurveyCoreException e){
+      throw new NoSurveyCoreException(_disciplinename,_projectname);
     }
-    catch(FinishingSurveyexcepcao e){
-      throw new FinishingSurveyexcepcao(_disciplinename,_projectname);
+    catch(FinishingSurveyCoreException e){
+      throw new FinishingSurveyCoreException(_disciplinename,_projectname);
     }
-    catch(NoSuchProjectexcepcao e){
-      throw new NoSuchProjectexcepcao(_disciplinename,_projectname);
+    catch(NoSuchProjectCoreException e){
+      throw new NoSuchProjectCoreException(_disciplinename,_projectname);
     }
-    catch(NoSuchDisciplineexcepcao e){
-      throw new NoSuchDisciplineexcepcao(_disciplinename);
+    catch(NoSuchDisciplineCoreException e){
+      throw new NoSuchDisciplineCoreException(_disciplinename);
     }
 	}
 	//6.6
-	public String showDisciplineSurvey(String _disciplinename,String _projectname)throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao{
+	public String showDisciplineSurvey(String _disciplinename,String _projectname)throws NoSuchProjectCoreException, NoSuchDisciplineCoreException{
 		try{
 			return _school.showDisciplineSurvey();
     }
-    catch(NoSuchProjectexcepcao e){
-      throw new NoSuchProjectexcepcao(_disciplinename,_projectname);
+    catch(NoSuchProjectCoreException e){
+      throw new NoSuchProjectCoreException(_disciplinename,_projectname);
     }
-    catch(NoSuchDisciplineexcepcao e){
-      throw new NoSuchDisciplineexcepcao(_disciplinename);
+    catch(NoSuchDisciplineCoreException e){
+      throw new NoSuchDisciplineCoreException(_disciplinename);
     }
 	}
 

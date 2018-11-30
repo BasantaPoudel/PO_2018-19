@@ -10,8 +10,8 @@ import sth.app.exceptions.NoSuchProjectException;
 import sth.app.exceptions.NoSurveyException;
 import sth.app.exceptions.NoSuchDisciplineException;
 
-import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
-import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+import sth.exceptions.newexceptions.NoSuchProjectCoreException;
+import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
 
 
 /**
@@ -45,11 +45,11 @@ public class DoShowProjectSubmissions extends Command<SchoolManager> {
     // _display.display();
     System.out.println(_receiver.showProjectSubmissions(_disciplinename.value(),_projectname.value()));
     }
-    catch(NoSuchProjectexcepcao e){
+    catch(NoSuchProjectCoreException e){
       throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
     }
 
-    catch(NoSuchDisciplineexcepcao e){
+    catch(NoSuchDisciplineCoreException e){
       throw new NoSuchDisciplineException(_disciplinename.value());
     }
   }

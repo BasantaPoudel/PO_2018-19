@@ -6,11 +6,11 @@ import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
 
-import sth.exceptions.newexceptions.NoSurveyexcepcao;
-import sth.exceptions.newexceptions.NonEmptySurveyexcepcao;
-import sth.exceptions.newexceptions.SurveyFinishedexcepcao;
-import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
-import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+import sth.exceptions.newexceptions.NoSurveyCoreException;
+import sth.exceptions.newexceptions.NonEmptySurveyCoreException;
+import sth.exceptions.newexceptions.SurveyFinishedCoreException;
+import sth.exceptions.newexceptions.NoSuchProjectCoreException;
+import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
 
 
 import sth.app.exceptions.NoSurveyException;
@@ -50,19 +50,19 @@ public class DoCancelSurvey extends Command<SchoolManager> {
     // _display.display();
     System.out.println(_receiver.cancelSurvey(_disciplinename.value(),_projectname.value()));
     }
-    catch(NoSurveyexcepcao e){
+    catch(NoSurveyCoreException e){
       throw new NoSurveyException(_disciplinename.value(),_projectname.value());
     }
-    catch(NonEmptySurveyexcepcao e){
+    catch(NonEmptySurveyCoreException e){
       throw new NonEmptySurveyException(_disciplinename.value(),_projectname.value());
     }
-    catch(SurveyFinishedexcepcao e){
+    catch(SurveyFinishedCoreException e){
       throw new SurveyFinishedException(_disciplinename.value(),_projectname.value());
     }
-    catch(NoSuchProjectexcepcao e){
+    catch(NoSuchProjectCoreException e){
       throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
     }
-    catch(NoSuchDisciplineexcepcao e){
+    catch(NoSuchDisciplineCoreException e){
       throw new NoSuchDisciplineException(_disciplinename.value());
     }
   }

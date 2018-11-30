@@ -11,9 +11,9 @@ import sth.app.exceptions.NoSuchDisciplineException;
 import sth.app.exceptions.NoSurveyException;
 
 
-import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
-import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
-import sth.exceptions.newexceptions.NoSurveyexcepcao;
+import sth.exceptions.newexceptions.NoSuchProjectCoreException;
+import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
+import sth.exceptions.newexceptions.NoSurveyCoreException;
 
 
 /**
@@ -48,14 +48,14 @@ public class DoShowSurveyResults extends Command<SchoolManager> {
     // _display.display();
     System.out.println(_receiver.showSurveyResults(_disciplinename.value(),_projectname.value()));
     }
-    catch(NoSuchProjectexcepcao e){
+    catch(NoSuchProjectCoreException e){
       throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
     }
 
-    catch(NoSurveyexcepcao e){
+    catch(NoSurveyCoreException e){
       throw new NoSurveyException(_disciplinename.value(),_projectname.value());
     }
-    catch(NoSuchDisciplineexcepcao e){
+    catch(NoSuchDisciplineCoreException e){
       throw new NoSuchDisciplineException(_disciplinename.value());
     }
 

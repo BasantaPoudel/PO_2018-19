@@ -35,16 +35,16 @@ import sth.core.Survey;
 import sth.core.Course;
 
 
-import sth.exceptions.newexceptions.NonEmptySurveyexcepcao;
-import sth.exceptions.newexceptions.OpeningSurveyexcepcao;
-import sth.exceptions.newexceptions.ClosingSurveyexcepcao;
-import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
-import sth.exceptions.newexceptions.NoSurveyexcepcao;
-import sth.exceptions.newexceptions.FinishingSurveyexcepcao;
-import sth.exceptions.newexceptions.NoSuchProjectexcepcao;
-import sth.exceptions.newexceptions.DuplicateSurveyexcepcao;
-import sth.exceptions.newexceptions.SurveyFinishedexcepcao;
-import sth.exceptions.newexceptions.NoSuchDisciplineexcepcao;
+import sth.exceptions.newexceptions.NonEmptySurveyCoreException;
+import sth.exceptions.newexceptions.OpeningSurveyCoreException;
+import sth.exceptions.newexceptions.ClosingSurveyCoreException;
+import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
+import sth.exceptions.newexceptions.NoSurveyCoreException;
+import sth.exceptions.newexceptions.FinishingSurveyCoreException;
+import sth.exceptions.newexceptions.NoSuchProjectCoreException;
+import sth.exceptions.newexceptions.DuplicateSurveyCoreException;
+import sth.exceptions.newexceptions.SurveyFinishedCoreException;
+import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
 
 
 
@@ -611,27 +611,27 @@ public class School implements Serializable {
 	=   Metodos de Portal DELEGADO        =
 	=====================================*/
 	//6.1
-	public String createSurvey() throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, DuplicateSurveyexcepcao{
+	public String createSurvey() throws NoSuchProjectCoreException, NoSuchDisciplineCoreException, DuplicateSurveyCoreException{
 		return "_school.createSurvey()";
 	}
 	//6.2
-	public String cancelSurvey() throws NoSuchProjectexcepcao,SurveyFinishedexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, NonEmptySurveyexcepcao{
+	public String cancelSurvey() throws NoSuchProjectCoreException,SurveyFinishedCoreException, NoSuchDisciplineCoreException, NoSurveyCoreException, NonEmptySurveyCoreException{
 		return "_school.cancelSurvey()";
 	}
 	//6.3
-	public String openSurvey() throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, OpeningSurveyexcepcao{
+	public String openSurvey() throws NoSuchProjectCoreException, NoSuchDisciplineCoreException, NoSurveyCoreException, OpeningSurveyCoreException{
 		return "_school.openSurvey()";
 	}
 	//6.4
-	public String closeSurvey() throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, ClosingSurveyexcepcao{
+	public String closeSurvey() throws NoSuchProjectCoreException, NoSuchDisciplineCoreException, NoSurveyCoreException, ClosingSurveyCoreException{
 		return "_school.closeSurvey()";
 	}
 	//6.5
-	public String finishSurvey() throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao, NoSurveyexcepcao, FinishingSurveyexcepcao{
+	public String finishSurvey() throws NoSuchProjectCoreException, NoSuchDisciplineCoreException, NoSurveyCoreException, FinishingSurveyCoreException{
 		return "_school.finishSurvey()";
 	}
 	//6.6
-	public String showDisciplineSurvey() throws NoSuchProjectexcepcao, NoSuchDisciplineexcepcao{
+	public String showDisciplineSurvey() throws NoSuchProjectCoreException, NoSuchDisciplineCoreException{
 		return "_school.showDisciplineSurvey()";
 	}
 
