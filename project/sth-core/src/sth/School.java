@@ -200,7 +200,6 @@ public class School implements Serializable {
 				Course c = new Course(fields3[0]);
 				Discipline disc = new Discipline(c,fields3[1]);
 				// discipline adds the id to 'it-self'
-				disc.addStudentID(id);
 				discs.add(disc);
 
 			}

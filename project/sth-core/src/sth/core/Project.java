@@ -9,7 +9,9 @@ public class Project implements Serializable{
 	private boolean _closed=false;
 	private String _content;
 
-	private TreeMap<String,Survey> _surveys = new TreeMap<String,Survey>();
+	private Map<String,Survey> _surveys = new TreeMap<String,Survey>();
+	
+	private Map<String,ProjectSubmission> _projectSubmissions = new TreeMap<String,ProjectSubmission>();
 
 
 	public Project(String name,String description,String content){
@@ -17,8 +19,8 @@ public class Project implements Serializable{
 		_description=description;
 		_content=content;
 	}
-    
-	
+
+
 	void close(){
 		_closed=true;
 	}

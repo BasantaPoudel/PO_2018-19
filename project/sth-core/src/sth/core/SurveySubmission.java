@@ -1,23 +1,16 @@
 package sth.core;
 import java.io.Serializable;
 
-import java.util.Map;
-import java.util.TreeMap;
-
-public class Survey implements Serializable{
+public class SurveySubmission implements Serializable{
 	private double _hoursSpent;
 	private String  _freeComments;
 	private boolean _closed=false;
 	private boolean _finalized=false;
 
 
-	private Map<String,SurveySubmission> _surveySubmissions = new TreeMap<String,SurveySubmission>();
-
-
-	public Survey(double hoursSpent ,String freeComments){
+	public SurveySubmission(double hoursSpent ,String freeComments){
 		_hoursSpent=hoursSpent;
 		_freeComments=freeComments;
-
 	}
 
 	/*============================================

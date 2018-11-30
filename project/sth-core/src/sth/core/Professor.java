@@ -19,6 +19,9 @@ Collator collator = Collator.getInstance(locale);
     super(_name,_phoneNumber,_id);
   }
 
+
+
+
 	public void setName(String name){
 		super.setName(name);
 	}
@@ -28,14 +31,18 @@ Collator collator = Collator.getInstance(locale);
 	public void setPhoneNumber(int phoneNumber){
 		super.setPhoneNumber(phoneNumber);
 	}
-
 	public int getId(){
 		return super.getId();
 	}
 	public void setId(int id){
 		super.setId(id);
 	}
-	/*=====  End of getters and setters  ======*/
+    public Discipline getDiscipline(Discipline d){
+        return _disciplines.get(d.getCourseName()).get(d.getName());
+    }
+
+
+
 
 	// _______________________________________________________________________
 	public void addDiscipline(Discipline discipline){

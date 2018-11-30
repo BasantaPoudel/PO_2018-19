@@ -1,7 +1,11 @@
 package sth.core;
 
 import java.util.List;
+import java.util.Map;
 import java.util.ArrayList;
+
+import java.util.Map;
+import java.util.TreeMap;
 
 import java.io.Serializable;
 
@@ -9,8 +13,9 @@ import java.io.Serializable;
 public class Discipline implements Serializable{
 	private String _name;
 	private Course _course;
-	private List<Integer> _studentIDs= new ArrayList<Integer>();
 
+	// projName,project
+	private Map<String,Project> _projects =new TreeMap<String,Project>();
 
 
 
@@ -42,20 +47,7 @@ public class Discipline implements Serializable{
 	}
 
 
-
-	/*=============================================
-	=            map operations
-	=============================================*/
-	public void addStudentID(int id){
-		_studentIDs.add(id);
-	}
-	public List<Integer> getIDs(){
-		return _studentIDs;
-	}
-
-	public void setIDs(List<Integer> ids){
-		_studentIDs=ids;
-	}
+ 
 
 
 
