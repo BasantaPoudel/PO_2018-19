@@ -57,5 +57,16 @@
 * A-09-05 - Ver alunos de disciplina com vários alunos e inseridos fora de ordem
 * A-09-06
 
-java -Dimport=../../tests/tests_ef/auto-tests/A-01-01-M-ok.import sth.app.App
+java -Dimport=../../tests/tests_ef/auto-tests/A-02-08-M-ok.import sth.app.App
+
+java -Dimport=../../tests/tests_ef/auto-tests/A-02-12-M-ok.import sth.app.App
+
+java -Dimport=../../tests/tests_ef/auto-tests/A-06-02-M-ok.import sth.app.App
+
+java -Dimport=../../tests/tests_ef/auto-tests/A-06-03-M-ok.import sth.app.App
+
+java -Dimport=../../tests/tests_ef/auto-tests/A-09-02-M-ok.import sth.app.App
+
+diffs log/A-00wik.log wiki_results.txt
+
 find . -type f  ! -name "*.?*" -delete
