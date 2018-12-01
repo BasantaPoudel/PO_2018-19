@@ -11,7 +11,7 @@ public class Staff extends Person implements Serializable{
 		super(_name,_phoneNumber,_id);
 	}
 	// _______________________________________________________________________
-	public void addDiscipline(Discipline d){
+	public void putDiscipline(Discipline d){
 		_disciplines.add(d);
 	}
 	public List<Discipline> getDisciplines(){

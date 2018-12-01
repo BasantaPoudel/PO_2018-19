@@ -15,6 +15,7 @@ public class Professor extends Person implements Serializable{
     //note <courseName<disciplineName,discipline>>
     private TreeMap<String,	TreeMap<String,	Discipline>> _disciplines = new TreeMap<String,	TreeMap<String,	Discipline>>();
 
+    // <disciplineName,courseName >
     private TreeMap<String,	String> _disciplinesCourses = new TreeMap<String,	String>();
 
     // constructor
@@ -23,84 +24,64 @@ public class Professor extends Person implements Serializable{
         super(_name,_phoneNumber,_id);
     }
 
-    // ====================================================
-    public void addDiscipline(Discipline discipline){
+    /*===========================================
+    =            disciplines
+    ===========================================*/
 
-        // ============= names ===================
 
+    public void putDiscipline(Discipline discipline){
+
+        // names
         String courseName=discipline.getCourseName();
-
-        // get the disciplineName form discipline
-        String disciplineName=discipline.getName();
-        // ========================================
+        String disciplineName=discipline.getName(); // get the disciplineName form discipline
 
         // if teacher never had discipline of that course
         if (_disciplines.get(courseName) == null){
 
-            // create a map of disciplineName's and disciplines for that course
-            TreeMap<String,Discipline> disciplinesMap = new TreeMap<String,Discipline>();
+            TreeMap<String,Discipline> disciplinesMap = new TreeMap<String,Discipline>(); // create a map of disciplineName's and disciplines for that course
 
-            // put in map disciplineName and discipline
-            disciplinesMap.put(disciplineName,discipline);
+            disciplinesMap.put(disciplineName,discipline);  // put in map disciplineName and discipline
+            _disciplines.put(courseName,disciplinesMap);  // add the new map  to respective course
 
-            // add the new map  to respective course
-            _disciplines.put(courseName,disciplinesMap);
 
         }
 
         // if teacher has had discipline of that course before
+
         else if (_disciplines.get(courseName) != null){
             // add  existing Map
             _disciplines.get(courseName).put(disciplineName,discipline);
         }
 
-        // finally add to _disciplinesCourses map the names for consulting
-        _disciplinesCourses.put(disciplineName,courseName);
+        _disciplinesCourses.put(disciplineName,courseName);// add to _disciplinesCourses (a Map<String,String>) the names
+
     }
-    // ====================================================
+
     public String getDisciplineName(String disciplineName){
         return _disciplinesCourses.get(disciplineName);
     }
 
+    public Discipline getDiscipline(String courseName,String disciplineName){
+        return _disciplines.get(courseName).get(disciplineName);
+    }
 
-    public void setName(String name){
-        super.setName(name);
+    public boolean hasDiscipline(String disciplineName){
+        return (_disciplines.containsKey(disciplineName));
     }
-    public int getPhoneNumber(){
-        return super.getPhoneNumber();
-    }
-    public void setPhoneNumber(int phoneNumber){
-        super.setPhoneNumber(phoneNumber);
-    }
-    public int getId(){
-        return super.getId();
-    }
-    public void setId(int id){
-        super.setId(id);
-    }
-    public Discipline getDiscipline(Discipline d){
-        return _disciplines.get(d.getCourseName()).get(d.getName());
+
+    public String getDisciplineCourseName(String disciplineName){
+        return _disciplinesCourses.get(disciplineName);
     }
 
 
-
-
-
-    public void createProject(String proj,String disc){
-
-    }
-    public void closeProject(String proj,String disc){
-
-    }
+    /*===========================================
+    =            show
+    ===========================================*/
 
     public String show(){
-
         return "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName()+"\n";
-
     }
-
     public String showWithDisciplines(){
-
         String res = "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName()+"\n";
         for (String courseName : _disciplines.keySet() ) {
             for (String disciplineName : _disciplines.get(courseName).keySet() ){

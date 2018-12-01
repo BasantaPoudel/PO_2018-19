@@ -219,7 +219,7 @@ public class School implements Serializable {
 		if (pattALUNO.matcher(tipoElemento).matches()){
 			Student student = new Student(name,phoneNumber,id);
 			for(Discipline disc : discs){
-				student.addDiscipline(disc);
+				student.putDiscipline(disc);
 			}
 			addStudent(id, student);
 			addPerson(id, student);
@@ -228,7 +228,7 @@ public class School implements Serializable {
 		else if (pattDELEGADO.matcher(tipoElemento).matches()){
 			Student representive = new Student(name,phoneNumber,id);
 			for(Discipline disc : discs){
-				representive.addDiscipline(disc);
+				representive.putDiscipline(disc);
 			}
 			addRepresentive(id, representive);
 			addPerson(id, representive);
@@ -237,7 +237,7 @@ public class School implements Serializable {
 		else if (pattDOCENTE.matcher(tipoElemento).matches()){
 			Professor professor = new Professor(name,phoneNumber,id);
 			for(Discipline disc : discs){
-				professor.addDiscipline(disc);
+				professor.putDiscipline(disc);
 			}
 			addProfessor(id, professor);
 			addPerson(id, professor);
@@ -246,7 +246,7 @@ public class School implements Serializable {
 		else if (pattFUNCIONÁRIO.matcher(tipoElemento).matches()){
 			Staff staff = new Staff(name,phoneNumber,id);
 			for(Discipline disc : discs){
-				staff.addDiscipline(disc);
+				staff.putDiscipline(disc);
 			}
 			addStaff(id, staff);
 			addPerson(id, staff);
@@ -567,7 +567,23 @@ public class School implements Serializable {
 	=   Metodos de Portal DOCENTE         =
 	=====================================*/
 	//4.1
-	public void createProject(int loginID, String disciplineName,String name){
+	public void createProject(int loginID, String disciplineName,String projectName)throws NoSuchDisciplineCoreException{
+		Professor prof = _professors.get(loginID);
+		if (prof.hasDiscipline(disciplineName)){
+			// courseName
+			String courseName=prof.getDisciplineCourseName(disciplineName);
+			// discipline
+			Discipline disc = prof.getDiscipline(courseName,disciplineName);
+
+			// project
+			Project proj=new Project(projectName);
+
+			disc.addProject(proj);
+			prof.putDiscipline(disc); //replaces
+		}
+		else{
+			throw new NoSuchDisciplineCoreException(disciplineName);
+		}
 	}
 	//4.2
 	public void closeProject(int loginID,String disciplineName,String name){

@@ -46,8 +46,14 @@ public class Discipline implements Serializable{
 		_course=course;
 	}
 
+	/*===========================================
+	=            projects
+	===========================================*/
 
- 
+	public  void addProject(Project project){
+		_projects.put(project.getName(),project);
+	}
+
 
 
 

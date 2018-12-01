@@ -42,7 +42,7 @@ public class Student extends Person implements Serializable{
 	/*=============================================
 	=            map operations
 	=============================================*/
-	public void addDiscipline(Discipline d){
+	public void putDiscipline(Discipline d){
 		_disciplines.put(d.getName(), d);
 	}
 
