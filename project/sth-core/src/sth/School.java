@@ -574,9 +574,9 @@ public class School implements Serializable {
 			String courseName=prof.getDisciplineCourseName(disciplineName);
 			// discipline
 			Discipline disc = prof.getDiscipline(courseName,disciplineName);
-
 			// project
 			Project proj=new Project(projectName);
+
 			disc.addProject(proj);
 		}
 		else{
@@ -585,15 +585,15 @@ public class School implements Serializable {
 	}
 	//4.2
 	public void closeProject(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineCoreException{
-				Professor prof = _professors.get(loginID);
-				if (prof.hasDiscipline(disciplineName)){
+			Professor prof = _professors.get(loginID);
+		if (prof.hasDiscipline(disciplineName)){
 			// courseName
 			String courseName=prof.getDisciplineCourseName(disciplineName);
 			// discipline
 			Discipline disc = prof.getDiscipline(courseName,disciplineName);
-
 			// project
 			Project proj=disc.getProject(projectName);
+
 			proj.close();
 
 		}
@@ -603,10 +603,26 @@ public class School implements Serializable {
 	}
 
 	//4.4
-	public String showProjectSubmissions(int loginID,String disciplineName,String projectName){
-		String res = "";
-		
-		return res;
+	public String showProjectSubmissions(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineCoreException{
+		Professor prof = _professors.get(loginID);
+		if (prof.hasDiscipline(disciplineName)){
+
+			String res = disciplineName+" - "+projectName;
+
+			// courseName
+			String courseName=prof.getDisciplineCourseName(disciplineName);
+			// discipline
+			Discipline disc = prof.getDiscipline(courseName,disciplineName);
+			// project
+			Project proj=disc.getProject(projectName);
+			// res+=proj.getSubmissions();
+
+			return res;
+		}
+		else{
+			throw new NoSuchDisciplineCoreException(disciplineName);
+		}
+
 		// Programação com Objectos - Gatos Simples
 		// * 0234 - Gato.java
 		// * 6789 - Cat.java
