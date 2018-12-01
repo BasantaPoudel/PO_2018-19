@@ -47,9 +47,9 @@ public class DoShowDisciplineStudents extends Command<SchoolManager> {
     // }
 
     try{
-    // _display.add(_receiver.showDisciplineStudent(_disciplineName.value(),_projectName.value()));
-    // _display.display();
-    System.out.println(_receiver.showDisciplineStudent(_disciplineName.value(),_projectName.value()));
+    _display.add(_receiver.showDisciplineStudents(_disciplineName.value(),_projectName.value()));
+    _display.display();
+    // System.out.println(_receiver.showDisciplineStudent(_disciplineName.value(),_projectName.value()));
     }
     catch(NoSuchProjectCoreException e){
       throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());

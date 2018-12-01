@@ -602,12 +602,18 @@ public class School implements Serializable {
 		}
 	}
 
-	//4.3
-	public String showDisciplineStudents(int loginID){
-		return "";
-	}
 	//4.4
-	public String showProjectSubmissions(String disciplineName){
+	public String showProjectSubmissions(int loginID,String disciplineName,String projectName){
+		String res = "";
+		
+		return res;
+		// Programação com Objectos - Gatos Simples
+		// * 0234 - Gato.java
+		// * 6789 - Cat.java
+		// * 7912 - Tigre.jav
+	}
+	//4.3
+	public String showDisciplineStudents(int loginID,String disciplineName,String projectName){
 		return "";
 	}
 
