@@ -22,10 +22,12 @@ do
 				 rm log/$FILE.log
 			 fi
 				echo "yes";
-				echo $FILE.................. o o>> log/A-00wik.log
+				printf "$FILE.................. o o ">> log/A-00wik.log
+				cat desc/$FILE.desc >> log/A-00wik.log
 	else
 		echo "no";
-		echo $FILE.................. o !>> log/A-00wik.log
+		printf "$FILE.................. o ! ">> log/A-00wik.log
+		cat desc/$FILE.desc >> log/A-00wik.log
 
 		echo $FILE FAILED > log/$FILE.log
 		echo $FILE FAILED >> log/A-00.log
