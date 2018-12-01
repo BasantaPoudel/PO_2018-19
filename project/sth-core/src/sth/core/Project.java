@@ -26,10 +26,10 @@ public class Project implements Serializable{
 	public String getName(){
 		return _name;
 	}
-	void close(){
+	public void close(){
 		_closed=true;
 	}
-	void open(){
+	public void open(){
         _closed=false;
 	}
 

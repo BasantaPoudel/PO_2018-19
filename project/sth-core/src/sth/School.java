@@ -577,18 +577,31 @@ public class School implements Serializable {
 
 			// project
 			Project proj=new Project(projectName);
-
 			disc.addProject(proj);
-			prof.putDiscipline(disc); //replaces
 		}
 		else{
 			throw new NoSuchDisciplineCoreException(disciplineName);
 		}
 	}
 	//4.2
-	public void closeProject(int loginID,String disciplineName,String name){
-		// else nothing happens
+	public void closeProject(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineCoreException{
+				Professor prof = _professors.get(loginID);
+				if (prof.hasDiscipline(disciplineName)){
+			// courseName
+			String courseName=prof.getDisciplineCourseName(disciplineName);
+			// discipline
+			Discipline disc = prof.getDiscipline(courseName,disciplineName);
+
+			// project
+			Project proj=disc.getProject(projectName);
+			proj.close();
+
+		}
+		else{
+			throw new NoSuchDisciplineCoreException(disciplineName);
+		}
 	}
+
 	//4.3
 	public String showDisciplineStudents(int loginID){
 		return "";

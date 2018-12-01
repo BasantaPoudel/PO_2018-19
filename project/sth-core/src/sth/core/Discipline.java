@@ -54,8 +54,9 @@ public class Discipline implements Serializable{
 		_projects.put(project.getName(),project);
 	}
 
-
-
+	public Project getProject(String projectName){
+		return _projects.get(projectName);
+	}
 
 
 }
