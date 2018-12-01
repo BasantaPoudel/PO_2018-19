@@ -567,12 +567,10 @@ public class School implements Serializable {
 	=   Metodos de Portal DOCENTE         =
 	=====================================*/
 	//4.1
-	public String createProject(int loginID,String name,String description,String content, String disciplineName){
-		return "";
+	public void createProject(int loginID, String disciplineName,String name){
 	}
 	//4.2
-	public String closeProject(int loginID,String name){
-		return "";
+	public void closeProject(int loginID,String disciplineName,String name){
 		// else nothing happens
 	}
 	//4.3

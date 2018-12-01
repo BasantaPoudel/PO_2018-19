@@ -44,7 +44,7 @@ public class DoCreateProject extends Command<SchoolManager> {
     try{
     // _display.add(_receiver.createProject(_disciplineName.value(),_projectName.value()));
     // _display.display();
-    System.out.println(_receiver.createProject(_disciplineName.value(),_projectName.value()));
+    _receiver.createProject(_disciplineName.value(),_projectName.value());
     }
     catch(NoSuchDisciplineCoreException e){
       throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());

@@ -9,12 +9,13 @@ import java.util.Locale;
 public class Professor extends Person implements Serializable{
 
 
-    Locale locale = new Locale("pt", "PT");
-    Collator collator = Collator.getInstance(locale);
+    private transient Locale locale = new Locale("pt", "PT");
+    private transient Collator collator = Collator.getInstance(locale);
 
     //note <courseName<disciplineName,discipline>>
     private TreeMap<String,	TreeMap<String,	Discipline>> _disciplines = new TreeMap<String,	TreeMap<String,	Discipline>>(collator);
-    private TreeMap<String,	TreeMap<String,	String>> _disciplinesCourses = new TreeMap<String,	TreeMap<String,	String>>(collator);
+
+    private TreeMap<String,	String> _disciplinesCourses = new TreeMap<String,	String>(collator);
 
     // constructor
 
@@ -22,7 +23,7 @@ public class Professor extends Person implements Serializable{
         super(_name,_phoneNumber,_id);
     }
 
-    // _______________________________________________________________________
+    // ====================================================
     public void addDiscipline(Discipline discipline){
 
         // ============= names ===================
@@ -52,9 +53,14 @@ public class Professor extends Person implements Serializable{
             // add  existing Map
             _disciplines.get(courseName).put(disciplineName,discipline);
         }
-    }
-    // _______________________________________________________________________
 
+        // finally add to _disciplinesCourses map the names for consulting
+        _disciplinesCourses.put(disciplineName,courseName);
+    }
+    // ====================================================
+    public String getDisciplineName(String disciplineName){
+        return _disciplinesCourses.get(disciplineName);
+    }
 
 
     public void setName(String name){
@@ -81,8 +87,10 @@ public class Professor extends Person implements Serializable{
 
 
     public void createProject(String proj,String disc){
+
     }
     public void closeProject(String proj,String disc){
+
     }
 
     public String show(){

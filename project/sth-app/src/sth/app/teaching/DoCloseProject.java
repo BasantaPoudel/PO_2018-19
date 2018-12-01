@@ -43,7 +43,8 @@ public class DoCloseProject extends Command<SchoolManager> {
     try{
     // _display.add(_receiver.closeProject(_disciplineName.value(),_projectName.value()));
     // _display.display();
-    System.out.println(_receiver.closeProject(_disciplineName.value(),_projectName.value()));
+    _receiver.closeProject(_disciplineName.value(),_projectName.value());
+
     }
     catch(NoSuchProjectCoreException e){
       throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());

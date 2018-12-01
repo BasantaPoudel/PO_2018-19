@@ -183,12 +183,14 @@ public class SchoolManager {
 	=   Funções de Portal DOCENTE         =
 	=====================================*/
 	//4.1
-	public String createProject(String _disciplineName,String _projectName) throws DuplicateProjectCoreException,NoSuchDisciplineCoreException{
-		return "_school.createProject()";
+	public void createProject(String disciplineName,String projectName) throws DuplicateProjectCoreException,NoSuchDisciplineCoreException{
+
+		_school.createProject( _loginID,  disciplineName, projectName);
 	}
 	//4.2
-	public String closeProject(String _disciplineName,String _projectName) throws NoSuchProjectCoreException,NoSuchDisciplineCoreException{
-		return "_school.closeProject()";
+	public void closeProject(String disciplineName,String projectName) throws NoSuchProjectCoreException,NoSuchDisciplineCoreException{
+
+		_school.closeProject( _loginID, disciplineName, projectName);
 	}
 	//4.3
 	public String showDisciplineStudent(String _disciplineName,String _projectName) throws NoSuchProjectCoreException,NoSuchDisciplineCoreException{
