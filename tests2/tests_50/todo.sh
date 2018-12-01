@@ -7,6 +7,7 @@ if [ ! -d results/ ]; then
 fi
 
 echo "" > log/A-00.log
+echo "" > log/A-00wik.log
 
 for FILE_RAW in $(ls auto-tests/*.in);
 do
@@ -21,11 +22,14 @@ do
 				 rm log/$FILE.log
 			 fi
 				echo "yes";
+				echo $FILE.................. o o>> log/A-00wik.log
 	else
-		echo no;
+		echo "no";
+		echo $FILE.................. o !>> log/A-00wik.log
 
 		echo $FILE FAILED > log/$FILE.log
 		echo $FILE FAILED >> log/A-00.log
+
 		cat desc/$FILE.desc >> log/$FILE.log
 		echo please schedule a fix >> log/$FILE.log
 		echo $FILE  >> log/$FILE.log

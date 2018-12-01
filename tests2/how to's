@@ -1,5 +1,5 @@
 magia
-cd ../tests2/tests_50;sh todo.sh;cd -
+make;cd ../tests2/tests_50;sh todo.sh;cd -
 
 manual
 proj:
