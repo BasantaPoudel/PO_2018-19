@@ -18,8 +18,8 @@ import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
 public class DoShowDisciplineSurveys extends Command<SchoolManager> {
 
   //FIXME[FIXING-BEGIN] add input fields if needed
-  Input<String> _projectname;
-  Input<String> _disciplinename;
+  Input<String> _projectName;
+  Input<String> _disciplineName;
   //FIXME[FIXING-END] add input fields if needed
   /**
    * @param receiver
@@ -27,8 +27,8 @@ public class DoShowDisciplineSurveys extends Command<SchoolManager> {
   public DoShowDisciplineSurveys(SchoolManager receiver) {
     super(Label.SHOW_DISCIPLINE_SURVEYS, receiver);
     //FIXME initialize input fields if needed
-    _disciplinename = _form.addStringInput(Message.requestDisciplineName());
-    _projectname = _form.addStringInput(Message.requestProjectName());
+    _disciplineName = _form.addStringInput(Message.requestDisciplineName());
+    _projectName = _form.addStringInput(Message.requestProjectName());
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
@@ -38,15 +38,15 @@ public class DoShowDisciplineSurveys extends Command<SchoolManager> {
     _form.parse();
 
     try{
-    // _display.add(_receiver.showDisciplineSurvey(_disciplinename.value(),_projectname.value()));
+    // _display.add(_receiver.showDisciplineSurvey(_disciplineName.value(),_projectName.value()));
     // _display.display();
-    System.out.println(_receiver.showDisciplineSurvey(_disciplinename.value(),_projectname.value()));
+    System.out.println(_receiver.showDisciplineSurvey(_disciplineName.value(),_projectName.value()));
     }
     catch(NoSuchProjectCoreException e){
-      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+      throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());
     }
     catch(NoSuchDisciplineCoreException e){
-      throw new NoSuchDisciplineException(_disciplinename.value());
+      throw new NoSuchDisciplineException(_disciplineName.value());
     }
   }
 

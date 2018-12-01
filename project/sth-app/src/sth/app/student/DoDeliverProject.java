@@ -16,8 +16,8 @@ import sth.app.exceptions.NoSuchDisciplineException;
 public class DoDeliverProject extends Command<SchoolManager> {
 
   //FIXME[FIXING-BEGIN] add input fields if needed
-  Input<String> _projectname;
-  Input<String> _disciplinename;
+  Input<String> _projectName;
+  Input<String> _disciplineName;
   Input<String> _description;
   //FIXME[FIXING-END] add input fields if needed
   /**
@@ -26,8 +26,8 @@ public class DoDeliverProject extends Command<SchoolManager> {
   public DoDeliverProject(SchoolManager receiver) {
     super(Label.DELIVER_PROJECT, receiver);
     //FIXME initialize input fields if needed
-    _disciplinename = _form.addStringInput(Message.requestDisciplineName());
-    _projectname = _form.addStringInput(Message.requestProjectName());
+    _disciplineName = _form.addStringInput(Message.requestDisciplineName());
+    _projectName = _form.addStringInput(Message.requestProjectName());
     _description = _form.addStringInput(Message.requestDeliveryMessage());
 
   }
@@ -38,15 +38,15 @@ public class DoDeliverProject extends Command<SchoolManager> {
     //FIXME implement command
     _form.parse();
     try{
-    // _display.add(_receiver.deliverProject(_disciplinename.value(),_projectname.value(),_description.value()));
+    // _display.add(_receiver.deliverProject(_disciplineName.value(),_projectName.value(),_description.value()));
     // _display.display();
-    System.out.println(_receiver.deliverProject(_disciplinename.value(),_projectname.value(),_description.value()));
+    System.out.println(_receiver.deliverProject(_disciplineName.value(),_projectName.value(),_description.value()));
     }
     catch(NoSuchProjectCoreException e){
-      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+      throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());
     }
     catch(NoSuchDisciplineCoreException e){
-      throw new NoSuchDisciplineException(_disciplinename.value());
+      throw new NoSuchDisciplineException(_disciplineName.value());
     }
     }
   }

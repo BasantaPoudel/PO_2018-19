@@ -21,8 +21,8 @@ import sth.exceptions.newexceptions.DuplicateProjectCoreException;
 public class DoCreateProject extends Command<SchoolManager> {
 
   //FIXME[FIXING-BEGIN] add input fields if needed
-  Input<String> _disciplinename;
-  Input<String> _projectname;
+  Input<String> _disciplineName;
+  Input<String> _projectName;
   //FIXME[FIXING-END] add input fields if needed
 
   /**
@@ -31,9 +31,9 @@ public class DoCreateProject extends Command<SchoolManager> {
   public DoCreateProject(SchoolManager receiver) {
     super(Label.CREATE_PROJECT, receiver);
     //FIXME [FIXING-BEGIN] initialize input fields if needed
-    _disciplinename = _form.addStringInput(Message.requestDisciplineName());
+    _disciplineName = _form.addStringInput(Message.requestDisciplineName());
     //[FIXING-LEFT] NoSuchDisciplineException
-    _projectname = _form.addStringInput(Message.requestProjectName());
+    _projectName = _form.addStringInput(Message.requestProjectName());
     //FIXME [FIXING-END] initialize input fields if needed  }
   }
   /** @see pt.tecnico.po.ui.Command#execute() */
@@ -42,16 +42,16 @@ public class DoCreateProject extends Command<SchoolManager> {
     //FIXME implement command
     _form.parse();
     try{
-    // _display.add(_receiver.createProject(_disciplinename.value(),_projectname.value()));
+    // _display.add(_receiver.createProject(_disciplineName.value(),_projectName.value()));
     // _display.display();
-    System.out.println(_receiver.createProject(_disciplinename.value(),_projectname.value()));
+    System.out.println(_receiver.createProject(_disciplineName.value(),_projectName.value()));
     }
     catch(NoSuchDisciplineCoreException e){
-      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+      throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());
     }
 
     catch(DuplicateProjectCoreException e){
-      throw new DuplicateProjectException(_disciplinename.value(),_projectname.value());
+      throw new DuplicateProjectException(_disciplineName.value(),_projectName.value());
     }
   }
 

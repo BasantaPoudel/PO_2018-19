@@ -24,8 +24,8 @@ import sth.app.exceptions.NoSuchDisciplineException;
 public class DoCloseSurvey extends Command<SchoolManager> {
 
   //FIXME[FIXING-BEGIN] add input fields if needed
-  Input<String> _projectname;
-  Input<String> _disciplinename;
+  Input<String> _projectName;
+  Input<String> _disciplineName;
   //FIXME[FIXING-END] add input fields if needed
 
   /**
@@ -34,8 +34,8 @@ public class DoCloseSurvey extends Command<SchoolManager> {
   public DoCloseSurvey(SchoolManager receiver) {
     super(Label.CLOSE_SURVEY, receiver);
     //FIXME initialize input fields if needed
-    _disciplinename = _form.addStringInput(Message.requestDisciplineName());
-    _projectname = _form.addStringInput(Message.requestProjectName());
+    _disciplineName = _form.addStringInput(Message.requestDisciplineName());
+    _projectName = _form.addStringInput(Message.requestProjectName());
 
   }
 
@@ -45,21 +45,21 @@ public class DoCloseSurvey extends Command<SchoolManager> {
     //FIXME implement command
     _form.parse();
     try{
-    // _display.add(_receiver.closeSurvey(_disciplinename.value(),_projectname.value()));
+    // _display.add(_receiver.closeSurvey(_disciplineName.value(),_projectName.value()));
     // _display.display();
-    System.out.println(_receiver.closeSurvey(_disciplinename.value(),_projectname.value()));
+    System.out.println(_receiver.closeSurvey(_disciplineName.value(),_projectName.value()));
     }
     catch(NoSurveyCoreException e){
-      throw new NoSurveyException(_disciplinename.value(),_projectname.value());
+      throw new NoSurveyException(_disciplineName.value(),_projectName.value());
     }
     catch(ClosingSurveyCoreException e){
-      throw new ClosingSurveyException(_disciplinename.value(),_projectname.value());
+      throw new ClosingSurveyException(_disciplineName.value(),_projectName.value());
     }
     catch(NoSuchProjectCoreException e){
-      throw new NoSuchProjectException(_disciplinename.value(),_projectname.value());
+      throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());
     }
     catch(NoSuchDisciplineCoreException e){
-      throw new NoSuchDisciplineException(_disciplinename.value());
+      throw new NoSuchDisciplineException(_disciplineName.value());
     }
 
   }
