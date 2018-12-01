@@ -57,5 +57,5 @@
 * A-09-05 - Ver alunos de disciplina com vários alunos e inseridos fora de ordem
 * A-09-06
 
-java -Dimport=../../tests/tests_25/auto-tests/A-01-01-M-ok.import sth.app.App
+java -Dimport=../../tests/tests_ef/auto-tests/A-01-01-M-ok.import sth.app.App
 find . -type f  ! -name "*.?*" -delete
