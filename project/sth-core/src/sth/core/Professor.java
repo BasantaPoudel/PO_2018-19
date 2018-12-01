@@ -9,13 +9,13 @@ import java.util.Locale;
 public class Professor extends Person implements Serializable{
 
 
-    private transient Locale locale = new Locale("pt", "PT");
-    private transient Collator collator = Collator.getInstance(locale);
+    // private transient Locale locale = new Locale("pt", "PT");
+    // private transient Collator  = Collator.getInstance(locale);
 
     //note <courseName<disciplineName,discipline>>
-    private TreeMap<String,	TreeMap<String,	Discipline>> _disciplines = new TreeMap<String,	TreeMap<String,	Discipline>>(collator);
+    private TreeMap<String,	TreeMap<String,	Discipline>> _disciplines = new TreeMap<String,	TreeMap<String,	Discipline>>();
 
-    private TreeMap<String,	String> _disciplinesCourses = new TreeMap<String,	String>(collator);
+    private TreeMap<String,	String> _disciplinesCourses = new TreeMap<String,	String>();
 
     // constructor
 
@@ -38,7 +38,7 @@ public class Professor extends Person implements Serializable{
         if (_disciplines.get(courseName) == null){
 
             // create a map of disciplineName's and disciplines for that course
-            TreeMap<String,Discipline> disciplinesMap = new TreeMap<String,Discipline>(collator);
+            TreeMap<String,Discipline> disciplinesMap = new TreeMap<String,Discipline>();
 
             // put in map disciplineName and discipline
             disciplinesMap.put(disciplineName,discipline);
