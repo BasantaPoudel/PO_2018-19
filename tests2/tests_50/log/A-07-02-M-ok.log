@@ -104,7 +104,8 @@ Escolha uma opção: Portal do Docente
 4 - Ver alunos de disciplina leccionada
 5 - Ver resultados de um inquérito
 0 - Sair
-Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
+Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: O projecto 'Proj I' não existe na disciplina 'Computadores II'.
+Portal do Docente
 1 - Criar projecto
 2 - Fechar projecto
 3 - Ver submissões de um projecto
@@ -118,8 +119,7 @@ Escolha uma opção: Menu principal
 4 - Portal do Docente
 0 - Sair
 Escolha uma opção: _________diff_____________________________________________________________________________________________________
-26c26,27
-< Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
+26c26
+< Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: O projecto 'Proj I' não existe na disciplina 'Computadores II'.
 ---
 > Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: A disciplina 'Computadores II' não existe ou não é válida para o utilizador em causa.
-> Portal do Docente

@@ -272,7 +272,8 @@ Escolha uma opção: Portal do Docente
 4 - Ver alunos de disciplina leccionada
 5 - Ver resultados de um inquérito
 0 - Sair
-Escolha uma opção: Nome da disciplina: Nome da disciplina: Portal do Docente
+Escolha uma opção: Nome da disciplina: Nome da disciplina: Ver alunos de disciplina leccionada: Operação inválida: A disciplina 'Algoritmos e Estruturas de Dados' não existe ou não é válida para o utilizador em causa.
+Portal do Docente
 1 - Criar projecto
 2 - Fechar projecto
 3 - Ver submissões de um projecto
@@ -280,28 +281,32 @@ Escolha uma opção: Nome da disciplina: Nome da disciplina: Portal do Docente
 5 - Ver resultados de um inquérito
 0 - Sair
 Escolha uma opção: Número inválido!
-Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
+Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: O projecto 'Compiladores' não existe na disciplina 'Compiladores'.
+Portal do Docente
 1 - Criar projecto
 2 - Fechar projecto
 3 - Ver submissões de um projecto
 4 - Ver alunos de disciplina leccionada
 5 - Ver resultados de um inquérito
 0 - Sair
-Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
+Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: O projecto 'Compiladores' não existe na disciplina 'Compiladores'.
+Portal do Docente
 1 - Criar projecto
 2 - Fechar projecto
 3 - Ver submissões de um projecto
 4 - Ver alunos de disciplina leccionada
 5 - Ver resultados de um inquérito
 0 - Sair
-Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
+Escolha uma opção: Nome da disciplina: Nome do projecto: Fechar projecto: Operação inválida: A disciplina 'Compiladores' não existe ou não é válida para o utilizador em causa.
+Portal do Docente
 1 - Criar projecto
 2 - Fechar projecto
 3 - Ver submissões de um projecto
 4 - Ver alunos de disciplina leccionada
 5 - Ver resultados de um inquérito
 0 - Sair
-Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
+Escolha uma opção: Nome da disciplina: Nome do projecto: Fechar projecto: Operação inválida: A disciplina 'Compiladores' não existe ou não é válida para o utilizador em causa.
+Portal do Docente
 1 - Criar projecto
 2 - Fechar projecto
 3 - Ver submissões de um projecto
@@ -320,8 +325,8 @@ Escolha uma opção: _________diff______________________________________________
 > * Informática - Compiladores
 > * Informática - Engenharia de Software
 > * Informática - Sistemas Operativos
-65c69,93
-< Escolha uma opção: Nome da disciplina: Nome da disciplina: Portal do Docente
+65c69,92
+< Escolha uma opção: Nome da disciplina: Nome da disciplina: Ver alunos de disciplina leccionada: Operação inválida: A disciplina 'Algoritmos e Estruturas de Dados' não existe ou não é válida para o utilizador em causa.
 ---
 > Escolha uma opção: Nome da disciplina: DELEGADO|100010|123456789|João Maria
 > * Informática - Algoritmos e Estruturas de Dados
@@ -347,18 +352,25 @@ Escolha uma opção: _________diff______________________________________________
 > ALUNO|100062|123456789|João A. Manuel
 > * Informática - Algoritmos e Estruturas de Dados
 > * Informática - Fundamentos da Programação
-> Portal do Docente
-72,73c100
+73,75c100
 < Escolha uma opção: Número inválido!
-< Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
+< Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: O projecto 'Compiladores' não existe na disciplina 'Compiladores'.
+< Portal do Docente
 ---
 > Escolha uma opção: Nome da disciplina: Portal do Docente
-87c114,115
-< Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
+82,83c107
+< Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: O projecto 'Compiladores' não existe na disciplina 'Compiladores'.
+< Portal do Docente
+---
+> Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
+90c114
+< Escolha uma opção: Nome da disciplina: Nome do projecto: Fechar projecto: Operação inválida: A disciplina 'Compiladores' não existe ou não é válida para o utilizador em causa.
 ---
 > Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: O projecto 'Compiladores' já existe na disciplina 'Compiladores'.
-> Portal do Docente
-94a123,130
+98c122,129
+< Escolha uma opção: Nome da disciplina: Nome do projecto: Fechar projecto: Operação inválida: A disciplina 'Compiladores' não existe ou não é válida para o utilizador em causa.
+---
+> Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
 > 1 - Criar projecto
 > 2 - Fechar projecto
 > 3 - Ver submissões de um projecto
@@ -366,4 +378,3 @@ Escolha uma opção: _________diff______________________________________________
 > 5 - Ver resultados de um inquérito
 > 0 - Sair
 > Escolha uma opção: Nome da disciplina: Nome do projecto: Fechar projecto: Operação inválida: O projecto 'dasdas' não existe na disciplina 'Compiladores'.
-> Portal do Docente

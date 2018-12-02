@@ -83,8 +83,8 @@ Escolha uma opção: Portal Pessoal
 Escolha uma opção: DOCENTE|100100|987654321|Ana Maria
 * Informática - Análise e Síntese de Algoritmos
 * Informática - Engenharia de Software
-* Matemática - Álgebra Linear
 * Matemática - Compiladores
+* Matemática - Álgebra Linear
 Portal Pessoal
 1 - Mostrar pessoa
 2 - Alterar número de telefone
@@ -98,3 +98,7 @@ Escolha uma opção: Menu principal
 4 - Portal do Docente
 0 - Sair
 Escolha uma opção: _________diff_____________________________________________________________________________________________________
+16d15
+< * Matemática - Compiladores
+17a17
+> * Matemática - Compiladores

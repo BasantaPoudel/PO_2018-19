@@ -1,7 +1,7 @@
-A-09-03-M-ok FAILED
-Ver alunos de disciplina com um aluno
+A-07-03-M-ok FAILED
+Criar projecto de disciplina lecionada e guardar (proj3)
 please schedule a fix
-A-09-03-M-ok
+A-07-03-M-ok
 ______________________________________________________________________________________________________________
 FUNCIONÁRIO|100001|123789456|Maria José
 DELEGADO|100010|123456789|João Maria
@@ -27,15 +27,19 @@ DELEGADO|100013|123456789|José Manuel
 DOCENTE|100100|987654321|Ana Maria
 # Informática|Engenharia de Software
 # Informática|Sistemas Operativos
-# Informática|The dark Side
-# Informática|Compiladores
+DOCENTE|100109|987654321|Yoga
+# Informática|Engenharia de Software
+# Informática|Sistemas Operativos
 FUNCIONÁRIO|101010|789456123|José Carlos
 ______________________________________________________________________________________________________________
 100100
 4
-4
-Compiladores
+1
+Engenharia de Software
+Proj 1
 0
+2
+proj3
 0
 ________expected______________________________________________________________________________________________________
 Identificador: Menu principal
@@ -51,12 +55,7 @@ Escolha uma opção: Portal do Docente
 4 - Ver alunos de disciplina leccionada
 5 - Ver resultados de um inquérito
 0 - Sair
-Escolha uma opção: Nome da disciplina: DELEGADO|100011|123456789|João Manuel
-* Informática - Algoritmos e Estruturas de Dados
-* Informática - Compiladores
-* Informática - Fundamentos da Programação
-* Informática - Programação com Objectos
-Portal do Docente
+Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
 1 - Criar projecto
 2 - Fechar projecto
 3 - Ver submissões de um projecto
@@ -64,6 +63,12 @@ Portal do Docente
 5 - Ver resultados de um inquérito
 0 - Sair
 Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Ficheiro sem nome. Guardar ficheiro como: Menu principal
 1 - Abrir
 2 - Guardar
 3 - Portal Pessoal
@@ -83,7 +88,7 @@ Escolha uma opção: Portal do Docente
 4 - Ver alunos de disciplina leccionada
 5 - Ver resultados de um inquérito
 0 - Sair
-Escolha uma opção: Nome da disciplina: Nome da disciplina: Ver alunos de disciplina leccionada: Operação inválida: A disciplina 'Compiladores' não existe ou não é válida para o utilizador em causa.
+Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: O projecto 'Proj 1' não existe na disciplina 'Engenharia de Software'.
 Portal do Docente
 1 - Criar projecto
 2 - Fechar projecto
@@ -97,18 +102,15 @@ Escolha uma opção: Menu principal
 3 - Portal Pessoal
 4 - Portal do Docente
 0 - Sair
-Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
-_________diff_____________________________________________________________________________________________________
-14c14,18
-< Escolha uma opção: Nome da disciplina: Nome da disciplina: Ver alunos de disciplina leccionada: Operação inválida: A disciplina 'Compiladores' não existe ou não é válida para o utilizador em causa.
+Escolha uma opção: Ficheiro sem nome. Guardar ficheiro como: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: _________diff_____________________________________________________________________________________________________
+14,15c14
+< Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: O projecto 'Proj 1' não existe na disciplina 'Engenharia de Software'.
+< Portal do Docente
 ---
-> Escolha uma opção: Nome da disciplina: DELEGADO|100011|123456789|João Manuel
-> * Informática - Algoritmos e Estruturas de Dados
-> * Informática - Compiladores
-> * Informática - Fundamentos da Programação
-> * Informática - Programação com Objectos
-28c32
-< Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
----
-> Escolha uma opção: 
-\ No newline at end of file
+> Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente

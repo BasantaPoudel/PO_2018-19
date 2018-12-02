@@ -95,7 +95,8 @@ Escolha uma opção: Portal do Docente
 4 - Ver alunos de disciplina leccionada
 5 - Ver resultados de um inquérito
 0 - Sair
-Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
+Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: O projecto 'Proj 1' não existe na disciplina 'Engenharia de Software'.
+Portal do Docente
 1 - Criar projecto
 2 - Fechar projecto
 3 - Ver submissões de um projecto
@@ -109,8 +110,7 @@ Escolha uma opção: Menu principal
 4 - Portal do Docente
 0 - Sair
 Escolha uma opção: _________diff_____________________________________________________________________________________________________
-20c20,21
-< Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Docente
+20c20
+< Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: O projecto 'Proj 1' não existe na disciplina 'Engenharia de Software'.
 ---
 > Escolha uma opção: Nome da disciplina: Nome do projecto: Criar projecto: Operação inválida: O projecto 'Proj 1' já existe na disciplina 'Engenharia de Software'.
-> Portal do Docente
