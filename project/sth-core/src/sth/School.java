@@ -530,41 +530,55 @@ public class School implements Serializable {
 
 	//3.4
 	public String searchPerson(String searchName) throws UnknownAgentException{
-		String allPeople = "";
+		TreeMap<Integer,Person> allPeople = new TreeMap<Integer,Person>();
 
-		for (Map.Entry<Integer, Professor> mapEntry : _professors.entrySet()) {
-			Professor professor = mapEntry.getValue();
 
+		for (Integer id : _professors.keySet() ){
+
+			Professor professor = _professors.get(id);
 			String name =professor.getName();
+
 			if(name.contains(searchName)){
-				allPeople += professor.show();
+				allPeople.put(professor.getId(),professor);
 			}
 		}
-		for (Map.Entry<Integer, Student> mapEntry : _students.entrySet()) {
-			Student student = mapEntry.getValue();
+		for (Integer id : _students.keySet() ){
 
+			Student student = _students.get(id);
 			String name =student.getName();
+
 			if(name.contains(searchName)){
-				allPeople += student.show();
+				allPeople.put(student.getId(),student);
 			}
 		}
-		for (Map.Entry<Integer, Student> mapEntry : _representatives.entrySet()) {
-			Student student = mapEntry.getValue();
+		for (Integer id : _representatives.keySet() ){
 
+			Student student = _representatives.get(id);
 			String name =student.getName();
+
 			if(name.contains(searchName)){
-				allPeople += student.show();
+				allPeople.put(student.getId(),student);
 			}
 		}
-		for (Map.Entry<Integer, Staff> mapEntry : _staffs.entrySet()) {
-			Staff staff = mapEntry.getValue();
+		for (Integer id : _staffs.keySet() ){
 
+			Staff staff = _staffs.get(id);
 			String name =staff.getName();
+
 			if(name.contains(searchName)){
-				allPeople += staff.show();
+				allPeople.put(staff.getId(),staff);
 			}
 		}
-		return allPeople;
+
+		// finally we make the whole string to be used
+
+		String res="";
+		for (Integer id : allPeople.keySet() ){
+			Person person = allPeople.get(id);
+			res+=person.showWithDisciplines();
+		}
+
+		return res;
 	}
 
 

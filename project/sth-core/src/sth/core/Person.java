@@ -37,6 +37,10 @@ public class Person implements Serializable{
 	public void setId(int id){
 		_id=id;
 	}
+
+	public String showWithDisciplines(){
+		return "";
+	}
 	/*=====  End of getters and setters  ======*/
 
 
