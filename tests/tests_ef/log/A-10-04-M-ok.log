@@ -1,0 +1,112 @@
+A-10-04-M-ok FAILED
+please schedule a fix
+A-10-04-M-ok
+______________________________________________________________________________________________________________
+FUNCIONÁRIO|100003|123789456|Maria José
+DELEGADO|100010|123456789|di1
+# Informática|D1
+# Informática|D3
+# Informática|D4
+DELEGADO|100011|123456789|di2
+# Informática|D1
+# Informática|D4
+# Informática|D5
+ALUNO|100012|123456789|ai1
+# Informática|D1
+# Informática|D2
+ALUNO|100013|123456789|ai2
+# Informática|D1
+# Informática|D3
+ALUNO|100014|123456789|ai3
+# Informática|D4
+# Informática|D3
+DELEGADO|100023|123456789|dm1
+# Matemática|D3
+ALUNO|100024|123456789|am1
+# Matemática|D3
+DOCENTE|100100|987654321|P1
+# Informática|D1
+# Informática|D2
+DOCENTE|100101|987654322|P2
+# Informática|D1
+# Informática|D3
+DOCENTE|100102|987654323|P3
+# Matemática|D3
+# Informática|D1
+FUNCIONÁRIO|101010|789456123|José Carlos
+______________________________________________________________________________________________________________
+100014
+1
+e1.obj
+5
+1
+D4
+P1
+Teste
+0
+0
+________expected______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+0 - Sair
+Escolha uma opção: Ficheiro a abrir: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+0 - Sair
+Escolha uma opção: Portal do Estudante
+1 - Entregar projecto
+2 - Preencher inquérito
+3 - Ver resultados de inquérito
+0 - Sair
+Escolha uma opção: Nome da disciplina: Nome do projecto: Mensagem de entrega: Entregar projecto: Operação inválida: O projecto 'P1' não existe na disciplina 'D4'.
+Portal do Estudante
+1 - Entregar projecto
+2 - Preencher inquérito
+3 - Ver resultados de inquérito
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+0 - Sair
+Escolha uma opção: ________us______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+0 - Sair
+Escolha uma opção: Ficheiro a abrir: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+0 - Sair
+Escolha uma opção: Portal do Estudante
+1 - Entregar projecto
+2 - Preencher inquérito
+3 - Ver resultados de inquérito
+0 - Sair
+Escolha uma opção: Nome da disciplina: Nome do projecto: Mensagem de entrega: Portal do Estudante
+1 - Entregar projecto
+2 - Preencher inquérito
+3 - Ver resultados de inquérito
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+0 - Sair
+Escolha uma opção: _________diff_____________________________________________________________________________________________________
+18c18,19
+< Escolha uma opção: Nome da disciplina: Nome do projecto: Mensagem de entrega: Portal do Estudante
+---
+> Escolha uma opção: Nome da disciplina: Nome do projecto: Mensagem de entrega: Entregar projecto: Operação inválida: O projecto 'P1' não existe na disciplina 'D4'.
+> Portal do Estudante

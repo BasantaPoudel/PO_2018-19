@@ -18,6 +18,7 @@ do
 done
 
 cd $PROJECTDIR && make clean &> /dev/null && cd ../tests/tests_50
+find . -type f  ! -name "*.?*" -delete
 
 
 echo "Done!"
