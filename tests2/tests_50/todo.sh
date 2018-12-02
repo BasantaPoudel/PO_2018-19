@@ -9,6 +9,7 @@ fi
 echo "" > log/A-00.log
 echo "" > log/A-00wik.log
 
+ 
 for FILE_RAW in $(ls auto-tests/*.in);
 do
 
@@ -50,8 +51,9 @@ do
 		echo "______________________________________________________________"$FILE"_________________________________________________________________"
 		cat desc/$FILE.desc
 
+		echo results/$FILE.outhyp auto-tests/expected/$FILE.out
 		diff -b -y results/$FILE.outhyp auto-tests/expected/$FILE.out
-		echo 
+		echo
 
 		#____________________________________________________________________________________________________________________________________________________________
 
