@@ -38,6 +38,9 @@ public class Person implements Serializable{
 		_id=id;
 	}
 
+	public String show(){
+		return "";
+	}
 	public String showWithDisciplines(){
 		return "";
 	}
