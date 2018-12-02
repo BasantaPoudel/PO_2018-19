@@ -55,22 +55,22 @@ public class Student extends Person implements Serializable{
 	=============================================*/
 
 	public void fillSurvey(Survey s){
-		//FIX1
+		// FIX1
 	}
 	public void finalizeSurvey(Survey s){
-		//FIX1
+		// FIX1
 	}
 	public void closeSurvey(Survey s){
-		//FIX1
+		// FIX1
 	}
 	public void openSurvey(Survey s){
-		//FIX1
+		// FIX1
 	}
 	public void  cancelSurvey(Survey s){
-		//FIX1
+		// FIX1
 	}
 	public void  createSurvey(Survey s){
-		//FIX1
+		// FIX1
 	}
 
 	/*=============================================
@@ -82,7 +82,7 @@ public class Student extends Person implements Serializable{
  * Show info about this student
  *
  *
- * @return  //FIX
+ * @return  // FIX
  */
 	public String show(){
 		String res;

@@ -15,23 +15,23 @@ import sth.exceptions.newexceptions.OpeningSurveyCoreException;
 import sth.exceptions.newexceptions.NoSuchProjectCoreException;
 import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
 
-//FIXME import other classes if needed
+// FIXME import other classes if needed
 
 /**
  * 4.5.3. Open survey.
  */
 public class DoOpenSurvey extends Command<SchoolManager> {
 
-  //FIXME[FIXING-BEGIN] add input fields if needed
+  // FIXME[FIXING-BEGIN] add input fields if needed
   Input<String> _projectName;
   Input<String> _disciplineName;
-  //FIXME[FIXING-END] add input fields if needed
+  // FIXME[FIXING-END] add input fields if needed
   /**
    * @param receiver
    */
   public DoOpenSurvey(SchoolManager receiver) {
     super(Label.OPEN_SURVEY, receiver);
-    //FIXME initialize input fields if needed
+    // FIXME initialize input fields if needed
     _disciplineName = _form.addStringInput(Message.requestDisciplineName());
     _projectName = _form.addStringInput(Message.requestProjectName());
   }

@@ -7,14 +7,14 @@ import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
-//FIXME import other classes if needed
+// FIXME import other classes if needed
 
 /**
  * 4.1.1. Open existing document.
  */
 public class DoOpen extends Command<SchoolManager> {
 
-  //FIXME add input fields if needed
+  // FIXME add input fields if needed
   Input<String> _openFileName;
 
   /**
@@ -22,7 +22,7 @@ public class DoOpen extends Command<SchoolManager> {
    */
   public DoOpen(SchoolManager receiver) {
     super(Label.OPEN, receiver);
-    //FIXME initialize input fields if needed
+    // FIXME initialize input fields if needed
     _openFileName = _form.addStringInput(Message.openFile());
 
   }
@@ -33,7 +33,7 @@ public class DoOpen extends Command<SchoolManager> {
     _form.parse();
 
     try {
-      //FIXME implement command
+      // FIXME implement command
       _receiver.doOpen(_openFileName.value());
     } catch (FileNotFoundException fnfe) {
       _display.popup(Message.fileNotFound());

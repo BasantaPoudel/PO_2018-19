@@ -254,7 +254,7 @@ public class School implements Serializable {
 
 		}
 		else{
-			System.out.println("??");
+			//FIX
 		}
 
 	}
@@ -578,6 +578,7 @@ public class School implements Serializable {
 			res+=person.showWithDisciplines();
 		}
 
+		allPeople.clear();
 		return res;
 	}
 
