@@ -85,8 +85,32 @@ public class Professor extends Person implements Serializable{
         String res = "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName()+"\n";
         for (String courseName : _disciplines.keySet() ) {
             for (String disciplineName : _disciplines.get(courseName).keySet() ){
-                res=res+"*" + courseName +" - "+disciplineName+"\n";
+                res+="*" + courseName +" - "+disciplineName+"\n";
             }
+        }
+        return res;
+    }
+
+    public String showDisciplineStudents(String courseName,String disciplineName){
+        // DELEGADO|100008|123456789|Joaquim Maria
+		// * Informática - Algoritmos e Estruturas de Dados
+		// * Informática - Análise e Síntese de Algoritmos
+		// * Informática - Fundamentos
+		// * Informática - Programação com Objectos
+		// DELEGADO|100009|123456789|João Maria
+		// * Informática - Algoritmos e Estruturas de Dados
+		// * Informática - Análise e Síntese de Algoritmos
+		// * Informática - Fundamentos
+		// * Informática - Programação com Objectos
+		// DELEGADO|100011|123456789|João Manuel
+		// * Informática - Algoritmos e Estruturas de Dados
+		// * Informática - Análise e Síntese de Algoritmos
+		// * Informática - Fundamentos
+		// * Informática - Programação com Objectos
+        String res="";
+        Discipline disc = getDiscipline(courseName,disciplineName);
+        for (Student student : disc.getStudents() ) {
+                res+=student.showWithDisciplines();
         }
         return res;
     }

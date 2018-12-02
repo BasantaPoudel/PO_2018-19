@@ -217,16 +217,17 @@ public class School implements Serializable {
 
 
 		if (pattALUNO.matcher(tipoElemento).matches()){
-			Student student = new Student(name,phoneNumber,id);
+			Student student = new Student(name,phoneNumber,id,false);
 			for(Discipline disc : discs){
 				student.putDiscipline(disc);
+				disc.putStudent(student);
 			}
 			addStudent(id, student);
 			addPerson(id, student);
 
 		}
 		else if (pattDELEGADO.matcher(tipoElemento).matches()){
-			Student representive = new Student(name,phoneNumber,id);
+			Student representive = new Student(name,phoneNumber,id,true);
 			for(Discipline disc : discs){
 				representive.putDiscipline(disc);
 			}
@@ -426,14 +427,15 @@ public class School implements Serializable {
 		Professor _pProf = _professors.get(loginID);
 		Student _pRepr = _representatives.get(loginID);
 		Staff _pStaff = _staffs.get(loginID);
+
 		if(_pStudent!=null){
-			return _pStudent.show(false);
+			return _pStudent.show();
+		}
+		else if(_pRepr!=null){
+			return _pRepr.show();
 		}
 		else if(_pProf!=null){
 			return _pProf.showWithDisciplines();
-		}
-		else if(_pRepr!=null){
-			return _pRepr.show(true);
 		}
 		else if(_pStaff!=null){
 			return _pStaff.show();
@@ -495,9 +497,9 @@ public class School implements Serializable {
 			if(value instanceof Student){
 				Student student = (Student) value;
 				if (hasRepresentative(student.getId()))
-				_allpersons += student.show(true);
+				_allpersons += student.show();
 				else if (hasStudent(student.getId()))
-				_allpersons += student.show(false);
+				_allpersons += student.show();
 
 			}
 
@@ -527,38 +529,42 @@ public class School implements Serializable {
 	*/
 
 	//3.4
-	public String searchPerson(String name) throws UnknownAgentException{
-		String _allstudent = "";
+	public String searchPerson(String searchName) throws UnknownAgentException{
+		String allPeople = "";
 
-		for (Map.Entry<Integer, Professor> entry : _professors.entrySet()) {
-			Professor value = entry.getValue();
-			String _sname =value.getName();
-			if(_sname.contains(name)){
-				_allstudent += value.show();
+		for (Map.Entry<Integer, Professor> mapEntry : _professors.entrySet()) {
+			Professor professor = mapEntry.getValue();
+
+			String name =professor.getName();
+			if(name.contains(searchName)){
+				allPeople += professor.show();
 			}
 		}
-		for (Map.Entry<Integer, Student> entry : _students.entrySet()) {
-			Student value = entry.getValue();
-			String _sname =value.getName();
-			if(_sname.contains(name)){
-				_allstudent += value.show(false);
+		for (Map.Entry<Integer, Student> mapEntry : _students.entrySet()) {
+			Student student = mapEntry.getValue();
+
+			String name =student.getName();
+			if(name.contains(searchName)){
+				allPeople += student.show();
 			}
 		}
-		for (Map.Entry<Integer, Student> entry : _representatives.entrySet()) {
-			Student value = entry.getValue();
-			String _sname =value.getName();
-			if(_sname.contains(name)){
-				_allstudent += value.show(true);
+		for (Map.Entry<Integer, Student> mapEntry : _representatives.entrySet()) {
+			Student student = mapEntry.getValue();
+
+			String name =student.getName();
+			if(name.contains(searchName)){
+				allPeople += student.show();
 			}
 		}
-		for (Map.Entry<Integer, Staff> entry : _staffs.entrySet()) {
-			Staff value = entry.getValue();
-			String _sname =value.getName();
-			if(_sname.contains(name)){
-				_allstudent += value.show();
+		for (Map.Entry<Integer, Staff> mapEntry : _staffs.entrySet()) {
+			Staff staff = mapEntry.getValue();
+
+			String name =staff.getName();
+			if(name.contains(searchName)){
+				allPeople += staff.show();
 			}
 		}
-		return _allstudent;
+		return allPeople;
 	}
 
 
@@ -629,8 +635,41 @@ public class School implements Serializable {
 		// * 7912 - Tigre.jav
 	}
 	//4.3
-	public String showDisciplineStudents(int loginID,String disciplineName,String projectName){
-		return "";
+	public String showDisciplineStudents(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineCoreException{
+		// DELEGADO|100008|123456789|Joaquim Maria
+		// * Informática - Algoritmos e Estruturas de Dados
+		// * Informática - Análise e Síntese de Algoritmos
+		// * Informática - Fundamentos
+		// * Informática - Programação com Objectos
+		// DELEGADO|100009|123456789|João Maria
+		// * Informática - Algoritmos e Estruturas de Dados
+		// * Informática - Análise e Síntese de Algoritmos
+		// * Informática - Fundamentos
+		// * Informática - Programação com Objectos
+		// DELEGADO|100011|123456789|João Manuel
+		// * Informática - Algoritmos e Estruturas de Dados
+		// * Informática - Análise e Síntese de Algoritmos
+		// * Informática - Fundamentos
+		// * Informática - Programação com Objectos
+
+		Professor prof = _professors.get(loginID);
+		if (prof.hasDiscipline(disciplineName)){
+
+			String res = disciplineName+" - "+projectName;
+
+			// courseName
+			String courseName=prof.getDisciplineCourseName(disciplineName);
+			// discipline
+			Discipline disc = prof.getDiscipline(courseName,disciplineName);
+			// project
+			Project proj=disc.getProject(projectName);
+			// res+=proj.getSubmissions();
+
+			return res;
+		}
+		else{
+			throw new NoSuchDisciplineCoreException(disciplineName);
+		}
 	}
 
 

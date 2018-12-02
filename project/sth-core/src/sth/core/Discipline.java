@@ -3,6 +3,7 @@ package sth.core;
 import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
+import java.util.Collection;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -16,6 +17,7 @@ public class Discipline implements Serializable{
 
 	// projectName,project
 	private Map<String,Project> _projects =new TreeMap<String,Project>();
+	private Map<Integer,Student> _students =new TreeMap<Integer,Student>();
 
 
 
@@ -56,6 +58,16 @@ public class Discipline implements Serializable{
 
 	public Project getProject(String projectName){
 		return _projects.get(projectName);
+	}
+ 	/*===========================================
+	=
+	===========================================*/
+
+	public void putStudent(Student student){
+		_students.put(student.getId(),student);
+	}
+	public  Collection<Student> getStudents(){
+		return _students.values();
 	}
 
 
