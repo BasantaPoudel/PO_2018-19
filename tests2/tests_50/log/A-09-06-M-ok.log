@@ -1,52 +1,77 @@
 A-09-06-M-ok FAILED
 -
-please schedule a fix
 A-09-06-M-ok
-______________________________________________________________________________________________________________
-FUNCIONÁRIO|100001|123789456|Maria José
-DELEGADO|100010|123456789|João Maria
-# Informática|Algoritmos e Estruturas de Dados
-# Informática|Fundamentos da Programação
-DELEGADO|100011|123456789|João Manuel
-# Informática|Algoritmos e Estruturas de Dados
-# Informática|Fundamentos da Programação
-DELEGADO|100021|123456789|João Manuel
-# Informática|Algoritmos e Estruturas de Dados
-# Informática|Fundamentos da Programação
-DELEGADO|100031|123456789|João Manuel
-# Informática|Algoritmos e Estruturas de Dados
-# Informática|Fundamentos da Programação
-DELEGADO|100041|123456789|João Manuel
-# Informática|Algoritmos e Estruturas de Dados
-# Informática|Fundamentos da Programação
-DELEGADO|100051|123456789|João Manuel
-# Informática|Algoritmos e Estruturas de Dados
-# Informática|Fundamentos da Programação
-DELEGADO|100061|123456789|João Manuel
-# Informática|Algoritmos e Estruturas de Dados
-# Informática|Fundamentos da Programação
-ALUNO|100062|123456789|João A. Manuel
-# Informática|Algoritmos e Estruturas de Dados
-# Informática|Fundamentos da Programação
-DELEGADO|100072|123456789|João Miguel
-# Matemática|Cálculo I
-# Matemática|Métodos Numéricos
-DELEGADO|100073|123456789|José Manuel
-# Matemática|Métodos Numéricos
-# Matemática|Probabilidades e Estatística
-DOCENTE|100100|987654321|Ana Maria
-# Informática|Análise e Síntese de Algoritmos
-# Informática|Compiladores
-# Informática|Engenharia de Software
-# Informática|Sistemas Operativos
-FUNCIONÁRIO|101010|789456123|José Carlos
-______________________________________________________________________________________________________________
+_____________________ in _________________________________________________________________________________________
 100061
 3
 3
 0
 0
-________expected______________________________________________________________________________________________________
+_________diff_____________________________________________________________________________________________________
+Identificador: Menu principal					Identificador: Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+5 - Portal do Estudante						5 - Portal do Estudante
+6 - Portal do Delegado						6 - Portal do Delegado
+0 - Sair							0 - Sair
+Escolha uma opção: Portal Pessoal				Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa						1 - Mostrar pessoa
+2 - Alterar número de telefone					2 - Alterar número de telefone
+3 - Mostrar pessoas						3 - Mostrar pessoas
+4 - Procurar pessoa						4 - Procurar pessoa
+0 - Sair							0 - Sair
+Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José	Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José
+DELEGADO|100010|123456789|João Maria				DELEGADO|100010|123456789|João Maria
+* Informática - Algoritmos e Estruturas de Dados		* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação			* Informática - Fundamentos da Programação
+DELEGADO|100011|123456789|João Manuel				DELEGADO|100011|123456789|João Manuel
+* Informática - Algoritmos e Estruturas de Dados		* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação			* Informática - Fundamentos da Programação
+DELEGADO|100021|123456789|João Manuel				DELEGADO|100021|123456789|João Manuel
+* Informática - Algoritmos e Estruturas de Dados		* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação			* Informática - Fundamentos da Programação
+DELEGADO|100031|123456789|João Manuel				DELEGADO|100031|123456789|João Manuel
+* Informática - Algoritmos e Estruturas de Dados		* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação			* Informática - Fundamentos da Programação
+DELEGADO|100041|123456789|João Manuel				DELEGADO|100041|123456789|João Manuel
+* Informática - Algoritmos e Estruturas de Dados		* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação			* Informática - Fundamentos da Programação
+DELEGADO|100051|123456789|João Manuel				DELEGADO|100051|123456789|João Manuel
+* Informática - Algoritmos e Estruturas de Dados		* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação			* Informática - Fundamentos da Programação
+DELEGADO|100061|123456789|João Manuel				DELEGADO|100061|123456789|João Manuel
+* Informática - Algoritmos e Estruturas de Dados		* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação			* Informática - Fundamentos da Programação
+ALUNO|100062|123456789|João A. Manuel				ALUNO|100062|123456789|João A. Manuel
+* Informática - Algoritmos e Estruturas de Dados		* Informática - Algoritmos e Estruturas de Dados
+* Informática - Fundamentos da Programação			* Informática - Fundamentos da Programação
+DELEGADO|100072|123456789|João Miguel				DELEGADO|100072|123456789|João Miguel
+* Matemática - Cálculo I					* Matemática - Cálculo I
+* Matemática - Métodos Numéricos				* Matemática - Métodos Numéricos
+DELEGADO|100073|123456789|José Manuel				DELEGADO|100073|123456789|José Manuel
+* Matemática - Métodos Numéricos				* Matemática - Métodos Numéricos
+* Matemática - Probabilidades e Estatística			* Matemática - Probabilidades e Estatística
+DOCENTE|100100|987654321|Ana Maria				DOCENTE|100100|987654321|Ana Maria
+							      >	* Informática - Análise e Síntese de Algoritmos
+							      >	* Informática - Compiladores
+							      >	* Informática - Engenharia de Software
+							      >	* Informática - Sistemas Operativos
+FUNCIONÁRIO|101010|789456123|José Carlos			FUNCIONÁRIO|101010|789456123|José Carlos
+Portal Pessoal							Portal Pessoal
+1 - Mostrar pessoa						1 - Mostrar pessoa
+2 - Alterar número de telefone					2 - Alterar número de telefone
+3 - Mostrar pessoas						3 - Mostrar pessoas
+4 - Procurar pessoa						4 - Procurar pessoa
+0 - Sair							0 - Sair
+Escolha uma opção: Menu principal				Escolha uma opção: Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+5 - Portal do Estudante						5 - Portal do Estudante
+6 - Portal do Delegado						6 - Portal do Delegado
+0 - Sair							0 - Sair
+Escolha uma opção: 						Escolha uma opção: ________expected______________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -110,7 +135,7 @@ Escolha uma opção: Menu principal
 5 - Portal do Estudante
 6 - Portal do Delegado
 0 - Sair
-Escolha uma opção: ________us______________________________________________________________________________________________________
+Escolha uma opção: __________us____________________________________________________________________________________________________
 Identificador: Menu principal
 1 - Abrir
 2 - Guardar
@@ -170,9 +195,42 @@ Escolha uma opção: Menu principal
 5 - Portal do Estudante
 6 - Portal do Delegado
 0 - Sair
-Escolha uma opção: _________diff_____________________________________________________________________________________________________
-45a46,49
-> * Informática - Análise e Síntese de Algoritmos
-> * Informática - Compiladores
-> * Informática - Engenharia de Software
-> * Informática - Sistemas Operativos
+Escolha uma opção: __________ diff ____________________________________________________________________________________________________
+____________________im__________________________________________________________________________________________
+FUNCIONÁRIO|100001|123789456|Maria José
+DELEGADO|100010|123456789|João Maria
+# Informática|Algoritmos e Estruturas de Dados
+# Informática|Fundamentos da Programação
+DELEGADO|100011|123456789|João Manuel
+# Informática|Algoritmos e Estruturas de Dados
+# Informática|Fundamentos da Programação
+DELEGADO|100021|123456789|João Manuel
+# Informática|Algoritmos e Estruturas de Dados
+# Informática|Fundamentos da Programação
+DELEGADO|100031|123456789|João Manuel
+# Informática|Algoritmos e Estruturas de Dados
+# Informática|Fundamentos da Programação
+DELEGADO|100041|123456789|João Manuel
+# Informática|Algoritmos e Estruturas de Dados
+# Informática|Fundamentos da Programação
+DELEGADO|100051|123456789|João Manuel
+# Informática|Algoritmos e Estruturas de Dados
+# Informática|Fundamentos da Programação
+DELEGADO|100061|123456789|João Manuel
+# Informática|Algoritmos e Estruturas de Dados
+# Informática|Fundamentos da Programação
+ALUNO|100062|123456789|João A. Manuel
+# Informática|Algoritmos e Estruturas de Dados
+# Informática|Fundamentos da Programação
+DELEGADO|100072|123456789|João Miguel
+# Matemática|Cálculo I
+# Matemática|Métodos Numéricos
+DELEGADO|100073|123456789|José Manuel
+# Matemática|Métodos Numéricos
+# Matemática|Probabilidades e Estatística
+DOCENTE|100100|987654321|Ana Maria
+# Informática|Análise e Síntese de Algoritmos
+# Informática|Compiladores
+# Informática|Engenharia de Software
+# Informática|Sistemas Operativos
+FUNCIONÁRIO|101010|789456123|José Carlos

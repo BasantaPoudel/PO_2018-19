@@ -1,7 +1,23 @@
 
+A-01-01-M-ok.................. o o Login com funcionário
+A-01-02-M-ok.................. o o Login com professor
+A-01-03-M-ok.................. o o Login com aluno
+A-01-04-M-ok.................. o o Login com delegado
+A-02-01-M-ok.................. o o Login funcionário e vê funcionário
+A-02-02-M-ok.................. o o Login professor sem disciplinas e vê professor
+A-02-03-M-ok.................. o o Login professor só com uma disciplina e vê professor
+A-02-04-M-ok.................. o o Login professor com várias disciplina e vê professor disciplinas inseridas ordenadamente com mesmo curso
+A-02-05-M-ok.................. o o Login professor com várias disciplina (e há várias disciplinas com o mesmo nome) e vê professor
+A-02-06-M-ok.................. o o Login aluno com uma disciplina e vê aluno
+A-02-07-M-ok.................. o o Login aluno com várias disciplinas ordenadas e vê aluno
+A-02-08-M-ok.................. o o Login aluno com várias disciplinas desordenadas e vê aluno
+A-02-09-M-ok.................. o o Login delegado com uma disciplina e vê delegado
+A-02-10-M-ok.................. o o Login delegado com várias disciplinas e vê delegado
+A-02-11-M-ok.................. o o Login de pessoa que não existe
+A-02-12-M-ok.................. o o Login professor com várias disciplina e vê professor disciplinas inseridas desordenadamente com mesmo curso
 A-02-13-M-ok.................. o ! Login professor com várias disciplina e vê professor disciplinas inseridas desordenadamente com curso  diferente
 A-03-01-M-ok.................. o o Procura pessoa com string que não existe
-A-03-02-M-ok.................. o ! Procura pessoa com string que faz match com uma pessoa existente
+A-03-02-M-ok.................. o o Procura pessoa com string que faz match com uma pessoa existente
 A-03-03-M-ok.................. o o Procura pessoa com string que faz match com várias pessoas (e lista de pessoas por id tb ordenada por nome)
 A-03-04-M-ok.................. o ! Procura pessoa com string que faz match com várias pessoas (e lista de pessoas por id não ordenada por nome)
 A-04-01-M-ok.................. o o Altera o número de telefone de um funcionário
