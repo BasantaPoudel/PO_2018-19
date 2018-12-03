@@ -223,7 +223,6 @@ public class School implements Serializable {
 				disc.putStudent(student);
 			}
 			addStudent(id, student);
-			addPerson(id, student);
 
 		}
 		else if (pattDELEGADO.matcher(tipoElemento).matches()){
@@ -232,7 +231,6 @@ public class School implements Serializable {
 				representive.putDiscipline(disc);
 			}
 			addRepresentive(id, representive);
-			addPerson(id, representive);
 
 		}
 		else if (pattDOCENTE.matcher(tipoElemento).matches()){
@@ -241,7 +239,6 @@ public class School implements Serializable {
 				professor.putDiscipline(disc);
 			}
 			addProfessor(id, professor);
-			addPerson(id, professor);
 
 		}
 		else if (pattFUNCIONÁRIO.matcher(tipoElemento).matches()){
@@ -250,7 +247,6 @@ public class School implements Serializable {
 				staff.putDiscipline(disc);
 			}
 			addStaff(id, staff);
-			addPerson(id, staff);
 
 		}
 		else{
@@ -273,6 +269,7 @@ public class School implements Serializable {
 	*/
 	public void addStudent(int id, Student student){
 		_students.put(id,student);
+		_persons.put(id,student);
 	}
 
 	/**
@@ -283,6 +280,7 @@ public class School implements Serializable {
 	*/
 	public void addRepresentive (int id, Student student ){
 		_representatives.put(id,student);
+		_persons.put(id,student);
 	}
 
 	/**
@@ -294,6 +292,7 @@ public class School implements Serializable {
 
 	public void addProfessor(int id, Professor professor){
 		_professors.put(id,professor);
+		_persons.put(id,professor);
 	}
 
 	/**
@@ -305,17 +304,11 @@ public class School implements Serializable {
 
 	public void addStaff(int id, Staff staff){
 		_staffs.put(id,staff);
+		_persons.put(id,staff);
 	}
 
-	/**
-	* Adds person to proper array
-	*
-	* @param id int
-	* @param person Person
-	*/
-	public void addPerson(int id, Person person){
-		_persons.put(id,person);
-	}
+
+
 
 
 
@@ -488,37 +481,44 @@ public class School implements Serializable {
 
 	//3.3
 	public String showAllPersons(){
-		String _allpersons = "";
+		TreeMap<Integer,Person> allPeople = new TreeMap<Integer,Person>();
 
+		for (Integer personId : _persons.keySet()) {
 
-		for (Map.Entry<Integer, Person> entry : _persons.entrySet()) {
-			Person value = entry.getValue();
+			if(hasStudent(personId) ){
 
-			if(value instanceof Student){
-				Student student = (Student) value;
-				if (hasRepresentative(student.getId()))
-				_allpersons += student.show();
-				else if (hasStudent(student.getId()))
-				_allpersons += student.show();
+				allPeople.put(personId,_students.get(personId)) ;
 
+			if (hasRepresentative(personId))
+
+				allPeople.put(personId,_representatives.get(personId)) ;
 			}
 
+			if(hasProfessor(personId) ){
 
-			if(value instanceof Professor){
-				Professor professor = (Professor) value;
-				_allpersons += professor.show();
+				allPeople.put(personId,_professors.get(personId)) ;
 			}
 
-			if(value instanceof Staff){
-				Staff staff = (Staff) value;
-				_allpersons += staff.show();
-			}
+			if(hasStaff(personId) ){
 
+				allPeople.put(personId,_staffs.get(personId)) ;
+			}
 
 		}
-		return _allpersons;
-	}
+		String res="";
+		for (Integer id : allPeople.keySet() ){
+			Person person = allPeople.get(id);
+			if (_staffs.containsKey(person.getId())){
+				res+=person.show();
+			}
+			else {
+				res+=person.showWithDisciplines();
+			}
+		}
 
+		return res;
+
+	}
 
 
 	/**
@@ -530,7 +530,7 @@ public class School implements Serializable {
 
 	//3.4
 	public String searchPerson(String searchName) throws UnknownAgentException{
-		TreeMap<Integer,Person> allPeople = new TreeMap<Integer,Person>();
+		TreeMap<String,Person> allPeople = new TreeMap<String,Person>();
 
 
 		for (Integer id : _professors.keySet() ){
@@ -539,7 +539,7 @@ public class School implements Serializable {
 			String name =professor.getName();
 
 			if(name.contains(searchName)){
-				allPeople.put(professor.getId(),professor);
+				allPeople.put(professor.getName(),professor);
 			}
 		}
 		for (Integer id : _students.keySet() ){
@@ -548,7 +548,7 @@ public class School implements Serializable {
 			String name =student.getName();
 
 			if(name.contains(searchName)){
-				allPeople.put(student.getId(),student);
+				allPeople.put(student.getName(),student);
 			}
 		}
 		for (Integer id : _representatives.keySet() ){
@@ -557,7 +557,7 @@ public class School implements Serializable {
 			String name =student.getName();
 
 			if(name.contains(searchName)){
-				allPeople.put(student.getId(),student);
+				allPeople.put(student.getName(),student);
 			}
 		}
 		for (Integer id : _staffs.keySet() ){
@@ -566,16 +566,16 @@ public class School implements Serializable {
 			String name =staff.getName();
 
 			if(name.contains(searchName)){
-				allPeople.put(staff.getId(),staff);
+				allPeople.put(staff.getName(),staff);
 			}
 		}
 
 		// finally we make the whole string to be used
 
 		String res="";
-		for (Integer id : allPeople.keySet() ){
-			Person person = allPeople.get(id);
-			if (_staffs.containsKey(id)){
+		for (String name : allPeople.keySet() ){
+			Person person = allPeople.get(name);
+			if (_staffs.containsKey(person.getId())){
 				res+=person.show();
 			}
 			else {
@@ -583,7 +583,6 @@ public class School implements Serializable {
 			}
 		}
 
-		allPeople.clear();
 		return res;
 	}
 
