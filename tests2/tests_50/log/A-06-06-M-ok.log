@@ -52,16 +52,16 @@ Escolha uma opção: Portal Pessoal				Escolha uma opção: Portal Pessoal
 4 - Procurar pessoa						4 - Procurar pessoa
 0 - Sair							0 - Sair
 Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José	Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José
-DELEGADO|100010|123456789|João Maria				DELEGADO|100010|123456789|João Maria
-* Informática - Algoritmos e Estruturas de Dados		* Informática - Algoritmos e Estruturas de Dados
-DELEGADO|100011|123456789|João Manuel				DELEGADO|100011|123456789|João Manuel
-* Informática - Algoritmos e Estruturas de Dados		* Informática - Algoritmos e Estruturas de Dados
-DELEGADO|100012|123456789|João Miguel				DELEGADO|100012|123456789|João Miguel
-* Matemática - Cálculo I					* Matemática - Cálculo I
+							      >	DELEGADO|100010|123456789|João Maria
+							      >	* Informática - Algoritmos e Estruturas de Dados
+							      >	DELEGADO|100011|123456789|João Manuel
+							      >	* Informática - Algoritmos e Estruturas de Dados
+							      >	DELEGADO|100012|123456789|João Miguel
+							      >	* Matemática - Cálculo I
 ALUNO|100013|123456789|José Manuel				ALUNO|100013|123456789|José Manuel
 * Matemática - Cálculo I					* Matemática - Cálculo I
 DOCENTE|100100|987654321|Ana Maria				DOCENTE|100100|987654321|Ana Maria
-							      >	* Informática - Algoritmos e Estruturas de Dados
+* Informática - Algoritmos e Estruturas de Dados		* Informática - Algoritmos e Estruturas de Dados
 FUNCIONÁRIO|101010|789456123|José Carlos			FUNCIONÁRIO|101010|789456123|José Carlos
 Portal Pessoal							Portal Pessoal
 1 - Mostrar pessoa						1 - Mostrar pessoa
@@ -242,15 +242,10 @@ Escolha uma opção: Portal Pessoal
 4 - Procurar pessoa
 0 - Sair
 Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José
-DELEGADO|100010|123456789|João Maria
-* Informática - Algoritmos e Estruturas de Dados
-DELEGADO|100011|123456789|João Manuel
-* Informática - Algoritmos e Estruturas de Dados
-DELEGADO|100012|123456789|João Miguel
-* Matemática - Cálculo I
 ALUNO|100013|123456789|José Manuel
 * Matemática - Cálculo I
 DOCENTE|100100|987654321|Ana Maria
+* Informática - Algoritmos e Estruturas de Dados
 FUNCIONÁRIO|101010|789456123|José Carlos
 Portal Pessoal
 1 - Mostrar pessoa
@@ -304,7 +299,3 @@ Escolha uma opção: Ficheiro sem nome. Guardar ficheiro como: Menu principal
 4 - Portal do Docente
 0 - Sair
 Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
-____________________im__________________________________________________________________________________________
-DOCENTE|100100|987654321|Ana Maria Vieira
-# Informática|Algoritmos e Estruturas de Dados
-FUNCIONÁRIO|101010|789456123|José Carlos
