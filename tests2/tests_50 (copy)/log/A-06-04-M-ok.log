@@ -1,0 +1,120 @@
+A-06-04-M-ok FAILED
+ - Persistência - abrir com uma pessoa que não existe no estado persistente
+A-06-04-M-ok
+_____________________ in _________________________________________________________________________________________
+101011
+1
+func2
+3
+3
+0
+0
+_________diff_____________________________________________________________________________________________________
+Identificador: Menu principal					Identificador: Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+4 - Portal do Docente						4 - Portal do Docente
+0 - Sair							0 - Sair
+Escolha uma opção: Ficheiro a abrir: Menu principal	      |	Escolha uma opção: Ficheiro a abrir: Abrir: Operação inválida
+							      >	Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+							      >	4 - Portal do Docente
+0 - Sair							0 - Sair
+Escolha uma opção: Portal Pessoal				Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa						1 - Mostrar pessoa
+2 - Alterar número de telefone					2 - Alterar número de telefone
+3 - Mostrar pessoas						3 - Mostrar pessoas
+4 - Procurar pessoa						4 - Procurar pessoa
+0 - Sair							0 - Sair
+Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José	Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José
+ALUNO|100048|123456789|Joaquim Maria			      |	DOCENTE|101011|789456123|José Carlos
+* Informática - Programação com Objectos		      <
+DOCENTE|101010|789456123|José Carlos			      <
+Portal Pessoal							Portal Pessoal
+1 - Mostrar pessoa						1 - Mostrar pessoa
+2 - Alterar número de telefone					2 - Alterar número de telefone
+3 - Mostrar pessoas						3 - Mostrar pessoas
+4 - Procurar pessoa						4 - Procurar pessoa
+0 - Sair							0 - Sair
+Escolha uma opção: Menu principal				Escolha uma opção: Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+							      >	4 - Portal do Docente
+0 - Sair							0 - Sair
+Escolha uma opção: 						Escolha uma opção: 
+________expected______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Ficheiro a abrir: Abrir: Operação inválida: A pessoa com identificador 101011 não existe.
+Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José
+DOCENTE|101011|789456123|José Carlos
+Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: 
+__________us____________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Ficheiro a abrir: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+0 - Sair
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: FUNCIONÁRIO|100001|123789456|Maria José
+ALUNO|100048|123456789|Joaquim Maria
+* Informática - Programação com Objectos
+DOCENTE|101010|789456123|José Carlos
+Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+0 - Sair
+Escolha uma opção: __________ diff ____________________________________________________________________________________________________
+____________________im__________________________________________________________________________________________
+FUNCIONÁRIO|100001|123789456|Maria José
+DOCENTE|101011|789456123|José Carlos

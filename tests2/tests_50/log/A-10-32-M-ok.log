@@ -1,0 +1,163 @@
+
+A-10-32-M-ok
+ - Criar inquérito em disciplina com um projecto mas com projecto não existente
+_____________________ in _________________________________________________________________________________________
+100010
+1
+e1.obj
+6
+1
+D1
+P3
+0
+0
+_________diff_____________________________________________________________________________________________________
+Identificador: Menu principal					Identificador: Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+5 - Portal do Estudante						5 - Portal do Estudante
+6 - Portal do Delegado						6 - Portal do Delegado
+0 - Sair							0 - Sair
+Escolha uma opção: Ficheiro a abrir: Menu principal		Escolha uma opção: Ficheiro a abrir: Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+5 - Portal do Estudante						5 - Portal do Estudante
+6 - Portal do Delegado						6 - Portal do Delegado
+0 - Sair							0 - Sair
+Escolha uma opção: Portal do Delegado				Escolha uma opção: Portal do Delegado
+1 - Criar inquérito						1 - Criar inquérito
+2 - Cancelar inquérito						2 - Cancelar inquérito
+3 - Abrir inquérito						3 - Abrir inquérito
+4 - Fechar inquérito						4 - Fechar inquérito
+5 - Finalizar inquérito						5 - Finalizar inquérito
+6 - Mostrar inquéritos de uma disciplina			6 - Mostrar inquéritos de uma disciplina
+0 - Sair							0 - Sair
+Escolha uma opção: Nome da disciplina: Nome do projecto: Port |	Escolha uma opção: Nome da disciplina: Nome do projecto: Cria
+							      >	Portal do Delegado
+1 - Criar inquérito						1 - Criar inquérito
+2 - Cancelar inquérito						2 - Cancelar inquérito
+3 - Abrir inquérito						3 - Abrir inquérito
+4 - Fechar inquérito						4 - Fechar inquérito
+5 - Finalizar inquérito						5 - Finalizar inquérito
+6 - Mostrar inquéritos de uma disciplina			6 - Mostrar inquéritos de uma disciplina
+0 - Sair							0 - Sair
+Escolha uma opção: Menu principal				Escolha uma opção: Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+5 - Portal do Estudante						5 - Portal do Estudante
+6 - Portal do Delegado						6 - Portal do Delegado
+0 - Sair							0 - Sair
+Escolha uma opção: 						Escolha uma opção: ________expected______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+6 - Portal do Delegado
+0 - Sair
+Escolha uma opção: Ficheiro a abrir: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+6 - Portal do Delegado
+0 - Sair
+Escolha uma opção: Portal do Delegado
+1 - Criar inquérito
+2 - Cancelar inquérito
+3 - Abrir inquérito
+4 - Fechar inquérito
+5 - Finalizar inquérito
+6 - Mostrar inquéritos de uma disciplina
+0 - Sair
+Escolha uma opção: Nome da disciplina: Nome do projecto: Criar inquérito: Operação inválida: O projecto 'P3' não existe na disciplina 'D1'.
+Portal do Delegado
+1 - Criar inquérito
+2 - Cancelar inquérito
+3 - Abrir inquérito
+4 - Fechar inquérito
+5 - Finalizar inquérito
+6 - Mostrar inquéritos de uma disciplina
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+6 - Portal do Delegado
+0 - Sair
+Escolha uma opção: __________us____________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+6 - Portal do Delegado
+0 - Sair
+Escolha uma opção: Ficheiro a abrir: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+6 - Portal do Delegado
+0 - Sair
+Escolha uma opção: Portal do Delegado
+1 - Criar inquérito
+2 - Cancelar inquérito
+3 - Abrir inquérito
+4 - Fechar inquérito
+5 - Finalizar inquérito
+6 - Mostrar inquéritos de uma disciplina
+0 - Sair
+Escolha uma opção: Nome da disciplina: Nome do projecto: Portal do Delegado
+1 - Criar inquérito
+2 - Cancelar inquérito
+3 - Abrir inquérito
+4 - Fechar inquérito
+5 - Finalizar inquérito
+6 - Mostrar inquéritos de uma disciplina
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+5 - Portal do Estudante
+6 - Portal do Delegado
+0 - Sair
+Escolha uma opção: __________ diff ____________________________________________________________________________________________________
+____________________im__________________________________________________________________________________________
+FUNCIONÁRIO|100003|123789456|Maria José
+DELEGADO|100010|123456789|di1
+# Informática|D1
+# Informática|D3
+# Informática|D4
+DELEGADO|100011|123456789|di2
+# Informática|D1
+# Informática|D4
+# Informática|D5
+ALUNO|100012|123456789|ai1
+# Informática|D1
+# Informática|D2
+ALUNO|100013|123456789|ai2
+# Informática|D1
+# Informática|D3
+ALUNO|100014|123456789|ai3
+# Informática|D4
+# Informática|D3
+DELEGADO|100023|123456789|dm1
+# Matemática|D3
+ALUNO|100024|123456789|am1
+# Matemática|D3
+DOCENTE|100100|987654321|P1
+# Informática|D1
+# Informática|D2
+DOCENTE|100101|987654322|P2
+# Informática|D1
+# Informática|D3
+DOCENTE|100102|987654323|P3
+# Matemática|D3
+# Informática|D1
+FUNCIONÁRIO|101010|789456123|José Carlos

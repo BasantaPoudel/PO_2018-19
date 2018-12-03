@@ -1,0 +1,65 @@
+______________________________________________________________________________________________________________
+Procura pessoa com string que não existe
+please schedule a fix
+A-03-01-M-ok
+______________________________________________________________________________________________________________
+FUNCIONÁRIO|100001|123789456|Maria José
+DELEGADO|100010|123456789|João Maria
+# Informática|Fundamentos da Programação
+# Informática|Algoritmos e Estruturas de Dados
+# Informática|Programação com Objectos
+# Informática|Análise e Síntese de Algoritmos
+DELEGADO|100011|123456789|João Manuel
+# Informática|Fundamentos da Programação
+# Informática|Algoritmos e Estruturas de Dados
+# Informática|Programação com Objectos
+# Informática|Análise e Síntese de Algoritmos
+DELEGADO|100012|123456789|João Miguel
+# Matemática|Álgebra Linear
+# Matemática|Probabilidades e Estatística
+# Matemática|Cálculo I
+# Matemática|Métodos Numéricos
+ALUNO|100013|123456789|José Manuel
+# Matemática|Métodos Numéricos
+# Matemática|Cálculo I
+# Matemática|Análise Numérica
+# Matemática|Probabilidades e Estatística
+DOCENTE|100100|987654321|Ana Maria
+# Informática|Análise e Síntese de Algoritmos
+# Informática|Compiladores
+# Informática|Engenharia de Software
+# Informática|Sistemas Operativos
+FUNCIONÁRIO|101010|789456123|José Carlos
+______________________________________________________________________________________________________________
+100100
+3
+4
+Jorge
+0
+0
+________exp______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Nome a procurar: Portal Pessoal
+1 - Mostrar pessoa
+2 - Alterar número de telefone
+3 - Mostrar pessoas
+4 - Procurar pessoa
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: 

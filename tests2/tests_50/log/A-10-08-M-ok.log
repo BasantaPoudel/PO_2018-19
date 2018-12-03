@@ -1,0 +1,151 @@
+
+A-10-08-M-ok
+ - Docente vê projecto P2 com 1 submissão  
+_____________________ in _________________________________________________________________________________________
+100100
+1
+e1.obj
+4
+3
+D1
+P2
+0
+0
+_________diff_____________________________________________________________________________________________________
+Identificador: Menu principal					Identificador: Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+4 - Portal do Docente						4 - Portal do Docente
+0 - Sair							0 - Sair
+Escolha uma opção: Ficheiro a abrir: Menu principal		Escolha uma opção: Ficheiro a abrir: Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+4 - Portal do Docente						4 - Portal do Docente
+0 - Sair							0 - Sair
+Escolha uma opção: Portal do Docente				Escolha uma opção: Portal do Docente
+1 - Criar projecto						1 - Criar projecto
+2 - Fechar projecto						2 - Fechar projecto
+3 - Ver submissões de um projecto				3 - Ver submissões de um projecto
+4 - Ver alunos de disciplina leccionada				4 - Ver alunos de disciplina leccionada
+5 - Ver resultados de um inquérito				5 - Ver resultados de um inquérito
+0 - Sair							0 - Sair
+Escolha uma opção: Nome da disciplina: Nome do projecto: Ver  |	Escolha uma opção: Nome da disciplina: Nome do projecto: D1 -
+							      >	* 100012 - Sub 2
+Portal do Docente						Portal do Docente
+1 - Criar projecto						1 - Criar projecto
+2 - Fechar projecto						2 - Fechar projecto
+3 - Ver submissões de um projecto				3 - Ver submissões de um projecto
+4 - Ver alunos de disciplina leccionada				4 - Ver alunos de disciplina leccionada
+5 - Ver resultados de um inquérito				5 - Ver resultados de um inquérito
+0 - Sair							0 - Sair
+Escolha uma opção: Menu principal				Escolha uma opção: Menu principal
+1 - Abrir							1 - Abrir
+2 - Guardar							2 - Guardar
+3 - Portal Pessoal						3 - Portal Pessoal
+4 - Portal do Docente						4 - Portal do Docente
+0 - Sair							0 - Sair
+Escolha uma opção: 						Escolha uma opção: ________expected______________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Ficheiro a abrir: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal do Docente
+1 - Criar projecto
+2 - Fechar projecto
+3 - Ver submissões de um projecto
+4 - Ver alunos de disciplina leccionada
+5 - Ver resultados de um inquérito
+0 - Sair
+Escolha uma opção: Nome da disciplina: Nome do projecto: D1 - P2
+* 100012 - Sub 2
+Portal do Docente
+1 - Criar projecto
+2 - Fechar projecto
+3 - Ver submissões de um projecto
+4 - Ver alunos de disciplina leccionada
+5 - Ver resultados de um inquérito
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: __________us____________________________________________________________________________________________________
+Identificador: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Ficheiro a abrir: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: Portal do Docente
+1 - Criar projecto
+2 - Fechar projecto
+3 - Ver submissões de um projecto
+4 - Ver alunos de disciplina leccionada
+5 - Ver resultados de um inquérito
+0 - Sair
+Escolha uma opção: Nome da disciplina: Nome do projecto: Ver submissões de um projecto: Operação inválida: A disciplina 'D1' não existe ou não é válida para o utilizador em causa.
+Portal do Docente
+1 - Criar projecto
+2 - Fechar projecto
+3 - Ver submissões de um projecto
+4 - Ver alunos de disciplina leccionada
+5 - Ver resultados de um inquérito
+0 - Sair
+Escolha uma opção: Menu principal
+1 - Abrir
+2 - Guardar
+3 - Portal Pessoal
+4 - Portal do Docente
+0 - Sair
+Escolha uma opção: __________ diff ____________________________________________________________________________________________________
+____________________im__________________________________________________________________________________________
+FUNCIONÁRIO|100003|123789456|Maria José
+DELEGADO|100010|123456789|di1
+# Informática|D1
+# Informática|D3
+# Informática|D4
+DELEGADO|100011|123456789|di2
+# Informática|D1
+# Informática|D4
+# Informática|D5
+ALUNO|100012|123456789|ai1
+# Informática|D1
+# Informática|D2
+ALUNO|100013|123456789|ai2
+# Informática|D1
+# Informática|D3
+ALUNO|100014|123456789|ai3
+# Informática|D4
+# Informática|D3
+DELEGADO|100023|123456789|dm1
+# Matemática|D3
+ALUNO|100024|123456789|am1
+# Matemática|D3
+DOCENTE|100100|987654321|P1
+# Informática|D1
+# Informática|D2
+DOCENTE|100101|987654322|P2
+# Informática|D1
+# Informática|D3
+DOCENTE|100102|987654323|P3
+# Matemática|D3
+# Informática|D1
+FUNCIONÁRIO|101010|789456123|José Carlos
