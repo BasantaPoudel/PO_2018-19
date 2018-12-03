@@ -134,7 +134,6 @@ Escolha uma opção: Ficheiro sem nome. Guardar ficheiro como: Menu principal
 6 - Portal do Delegado
 0 - Sair
 Escolha uma opção: Fim de entrada de dados (R-EOF): pt.tecnico.po.io.RuntimeEOFException: Fim do fluxo de dados de entrada
-_________diff_____________________________________________________________________________________________________
 ____________________im__________________________________________________________________________________________
 FUNCIONÁRIO|100003|123789456|Maria José
 DELEGADO|100010|123456789|di1

@@ -57,9 +57,10 @@ do
 
 		# in
 		cat auto-tests/$FILE.in
-		echo "_________diff_____________________________________________________________________________________________________" >> log/$FILE.log
+		echo "______________________________________________________________________________________________________________"
 		echo
 		colordiff -b -y results/$FILE.outhyp auto-tests/expected/$FILE.out
+		colordiff results/$FILE.outhyp auto-tests/expected/$FILE.out
 		echo
 
 		echo "____________________im__________________________________________________________________________________________" >> log/$FILE.log
