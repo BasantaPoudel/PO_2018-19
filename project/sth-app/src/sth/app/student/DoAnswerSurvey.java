@@ -5,7 +5,7 @@ import pt.tecnico.po.ui.DialogException;
 import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
-// FIXME import other classes if needed
+//FIXME import other classes if needed
 import sth.exceptions.newexceptions.NoSurveyCoreException;
 import sth.exceptions.newexceptions.NoSuchProjectCoreException;
 import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
@@ -18,19 +18,19 @@ import sth.app.exceptions.NoSuchDisciplineException;
  */
 public class DoAnswerSurvey extends Command<SchoolManager> {
 
-  // FIXME[FIXING-BEGIN] add input fields if needed
+  //FIXME[FIXING-BEGIN] add input fields if needed
   Input<String> _projectName;
   Input<String> _disciplineName;
   Input<Float> _horas;
   Input<String> _comments;
-  // FIXME[FIXING-END] add input fields if needed
+  //FIXME[FIXING-END] add input fields if needed
 
   /**
    * @param receiver
    */
   public DoAnswerSurvey(SchoolManager receiver) {
     super(Label.ANSWER_SURVEY, receiver);
-    // FIXME initialize input fields if needed
+    //FIXME initialize input fields if needed
     _disciplineName = _form.addStringInput(Message.requestDisciplineName());
     _projectName = _form.addStringInput(Message.requestProjectName());
     _horas = _form.addFloatInput(Message.requestProjectHours());
@@ -41,7 +41,7 @@ public class DoAnswerSurvey extends Command<SchoolManager> {
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
   public final void execute() throws DialogException {
-    // FIXME [FIXING-BEGIN] implement command
+    //FIXME [FIXING-BEGIN] implement command
   _form.parse();
   try {
     // _display.add(_receiver.answerSurvey(_disciplineName.value(),_projectName.value()));
@@ -57,6 +57,6 @@ public class DoAnswerSurvey extends Command<SchoolManager> {
   catch(NoSuchDisciplineCoreException e){
     throw new NoSuchDisciplineException(_disciplineName.value());
   }
-  // FIXME [FIXING-END] implement command
+  //FIXME [FIXING-END] implement command
   }
 }

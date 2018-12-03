@@ -6,7 +6,7 @@ import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
-// FIXME import other classes if needed
+//FIXME import other classes if needed
 
 /**
 * 4.1.1. Save to file under current name (if unnamed, query for name).

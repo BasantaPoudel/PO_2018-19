@@ -7,7 +7,7 @@ import sth.exceptions.BadEntryException;
 import sth.exceptions.ImportFileException;
 import sth.exceptions.NoSuchPersonIdException;
 
-// FIXME [FIXING-BEGIN] import other classes if needed
+//FIXME [FIXING-BEGIN] import other classes if needed
 import java.util.Collection;
 import java.util.Collections;
 import sth.exceptions.UnknownAgentException;
@@ -33,16 +33,16 @@ import sth.exceptions.newexceptions.NonEmptySurveyCoreException;
 import sth.exceptions.newexceptions.SurveyFinishedCoreException;
 import sth.exceptions.newexceptions.DuplicateProjectCoreException;
 
-// FIXME [FIXING-END] import other classes if needed
+//FIXME [FIXING-END] import other classes if needed
 
 /**
 * The façade class.
 */
 public class SchoolManager {
 
-	// FIXME add object attributes if needed
+	//FIXME add object attributes if needed
 
-	// FIXME implement constructors if needed
+	//FIXME implement constructors if needed
 	private School _school = new School();
 	private int _loginID;
 	private boolean _ischanged = false;
@@ -71,13 +71,13 @@ public class SchoolManager {
 	* @throws NoSuchPersonIdException
 	*/
 	public void login(int id) throws NoSuchPersonIdException {
-		// FIXME [FIXING-BEGIN] implement method
+		//FIXME [FIXING-BEGIN] implement method
 		_loginID = id;
 		if (  !(_school.hasStudent(id)||_school.hasProfessor(id)||_school.hasRepresentative(id) || _school.hasStaff(id))	)
 		throw new NoSuchPersonIdException(id);
 		// System.out.println(_loginID); [Debug]
 		// _school.printStudent();
-		// FIXME [FIXING-END] implement method
+		//FIXME [FIXING-END] implement method
 	}
 
 	/**
@@ -110,7 +110,7 @@ public class SchoolManager {
 		return _school.hasRepresentative(_loginID);
 	}
 
-	// FIXME [FIXING-BEGIN] implement other methods (in general, one for each command in sth-app)
+	//FIXME [FIXING-BEGIN] implement other methods (in general, one for each command in sth-app)
 	// public String getPersons() {
 	//     return _school.getPersons();
 	// }

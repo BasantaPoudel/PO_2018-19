@@ -1,6 +1,6 @@
 package sth;
 
-// FIXME [FIXING-BEGIN] import other classes if needed
+//FIXME [FIXING-BEGIN] import other classes if needed
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.Serializable;
@@ -48,7 +48,7 @@ import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
 
 
 
-// FIXME [FIXING-END] import other classes if needed
+//FIXME [FIXING-END] import other classes if needed
 
 /**
 * School implementation.
@@ -80,7 +80,7 @@ public class School implements Serializable {
 
 	//[FIXING-END]
 
-	// FIXME implement constructors if needed
+	//FIXME implement constructors if needed
 
 	/*========================================
 	=            main functions
