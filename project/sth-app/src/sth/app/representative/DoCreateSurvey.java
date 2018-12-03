@@ -41,9 +41,9 @@ public class DoCreateSurvey extends Command<SchoolManager> {
     //FIXME implement command
     _form.parse();
     try{
-    // _display.add(_receiver.createSurvey(_disciplineName.value(),_projectName.value()));
+    // _display.add(_receiver.createSurvey(_disciplineName.value(),_projectName.value());
     // _display.display();
-    System.out.println(_receiver.createSurvey(_disciplineName.value(),_projectName.value()));
+    String s = _receiver.createSurvey(_disciplineName.value(),_projectName.value());
     }
     catch(DuplicateSurveyCoreException e){
       throw new DuplicateSurveyException(_disciplineName.value(),_projectName.value());

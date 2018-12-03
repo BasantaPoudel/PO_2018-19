@@ -42,7 +42,7 @@ public class DoCreateProject extends Command<SchoolManager> {
     //FIXME implement command
     _form.parse();
     try{
-    // _display.add(_receiver.createProject(_disciplineName.value(),_projectName.value()));
+    // _display.add(_receiver.createProject(_disciplineName.value(),_projectName.value());
     // _display.display();
     _receiver.createProject(_disciplineName.value(),_projectName.value());
     }

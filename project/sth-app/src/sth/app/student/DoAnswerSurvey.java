@@ -44,9 +44,9 @@ public class DoAnswerSurvey extends Command<SchoolManager> {
     //FIXME [FIXING-BEGIN] implement command
   _form.parse();
   try {
-    // _display.add(_receiver.answerSurvey(_disciplineName.value(),_projectName.value()));
+    // _display.add(_receiver.answerSurvey(_disciplineName.value(),_projectName.value());
     // _display.display();
-    System.out.println(_receiver.answerSurvey(_disciplineName.value(),_projectName.value()));
+    String s = _receiver.answerSurvey(_disciplineName.value(),_projectName.value());
 
   } catch (NoSuchProjectCoreException e) {
     throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());

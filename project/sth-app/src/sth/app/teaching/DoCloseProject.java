@@ -41,7 +41,7 @@ public class DoCloseProject extends Command<SchoolManager> {
     //FIXME implement command
     _form.parse();
     try{
-    // _display.add(_receiver.closeProject(_disciplineName.value(),_projectName.value()));
+    // _display.add(_receiver.closeProject(_disciplineName.value(),_projectName.value());
     // _display.display();
     _receiver.closeProject(_disciplineName.value(),_projectName.value());
 

@@ -45,9 +45,9 @@ public class DoCloseSurvey extends Command<SchoolManager> {
     //FIXME implement command
     _form.parse();
     try{
-    // _display.add(_receiver.closeSurvey(_disciplineName.value(),_projectName.value()));
+    // _display.add(_receiver.closeSurvey(_disciplineName.value(),_projectName.value());
     // _display.display();
-    System.out.println(_receiver.closeSurvey(_disciplineName.value(),_projectName.value()));
+    String s = _receiver.closeSurvey(_disciplineName.value(),_projectName.value());
     }
     catch(NoSurveyCoreException e){
       throw new NoSurveyException(_disciplineName.value(),_projectName.value());

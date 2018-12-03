@@ -40,7 +40,7 @@ public class DoDeliverProject extends Command<SchoolManager> {
     try{
     // _display.add(_receiver.deliverProject(_disciplineName.value(),_projectName.value(),_description.value()));
     // _display.display();
-    System.out.println(_receiver.deliverProject(_disciplineName.value(),_projectName.value(),_description.value()));
+    String s = _receiver.deliverProject(_disciplineName.value(),_projectName.value(),_description.value());
     }
     catch(NoSuchProjectCoreException e){
       throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());

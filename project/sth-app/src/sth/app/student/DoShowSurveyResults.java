@@ -37,9 +37,9 @@ public class DoShowSurveyResults extends Command<SchoolManager> {
   public final void execute() throws DialogException {
     _form.parse();
     try{
-    // _display.add(_receiver.showSurveyResult(_disciplineName.value(),_projectName.value()));
+    // _display.add(_receiver.showSurveyResult(_disciplineName.value(),_projectName.value());
     // _display.display();
-    System.out.println(_receiver.showSurveyResult(_disciplineName.value(),_projectName.value()));
+    String s = _receiver.showSurveyResult(_disciplineName.value(),_projectName.value());
     }
     catch ( NoSurveyCoreException e) {
      throw new NoSurveyException(_disciplineName.value(),_projectName.value());

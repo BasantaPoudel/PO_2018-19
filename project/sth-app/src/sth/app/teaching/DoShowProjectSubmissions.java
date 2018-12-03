@@ -44,7 +44,7 @@ public class DoShowProjectSubmissions extends Command<SchoolManager> {
     _display.add(_receiver.showProjectSubmissions(_disciplineName.value(),_projectName.value()));
     _display.display();
 
-    // System.out.println(_receiver.showProjectSubmissions(_disciplineName.value(),_projectName.value()));
+    // String s = _receiver.showProjectSubmissions(_disciplineName.value(),_projectName.value());
     }
     catch(NoSuchProjectCoreException e){
       throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());

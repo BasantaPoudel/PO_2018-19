@@ -29,8 +29,8 @@ public class DoSave extends Command<SchoolManager> {
     public final void execute() {
       if(_receiver.getInitial()==true){
         if(_receiver.getChanged()==false){
-          // System.out.println(_receiver.getChanged());
-          // System.out.println(_receiver.getInitial());
+          // String s = _receiver.getChanged());
+          // String s = _receiver.getInitial());
           // _receiver.setInitial();
           _fileName = _form.addStringInput(Message.newSaveAs());
           _form.parse();

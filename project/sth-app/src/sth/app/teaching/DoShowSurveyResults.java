@@ -44,9 +44,9 @@ public class DoShowSurveyResults extends Command<SchoolManager> {
 
 
     try{
-    // _display.add(_receiver.showSurveyResults(_disciplineName.value(),_projectName.value()));
+    // _display.add(_receiver.showSurveyResults(_disciplineName.value(),_projectName.value());
     // _display.display();
-    System.out.println(_receiver.showSurveyResults(_disciplineName.value(),_projectName.value()));
+    String s = _receiver.showSurveyResults(_disciplineName.value(),_projectName.value());
     }
     catch(NoSuchProjectCoreException e){
       throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());
