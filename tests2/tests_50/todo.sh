@@ -9,7 +9,6 @@ fi
 echo "" > log/A-00.log
 echo "" > log/A-00wik.log
 
-
 for FILE_RAW in $(ls auto-tests/*.in);
 do
 
@@ -19,6 +18,7 @@ do
 
 	echo  $FILE
 	echo "" > log/$FILE.log
+
 	if diff auto-tests/expected/$FILE.out results/$FILE.outhyp >/dev/null ; then
 			 if [ -f log/$FILE.log ];then
 				 rm log/$FILE.log
@@ -28,6 +28,7 @@ do
 			cat desc/$FILE.desc >> log/A-00wik.log
 	else
 		echo "no";
+
 		printf "$FILE.................. o ! ">> log/A-00wik.log
 		cat desc/$FILE.desc >> log/A-00wik.log
 
