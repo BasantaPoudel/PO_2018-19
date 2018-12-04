@@ -439,6 +439,7 @@ public class School implements Serializable {
 		else if(_pStaff!=null){
 			return _pStaff.show();
 		}
+
 		return "";
 	}
 
@@ -490,26 +491,18 @@ public class School implements Serializable {
 		TreeMap<Integer,Person> allPeople = new TreeMap<Integer,Person>();
 
 		for (Integer personId : _persons.keySet()) {
-
 			if(hasStudent(personId) ){
-
 				allPeople.put(personId,_students.get(personId)) ;
-
-			if (hasRepresentative(personId))
-
+			}
+			if(hasRepresentative(personId)){
 				allPeople.put(personId,_representatives.get(personId)) ;
 			}
-
 			if(hasProfessor(personId) ){
-
 				allPeople.put(personId,_professors.get(personId)) ;
 			}
-
 			if(hasStaff(personId) ){
-
 				allPeople.put(personId,_staffs.get(personId)) ;
 			}
-
 		}
 		String res="";
 		for (Integer id : allPeople.keySet() ){
