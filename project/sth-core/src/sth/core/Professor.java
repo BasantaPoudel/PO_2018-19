@@ -18,6 +18,8 @@ public class Professor extends Person implements Serializable{
     // <disciplineName,courseName >
     private TreeMap<String,	String> _disciplinesCourses = new TreeMap<String,	String>();
 
+    private TreeMap<String,Discipline> disciplinesMap = new TreeMap<String,Discipline>(); // create a map of disciplineName's and disciplines for that course
+
     // constructor
 
     public Professor(String _name,int _phoneNumber,int _id){
@@ -27,46 +29,38 @@ public class Professor extends Person implements Serializable{
     /*===========================================
     =            disciplines
     ===========================================*/
-
-
     public void putDiscipline(Discipline discipline){
-
         // names
         String courseName=discipline.getCourseName();
         String disciplineName=discipline.getName(); // get the disciplineName form discipline
-
         // if teacher never had discipline of that course
         if (_disciplines.get(courseName) == null){
-
-            TreeMap<String,Discipline> disciplinesMap = new TreeMap<String,Discipline>(); // create a map of disciplineName's and disciplines for that course
-
             disciplinesMap.put(disciplineName,discipline);  // put in map disciplineName and discipline
             _disciplines.put(courseName,disciplinesMap);  // add the new map  to respective course
-
-
         }
-
         // if teacher has had discipline of that course before
-
         else if (_disciplines.get(courseName) != null){
             // add  existing Map
             _disciplines.get(courseName).put(disciplineName,discipline);
         }
-
         _disciplinesCourses.put(disciplineName,courseName);// add to _disciplinesCourses (a Map<String,String>) the names
-
     }
 
     public String getDisciplineName(String disciplineName){
         return _disciplinesCourses.get(disciplineName);
     }
 
-    public Discipline getDiscipline(String courseName,String disciplineName){
-        return _disciplines.get(courseName).get(disciplineName);
+    public Discipline getDiscipline(String disciplineName){
+        return disciplinesMap.get(disciplineName);
     }
 
+    //Overloading 
+    public Discipline getDiscipline(String courseName,String disciplineName){
+       return _disciplines.get(courseName).get(disciplineName);
+   }
+
     public boolean hasDiscipline(String disciplineName){
-        return (_disciplines.containsKey(disciplineName));
+        return (disciplinesMap.containsKey(disciplineName));
     }
 
     public String getDisciplineCourseName(String disciplineName){
@@ -91,11 +85,11 @@ public class Professor extends Person implements Serializable{
         return res;
     }
 
- 
 
 
 
-    public String showDisciplineStudents(String courseName,String disciplineName){
+
+    public String showDisciplineStudents(String disciplineName){
         // DELEGADO|100008|123456789|Joaquim Maria
 		// * Informática - Algoritmos e Estruturas de Dados
 		// * Informática - Análise e Síntese de Algoritmos
@@ -112,11 +106,11 @@ public class Professor extends Person implements Serializable{
 		// * Informática - Fundamentos
 		// * Informática - Programação com Objectos
         String res="";
-        Discipline disc = getDiscipline(courseName,disciplineName);
-        for (Student student : disc.getStudents() ) {
-                res+=student.showWithDisciplines();
-        }
-        return res;
+        Discipline disc = getDiscipline(disciplineName);
+        // for (Student student : disc.getStudents() ) {
+        //         res+=student.showWithDisciplines();
+        // }
+        return res + disc.showStudents();
     }
 
 

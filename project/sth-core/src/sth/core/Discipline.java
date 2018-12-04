@@ -70,5 +70,27 @@ public class Discipline implements Serializable{
 		return _students.values();
 	}
 
+	public boolean hasProject(String projectName){
+			return (_projects.containsKey(projectName));
+	}
+
+	public String showStudents(){
+		String _allStudents = "";
+		// for (Map.Entry<Integer, Student> entry : _students.entrySet()) {
+		// 	Student value = entry.getValue();
+		// 	String _sName =value.getName();
+		// 	_allStudents += value.show();
+		//
+		// }
+
+    // [debug]
+		// customers.forEach((id, name) -> {
+		// 	System.out.println("Key : " + id + " value : " + name);
+		// });
+
+		 // System.out.println("reached here show students in discipline");//  [debug]
+		 
+		return _allStudents;
+	}
 
 }

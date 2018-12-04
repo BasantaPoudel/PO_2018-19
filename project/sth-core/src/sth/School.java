@@ -45,6 +45,7 @@ import sth.exceptions.newexceptions.NoSuchProjectCoreException;
 import sth.exceptions.newexceptions.DuplicateSurveyCoreException;
 import sth.exceptions.newexceptions.SurveyFinishedCoreException;
 import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
+import sth.exceptions.newexceptions.DuplicateProjectCoreException;
 
 
 
@@ -68,6 +69,9 @@ public class School implements Serializable {
 	private Map<Integer, Staff> _staffs = new TreeMap<Integer, Staff>();
 	//all people
 	private Map<Integer, Person> _persons= new TreeMap<Integer, Person>();
+
+	//New Map for storing instances of disciplines
+	private Map<String, Discipline> _disciplines= new TreeMap<String, Discipline>();
 
 	private Map<String,Project> _projects = new TreeMap<String,Project>();
 
@@ -223,6 +227,7 @@ public class School implements Serializable {
 				disc.putStudent(student);
 			}
 			addStudent(id, student);
+			// Se calhar falta aqui adicionar alunos nas disciplinas.
 
 		}
 		else if (pattDELEGADO.matcher(tipoElemento).matches()){
@@ -592,7 +597,7 @@ public class School implements Serializable {
 	=   Metodos de Portal DOCENTE         =
 	=====================================*/
 	//4.1
-	public void createProject(int loginID, String disciplineName,String projectName)throws NoSuchDisciplineCoreException{
+	public void createProject(int loginID, String disciplineName,String projectName)throws NoSuchDisciplineCoreException, DuplicateProjectCoreException{
 		Professor prof = _professors.get(loginID);
 		if (prof.hasDiscipline(disciplineName)){
 			// courseName
@@ -600,16 +605,21 @@ public class School implements Serializable {
 			// discipline
 			Discipline disc = prof.getDiscipline(courseName,disciplineName);
 			// project
-			Project proj=new Project(projectName);
+			if (disc.hasProject(projectName)==false){
+				Project proj=new Project(projectName);
 
-			disc.addProject(proj);
+				disc.addProject(proj);
+			}
+			else{
+				throw new DuplicateProjectCoreException(disciplineName,projectName);
+			}
 		}
-		else{
+		else {
 			throw new NoSuchDisciplineCoreException(disciplineName);
 		}
 	}
 	//4.2
-	public void closeProject(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineCoreException{
+	public void closeProject(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineCoreException,NoSuchProjectCoreException{
 			Professor prof = _professors.get(loginID);
 		if (prof.hasDiscipline(disciplineName)){
 			// courseName
@@ -619,7 +629,13 @@ public class School implements Serializable {
 			// project
 			Project proj=disc.getProject(projectName);
 
-			proj.close();
+			if (disc.hasProject(projectName)==true){
+				proj.close();
+			}
+			else{
+				throw new NoSuchProjectCoreException(disciplineName,projectName);
+			}
+
 
 		}
 		else{
@@ -654,7 +670,7 @@ public class School implements Serializable {
 		// * 7912 - Tigre.jav
 	}
 	//4.3
-	public String showDisciplineStudents(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineCoreException{
+	public String showDisciplineStudents(int loginID,String disciplineName)throws NoSuchDisciplineCoreException{
 		// DELEGADO|100008|123456789|Joaquim Maria
 		// * Informática - Algoritmos e Estruturas de Dados
 		// * Informática - Análise e Síntese de Algoritmos
@@ -670,18 +686,19 @@ public class School implements Serializable {
 		// * Informática - Análise e Síntese de Algoritmos
 		// * Informática - Fundamentos
 		// * Informática - Programação com Objectos
-
 		Professor prof = _professors.get(loginID);
 		if (prof.hasDiscipline(disciplineName)){
+			System.out.println("Has Discipline"); //[debug]
+			String res = ""; //+" - "+projectName;
 
-			String res = disciplineName+" - "+projectName;
+			// // courseName
+			// String courseName=prof.getDisciplineCourseName(disciplineName);
 
-			// courseName
-			String courseName=prof.getDisciplineCourseName(disciplineName);
-			// discipline
-			Discipline disc = prof.getDiscipline(courseName,disciplineName);
+			// // discipline
+			// Discipline disc = prof.getDiscipline(courseName,disciplineName);
+			res += prof.showDisciplineStudents(disciplineName);
 			// project
-			Project proj=disc.getProject(projectName);
+			// Project proj=disc.getProject(projectName);
 			// res+=proj.getSubmissions();
 
 			return res;

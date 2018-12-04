@@ -193,8 +193,8 @@ public class SchoolManager {
 		_school.closeProject( _loginID, disciplineName, projectName);
 	}
 	//4.3
-	public String showDisciplineStudents(String disciplineName,String projectName) throws NoSuchProjectCoreException,NoSuchDisciplineCoreException{
-		return _school.showDisciplineStudents(_loginID,disciplineName,projectName);
+	public String showDisciplineStudents(String disciplineName) throws NoSuchDisciplineCoreException{
+		return _school.showDisciplineStudents(_loginID,disciplineName);
 	}
 	//4.4
 	public String showProjectSubmissions(String disciplineName,String projectName) throws NoSuchProjectCoreException,NoSuchDisciplineCoreException{

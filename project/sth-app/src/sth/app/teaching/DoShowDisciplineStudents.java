@@ -22,7 +22,6 @@ public class DoShowDisciplineStudents extends Command<SchoolManager> {
 
   //FIXME[FIXING-BEGIN] add input fields if needed
   Input<String> _disciplineName;
-  Input<String> _projectName;
   //FIXME[FIXING-END] add input fields if needed
 
   /**
@@ -32,8 +31,6 @@ public class DoShowDisciplineStudents extends Command<SchoolManager> {
     super(Label.SHOW_COURSE_STUDENTS, receiver);
     //FIXME initialize input fields if needed
     _disciplineName = _form.addStringInput(Message.requestDisciplineName());
-    _projectName = _form.addStringInput(Message.requestDisciplineName());
-
   }
 
   /** @see pt.tecnico.po.ui.Command#execute() */
@@ -47,13 +44,13 @@ public class DoShowDisciplineStudents extends Command<SchoolManager> {
     // }
 
     try{
-    _display.add(_receiver.showDisciplineStudents(_disciplineName.value(),_projectName.value()));
+    _display.add(_receiver.showDisciplineStudents(_disciplineName.value()));
     _display.display();
-    // String s = _receiver.showDisciplineStudent(_disciplineName.value(),_projectName.value());
+    // String s = _receiver.showDisciplineStudents(_disciplineName.value());
     }
-    catch(NoSuchProjectCoreException e){
-      throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());
-    }
+    // catch(NoSuchProjectCoreException e){
+    //   throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());
+    // }
 
     catch(NoSuchDisciplineCoreException e){
       throw new NoSuchDisciplineException(_disciplineName.value());

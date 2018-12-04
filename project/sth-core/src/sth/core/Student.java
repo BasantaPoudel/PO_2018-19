@@ -95,7 +95,9 @@ public class Student extends Person implements Serializable{
 			Discipline discipline = entr.getValue();
   			res=res+"*" + discipline.getCourseName()+" - "+discipline.getName()+"\n";
 		}
+		System.out.println("reached here show in Student");
 
+		// System.out.println(res); //[debug]
 		return res;
 
 	}
