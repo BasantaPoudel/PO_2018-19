@@ -158,7 +158,8 @@ public class School implements Serializable {
 		int phoneNumber = Integer.parseInt(fields[2]);
 		String name = fields[3];
 
-		ArrayList<Discipline> discs = new ArrayList<Discipline>();
+
+		ArrayList<Discipline> disciplines = new ArrayList<Discipline>();
 
 		String tipoElemento="";
 		Pattern pattALUNO = Pattern.compile("ALUNO");
@@ -202,9 +203,9 @@ public class School implements Serializable {
 				//make the necessary objects for adding the discipline to student
 
 				Course c = new Course(fields3[0]);
-				Discipline disc = new Discipline(c,fields3[1]);
+				Discipline discipline = new Discipline(c,fields3[1]);
 				// discipline adds the id to 'it-self'
-				discs.add(disc);
+				disciplines.add(discipline);
 
 			}
 		}catch(UnknownDataException e){
@@ -222,9 +223,9 @@ public class School implements Serializable {
 
 		if (pattALUNO.matcher(tipoElemento).matches()){
 			Student student = new Student(name,phoneNumber,id,false);
-			for(Discipline disc : discs){
-				student.putDiscipline(disc);
-				disc.putStudent(student);
+			for(Discipline discipline : disciplines){
+				student.putDiscipline(discipline);
+				discipline.putStudent(student);
 			}
 			addStudent(id, student);
 			// Se calhar falta aqui adicionar alunos nas disciplinas.
@@ -232,24 +233,24 @@ public class School implements Serializable {
 		}
 		else if (pattDELEGADO.matcher(tipoElemento).matches()){
 			Student representive = new Student(name,phoneNumber,id,true);
-			for(Discipline disc : discs){
-				representive.putDiscipline(disc);
+			for(Discipline discipline : disciplines){
+				representive.putDiscipline(discipline);
 			}
 			addRepresentive(id, representive);
 
 		}
 		else if (pattDOCENTE.matcher(tipoElemento).matches()){
 			Professor professor = new Professor(name,phoneNumber,id);
-			for(Discipline disc : discs){
-				professor.putDiscipline(disc);
+			for(Discipline discipline : disciplines){
+				professor.putDiscipline(discipline);
 			}
 			addProfessor(id, professor);
 
 		}
 		else if (pattFUNCIONÁRIO.matcher(tipoElemento).matches()){
 			Staff staff = new Staff(name,phoneNumber,id);
-			for(Discipline disc : discs){
-				staff.putDiscipline(disc);
+			for(Discipline discipline : disciplines){
+				staff.putDiscipline(discipline);
 			}
 			addStaff(id, staff);
 
@@ -603,12 +604,12 @@ public class School implements Serializable {
 			// courseName
 			String courseName=prof.getDisciplineCourseName(disciplineName);
 			// discipline
-			Discipline disc = prof.getDiscipline(courseName,disciplineName);
+			Discipline discipline = prof.getDiscipline(courseName,disciplineName);
 			// project
-			if (disc.hasProject(projectName)==false){
+			if (discipline.hasProject(projectName)==false){
 				Project proj=new Project(projectName);
 
-				disc.addProject(proj);
+				discipline.addProject(proj);
 			}
 			else{
 				throw new DuplicateProjectCoreException(disciplineName,projectName);
@@ -625,11 +626,11 @@ public class School implements Serializable {
 			// courseName
 			String courseName=prof.getDisciplineCourseName(disciplineName);
 			// discipline
-			Discipline disc = prof.getDiscipline(courseName,disciplineName);
+			Discipline discipline = prof.getDiscipline(courseName,disciplineName);
 			// project
-			Project proj=disc.getProject(projectName);
+			Project proj=discipline.getProject(projectName);
 
-			if (disc.hasProject(projectName)==true){
+			if (discipline.hasProject(projectName)==true){
 				proj.close();
 			}
 			else{
@@ -653,9 +654,9 @@ public class School implements Serializable {
 			// courseName
 			String courseName=prof.getDisciplineCourseName(disciplineName);
 			// discipline
-			Discipline disc = prof.getDiscipline(courseName,disciplineName);
+			Discipline discipline = prof.getDiscipline(courseName,disciplineName);
 			// project
-			Project proj=disc.getProject(projectName);
+			Project proj=discipline.getProject(projectName);
 			// res+=proj.getSubmissions();
 
 			return res;
@@ -695,10 +696,10 @@ public class School implements Serializable {
 			// String courseName=prof.getDisciplineCourseName(disciplineName);
 
 			// // discipline
-			// Discipline disc = prof.getDiscipline(courseName,disciplineName);
+			// Discipline discipline = prof.getDiscipline(courseName,disciplineName);
 			res += prof.showDisciplineStudents(disciplineName);
 			// project
-			// Project proj=disc.getProject(projectName);
+			// Project proj=discipline.getProject(projectName);
 			// res+=proj.getSubmissions();
 
 			return res;
