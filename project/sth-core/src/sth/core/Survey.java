@@ -6,7 +6,7 @@ import java.util.TreeMap;
 
 public class Survey implements Serializable{
 	private double _hoursSpent;
-	private String  _freeComments;
+	private String  _freeComment;
 	private boolean _closed=false;
 	private boolean _finalized=false;
 
@@ -14,9 +14,9 @@ public class Survey implements Serializable{
 	private Map<String,SurveySubmission> _surveySubmissions = new TreeMap<String,SurveySubmission>();
 
 
-	public Survey(double hoursSpent ,String freeComments){
+	public Survey(double hoursSpent ,String freeComment){
 		_hoursSpent=hoursSpent;
-		_freeComments=freeComments;
+		_freeComment=freeComment;
 
 	}
 
@@ -29,11 +29,11 @@ public class Survey implements Serializable{
 	public void setHoursSpent(double hoursSpent){
 		_hoursSpent=hoursSpent;
 	}
-	public String  getFreeComments(){
-		return _freeComments;
+	public String  getfreeComment(){
+		return _freeComment;
 	}
-	public void setFreeComments(String  freeComments){
-		_freeComments=freeComments;
+	public void setfreeComment(String  freeComment){
+		_freeComment=freeComment;
 	}
 	public boolean getClosed(){
 		return _closed;
