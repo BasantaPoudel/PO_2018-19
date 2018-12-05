@@ -638,7 +638,7 @@ public class School implements Serializable {
 	}
 
 	//4.4
-	public String showProjectSubmissions(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineCoreException{
+	public String showProjectSubmissions(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineCoreException,NoSuchProjectCoreException{
 		Professor prof = _professors.get(loginID);
 		if (prof.hasDiscipline(disciplineName)){
 
@@ -650,9 +650,16 @@ public class School implements Serializable {
 			Discipline discipline = prof.getDiscipline(courseName,disciplineName);
 			// project
 			Project proj=discipline.getProject(projectName);
-			// res+=proj.getSubmissions();
 
-			return res;
+			if (discipline.hasProject(projectName)==true){
+				// proj.close();
+				return res;
+			}
+			else{
+				throw new NoSuchProjectCoreException(disciplineName,projectName);
+			}
+
+
 		}
 		else{
 			throw new NoSuchDisciplineCoreException(disciplineName);
@@ -682,7 +689,7 @@ public class School implements Serializable {
 		// * Informática - Programação com Objectos
 		Professor prof = _professors.get(loginID);
 		if (prof.hasDiscipline(disciplineName)){
-			System.out.println("Has Discipline"); //[debug]
+			// System.out.println("Has Discipline"); //[debug]
 			String res = ""; //+" - "+projectName;
 
 			// // courseName

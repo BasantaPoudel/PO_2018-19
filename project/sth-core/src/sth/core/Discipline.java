@@ -36,7 +36,7 @@ public class Discipline implements Serializable{
 		_name=name;
 	}
 
-	private String show(){
+	public String show(){
 		return "* " + _name +" - " + _course;
 
 	}
@@ -64,6 +64,7 @@ public class Discipline implements Serializable{
 	===========================================*/
 
 	public void putStudent(Student student){
+		// System.out.println("Discipline puts Student with StudentId: "+student.getId()+" DisciplineName: "+this._name );
 		_students.put(student.getId(),student);
 	}
 	public  Collection<Student> getStudents(){
@@ -75,21 +76,18 @@ public class Discipline implements Serializable{
 	}
 
 	public String showStudents(){
+
+		// System.out.println("reached here show students in discipline");//  [debug]
+		// System.out.println("Size of _students map:"+_students.size());//  [debug]
 		String _allStudents = "";
-		// for (Map.Entry<Integer, Student> entry : _students.entrySet()) {
-		// 	Student value = entry.getValue();
-		// 	String _sName =value.getName();
-		// 	_allStudents += value.show();
-		//
-		// }
+		for (Map.Entry<Integer, Student> entry : _students.entrySet()) {
+			Student value = entry.getValue();
+			String _sName =value.getName();
+			_allStudents += value.show();
 
-    // [debug]
-		// customers.forEach((id, name) -> {
-		// 	System.out.println("Key : " + id + " value : " + name);
-		// });
-
-		 // System.out.println("reached here show students in discipline");//  [debug]
-		 
+			// System.out.println("reached here show students in discipline");//  [debug]
+		}
+		System.out.println(_allStudents);
 		return _allStudents;
 	}
 

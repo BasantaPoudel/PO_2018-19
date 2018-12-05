@@ -32,7 +32,9 @@ public class Professor extends Person implements Serializable{
     public void putDiscipline(Discipline discipline){
         // names
         String courseName=discipline.getCourseName();
+
         String disciplineName=discipline.getName(); // get the disciplineName form discipline
+        // System.out.println("Professor puts Discipline with  DisciplineName: "+disciplineName);
         // if teacher never had discipline of that course
         if (_disciplines.get(courseName) == null){
             disciplinesMap.put(disciplineName,discipline);  // put in map disciplineName and discipline
@@ -54,7 +56,7 @@ public class Professor extends Person implements Serializable{
         return disciplinesMap.get(disciplineName);
     }
 
-    //Overloading 
+    //Overloading
     public Discipline getDiscipline(String courseName,String disciplineName){
        return _disciplines.get(courseName).get(disciplineName);
    }
@@ -107,10 +109,22 @@ public class Professor extends Person implements Serializable{
 		// * Informática - Programação com Objectos
         String res="";
         Discipline disc = getDiscipline(disciplineName);
-        // for (Student student : disc.getStudents() ) {
-        //         res+=student.showWithDisciplines();
-        // }
-        return res + disc.showStudents();
+        System.out.println(disc); //[debug]
+        System.out.println(disciplinesMap.size());//  [debug]
+
+        String _allDisciplines = "";
+        for (Map.Entry<String, Discipline> entry : disciplinesMap.entrySet()) {
+          Discipline value = entry.getValue();
+          String _sName =value.getName();
+          _allDisciplines += _sName;
+          // System.out.println("reached here show students in discipline");//  [debug]
+          System.out.println(_sName);//  [debug]
+        }
+
+
+
+
+        return res; //+ disc.showStudents();
     }
 
 

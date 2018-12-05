@@ -119,7 +119,6 @@ public class SchoolManager {
 
 	public String setNewPhoneNum(int newTelPhone){
 		_ischanged=true;
-		_initial=true;
 		return _school.setNewPhoneNum(_loginID,newTelPhone);
 	}
 
@@ -146,6 +145,8 @@ public class SchoolManager {
 				oos.close();
 				_initial=false;
 				_ischanged=false;
+				System.out.println("Saved");
+
 			}
 			catch (IOException e) { e.printStackTrace(); }
 		}

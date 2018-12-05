@@ -10,10 +10,6 @@ public class Student extends Person implements Serializable{
 	private int _numOfEnrolledDisciplines=0;
 	private Map<String,Discipline> _disciplines = new TreeMap<String, Discipline>();
 
-	public Student(String _name,int _phoneNumber,int _id){
-		super(_name,_phoneNumber,_id);
-	}
-
 	    	// To specify if hes a representative
 	public Student(String _name,int _phoneNumber,int _id,boolean isRep){
 		super(_name,_phoneNumber,_id);
@@ -95,12 +91,13 @@ public class Student extends Person implements Serializable{
 			Discipline discipline = entr.getValue();
   			res=res+"*" + discipline.getCourseName()+" - "+discipline.getName()+"\n";
 		}
-		System.out.println("reached here show in Student");
+		// System.out.println("reached here show in Student");
 
 		// System.out.println(res); //[debug]
 		return res;
 
 	}
+
 
 	public String showWithDisciplines(){
 		String res;
