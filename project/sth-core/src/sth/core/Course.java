@@ -29,4 +29,14 @@ public class Course implements Serializable{
 	public void setNumOfRepresentatives(int numOfRepresentatives){
 		_numOfRepresentatives=numOfRepresentatives;
 	}
+
+	public void putDiscipline(Discipline d){
+		_disciplines.put(d.getName(),d);
+	}
+	public boolean hasDiscipline(Discipline d){
+		return _disciplines.containsKey(d.getName());
+	}
+	public Discipline getDiscipline(String dname){
+		return _disciplines.get(dname);
+	}
 }
