@@ -39,6 +39,11 @@ public class Course implements Serializable{
 		return _disciplines.containsKey(d.getName());
 	}
 	public Discipline getDiscipline(String dname){
-		return _disciplines.get(dname);
+		if (_disciplines.containsKey(dname)){
+			return _disciplines.get(dname);
+		}
+		else
+			return null;
 	}
+
 }
