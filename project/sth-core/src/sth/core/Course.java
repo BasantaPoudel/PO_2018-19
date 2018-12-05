@@ -31,7 +31,9 @@ public class Course implements Serializable{
 	}
 
 	public void putDiscipline(Discipline d){
-		_disciplines.put(d.getName(),d);
+		if (!hasDiscipline(d)){
+			_disciplines.put(d.getName(),d);
+		}
 	}
 	public boolean hasDiscipline(Discipline d){
 		return _disciplines.containsKey(d.getName());
