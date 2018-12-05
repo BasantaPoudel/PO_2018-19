@@ -28,19 +28,19 @@ public class DoSave extends Command<SchoolManager> {
     @Override
     public final void execute() {
       if(_receiver.getInitial()==true){
-        if(_receiver.getChanged()==false){
-          // String s = _receiver.getChanged());
-          // String s = _receiver.getInitial());
-          // _receiver.setInitial();
           _fileName = _form.addStringInput(Message.newSaveAs());
           _form.parse();
           _receiver.doSave(_fileName.value());
-        }
-        else{
-          // _fileName = _form.addStringInput(Message.saveAs());
-          // _form.parse();
+      }
+      else if(_receiver.getChanged()==true && _receiver.getInitial()==true){
+          _fileName = _form.addStringInput(Message.newSaveAs());
+          _form.parse();
           _receiver.doSave(_fileName.value());
-        }
+      }
+      else{
+        // _fileName = _form.addStringInput(Message.newSaveAs());
+        // _form.parse();
+        _receiver.doSave(_fileName.value());
       }
     }
   }
