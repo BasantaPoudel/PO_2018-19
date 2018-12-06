@@ -66,7 +66,7 @@ public class Project implements Serializable{
 
 		String res = "";
 		for (Integer id : _projectSubmissions.keySet() ){
-				 res+="* " + id + " - " + _projectSubmissions.get(id).show();
+				 res+="\n* " + id + " - " + _projectSubmissions.get(id).show();
 		}
 
 		return res;

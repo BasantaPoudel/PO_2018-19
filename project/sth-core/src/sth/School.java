@@ -768,12 +768,14 @@ public class School implements Serializable {
 			throw new NoSuchDisciplineNewException(disciplineName);
 		}
 	}
+
+
 	//4.4
 	public String showProjectSubmissions(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineNewException,NoSuchProjectNewException{
 		Professor prof = _professors.get(loginID);
 		if (prof.hasDiscipline(disciplineName)){
 
-			String res = disciplineName+" - "+projectName+"\n";
+			String res = disciplineName+" - "+projectName;
 			// courseName
 			String courseName=prof.getDisciplineCourseName(disciplineName);
 			// discipline
@@ -785,17 +787,16 @@ public class School implements Serializable {
 				// proj.close();
 				// return res;
 					res += proj.showSubmissions();
+					System.out.println(res);
+					return res;
 			}
-			System.out.println(res);
-				return res;
-
-			}
-			else{
+		 	else{
 				throw new NoSuchProjectNewException(disciplineName,projectName);
 			}
-		// else{
-		// 	throw new NoSuchDisciplineNewException(disciplineName);
-		// }
+		}
+		else{
+			throw new NoSuchDisciplineNewException(disciplineName);
+		}
 
 	}
 
@@ -811,7 +812,18 @@ public class School implements Serializable {
 	//5.1
 	public void deliverProject(int loginID, String disciplineName, String projectName,String _description) throws NoSuchDisciplineNewException,NoSuchProjectNewException{
 		// return "_school.deliverProject()";
-		Student loggedStudent = _students.get(loginID);
+		// Student loggedStudent = _students.get(loginID);
+		// Student loggedRepresentative = _representatives.get(loginID);
+		Student loggedStudent = null;
+		if(hasStudent(loginID)){
+			 loggedStudent = _students.get(loginID);
+			System.out.println("asassd" + loggedStudent);
+		}
+		else if(hasRepresentative(loginID)){
+			loggedStudent = _representatives.get(loginID);
+			System.out.println("asassd" + loggedStudent);
+		}
+		// System.out.println("asassd" + loggedRepresentative);
 		if (loggedStudent.hasDiscipline(disciplineName)){
 		// courseName
 		// String courseName=prof.getDisciplineCourseName(disciplineName);

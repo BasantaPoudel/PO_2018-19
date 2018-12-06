@@ -16,6 +16,7 @@ public class Student extends Person implements Serializable{
 		_isRepresentive=isRep;
 	}
 
+	// public Student(){}
 	/*============================================
 	=            getters and setters             =
 	============================================*/
