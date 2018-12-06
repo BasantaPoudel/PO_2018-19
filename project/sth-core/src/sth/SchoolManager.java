@@ -48,7 +48,9 @@ public class SchoolManager {
 	private int _loginID;
 	private boolean _ischanged = false;
 	private boolean _initial = true;
+	private boolean _isLoaded = false;
 
+	private String _loadedFileName;
 	/**
 	* @param datafile
 	* @throws ImportFileException
@@ -159,8 +161,53 @@ public class SchoolManager {
 
 	}
 
+	public void doSave(){
+		// if ((_initial==true) || (_ischanged==true)){
+			// System.out.println(_initial);
+			try {
+				ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(_loadedFileName)));
+				oos.writeObject(_school);
+				oos.close();
+				_initial=false;
+				_ischanged=false;
+				System.out.println("Saved");
+
+			}
+			catch (IOException e) { e.printStackTrace(); }
+		}
+
+
+
+	public void doOpen(String fileName) throws FileNotFoundException,ClassNotFoundException,IOException,NoSuchPersonIdException{
+		try {
+			ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(fileName)));
+			_schoolCurrent=_school;
+			_school = (School)ois.readObject();
+			ois.close();
+			_loadedFileName=fileName;
+		}
+		catch (IOException            e) { e.printStackTrace(); }
+		catch (ClassNotFoundException e) { e.printStackTrace(); }
+
+		finally {
+			try{
+				hasUser(_loginID);
+				_isLoaded=true;
+			}
+			catch (NoSuchPersonIdException e) {
+				_school=_schoolCurrent;
+				throw new NoSuchPersonIdException(_loginID);
+			}
+		}
+
+
+	}
+
 	public boolean getChanged(){
 		return _ischanged;
+	}
+	public boolean getIsLoaded(){
+		return _isLoaded;
 	}
 	public void setChanged(){
 		_ischanged=true;
@@ -176,28 +223,6 @@ public class SchoolManager {
 		return _loginID;
 	}
 
-	public void doOpen(String fileName) throws FileNotFoundException,ClassNotFoundException,IOException,NoSuchPersonIdException{
-		try {
-			ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(fileName)));
-			_schoolCurrent=_school;
-			_school = (School)ois.readObject();
-			ois.close();
-		}
-		catch (IOException            e) { e.printStackTrace(); }
-		catch (ClassNotFoundException e) { e.printStackTrace(); }
-
-		finally {
-			try{
-				hasUser(_loginID);
-			}
-			catch (NoSuchPersonIdException e) {
-					_school=_schoolCurrent;
-					throw new NoSuchPersonIdException(_loginID);
-			}
-		}
-
-
-	}
 
 	/*=====================================
 	=   Funções de Portal DOCENTE         =
