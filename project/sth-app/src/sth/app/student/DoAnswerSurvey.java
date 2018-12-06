@@ -6,9 +6,9 @@ import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
 //FIXME import other classes if needed
-import sth.exceptions.newexceptions.NoSurveyCoreException;
-import sth.exceptions.newexceptions.NoSuchProjectCoreException;
-import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
+import sth.exceptions.newexceptions.NoSurveyNewException;
+import sth.exceptions.newexceptions.NoSuchProjectNewException;
+import sth.exceptions.newexceptions.NoSuchDisciplineNewException;
 
 import sth.app.exceptions.NoSurveyException;
 import sth.app.exceptions.NoSuchProjectException;
@@ -48,13 +48,13 @@ public class DoAnswerSurvey extends Command<SchoolManager> {
     // _display.display();
     String s = _receiver.answerSurvey(_disciplineName.value(),_projectName.value());
 
-  } catch (NoSuchProjectCoreException e) {
+  } catch (NoSuchProjectNewException e) {
     throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());
 
-  } catch ( NoSurveyCoreException e) {
+  } catch ( NoSurveyNewException e) {
     throw new NoSurveyException(_disciplineName.value(),_projectName.value());
   }
-  catch(NoSuchDisciplineCoreException e){
+  catch(NoSuchDisciplineNewException e){
     throw new NoSuchDisciplineException(_disciplineName.value());
   }
   //FIXME [FIXING-END] implement command

@@ -6,6 +6,10 @@ import java.io.IOException;
 import pt.tecnico.po.ui.Command;
 import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
+import sth.app.exceptions.NoSuchPersonException;
+import sth.exceptions.NoSuchPersonIdException;
+import pt.tecnico.po.ui.DialogException;
+
 
 //FIXME import other classes if needed
 
@@ -29,7 +33,7 @@ public class DoOpen extends Command<SchoolManager> {
 
   /** @see pt.tecnico.po.ui.Command#execute() */
   @Override
-  public final void execute() {
+  public final void execute() throws DialogException{
     _form.parse();
 
     try {
@@ -40,6 +44,9 @@ public class DoOpen extends Command<SchoolManager> {
     } catch (ClassNotFoundException | IOException e) {
       e.printStackTrace();
     }
+   catch (NoSuchPersonIdException e) {
+    throw new NoSuchPersonException(_receiver.getLoginId());
+  }
   }
 
 }

@@ -29,23 +29,24 @@ import sth.core.Professor;
 import sth.core.Discipline;
 import sth.core.Person;
 import sth.core.Project;
+import sth.core.ProjectSubmission;
 import sth.core.Staff;
 import sth.core.Student;
 import sth.core.Survey;
 import sth.core.Course;
 
 
-import sth.exceptions.newexceptions.NonEmptySurveyCoreException;
-import sth.exceptions.newexceptions.OpeningSurveyCoreException;
-import sth.exceptions.newexceptions.ClosingSurveyCoreException;
-import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
-import sth.exceptions.newexceptions.NoSurveyCoreException;
-import sth.exceptions.newexceptions.FinishingSurveyCoreException;
-import sth.exceptions.newexceptions.NoSuchProjectCoreException;
-import sth.exceptions.newexceptions.DuplicateSurveyCoreException;
-import sth.exceptions.newexceptions.SurveyFinishedCoreException;
-import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
-import sth.exceptions.newexceptions.DuplicateProjectCoreException;
+import sth.exceptions.newexceptions.NonEmptySurveyNewException;
+import sth.exceptions.newexceptions.OpeningSurveyNewException;
+import sth.exceptions.newexceptions.ClosingSurveyNewException;
+import sth.exceptions.newexceptions.NoSuchDisciplineNewException;
+import sth.exceptions.newexceptions.NoSurveyNewException;
+import sth.exceptions.newexceptions.FinishingSurveyNewException;
+import sth.exceptions.newexceptions.NoSuchProjectNewException;
+import sth.exceptions.newexceptions.DuplicateSurveyNewException;
+import sth.exceptions.newexceptions.SurveyFinishedNewException;
+import sth.exceptions.newexceptions.NoSuchDisciplineNewException;
+import sth.exceptions.newexceptions.DuplicateProjectNewException;
 
 
 
@@ -72,7 +73,7 @@ public class School implements Serializable {
 
 	//New Map for storing instances of disciplines
 	private Map<String, Discipline> _disciplines= new TreeMap<String, Discipline>();
-
+	private Map<String, Course> _courses= new TreeMap<String, Course>();
 	private Map<String,Project> _projects = new TreeMap<String,Project>();
 
 	// <discipline name, Map of courses>
@@ -160,6 +161,7 @@ public class School implements Serializable {
 
 
 		ArrayList<Discipline> disciplines = new ArrayList<Discipline>();
+		ArrayList<String> _courseTempNames = new ArrayList<String>();
 
 		String tipoElemento="";
 		Pattern pattALUNO = Pattern.compile("ALUNO");
@@ -195,37 +197,92 @@ public class School implements Serializable {
 				// for each # line we will:
 
 				// cut out the # part
+
 				String[] fields2 = line.split("\\#");
 
 				//gets last 2 fields for discipline
 				String[] fields3=fields2[1].split("\\|");
-
+				// if(_courseTempNames.contains(fields3[0]))
+				// System.out.println("Cousename in isNextLineHashtag: "+fields3[0]);
 				//make the necessary objects for adding the discipline to student
+				_courseTempNames.add(fields3[0]);
+				if(_courses.containsKey(fields3[0])==false){  //fields3[0]: CourseName
+					Course c = new Course(fields3[0]);
+					if(c.hasDiscipline(fields3[1])==false){
+					Discipline discipline = new Discipline(c,fields3[1]);
+						c.putDiscipline(discipline);
+						_courses.put(fields3[0],c);
+						disciplines.add(discipline);
+						// System.out.println("CourseName:" +fields3[0] +" "+c+ " DisciplineName: "+fields3[1] +" "+ discipline);
+					}
+					else{
+						Discipline discipline = c.getDiscipline(fields3[1]);
+						c.putDiscipline(discipline);
+						_courses.put(fields3[0],c);
+						disciplines.add(discipline);
+						// System.out.println("CourseName:" +fields3[0] +" "+c+ " DisciplineName: "+fields3[1] +" "+ discipline);
+					}
+					// System.out.println("Printing in isNextLineHashtag");
+				}
 
-				Course c = new Course(fields3[0]);
-				Discipline discipline = new Discipline(c,fields3[1]);
+				else{
+					Course c = _courses.get(fields3[0]);
+
+					if(c.hasDiscipline(fields3[1])==false){
+					Discipline discipline = new Discipline(c,fields3[1]);
+						c.putDiscipline(discipline);
+						_courses.put(fields3[0],c);
+						disciplines.add(discipline);
+						// System.out.println("CourseName:" +fields3[0] +" "+c+ " DisciplineName: "+fields3[1] +" "+ discipline);
+					}
+					else{
+						Discipline discipline = c.getDiscipline(fields3[1]);
+						c.putDiscipline(discipline);
+						_courses.put(fields3[0],c);
+						disciplines.add(discipline);
+						// System.out.println("CourseName:" +fields3[0] +" "+c+ " DisciplineName: "+fields3[1] +" "+ discipline);
+					}
+				//
+				// 	Discipline discipline = new Discipline(c,fields3[1]);
+				// 	// System.out.println("Printing in isNextLineHashtag");
+				// 	System.out.println("CourseName:" +fields3[0] +" "+c+ " DisciplineName: "+fields3[1] +" "+ discipline);
+				// 	// System.out.println(discipline);
+				// 	c.putDiscipline(discipline);
+				// 	_courses.put(fields3[0],c);
+				// 	disciplines.add(discipline);
+				// }
 				// discipline adds the id to 'it-self'
-				disciplines.add(discipline);
-
+				}
 			}
 		}catch(UnknownDataException e){
 			// FIX
 		}   		catch(IOException e){
-			// FIX
+			e.printStackTrace();// FIX
 		}  		catch(ClientExistsException e){
-			// FIX
+			e.printStackTrace();// FIX
 		}		catch(InvalidIdentifierException e){
-			// FIX
+			e.printStackTrace();// FIX
 		}
 		// _______________________________________________________________________
 
 
-
 		if (pattALUNO.matcher(tipoElemento).matches()){
 			Student student = new Student(name,phoneNumber,id,false);
+			int i=0;
 			for(Discipline discipline : disciplines){
-				student.putDiscipline(discipline);
-				discipline.putStudent(student);
+				// System.out.println(discipline.getName());
+				Course c = _courses.get(_courseTempNames.get(i));
+				// System.out.println(c.getName());
+				// System.out.println(_courseTempNames.get(i));
+				Discipline d = c.getDiscipline(discipline.getName());
+				// System.out.println(d.getName());
+				student.putDiscipline(d);
+				// System.out.println("Aluno     "+name+" Curso: "+_courseTempNames.get(i) + " Discipline: " + discipline.getName()+ " "+d);
+
+				d.putStudent(student);
+				// student.putDiscipline(discipline);
+				// discipline.putStudent(student);
+				i=i+1;
 			}
 			addStudent(id, student);
 			// Se calhar falta aqui adicionar alunos nas disciplinas.
@@ -233,24 +290,61 @@ public class School implements Serializable {
 		}
 		else if (pattDELEGADO.matcher(tipoElemento).matches()){
 			Student representive = new Student(name,phoneNumber,id,true);
+			int i =0;
 			for(Discipline discipline : disciplines){
-				representive.putDiscipline(discipline);
+				// System.out.println(discipline.getName());
+				Course c = _courses.get(_courseTempNames.get(i));
+				Discipline d = c.getDiscipline(discipline.getName());
+				//
+				representive.putDiscipline(d);
+				d.putStudent(representive);
+				// System.out.println("Delegado     "+name+" Curso: "+_courseTempNames.get(i) + " Discipline: " + discipline.getName()+ " "+d);
+
+				 // representive.putDiscipline(discipline);
+				i=i+1;
 			}
 			addRepresentive(id, representive);
 
 		}
 		else if (pattDOCENTE.matcher(tipoElemento).matches()){
 			Professor professor = new Professor(name,phoneNumber,id);
+			// System.out.println(_courseTempNames.size());
+			int i =0;
 			for(Discipline discipline : disciplines){
-				professor.putDiscipline(discipline);
+				// System.out.println(discipline.getName());
+				Course c = _courses.get(_courseTempNames.get(i));
+				Discipline d = c.getDiscipline(discipline.getName());
+				// System.out.println(d.getName());
+				// System.out.println("Printing in Professor");
+				// System.out.println(d);
+				// System.out.println(discipline.getName());
+				// System.out.println(discipline);
+				// // for(String _courseTempName : _courseTempNames){
+				//
+				// 	System.out.println(_courseTempName);
+				// }
+				// System.out.println(c);
+				// System.out.println("_courseTempName: "+_courseTempName + "@" + c );
+				// System.out.println("Cousename in Professor: "+_courseTempName[1]);
+				// System.out.println("Professor "+name+" Curso: "+_courseTempNames.get(i) + " Discipline: "+ discipline.getName()+ " "+d);
+				i=i+1;
+				// professor.putDiscipline(discipline);
+				professor.putDiscipline(d);
+
 			}
 			addProfessor(id, professor);
 
 		}
 		else if (pattFUNCIONÁRIO.matcher(tipoElemento).matches()){
 			Staff staff = new Staff(name,phoneNumber,id);
+			int i=0;
 			for(Discipline discipline : disciplines){
+				Course c = _courses.get(_courseTempNames.get(i));
+				Discipline d = c.getDiscipline(discipline.getName());
 				staff.putDiscipline(discipline);
+				// System.out.println("Funcionario     "+name+" Curso: "+_courseTempNames.get(i) + " Discipline: " + discipline.getName()+ " "+d);
+
+				i=i+1;
 			}
 			addStaff(id, staff);
 
@@ -591,7 +685,7 @@ public class School implements Serializable {
 	=   Metodos de Portal DOCENTE         =
 	=====================================*/
 	//4.1
-	public void createProject(int loginID, String disciplineName,String projectName)throws NoSuchDisciplineCoreException, DuplicateProjectCoreException{
+	public void createProject(int loginID, String disciplineName,String projectName)throws NoSuchDisciplineNewException, DuplicateProjectNewException{
 		Professor prof = _professors.get(loginID);
 		if (prof.hasDiscipline(disciplineName)){
 			// courseName
@@ -605,15 +699,15 @@ public class School implements Serializable {
 				discipline.addProject(proj);
 			}
 			else{
-				throw new DuplicateProjectCoreException(disciplineName,projectName);
+				throw new DuplicateProjectNewException(disciplineName,projectName);
 			}
 		}
 		else {
-			throw new NoSuchDisciplineCoreException(disciplineName);
+			throw new NoSuchDisciplineNewException(disciplineName);
 		}
 	}
 	//4.2
-	public void closeProject(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineCoreException,NoSuchProjectCoreException{
+	public void closeProject(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineNewException,NoSuchProjectNewException{
 			Professor prof = _professors.get(loginID);
 		if (prof.hasDiscipline(disciplineName)){
 			// courseName
@@ -627,51 +721,17 @@ public class School implements Serializable {
 				proj.close();
 			}
 			else{
-				throw new NoSuchProjectCoreException(disciplineName,projectName);
+				throw new NoSuchProjectNewException(disciplineName,projectName);
 			}
 
 
 		}
 		else{
-			throw new NoSuchDisciplineCoreException(disciplineName);
+			throw new NoSuchDisciplineNewException(disciplineName);
 		}
-	}
-
-	//4.4
-	public String showProjectSubmissions(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineCoreException,NoSuchProjectCoreException{
-		Professor prof = _professors.get(loginID);
-		if (prof.hasDiscipline(disciplineName)){
-
-			String res = disciplineName+" - "+projectName;
-
-			// courseName
-			String courseName=prof.getDisciplineCourseName(disciplineName);
-			// discipline
-			Discipline discipline = prof.getDiscipline(courseName,disciplineName);
-			// project
-			Project proj=discipline.getProject(projectName);
-
-			if (discipline.hasProject(projectName)==true){
-				// proj.close();
-				return res;
-			}
-			else{
-				throw new NoSuchProjectCoreException(disciplineName,projectName);
-			}
-
-
-		}
-		else{
-			throw new NoSuchDisciplineCoreException(disciplineName);
-		}
-
-		// Programação com Objectos - Gatos Simples
-		// * 0234 - Gato.java
-		// * 6789 - Cat.java
-		// * 7912 - Tigre.jav
 	}
 	//4.3
-	public String showDisciplineStudents(int loginID,String disciplineName)throws NoSuchDisciplineCoreException{
+	public String showDisciplineStudents(int loginID,String disciplineName)throws NoSuchDisciplineNewException{
 		// DELEGADO|100008|123456789|Joaquim Maria
 		// * Informática - Algoritmos e Estruturas de Dados
 		// * Informática - Análise e Síntese de Algoritmos
@@ -705,10 +765,37 @@ public class School implements Serializable {
 			return res;
 		}
 		else{
-			throw new NoSuchDisciplineCoreException(disciplineName);
+			throw new NoSuchDisciplineNewException(disciplineName);
 		}
 	}
+	//4.4
+	public String showProjectSubmissions(int loginID,String disciplineName,String projectName)throws NoSuchDisciplineNewException,NoSuchProjectNewException{
+		Professor prof = _professors.get(loginID);
+		if (prof.hasDiscipline(disciplineName)){
 
+			String res = disciplineName+" - "+projectName;
+
+			// courseName
+			String courseName=prof.getDisciplineCourseName(disciplineName);
+			// discipline
+			Discipline discipline = prof.getDiscipline(courseName,disciplineName);
+			// project
+			Project proj=discipline.getProject(projectName);
+
+			if (discipline.hasProject(projectName)==true){
+				// proj.close();
+				return res;
+			}
+			else{
+				throw new NoSuchProjectNewException(disciplineName,projectName);
+			}
+
+
+		}
+		else{
+			throw new NoSuchDisciplineNewException(disciplineName);
+		}
+	}
 
 	// Survey
 	//4.5
@@ -720,8 +807,41 @@ public class School implements Serializable {
 	=   Metodos de Portal ALUNO           =
 	=====================================*/
 	//5.1
-	public String deliverProject() {
-		return "_school.deliverProject()";
+	public void deliverProject(int loginID, String disciplineName, String projectName,String _description) throws NoSuchDisciplineNewException,NoSuchProjectNewException{
+		// return "_school.deliverProject()";
+		Student loggedStudent = _students.get(loginID);
+		if (loggedStudent.hasDiscipline(disciplineName)){
+		// courseName
+		// String courseName=prof.getDisciplineCourseName(disciplineName);
+		// discipline
+
+
+
+
+		Discipline discipline = loggedStudent.getDiscipline(disciplineName);
+		// project
+		ProjectSubmission projSub = new ProjectSubmission(_description);
+		System.out.println(projSub);
+		if (discipline.hasProject(projectName)){
+			Project proj=discipline.getProject(projectName);
+			if(proj.getState()==false){
+				proj.submitProject(projectName,projSub);
+			}
+			else{
+				System.out.println("State Check");
+				throw new NoSuchProjectNewException(disciplineName,projectName);
+			}
+		}
+		else{
+			System.out.println("Existence Check");
+			throw new NoSuchProjectNewException(disciplineName,projectName);
+		}
+
+
+	}
+	else{
+		throw new NoSuchDisciplineNewException(disciplineName);
+	}
 	}
 	//5.2
 	public String answerSurvey(){
@@ -736,27 +856,27 @@ public class School implements Serializable {
 	=   Metodos de Portal DELEGADO        =
 	=====================================*/
 	//6.1
-	public String createSurvey() throws NoSuchProjectCoreException, NoSuchDisciplineCoreException, DuplicateSurveyCoreException{
+	public String createSurvey() throws NoSuchProjectNewException, NoSuchDisciplineNewException, DuplicateSurveyNewException{
 		return "_school.createSurvey()";
 	}
 	//6.2
-	public String cancelSurvey() throws NoSuchProjectCoreException,SurveyFinishedCoreException, NoSuchDisciplineCoreException, NoSurveyCoreException, NonEmptySurveyCoreException{
+	public String cancelSurvey() throws NoSuchProjectNewException,SurveyFinishedNewException, NoSuchDisciplineNewException, NoSurveyNewException, NonEmptySurveyNewException{
 		return "_school.cancelSurvey()";
 	}
 	//6.3
-	public String openSurvey() throws NoSuchProjectCoreException, NoSuchDisciplineCoreException, NoSurveyCoreException, OpeningSurveyCoreException{
+	public String openSurvey() throws NoSuchProjectNewException, NoSuchDisciplineNewException, NoSurveyNewException, OpeningSurveyNewException{
 		return "_school.openSurvey()";
 	}
 	//6.4
-	public String closeSurvey() throws NoSuchProjectCoreException, NoSuchDisciplineCoreException, NoSurveyCoreException, ClosingSurveyCoreException{
+	public String closeSurvey() throws NoSuchProjectNewException, NoSuchDisciplineNewException, NoSurveyNewException, ClosingSurveyNewException{
 		return "_school.closeSurvey()";
 	}
 	//6.5
-	public String finishSurvey() throws NoSuchProjectCoreException, NoSuchDisciplineCoreException, NoSurveyCoreException, FinishingSurveyCoreException{
+	public String finishSurvey() throws NoSuchProjectNewException, NoSuchDisciplineNewException, NoSurveyNewException, FinishingSurveyNewException{
 		return "_school.finishSurvey()";
 	}
 	//6.6
-	public String showDisciplineSurvey() throws NoSuchProjectCoreException, NoSuchDisciplineCoreException{
+	public String showDisciplineSurvey() throws NoSuchProjectNewException, NoSuchDisciplineNewException{
 		return "_school.showDisciplineSurvey()";
 	}
 

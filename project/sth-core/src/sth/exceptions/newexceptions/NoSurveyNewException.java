@@ -1,17 +1,9 @@
-/**
- *
- */
+
 package sth.exceptions.newexceptions;
 import java.lang.Exception;
 
 
-
-/**
- *
- */
-public class SurveyFinishedCoreException extends Exception{
-
-
+public class NoSurveyNewException extends Exception{
   /** Discipline name. */
   private String _discipline;
 
@@ -22,7 +14,7 @@ public class SurveyFinishedCoreException extends Exception{
    * @param discipline
    * @param project
    */
-  public SurveyFinishedCoreException(String discipline, String project) {
+  public NoSurveyNewException(String discipline, String project) {
     _discipline = discipline;
     _project = project;
   }

@@ -5,11 +5,11 @@ package sth.exceptions.newexceptions;
 import java.lang.Exception;
 
 
+
 /**
  *
  */
-public class NonEmptySurveyCoreException extends Exception{
-
+public class ClosingSurveyNewException extends Exception{
 
   /** Discipline name. */
   private String _discipline;
@@ -21,7 +21,7 @@ public class NonEmptySurveyCoreException extends Exception{
    * @param discipline
    * @param project
    */
-  public NonEmptySurveyCoreException(String discipline, String project) {
+  public ClosingSurveyNewException(String discipline, String project) {
     _discipline = discipline;
     _project = project;
   }

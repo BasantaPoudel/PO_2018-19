@@ -38,6 +38,15 @@ public class Student extends Person implements Serializable{
 		_disciplines.put(d.getName(), d);
 	}
 
+	public Discipline getDiscipline(String disciplineName){
+		 return _disciplines.get(disciplineName);
+ }
+
+
+	public boolean hasDiscipline(String disciplineName){
+		return (_disciplines.containsKey(disciplineName));
+	}
+
 
 
 	/*=============================================
@@ -45,6 +54,7 @@ public class Student extends Person implements Serializable{
 	=============================================*/
 
 	public void deliverProject(Project p){
+
 	}
 	/*=============================================
 

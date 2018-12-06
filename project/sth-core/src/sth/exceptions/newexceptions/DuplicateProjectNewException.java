@@ -1,9 +1,19 @@
-
+/**
+ *
+ */
 package sth.exceptions.newexceptions;
 import java.lang.Exception;
 
 
-public class NoSurveyCoreException extends Exception{
+
+/**
+ *
+ */
+public class DuplicateProjectNewException extends Exception{
+
+  /** Serial number for serialization. */
+  private static final long serialVersionUID = 201810051538L;
+
   /** Discipline name. */
   private String _discipline;
 
@@ -14,9 +24,11 @@ public class NoSurveyCoreException extends Exception{
    * @param discipline
    * @param project
    */
-  public NoSurveyCoreException(String discipline, String project) {
+  public DuplicateProjectNewException(String discipline, String project) {
     _discipline = discipline;
     _project = project;
   }
+
+
 
 }

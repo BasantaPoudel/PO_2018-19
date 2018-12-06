@@ -10,9 +10,9 @@ import sth.app.exceptions.NoSuchProjectException;
 import sth.app.exceptions.NoSurveyException;
 import sth.app.exceptions.NoSuchDisciplineException;
 
-import sth.exceptions.newexceptions.NoSuchProjectCoreException;
-import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
-import sth.exceptions.newexceptions.DuplicateSurveyCoreException;
+import sth.exceptions.newexceptions.NoSuchProjectNewException;
+import sth.exceptions.newexceptions.NoSuchDisciplineNewException;
+import sth.exceptions.newexceptions.DuplicateSurveyNewException;
 
 /**
  * 4.3.2. Close project.
@@ -46,10 +46,10 @@ public class DoCloseProject extends Command<SchoolManager> {
     _receiver.closeProject(_disciplineName.value(),_projectName.value());
 
     }
-    catch(NoSuchProjectCoreException e){
+    catch(NoSuchProjectNewException e){
       throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());
     }
-    catch(NoSuchDisciplineCoreException e){
+    catch(NoSuchDisciplineNewException e){
       throw new NoSuchDisciplineException(_disciplineName.value());
     }
 

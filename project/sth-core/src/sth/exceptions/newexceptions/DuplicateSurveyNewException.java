@@ -5,7 +5,7 @@ package sth.exceptions.newexceptions;
 import java.lang.Exception;
 
 
-public class DuplicateSurveyCoreException extends Exception{
+public class DuplicateSurveyNewException extends Exception{
 
   /** Discipline name. */
   private String _discipline;
@@ -17,7 +17,7 @@ public class DuplicateSurveyCoreException extends Exception{
    * @param discipline
    * @param project
    */
-  public DuplicateSurveyCoreException(String discipline, String project) {
+  public DuplicateSurveyNewException(String discipline, String project) {
     _discipline = discipline;
     _project = project;
   }

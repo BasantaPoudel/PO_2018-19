@@ -18,7 +18,7 @@ public class Discipline implements Serializable{
 	// projectName,project
 	private Map<String,Project> _projects =new TreeMap<String,Project>();
 	private Map<Integer,Student> _students =new TreeMap<Integer,Student>();
-
+	private Map<String , ProjectSubmission> _submissions= new TreeMap<String, ProjectSubmission>();
 
 
 	public Discipline(Course course,String name){

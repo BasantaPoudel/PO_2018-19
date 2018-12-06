@@ -9,7 +9,7 @@ import java.lang.Exception;
 /**
  *
  */
-public class NoSuchDisciplineCoreException extends Exception{
+public class NoSuchDisciplineNewException extends Exception{
 
 
   /** Discipline name. */
@@ -18,7 +18,7 @@ public class NoSuchDisciplineCoreException extends Exception{
   /**
    * @param name
    */
-  public NoSuchDisciplineCoreException(String name) {
+  public NoSuchDisciplineNewException(String name) {
     _name = name;
   }
 

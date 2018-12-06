@@ -3,15 +3,16 @@ import java.io.Serializable;
 
 import java.util.Map;
 import java.util.TreeMap;
+
 public class Course implements Serializable{
 	private String _name;
 	private int _numOfRepresentatives=0;
+	private Map<String,Discipline> _disciplines = new TreeMap<String,Discipline>();
 
 	public Course(String name){
 		_name=name;
 	}
 
-	private Map <String,Discipline> _disciplines= new TreeMap<String,Discipline>();
 
 	/*===========================================
 	=            getters and setters            =
@@ -31,16 +32,16 @@ public class Course implements Serializable{
 	}
 
 	public void putDiscipline(Discipline d){
-		if (!hasDiscipline(d)){
+		// if (!hasDiscipline(d)){
 			_disciplines.put(d.getName(),d);
-		}
+		// }
 	}
-	public boolean hasDiscipline(Discipline d){
-		return _disciplines.containsKey(d.getName());
+	public boolean hasDiscipline(String disciplineName){
+		return _disciplines.containsKey(disciplineName);
 	}
-	public Discipline getDiscipline(String dname){
-		if (_disciplines.containsKey(dname)){
-			return _disciplines.get(dname);
+	public Discipline getDiscipline(String disciplineName){
+		if (_disciplines.containsKey(disciplineName)){
+			return _disciplines.get(disciplineName);
 		}
 		else
 			return null;

@@ -10,9 +10,9 @@ import sth.app.exceptions.NoSuchProjectException;
 import sth.app.exceptions.DuplicateProjectException;
 import sth.app.exceptions.NoSuchDisciplineException;
 
-import sth.exceptions.newexceptions.NoSuchProjectCoreException;
-import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
-import sth.exceptions.newexceptions.DuplicateProjectCoreException;
+import sth.exceptions.newexceptions.NoSuchProjectNewException;
+import sth.exceptions.newexceptions.NoSuchDisciplineNewException;
+import sth.exceptions.newexceptions.DuplicateProjectNewException;
 
 
 /**
@@ -46,11 +46,11 @@ public class DoCreateProject extends Command<SchoolManager> {
     // _display.display();
     _receiver.createProject(_disciplineName.value(),_projectName.value());
     }
-    catch(NoSuchDisciplineCoreException e){
+    catch(NoSuchDisciplineNewException e){
       throw new NoSuchDisciplineException(_disciplineName.value());
     }
 
-    catch(DuplicateProjectCoreException e){
+    catch(DuplicateProjectNewException e){
       throw new DuplicateProjectException(_disciplineName.value(),_projectName.value());
     }
   }

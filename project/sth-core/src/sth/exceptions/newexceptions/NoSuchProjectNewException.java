@@ -9,7 +9,7 @@ import java.lang.Exception;
 /**
  *
  */
-public class NoSuchProjectCoreException extends Exception{
+public class NoSuchProjectNewException extends Exception{
 
   /** Discipline name. */
   private String _discipline;
@@ -21,7 +21,7 @@ public class NoSuchProjectCoreException extends Exception{
    * @param discipline
    * @param project
    */
-  public NoSuchProjectCoreException(String discipline, String project) {
+  public NoSuchProjectNewException(String discipline, String project) {
     _discipline = discipline;
     _project = project;
   }

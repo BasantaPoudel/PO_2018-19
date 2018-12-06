@@ -10,10 +10,10 @@ import sth.app.exceptions.FinishingSurveyException;
 import sth.app.exceptions.NoSuchProjectException;
 import sth.app.exceptions.NoSurveyException;
 
-import sth.exceptions.newexceptions.NoSurveyCoreException;
-import sth.exceptions.newexceptions.FinishingSurveyCoreException;
-import sth.exceptions.newexceptions.NoSuchProjectCoreException;
-import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
+import sth.exceptions.newexceptions.NoSurveyNewException;
+import sth.exceptions.newexceptions.FinishingSurveyNewException;
+import sth.exceptions.newexceptions.NoSuchProjectNewException;
+import sth.exceptions.newexceptions.NoSuchDisciplineNewException;
 //FIXME import other classes if needed
 
 /**
@@ -46,16 +46,16 @@ public class DoFinishSurvey extends Command<SchoolManager> {
     // _display.display();
     String s = _receiver.finishSurvey(_disciplineName.value(),_projectName.value());
     }
-    catch(NoSurveyCoreException e){
+    catch(NoSurveyNewException e){
       throw new NoSurveyException(_disciplineName.value(),_projectName.value());
     }
-    catch(FinishingSurveyCoreException e){
+    catch(FinishingSurveyNewException e){
       throw new FinishingSurveyException(_disciplineName.value(),_projectName.value());
     }
-    catch(NoSuchProjectCoreException e){
+    catch(NoSuchProjectNewException e){
       throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());
     }
-    catch(NoSuchDisciplineCoreException e){
+    catch(NoSuchDisciplineNewException e){
       throw new NoSuchDisciplineException(_disciplineName.value());
     }
   }

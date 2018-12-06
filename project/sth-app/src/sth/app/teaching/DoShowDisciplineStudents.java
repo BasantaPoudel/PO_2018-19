@@ -11,8 +11,8 @@ import sth.app.exceptions.NoSurveyException;
 import sth.app.exceptions.NoSuchDisciplineException;
 
 
-import sth.exceptions.newexceptions.NoSuchProjectCoreException;
-import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
+import sth.exceptions.newexceptions.NoSuchProjectNewException;
+import sth.exceptions.newexceptions.NoSuchDisciplineNewException;
 
 
 /**
@@ -48,11 +48,11 @@ public class DoShowDisciplineStudents extends Command<SchoolManager> {
     _display.display();
     // String s = _receiver.showDisciplineStudents(_disciplineName.value());
     }
-    // catch(NoSuchProjectCoreException e){
+    // catch(NoSuchProjectNewException e){
     //   throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());
     // }
 
-    catch(NoSuchDisciplineCoreException e){
+    catch(NoSuchDisciplineNewException e){
       throw new NoSuchDisciplineException(_disciplineName.value());
     }
 

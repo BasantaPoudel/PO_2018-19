@@ -9,7 +9,7 @@ import java.lang.Exception;
 /**
  *
  */
-public class NoSuchPersonCoreException extends Exception{
+public class NoSuchPersonNewException extends Exception{
 
 
   /** Person id. */
@@ -18,7 +18,7 @@ public class NoSuchPersonCoreException extends Exception{
   /**
    * @param id
    */
-  public NoSuchPersonCoreException(int id) {
+  public NoSuchPersonNewException(int id) {
     _id = id;
   }
 

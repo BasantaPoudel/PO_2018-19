@@ -4,8 +4,7 @@
 package sth.exceptions.newexceptions;
 import java.lang.Exception;
 
-
-public class FinishingSurveyCoreException extends Exception{
+public class OpeningSurveyNewException extends Exception{
 
   /** Discipline name. */
   private String _discipline;
@@ -17,7 +16,7 @@ public class FinishingSurveyCoreException extends Exception{
    * @param discipline
    * @param project
    */
-  public FinishingSurveyCoreException(String discipline, String project) {
+  public OpeningSurveyNewException(String discipline, String project) {
     _discipline = discipline;
     _project = project;
   }

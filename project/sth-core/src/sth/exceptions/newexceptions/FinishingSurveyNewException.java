@@ -5,14 +5,7 @@ package sth.exceptions.newexceptions;
 import java.lang.Exception;
 
 
-
-/**
- *
- */
-public class DuplicateProjectCoreException extends Exception{
-
-  /** Serial number for serialization. */
-  private static final long serialVersionUID = 201810051538L;
+public class FinishingSurveyNewException extends Exception{
 
   /** Discipline name. */
   private String _discipline;
@@ -24,11 +17,9 @@ public class DuplicateProjectCoreException extends Exception{
    * @param discipline
    * @param project
    */
-  public DuplicateProjectCoreException(String discipline, String project) {
+  public FinishingSurveyNewException(String discipline, String project) {
     _discipline = discipline;
     _project = project;
   }
-
-
 
 }

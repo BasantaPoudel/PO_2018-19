@@ -6,8 +6,8 @@ import pt.tecnico.po.ui.Input;
 import sth.SchoolManager;
 
 //FIXME import other classes if needed
-import sth.exceptions.newexceptions.NoSuchProjectCoreException;
-import sth.exceptions.newexceptions.NoSuchDisciplineCoreException;
+import sth.exceptions.newexceptions.NoSuchProjectNewException;
+import sth.exceptions.newexceptions.NoSuchDisciplineNewException;
 import sth.app.exceptions.NoSuchProjectException;
 import sth.app.exceptions.NoSuchDisciplineException;
 /**
@@ -40,12 +40,12 @@ public class DoDeliverProject extends Command<SchoolManager> {
     try{
     // _display.add(_receiver.deliverProject(_disciplineName.value(),_projectName.value(),_description.value()));
     // _display.display();
-    String s = _receiver.deliverProject(_disciplineName.value(),_projectName.value(),_description.value());
+      _receiver.deliverProject(_disciplineName.value(),_projectName.value(),_description.value());
     }
-    catch(NoSuchProjectCoreException e){
+    catch(NoSuchProjectNewException e){
       throw new NoSuchProjectException(_disciplineName.value(),_projectName.value());
     }
-    catch(NoSuchDisciplineCoreException e){
+    catch(NoSuchDisciplineNewException e){
       throw new NoSuchDisciplineException(_disciplineName.value());
     }
     }
