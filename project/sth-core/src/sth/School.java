@@ -773,8 +773,7 @@ public class School implements Serializable {
 		Professor prof = _professors.get(loginID);
 		if (prof.hasDiscipline(disciplineName)){
 
-			String res = disciplineName+" - "+projectName;
-
+			String res = disciplineName+" - "+projectName+"\n";
 			// courseName
 			String courseName=prof.getDisciplineCourseName(disciplineName);
 			// discipline
@@ -784,17 +783,20 @@ public class School implements Serializable {
 
 			if (discipline.hasProject(projectName)==true){
 				// proj.close();
+				// return res;
+					res += proj.showSubmissions();
+			}
+			System.out.println(res);
 				return res;
+
 			}
 			else{
 				throw new NoSuchProjectNewException(disciplineName,projectName);
 			}
+		// else{
+		// 	throw new NoSuchDisciplineNewException(disciplineName);
+		// }
 
-
-		}
-		else{
-			throw new NoSuchDisciplineNewException(disciplineName);
-		}
 	}
 
 	// Survey
@@ -815,9 +817,6 @@ public class School implements Serializable {
 		// String courseName=prof.getDisciplineCourseName(disciplineName);
 		// discipline
 
-
-
-
 		Discipline discipline = loggedStudent.getDiscipline(disciplineName);
 		// project
 		ProjectSubmission projSub = new ProjectSubmission(_description);
@@ -825,12 +824,14 @@ public class School implements Serializable {
 		if (discipline.hasProject(projectName)){
 			Project proj=discipline.getProject(projectName);
 			if(proj.getState()==false){
-				proj.submitProject(projectName,projSub);
+				proj.submitProject(loginID,projSub);
 			}
 			else{
 				System.out.println("State Check");
 				throw new NoSuchProjectNewException(disciplineName,projectName);
 			}
+			System.out.println("Delivered Project: "+ proj.getProjectSubmitted(loginID));
+			System.out.println("Has Submission: "+ proj.hasSubmission(loginID));
 		}
 		else{
 			System.out.println("Existence Check");

@@ -14,7 +14,7 @@ public class Project implements Serializable{
 
 	private Map<String,Survey> _surveys = new TreeMap<String,Survey>();
 
-	private Map<String,ProjectSubmission> _projectSubmissions = new TreeMap<String,ProjectSubmission>();
+	private Map<Integer,ProjectSubmission> _projectSubmissions = new TreeMap<Integer,ProjectSubmission>();
 
 
 	public Project(String name){
@@ -35,11 +35,41 @@ public class Project implements Serializable{
 	public void open(){
         _closed=false;
 	}
-	public boolean hasSubmission(String projectName){
-		return (_projectSubmissions.containsKey(projectName));
+	public boolean hasSubmission(Integer id){
+		return (_projectSubmissions.containsKey(id));
 	}
-	public void submitProject(String projectName, ProjectSubmission content){
-		_projectSubmissions.put(projectName,content);
+	public void submitProject(Integer id, ProjectSubmission submission){
+		_projectSubmissions.put(id,submission);
+	}
+	public ProjectSubmission getProjectSubmitted(Integer id){
+			return _projectSubmissions.get(id);
+	}
+
+	public String showSubmissions(){
+		// for (Map.Entry<Integer, ProjectSubmission> entry : _projectSubmissions.entrySet()) {
+		// 	ProjectSubmission value = entry.getValue();
+		// 	_allSubmissions += value.show();
+		//
+		// 	// System.out.println("reached here show students in discipline");//  [debug]
+		// }
+		// System.out.println(_allSubmissions);
+
+		// Formato de apresentação
+		// * Identificador do 1º aluno - submissão do 1º aluno
+		// ...
+		// * Identificador do Nº aluno - submissão do Nº aluno
+		// Exemplo de apresentação
+		// Programação com Objectos - Gatos Simples
+		// * 0234 - Gato.java
+		// * 6789 - Cat.java
+		// * 7912 - Tigre.java
+
+		String res = "";
+		for (Integer id : _projectSubmissions.keySet() ){
+				 res+="* " + id + " - " + _projectSubmissions.get(id).show();
+		}
+
+		return res;
 	}
 
 
