@@ -12,35 +12,40 @@ public class Project implements Serializable{
 
 	private boolean _closed=false;
 
-	private Map<String,Survey> _surveys = new TreeMap<String,Survey>();
+	// private Survey _survey; // = new TreeMap<String,Survey>();
 
 	private Map<Integer,ProjectSubmission> _projectSubmissions = new TreeMap<Integer,ProjectSubmission>();
-
+	// private Map<Integer,SurveySubmission> _projectSubmissions = new TreeMap<Integer,SurveySubmission>();
 
 	public Project(String name){
 		_name=name;
 	}
 
-
 	//getters
 	public String getName(){
 		return _name;
 	}
+
 	public void close(){
 		_closed=true;
 	}
+
 	public boolean getState(){
 		return _closed;
 	}
+
 	public void open(){
         _closed=false;
 	}
+
 	public boolean hasSubmission(Integer id){
 		return (_projectSubmissions.containsKey(id));
 	}
+
 	public void submitProject(Integer id, ProjectSubmission submission){
 		_projectSubmissions.put(id,submission);
 	}
+
 	public ProjectSubmission getProjectSubmitted(Integer id){
 			return _projectSubmissions.get(id);
 	}
@@ -72,5 +77,24 @@ public class Project implements Serializable{
 		return res;
 	}
 
+	public void createSurvey(){
+
+	}
+
+	public void closeSurvey(){
+
+	}
+
+	public void cancelSurvey(){
+
+	}
+
+	public void finishSurvey(){
+
+	}
+
+	public void openSurvey(){
+
+	}
 
 }

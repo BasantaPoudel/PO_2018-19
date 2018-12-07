@@ -35,7 +35,6 @@ import sth.core.Student;
 import sth.core.Survey;
 import sth.core.Course;
 
-
 import sth.exceptions.newexceptions.NonEmptySurveyNewException;
 import sth.exceptions.newexceptions.OpeningSurveyNewException;
 import sth.exceptions.newexceptions.ClosingSurveyNewException;
@@ -61,8 +60,6 @@ public class School implements Serializable {
 	private static final long serialVersionUID = 201810051538L;
 
 
-
-
 	// maps for people and theirs ids
 	private Map<Integer, Student> _students = new TreeMap<Integer, Student>();
 	private Map<Integer, Student> _representatives = new TreeMap<Integer, Student>();
@@ -71,24 +68,19 @@ public class School implements Serializable {
 	//all people
 	private Map<Integer, Person> _persons= new TreeMap<Integer, Person>();
 
-	//New Map for storing instances of disciplines
+	// Maps for storing instances
 	private Map<String, Discipline> _disciplines= new TreeMap<String, Discipline>();
 	private Map<String, Course> _courses= new TreeMap<String, Course>();
 	private Map<String,Project> _projects = new TreeMap<String,Project>();
 
 	// <discipline name, Map of courses>
-	private Map<String,ArrayList<Course> > _disciplinesCourses = new TreeMap<String,ArrayList<Course> >();
-
-
-
-
+	// private Map<String,ArrayList<Course> > _disciplinesCourses = new TreeMap<String,ArrayList<Course> >();
 
 	//[FIXING-END]
-
 	//FIXME implement constructors if needed
 
 	/*========================================
-	=            main functions
+	=     Methods for Import and Parsing
 	=========================================*/
 
 	/**
@@ -97,7 +89,6 @@ public class School implements Serializable {
 	* @throws IOException
 	*/
 	void importFile(String filename) throws IOException, BadEntryException {
-
 		BufferedReader reader = new BufferedReader(new FileReader(filename));
 		String line;
 
@@ -144,7 +135,6 @@ public class School implements Serializable {
 	}
 
 
-
 	/**
 	* Registers
 	*
@@ -159,7 +149,7 @@ public class School implements Serializable {
 		int phoneNumber = Integer.parseInt(fields[2]);
 		String name = fields[3];
 
-
+		//ArrayList to temporarily store disciplines and courses
 		ArrayList<Discipline> disciplines = new ArrayList<Discipline>();
 		ArrayList<String> _courseTempNames = new ArrayList<String>();
 
@@ -326,7 +316,8 @@ public class School implements Serializable {
 				// System.out.println(c);
 				// System.out.println("_courseTempName: "+_courseTempName + "@" + c );
 				// System.out.println("Cousename in Professor: "+_courseTempName[1]);
-				// System.out.println("Professor "+name+" Curso: "+_courseTempNames.get(i) + " Discipline: "+ discipline.getName()+ " "+d);
+				System.out.println("Professor "+name+" Curso: "+_courseTempNames.get(i) + " Discipline: "+ discipline.getName()+ " "+d);
+				professor.putCourse(_courseTempNames.get(i),c);
 				i=i+1;
 				// professor.putDiscipline(discipline);
 				professor.putDiscipline(d);

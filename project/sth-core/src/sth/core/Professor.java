@@ -20,6 +20,7 @@ public class Professor extends Person implements Serializable{
 
     private TreeMap<String,Discipline> disciplinesMap = new TreeMap<String,Discipline>(); // create a map of disciplineName's and disciplines for that course
 
+    private TreeMap<String,Course> _courses =new TreeMap<String, Course>();
     // constructor
 
     public Professor(String _name,int _phoneNumber,int _id){
@@ -46,6 +47,10 @@ public class Professor extends Person implements Serializable{
             _disciplines.get(courseName).put(disciplineName,discipline);
         }
         _disciplinesCourses.put(disciplineName,courseName);// add to _disciplinesCourses (a Map<String,String>) the names
+    }
+
+    public void putCourse(String courseName, Course course){
+      _courses.put(courseName,course);
     }
 
     public String getDisciplineName(String disciplineName){
@@ -92,7 +97,7 @@ public class Professor extends Person implements Serializable{
 
 
     public String showDisciplineStudents(String disciplineName){
-        // DELEGADO|100008|123456789|Joaquim Maria
+    // DELEGADO|100008|123456789|Joaquim Maria
 		// * Informática - Algoritmos e Estruturas de Dados
 		// * Informática - Análise e Síntese de Algoritmos
 		// * Informática - Fundamentos
@@ -109,8 +114,8 @@ public class Professor extends Person implements Serializable{
 		// * Informática - Programação com Objectos
         String res="";
         Discipline disc = getDiscipline(disciplineName);
-        System.out.println(disc); //[debug]
-        System.out.println(disciplinesMap.size());//  [debug]
+        // System.out.println(disc); //[debug]
+        // System.out.println(disciplinesMap.size());//  [debug]
 
         String _allDisciplines = "";
         for (Map.Entry<String, Discipline> entry : disciplinesMap.entrySet()) {
@@ -118,7 +123,7 @@ public class Professor extends Person implements Serializable{
           String _sName =value.getName();
           _allDisciplines += _sName;
           // System.out.println("reached here show students in discipline");//  [debug]
-          System.out.println(_sName);//  [debug]
+          // System.out.println(_sName);//  [debug]
         }
 
 

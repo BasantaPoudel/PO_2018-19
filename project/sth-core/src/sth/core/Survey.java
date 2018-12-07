@@ -10,15 +10,18 @@ public class Survey implements Serializable{
 	private boolean _closed=false;
 	private boolean _finalized=false;
 
-
+	// private SurveyState _state = new SurveyCreated(this);
 	// private Map<String,SurveySubmission> _surveySubmissions = new TreeMap<String,SurveySubmission>();
-
 
 	public Survey(double hoursSpent ,String freeComments){
 		_hoursSpent=hoursSpent;
 		_freeComments=freeComments;
 
 	}
+
+	// public void setState(SurveyState state) {
+	// 	_state = state;
+	// }
 
 	/*============================================
 	=            getters and setters             =
@@ -47,4 +50,26 @@ public class Survey implements Serializable{
 	public void setFinalized(boolean finalized){
 		_finalized=finalized;
 	}
+
+
+	/*============================================
+	=           Other Methods             =
+	============================================*/
+
+	public void cancel(){
+		// _state.cancel();
+	}
+	public void open(){
+		// _state.open();
+	}
+	public void close(){
+		// _state.close();
+	}
+	public void finalise(){
+		// _state.finalise();
+	}
+	public void submit(){
+		// _state.submit();
+	}
+
 }
