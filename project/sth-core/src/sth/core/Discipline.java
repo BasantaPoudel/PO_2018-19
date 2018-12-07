@@ -87,7 +87,7 @@ public class Discipline implements Serializable{
 
 			// System.out.println("reached here show students in discipline");//  [debug]
 		}
-		System.out.println(_allStudents);
+		// System.out.println(_allStudents);
 		return _allStudents;
 	}
 

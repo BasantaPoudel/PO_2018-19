@@ -84,51 +84,19 @@ public class Professor extends Person implements Serializable{
     }
     public String showWithDisciplines(){
         String res = "DOCENTE"+"|"+getId()+"|"+getPhoneNumber()+"|"+getName()+"\n";
-        for (String courseName : _disciplines.keySet() ) {
-            for (String disciplineName : _disciplines.get(courseName).keySet() ){
-                res+="*" + courseName +" - "+disciplineName+"\n";
-            }
+        for (String courseName : _courses.keySet() ) {
+              res +=_courses.get(courseName).showDisciplines(disciplinesMap);
         }
+          // System.out.println(res);
         return res;
     }
 
-
-
-
-
     public String showDisciplineStudents(String disciplineName){
-    // DELEGADO|100008|123456789|Joaquim Maria
-		// * Informática - Algoritmos e Estruturas de Dados
-		// * Informática - Análise e Síntese de Algoritmos
-		// * Informática - Fundamentos
-		// * Informática - Programação com Objectos
-		// DELEGADO|100009|123456789|João Maria
-		// * Informática - Algoritmos e Estruturas de Dados
-		// * Informática - Análise e Síntese de Algoritmos
-		// * Informática - Fundamentos
-		// * Informática - Programação com Objectos
-		// DELEGADO|100011|123456789|João Manuel
-		// * Informática - Algoritmos e Estruturas de Dados
-		// * Informática - Análise e Síntese de Algoritmos
-		// * Informática - Fundamentos
-		// * Informática - Programação com Objectos
         String res="";
-        Discipline disc = getDiscipline(disciplineName);
-        // System.out.println(disc); //[debug]
-        // System.out.println(disciplinesMap.size());//  [debug]
-
-        String _allDisciplines = "";
-        for (Map.Entry<String, Discipline> entry : disciplinesMap.entrySet()) {
-          Discipline value = entry.getValue();
-          String _sName =value.getName();
-          _allDisciplines += _sName;
-          // System.out.println("reached here show students in discipline");//  [debug]
-          // System.out.println(_sName);//  [debug]
-        }
-
-
-
-
+        String cName= getDisciplineCourseName(disciplineName);
+        Course c = _courses.get(cName);
+        Discipline disc = c.getDiscipline(disciplineName);
+        res+=disc.showStudents();
         return res; //+ disc.showStudents();
     }
 

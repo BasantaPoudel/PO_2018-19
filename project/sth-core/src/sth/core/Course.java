@@ -47,4 +47,17 @@ public class Course implements Serializable{
 			return null;
 	}
 
+	public String showDisciplines(TreeMap<String,Discipline> d){
+		String res="";
+		// System.out.println(_name + ":" + _disciplines.size());
+		for (String disciplineName : _disciplines.keySet() ) {
+				// System.out.println(disciplineName + d.containsKey(disciplineName));
+					if(d.containsKey(disciplineName)){
+							res+="*" + _name +" - "+disciplineName+"\n";
+					}
+		}
+		// System.out.println(res);
+		return res;
+	}
+
 }

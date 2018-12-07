@@ -118,13 +118,6 @@ public class SchoolManager {
 		return _school.hasRepresentative(_loginID);
 	}
 
-	//FIXME [FIXING-BEGIN] implement other methods (in general, one for each command in sth-app)
-	// public String getPersons() {
-	//     return _school.getPersons();
-	// }
-
-
-
 	public String setNewPhoneNum(int newTelPhone){
 		_ischanged=true;
 		return _school.setNewPhoneNum(_loginID,newTelPhone);
@@ -153,7 +146,7 @@ public class SchoolManager {
 				oos.close();
 				_initial=false;
 				_ischanged=false;
-				System.out.println("Saved");
+				// System.out.println("Saved");
 
 			}
 			catch (IOException e) { e.printStackTrace(); }
@@ -170,7 +163,7 @@ public class SchoolManager {
 				oos.close();
 				_initial=false;
 				_ischanged=false;
-				System.out.println("Saved");
+				// System.out.println("Saved");
 
 			}
 			catch (IOException e) { e.printStackTrace(); }

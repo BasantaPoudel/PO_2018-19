@@ -232,16 +232,6 @@ public class School implements Serializable {
 						disciplines.add(discipline);
 						// System.out.println("CourseName:" +fields3[0] +" "+c+ " DisciplineName: "+fields3[1] +" "+ discipline);
 					}
-				//
-				// 	Discipline discipline = new Discipline(c,fields3[1]);
-				// 	// System.out.println("Printing in isNextLineHashtag");
-				// 	System.out.println("CourseName:" +fields3[0] +" "+c+ " DisciplineName: "+fields3[1] +" "+ discipline);
-				// 	// System.out.println(discipline);
-				// 	c.putDiscipline(discipline);
-				// 	_courses.put(fields3[0],c);
-				// 	disciplines.add(discipline);
-				// }
-				// discipline adds the id to 'it-self'
 				}
 			}
 		}catch(UnknownDataException e){
@@ -304,19 +294,6 @@ public class School implements Serializable {
 				// System.out.println(discipline.getName());
 				Course c = _courses.get(_courseTempNames.get(i));
 				Discipline d = c.getDiscipline(discipline.getName());
-				// System.out.println(d.getName());
-				// System.out.println("Printing in Professor");
-				// System.out.println(d);
-				// System.out.println(discipline.getName());
-				// System.out.println(discipline);
-				// // for(String _courseTempName : _courseTempNames){
-				//
-				// 	System.out.println(_courseTempName);
-				// }
-				// System.out.println(c);
-				// System.out.println("_courseTempName: "+_courseTempName + "@" + c );
-				// System.out.println("Cousename in Professor: "+_courseTempName[1]);
-				System.out.println("Professor "+name+" Curso: "+_courseTempNames.get(i) + " Discipline: "+ discipline.getName()+ " "+d);
 				professor.putCourse(_courseTempNames.get(i),c);
 				i=i+1;
 				// professor.putDiscipline(discipline);
@@ -462,37 +439,6 @@ public class School implements Serializable {
 	public boolean hasStaffs(int loginID){
 		return _staffs.containsKey(loginID);
 	}
-
-	/**
-	*Performs the Command DoShowAllPersons
-	*
-	* @return String
-	*/
-
-	// public String showAllPersons(){
-	// String _allpersons = "";
-	// for (Map.Entry<Integer, Professor> entry : _professors.entrySet()) {
-	// 	Professor value = entry.getValue();
-	// 	String _sname =value.getName();
-	// 	_allpersons += value.show();
-	// }
-	// for (Map.Entry<Integer, Student> entry : _students.entrySet()) {
-	// 	Student value = entry.getValue();
-	// 	String _sname =value.getName();
-	// 	_allpersons += value.show(false);
-	// }
-	// for (Map.Entry<Integer, Student> entry : _representatives.entrySet()) {
-	// 	Student value = entry.getValue();
-	// 	String _sname =value.getName();
-	// 	_allpersons += value.show(true);
-	// }
-	// for (Map.Entry<Integer, Staff> entry : _staffs.entrySet()) {
-	// 	Staff value = entry.getValue();
-	// 	String _sname =value.getName();
-	// 	_allpersons += value.show();
-	// }
-	//}
-
 
 	/*=====================================
 	=   Metodos de Portal Pessoal         =
@@ -778,7 +724,7 @@ public class School implements Serializable {
 				// proj.close();
 				// return res;
 					res += proj.showSubmissions();
-					System.out.println(res);
+					// System.out.println(res);
 					return res;
 			}
 		 	else{
@@ -808,11 +754,9 @@ public class School implements Serializable {
 		Student loggedStudent = null;
 		if(hasStudent(loginID)){
 			 loggedStudent = _students.get(loginID);
-			System.out.println("asassd" + loggedStudent);
 		}
 		else if(hasRepresentative(loginID)){
 			loggedStudent = _representatives.get(loginID);
-			System.out.println("asassd" + loggedStudent);
 		}
 		// System.out.println("asassd" + loggedRepresentative);
 		if (loggedStudent.hasDiscipline(disciplineName)){
@@ -823,21 +767,21 @@ public class School implements Serializable {
 		Discipline discipline = loggedStudent.getDiscipline(disciplineName);
 		// project
 		ProjectSubmission projSub = new ProjectSubmission(_description);
-		System.out.println(projSub);
+		// System.out.println(projSub);
 		if (discipline.hasProject(projectName)){
 			Project proj=discipline.getProject(projectName);
 			if(proj.getState()==false){
 				proj.submitProject(loginID,projSub);
 			}
 			else{
-				System.out.println("State Check");
+				// System.out.println("State Check");
 				throw new NoSuchProjectNewException(disciplineName,projectName);
 			}
-			System.out.println("Delivered Project: "+ proj.getProjectSubmitted(loginID));
-			System.out.println("Has Submission: "+ proj.hasSubmission(loginID));
+			// System.out.println("Delivered Project: "+ proj.getProjectSubmitted(loginID));
+			// System.out.println("Has Submission: "+ proj.hasSubmission(loginID));
 		}
 		else{
-			System.out.println("Existence Check");
+			// System.out.println("Existence Check");
 			throw new NoSuchProjectNewException(disciplineName,projectName);
 		}
 
