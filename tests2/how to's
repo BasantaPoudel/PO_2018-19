@@ -1,6 +1,18 @@
 magia
-make;cd ../tests2/tests_50;sh todo.sh;cd -
+make;
+cd ../tests2/tests_50;
+sh todo.sh;
+cd -
 
 manual
 proj:
-echo; a="A-09-02-M-ok";   cat ../tests2/tests_50/desc/$a.desc; echo;       cat ../tests2/tests_50/auto-tests/$a.import;   cat ../tests2/tests_50/auto-tests/$a.in;       export CLASSPATH=/usr/share/java/po-uuilib.jar:sth-core/sth-core.jar:sth-app/sth-app.jar;       java -Dimport=../tests/tests_50/auto-tests/$a.import sth.app.App
+echo;
+
+
+a="A-09-02-M-ok";
+cat ../tests2/tests_50/desc/$a.desc;
+echo;
+cat ../tests2/tests_50/auto-tests/$a.import;
+cat ../tests2/tests_50/auto-tests/$a.in;
+export CLASSPATH=/usr/share/java/po-uuilib.jar:sth-core/sth-core.jar:sth-app/sth-app.jar;
+java -Dimport=../tests/tests_50/auto-tests/$a.import sth.app.App
