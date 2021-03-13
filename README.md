@@ -29,7 +29,7 @@ ou
 ```
  
  # Main Feature Highlight
- Portal
+Portal  
 The major functionality includes separate portal for each person according to their status. In each of the portals
 there were options to show the profile, change the details of the profile and find another person
 using the search id. Depending on the person’s status, the options in the portal would be different.
@@ -73,5 +73,5 @@ https://web.tecnico.ulisboa.pt/~david.matos/w/pt/index.php/Comando_(padr%C3%A3o_
 
 
 **Authors**
-Basanta Poudel
+Basanta Poudel  
 Ricardo Almeida
